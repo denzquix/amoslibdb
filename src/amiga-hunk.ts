@@ -2,6 +2,11 @@
 const HUNK_CODE = 0x3E9;
 const HUNK_END = 0x3F2;
 
+export type Hunk = (
+  | {type:'HUNK_CODE', data:Buffer}
+  | {type:'HUNK_END'}
+);
+
 export function parseHunk(buf: Buffer) {
   let pos = 0;
   const u32be = () => { const v = buf.readUint32BE(pos); pos += 4; return v; };
@@ -17,40 +22,49 @@ export function parseHunk(buf: Buffer) {
   for (let residentLibrary = hunkstr(); residentLibrary !== ''; residentLibrary = hunkstr()) {
     residentLibraries.push(residentLibrary);
   }
-  if (residentLibraries.length !== 0) {
-    throw new Error('resident library list is nonempty');
-  }
 
-  const tableSize = u32be();
+  const totalHunkCount = u32be();
   const firstHunk = u32be();
   const lastHunk = u32be();
-  const hunkSizes = Array.from({length: lastHunk + 1 - firstHunk}, () => { const v = u32be(); return {len:(v & (-1 >>> 2)) * 4, flags:(v >>> 30)} });
+  if (lastHunk < firstHunk || (lastHunk+1) > totalHunkCount) {
+    throw new Error('invalid hunk configuration');
+  }
+  const localHunkCount = lastHunk + 1 - firstHunk;
+  const allHunkSizes = Array.from({length: totalHunkCount}, () => { const v = u32be(); return {len:(v & (-1 >>> 2)) * 4, flags:(v >>> 30)} });
 
-  function *eachHunk() {
-    while (pos < buf.length) {
-      const hunkType = u32be() & (-1 >>> 3); // mask off the top 3 bits
-      switch (hunkType) {
-        case HUNK_CODE: {
-          yield {type:'HUNK_CODE' as const, data:bytes(u32be() * 4)};
-          break;
-        }
-        case HUNK_END: {
-          yield {type:'HUNK_END' as const};
-          break;
-        }
-        default: {
-          throw new Error('unknown hunk type: ' + hunkType.toString(16));
-        }
+  const hunks: Hunk[] = [];
+  while (pos < buf.length) {
+    const hunkType = u32be() & (-1 >>> 3); // mask off the top 3 bits
+    switch (hunkType) {
+      case HUNK_CODE: {
+        hunks.push({type:'HUNK_CODE' as const, data:bytes(u32be() * 4)});
+        break;
+      }
+      case HUNK_END: {
+        hunks.push({type:'HUNK_END' as const});
+        break;
+      }
+      default: {
+        throw new Error('unknown hunk type: ' + hunkType.toString(16));
       }
     }
   }
 
-  const hunks = [...eachHunk()];
-
-  return {
-    residentLibraries,
-    hunks,
-  };
+  if (localHunkCount === totalHunkCount) {
+    return {
+      type: 'complete',
+      residentLibraries,
+      hunks,
+      allHunkSizes,
+    };
+  }
+  else {
+    return {
+      type: 'partial',
+      residentLibraries,
+      hunks,
+      firstHunkOffset: firstHunk,
+      allHunkSizes,
+    };
+  }
 }
-
-export type Hunk = ReturnType<typeof parseHunk>['hunks'][0];
