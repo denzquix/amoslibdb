@@ -90,7 +90,7 @@ export namespace EffectiveAddress {
                 return {type:'Imm', value:(hi << 16) | lo, size:immSize};
               }
               case 'W': {
-                return {type:'Imm', value:getExtWord(), size:immSize};
+                return {type:'Imm', value:getExtWord() << 16 >> 16, size:immSize};
               }
               case 'B': {
                 return {type:'Imm', value:getExtWord() << 24 >> 24, size:immSize};
@@ -130,6 +130,77 @@ export namespace Operand {
   export type USP = {type:'USP'};
   export type RegSet = {type:'RegSet', regs: Set<`${'A' | 'D'}${bit_trio}`>};
   export type Displacement<TSize extends 'B'|'W' = 'B'|'W'> = {type:'Disp', size:TSize, value:number};
+
+  const signedHex = (v: number) => (v < 0) ? `-$${(-v).toString(16)}` : `$${v.toString(16)}`;
+
+  export const stringify = (o: Operand): string => {
+    switch (o.type) {
+      case 'Dn': {
+        return `D${o.reg}`;
+      }
+      case 'An': case 'Dn': {
+        switch (o.mode) {
+          case 'direct': return `A${o.reg}`
+          case 'indirect': return `(A${o.reg})`;
+          case 'indirect-post-inc': return `(A${o.reg})+`;
+          case 'indirect-pre-dec': return `-(A${o.reg})`;
+          case 'indirect-displaced': return `(${signedHex(o.disp)},A${o.reg})`;
+          case 'indirect-indexed': {
+            return `(${signedHex(o.disp)},A${o.reg},${o.index.type === 'An' ? 'A' : 'D'}${o.index.reg})`;
+          }
+        }
+      }
+      case 'PC': {
+        switch (o.mode) {
+          case 'indirect-displaced': return `(${signedHex(o.disp)},PC)`;
+          case 'indirect-indexed': {
+            return `(${signedHex(o.disp)},PC,${o.index.type === 'An' ? 'A' : 'D'}${o.index.reg})`;
+          }
+        }
+      }
+      case 'Abs': {
+        switch (o.size) {
+          case 'W': return `($${(o.value >>> 0).toString(16)}).W`;
+          case 'L': return `($${(o.value >>> 0).toString(16)}).L`;
+        }
+      }
+      case 'Imm': {
+        return '#' + (Math.abs(o.value) < 10 ? o.value : signedHex(o.value));
+      }
+      case 'Disp': {
+        return signedHex(o.value);
+      }
+      case 'RegSet': {
+        return stringifyRegSet(o.regs);
+      }
+      default: return o.type;
+    }
+  };
+
+  export const requiredExtWords = (op: Operand): number => {
+    switch (op.type) {
+      case 'An':
+        switch (op.mode) {
+          case 'indirect-displaced':
+          case 'indirect-indexed':
+            return 1;
+          default:
+            return 0;
+        }
+      case 'PC':
+        return 1;
+      case 'Abs':
+      case 'Imm':
+        return op.size === 'L' ? 2 : 1;
+      case 'Disp':
+        return op.size === 'B' ? 0 : 1;
+      case 'RegSet':
+        return 1;
+      default:
+        return 0;
+    }
+  }  
+
 }
 
 export type Operand = (
@@ -150,4 +221,55 @@ export const parseRegSet = (mask: number, reversed: boolean): Operand.RegSet => 
     }
   }
   return {type:'RegSet', regs};
+};
+
+export const stringifyRegSet = (regs: Set<`${'A'|'D'}${0|1|2|3|4|5|6|7}`>): string => {
+  if (regs.size === 0) return '{}';
+  
+  const dRegs: number[] = [];
+  const aRegs: number[] = [];
+  
+  for (const reg of regs) {
+    const num = parseInt(reg[1]!);
+    if (reg[0] === 'D') {
+      dRegs.push(num);
+    } else {
+      aRegs.push(num);
+    }
+  }
+  
+  dRegs.sort((a, b) => a - b);
+  aRegs.sort((a, b) => a - b);
+  
+  const formatRanges = (nums: number[], prefix: string): string[] => {
+    if (nums.length === 0) return [];
+    
+    const ranges: string[] = [];
+    let start = nums[0]!;
+    let end = nums[0]!;
+    
+    for (let i = 1; i <= nums.length; i++) {
+      if (i < nums.length && nums[i] === end + 1) {
+        end = nums[i]!;
+      } else {
+        if (start === end) {
+          ranges.push(`${prefix}${start}`);
+        } else if (end === start + 1) {
+          ranges.push(`${prefix}${start}`);
+          ranges.push(`${prefix}${end}`);
+        } else {
+          ranges.push(`${prefix}${start}-${prefix}${end}`);
+        }
+        if (i < nums.length) {
+          start = nums[i]!;
+          end = nums[i]!;
+        }
+      }
+    }
+    
+    return ranges;
+  };
+  
+  const parts = [...formatRanges(dRegs, 'D'), ...formatRanges(aRegs, 'A')];
+  return parts.join('/');
 };

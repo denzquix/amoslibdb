@@ -4,18 +4,61 @@ import InstrCode, { fromOpcode, unpack } from "../instr-code/index.js";
 import MnemonicCode from "../mnemonic.js";
 import { bit_trio } from "../util.js";
 import type { ASL, Instruction, LSL, ROL, ROXL } from "./all.js";
-import { EffectiveAddress as EA, parseRegSet } from "./operand.js";
+import { EffectiveAddress as EA, Operand, parseRegSet } from "./operand.js";
 
 const Dn = (reg: bit_trio) => ({type:'Dn' as const, reg, mode:'direct' as const});
 const An = (reg: bit_trio) => ({type:'An' as const, reg, mode:'direct' as const});
 const AnPreDec = (reg: bit_trio) => ({type:'An' as const, reg, mode:'indirect-pre-dec' as const});
 const AnPostInc = (reg: bit_trio) => ({type:'An' as const, reg, mode:'indirect-post-inc' as const});
 
+export const instrExtWords = (i: Instruction): number => {
+  let count = 0;
+
+  // These have embedded immediates/displacements, not extension words
+  switch (i.mnemonic) {
+    case MnemonicCode.MOVEQ:
+    case MnemonicCode.ADDQ:
+    case MnemonicCode.SUBQ:
+    case MnemonicCode.TRAP:
+      return 0;
+  }
+
+  // Shifts with immediate count have it embedded
+  if ('src' in i && i.src.type === 'Imm') {
+    switch (i.mnemonic) {
+      case MnemonicCode.ASL:
+      case MnemonicCode.ASR:
+      case MnemonicCode.LSL:
+      case MnemonicCode.LSR:
+      case MnemonicCode.ROL:
+      case MnemonicCode.ROR:
+      case MnemonicCode.ROXL:
+      case MnemonicCode.ROXR:
+        // Only count dst, not src
+        if ('dst' in i) count += Operand.requiredExtWords(i.dst);
+        return count;
+    }
+  }
+
+
+  if ('src' in i) count += Operand.requiredExtWords(i.src);
+  if ('dst' in i) count += Operand.requiredExtWords(i.dst);
+  if ('target' in i) count += Operand.requiredExtWords(i.target);
+  if ('counter' in i) count += Operand.requiredExtWords(i.counter);
+  if ('lhs' in i) count += Operand.requiredExtWords(i.lhs);
+  if ('rhs' in i) count += Operand.requiredExtWords(i.rhs);
+  if ('reg' in i) count += Operand.requiredExtWords(i.reg);
+  if ('disp' in i && i.mnemonic === MnemonicCode.LINK) count += Operand.requiredExtWords(i.disp);
+  if ('imm' in i) count += Operand.requiredExtWords(i.imm);
+
+  return count;
+};
+
 export const readInstruction = (raw: Buffer, offset = 0, instrCode = -1): Instruction | null => {
   if ((offset + 2) > raw.length) {
     return null;
   }
-  const opcode = raw.readUint16BE(0);
+  const opcode = raw.readUint16BE(offset);
   offset += 2;
   if (instrCode === -1) {
     instrCode = fromOpcode(opcode);
@@ -36,7 +79,7 @@ export const readInstruction = (raw: Buffer, offset = 0, instrCode = -1): Instru
     if ((offset + 2) > raw.length) {
       throw new Error('out of input');
     }
-    const v = raw.readInt16BE(offset);
+    const v = raw.readUint16BE(offset);
     offset += 2;
     return v;
   };
@@ -613,4 +656,183 @@ export const readInstruction = (raw: Buffer, offset = 0, instrCode = -1): Instru
     }
     default: return null;
   }
+};
+
+export const stringifyInstruction = (i: Instruction): string => {
+  let ops: string[];
+  switch (i.mnemonic) {
+    case MnemonicCode.MOVE:
+    case MnemonicCode.MOVEA:
+    case MnemonicCode.MOVEQ:
+    case MnemonicCode.MOVEP:
+    case MnemonicCode.MOVEM:
+    case MnemonicCode.ADD:
+    case MnemonicCode.ADDA:
+    case MnemonicCode.ADDI:
+    case MnemonicCode.ADDQ:
+    case MnemonicCode.ADDX:
+    case MnemonicCode.SUB:
+    case MnemonicCode.SUBA:
+    case MnemonicCode.SUBI:
+    case MnemonicCode.SUBQ:
+    case MnemonicCode.SUBX:
+    case MnemonicCode.CMP:
+    case MnemonicCode.CMPA:
+    case MnemonicCode.CMPI:
+    case MnemonicCode.CMPM:
+    case MnemonicCode.MULU:
+    case MnemonicCode.MULS:
+    case MnemonicCode.DIVU:
+    case MnemonicCode.DIVS:
+    case MnemonicCode.AND:
+    case MnemonicCode.ANDI:
+    case MnemonicCode.OR:
+    case MnemonicCode.ORI:
+    case MnemonicCode.EOR:
+    case MnemonicCode.EORI:
+    case MnemonicCode.ABCD:
+    case MnemonicCode.SBCD:
+    case MnemonicCode.CHK:
+    case MnemonicCode.LEA:
+    case MnemonicCode.BTST:
+    case MnemonicCode.BCHG:
+    case MnemonicCode.BCLR:
+    case MnemonicCode.BSET: {
+      ops = [Operand.stringify(i.src), Operand.stringify(i.dst)];
+      break;
+    }
+
+    case MnemonicCode.ASL:
+    case MnemonicCode.ASR:
+    case MnemonicCode.LSL:
+    case MnemonicCode.LSR:
+    case MnemonicCode.ROL:
+    case MnemonicCode.ROR:
+    case MnemonicCode.ROXL:
+    case MnemonicCode.ROXR: {
+      if (('src' in i) && i.src != null) {
+        ops = [Operand.stringify(i.src), Operand.stringify(i.dst)];
+      } else {
+        ops = [Operand.stringify(i.dst)];
+      }
+      break;
+    }
+
+    case MnemonicCode.EXG: {
+      ops = [Operand.stringify(i.lhs), Operand.stringify(i.rhs)];
+      break;
+    }
+
+    case MnemonicCode.NEG:
+    case MnemonicCode.NEGX:
+    case MnemonicCode.NOT:
+    case MnemonicCode.CLR:
+    case MnemonicCode.TST:
+    case MnemonicCode.EXT:
+    case MnemonicCode.NBCD:
+    case MnemonicCode.TAS:
+    case MnemonicCode.SWAP:
+    case MnemonicCode.ST:
+    case MnemonicCode.SF:
+    case MnemonicCode.SHI:
+    case MnemonicCode.SLS:
+    case MnemonicCode.SCC:
+    case MnemonicCode.SCS:
+    case MnemonicCode.SNE:
+    case MnemonicCode.SEQ:
+    case MnemonicCode.SVC:
+    case MnemonicCode.SVS:
+    case MnemonicCode.SPL:
+    case MnemonicCode.SMI:
+    case MnemonicCode.SGE:
+    case MnemonicCode.SLT:
+    case MnemonicCode.SGT:
+    case MnemonicCode.SLE: {
+      ops = [Operand.stringify(i.dst)];
+      break;
+    }
+
+    case MnemonicCode.PEA: {
+      ops = [Operand.stringify(i.src)];
+      break;
+    }
+
+    case MnemonicCode.BRA:
+    case MnemonicCode.BSR:
+    case MnemonicCode.BHI:
+    case MnemonicCode.BLS:
+    case MnemonicCode.BCC:
+    case MnemonicCode.BCS:
+    case MnemonicCode.BNE:
+    case MnemonicCode.BEQ:
+    case MnemonicCode.BVC:
+    case MnemonicCode.BVS:
+    case MnemonicCode.BPL:
+    case MnemonicCode.BMI:
+    case MnemonicCode.BGE:
+    case MnemonicCode.BLT:
+    case MnemonicCode.BGT:
+    case MnemonicCode.BLE:
+    case MnemonicCode.JMP:
+    case MnemonicCode.JSR: {
+      ops = [Operand.stringify(i.target)];
+      break;
+    }
+
+    case MnemonicCode.DBT:
+    case MnemonicCode.DBF:
+    case MnemonicCode.DBHI:
+    case MnemonicCode.DBLS:
+    case MnemonicCode.DBCC:
+    case MnemonicCode.DBCS:
+    case MnemonicCode.DBNE:
+    case MnemonicCode.DBEQ:
+    case MnemonicCode.DBVC:
+    case MnemonicCode.DBVS:
+    case MnemonicCode.DBPL:
+    case MnemonicCode.DBMI:
+    case MnemonicCode.DBGE:
+    case MnemonicCode.DBLT:
+    case MnemonicCode.DBGT:
+    case MnemonicCode.DBLE: {
+      ops = [Operand.stringify(i.counter), Operand.stringify(i.target)];
+      break;
+    }
+
+    case MnemonicCode.LINK: {
+      ops = [Operand.stringify(i.reg), Operand.stringify(i.disp)];
+      break;
+    }
+
+    case MnemonicCode.UNLK: {
+      ops = [Operand.stringify(i.reg)];
+      break;
+    }
+
+    case MnemonicCode.TRAP: {
+      ops = [`#${i.vector}`];
+      break;
+    }
+
+    case MnemonicCode.STOP: {
+      ops = [Operand.stringify(i.imm)];
+      break;
+    }
+
+    case MnemonicCode.RTS:
+    case MnemonicCode.RTR:
+    case MnemonicCode.RTE:
+    case MnemonicCode.NOP:
+    case MnemonicCode.RESET:
+    case MnemonicCode.TRAPV:
+    case MnemonicCode.ILLEGAL: {
+      ops = [];
+      break;
+    }
+
+    default:
+      throw new Error('unknown mnemonic');
+  }
+  const { size } = (i as {size?: 'B' | 'W' | 'L' | null});
+  return `${MnemonicCode[i.mnemonic] ?? '???'}${size ? `.${size}` : ''}${ops ? ' '+ops.join(',') : ''}`;
 };
