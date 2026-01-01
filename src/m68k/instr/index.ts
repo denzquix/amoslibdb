@@ -17,10 +17,13 @@ export const instrExtWords = (i: Instruction): number => {
   // These have embedded immediates/displacements, not extension words
   switch (i.mnemonic) {
     case MnemonicCode.MOVEQ:
+    case MnemonicCode.TRAP:
+      return 0;  // These truly have no operands that need extension words
+    
     case MnemonicCode.ADDQ:
     case MnemonicCode.SUBQ:
-    case MnemonicCode.TRAP:
-      return 0;
+      // The immediate (1-8) is embedded in opcode, but dst may need extension words
+      return Operand.requiredExtWords(i.dst);
   }
 
   // Shifts with immediate count have it embedded
@@ -836,3 +839,5 @@ export const stringifyInstruction = (i: Instruction): string => {
   const { size } = (i as {size?: 'B' | 'W' | 'L' | null});
   return `${MnemonicCode[i.mnemonic] ?? '???'}${size ? `.${size}` : ''}${ops ? ' '+ops.join(',') : ''}`;
 };
+
+export type { Instruction };
