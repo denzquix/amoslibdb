@@ -420,37 +420,31 @@ export function fromOpcode(opcode: number): number {
     }
 
     case 0x9: {
-      // SUBX
-      if ((opcode & 0xf130) === 0x9100) {
-        const sizeCode = bit_duo(opcode, 6);
-        const mem = bit(opcode, 3) === 1;
-        return sizeSelect(sizeCode, mem ? InstrCode.SUBX_MEM : InstrCode.SUBX_REG);
-      }
-
       const opmode = bit_trio(opcode, 6);
-
-      const isSubEaToDn = opmode === 0b000 || opmode === 0b001 || opmode === 0b010;
-      const isSubDnToEa = opmode === 0b100 || opmode === 0b101 || opmode === 0b110;
-      const isSuba = opmode === 0b011 || opmode === 0b111;
-
-      if (isSuba) {
-        if (ea === EaCode.Invalid) return -1;
-        return opmode === 0b011 ? InstrCode.SUBA.W : InstrCode.SUBA.L;
+      switch (opmode) {
+        case 0b000:
+          return (ea !== EaCode.Invalid) ? InstrCode.SUB_EA_DN.B : -1;
+        case 0b001:
+          return (ea !== EaCode.Invalid) ? InstrCode.SUB_EA_DN.W : -1;
+        case 0b010:
+          return (ea !== EaCode.Invalid) ? InstrCode.SUB_EA_DN.L : -1;
+        case 0b011:
+          return (ea !== EaCode.Invalid) ? InstrCode.SUBA.W : -1;
+        case 0b100:
+          if (mode === 0) return InstrCode.SUBX_REG.B;
+          if (mode === 1) return InstrCode.SUBX_MEM.B;
+          return (ea & EaCode.MemAlterable) ? InstrCode.SUB_DN_EA.B : -1;
+        case 0b101:
+          if (mode === 0) return InstrCode.SUBX_REG.W;
+          if (mode === 1) return InstrCode.SUBX_MEM.W;
+          return (ea & EaCode.MemAlterable) ? InstrCode.SUB_DN_EA.W : -1;
+        case 0b110:
+          if (mode === 0) return InstrCode.SUBX_REG.L;
+          if (mode === 1) return InstrCode.SUBX_MEM.L;
+          return (ea & EaCode.MemAlterable) ? InstrCode.SUB_DN_EA.L : -1;
+        case 0b111:
+          return (ea !== EaCode.Invalid) ? InstrCode.SUBA.L : -1;
       }
-
-      if (isSubDnToEa) {
-        if (!(ea & EaCode.DataAlterable)) return -1;
-        const sizeCode = (opmode === 0b100) ? Size.BYTE : (opmode === 0b101) ? Size.WORD : Size.LONG;
-        return sizeSelect(sizeCode, InstrCode.SUB_DN_EA);
-      }
-
-      if (isSubEaToDn) {
-        if (ea === EaCode.Invalid) return -1;
-        const sizeCode = (opmode === 0b000) ? Size.BYTE : (opmode === 0b001) ? Size.WORD : Size.LONG;
-        return sizeSelect(sizeCode, InstrCode.SUB_EA_DN);
-      }
-
-      return -1;
     }
 
     case 0xB: {
