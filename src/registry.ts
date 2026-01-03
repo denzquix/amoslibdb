@@ -13,6 +13,11 @@ const registry: {[md5: string]: LibInfo} = {
   '7d3df35f6a37886c2d4c84542b9300e0': {name:'Requester', version:'ProV2', libraryNumber:3},
   '241e45afbbad3871e5dad9135dacd1cb': {name:'IOPorts', version:'ProV2', libraryNumber:6},
 
+  '1287e5ce2930a37b23c892973f225749': {name:'CreatorCore', version:'V1.12', libraryNumber:0},
+  '2d4087f5635f1617695f2119c8a6b8e3': {name:'CreatorCore', version:'V1.34', libraryNumber:0},
+  '9a7c2211cc479d8751d4262cd5872c25': {name:'CreatorCore', version:'V1.34a', libraryNumber:0},
+  '22f05edd0edef32e860312b7d929b1c9': {name:'CreatorCore', version:'V1.34f', libraryNumber:0},
+
   // third party
   '18ed1e8c39eb633bd26a5da129002a64': {name:'OpalVision', version:'V1.1', libraryNumber:21},
 };
