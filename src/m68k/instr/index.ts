@@ -62,7 +62,6 @@ export const readInstruction = (raw: Buffer, offset = 0, instrCode = -1): Instru
     return null;
   }
   const opcode = raw.readUint16BE(offset);
-  offset += 2;
   if (instrCode === -1) {
     instrCode = fromOpcode(opcode);
     if (instrCode === -1) {
@@ -78,6 +77,7 @@ export const readInstruction = (raw: Buffer, offset = 0, instrCode = -1): Instru
   if ((offset+totalSize) > raw.length) {
     return null;
   }
+  offset += 2;
   const getExtWord = () => {
     if ((offset + 2) > raw.length) {
       throw new Error('out of input');
