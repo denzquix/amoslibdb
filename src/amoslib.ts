@@ -16,7 +16,7 @@ export function parseAmosLib(data: Buffer) {
   if (C_End > data.length) {
     throw new Error('truncated data');
   }
-  const title = data.subarray(C_Title, C_End).toString('binary').replace(/\0+$/, '').split(/\0/g);
+  const title = (C_Title === C_Lib) ? '' : data.subarray(C_Title, C_End).toString('binary').replace(/\0[\s\S]*/, '');
   const codeBlockCount = (C_Tk - C_Off) / 2;
   const codeBlocks = new Array<Buffer>(codeBlockCount);
   let nextPos = C_Lib;
@@ -25,13 +25,13 @@ export function parseAmosLib(data: Buffer) {
     codeBlocks[i] = codeBlock;
     nextPos += codeBlock.length;
   }
-  if (nextPos !== C_Title) {
+  if (nextPos !== C_Title && C_Title !== C_Lib) {
     throw new Error('needed ' + C_Title + ', got ' + nextPos);
   }
   let tkPos = C_Tk;
   const tokenInfo = new Array<{instrEntryPoint: number, funcEntryPoint: number, name: String, signature: string, terminator: number}>();
   let lastName = '';
-  for (;;) {
+  if (tkPos < C_Lib) for (;;) {
     if (tkPos >= C_Lib) {
       throw new Error('unterminated token section');
     }
