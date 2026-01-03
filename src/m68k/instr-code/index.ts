@@ -284,8 +284,7 @@ export function fromOpcode(opcode: number): number {
         }
       }
 
-      // MOVEM (irregular mask due to direction bit)
-      switch (opcode & 0xfb80) {
+      switch (opcode & 0xff80) {
         case 0x4880: {
           if (!(ea & EaCode.MemAlterable)) return -1;
           if (mode === 0b011) return -1; // (An)+ not allowed as destination
