@@ -448,36 +448,28 @@ export function fromOpcode(opcode: number): number {
     }
 
     case 0xB: {
-      // CMPM
-      if ((opcode & 0xf138) === 0xb108) {
-        const sizeCode = bit_duo(opcode, 6);
-        return sizeSelect(sizeCode, InstrCode.CMPM);
-      }
-
       const opmode = bit_trio(opcode, 6);
-      const isEor = opmode === 0b100 || opmode === 0b101 || opmode === 0b110;
-      const isCmp = opmode === 0b000 || opmode === 0b001 || opmode === 0b010;
-      const isCmpa = opmode === 0b011 || opmode === 0b111;
-
-      if (isEor) {
-        if (!(ea & EaCode.DataAlterable)) return -1;
-        const sizeCode = (opmode === 0b100) ? Size.BYTE : (opmode === 0b101) ? Size.WORD : Size.LONG;
-        return sizeSelect(sizeCode, InstrCode.EOR);
+      switch (opmode) {
+        case 0b000:
+          return (ea !== EaCode.Invalid) ? InstrCode.CMP.B : -1;
+        case 0b001:
+          return (ea !== EaCode.Invalid) ? InstrCode.CMP.W : -1;
+        case 0b010:
+          return (ea !== EaCode.Invalid) ? InstrCode.CMP.L : -1;
+        case 0b011:
+          return (ea !== EaCode.Invalid) ? InstrCode.CMPA.W : -1;
+        case 0b100:
+          if (mode === 1) return InstrCode.CMPM.B;
+          return (ea & EaCode.DataAlterable) ? InstrCode.EOR.B : -1;
+        case 0b101:
+          if (mode === 1) return InstrCode.CMPM.W;
+          return (ea & EaCode.DataAlterable) ? InstrCode.EOR.W : -1;
+        case 0b110:
+          if (mode === 1) return InstrCode.CMPM.L;
+          return (ea & EaCode.DataAlterable) ? InstrCode.EOR.L : -1;
+        case 0b111:
+          return (ea !== EaCode.Invalid) ? InstrCode.CMPA.L : -1;
       }
-
-      if (isCmpa) {
-        if (ea === EaCode.Invalid) return -1;
-        const sizeCode = (opmode === 0b011) ? Size.WORD : Size.LONG;
-        return sizeSelect(sizeCode, InstrCode.CMPA);
-      }
-
-      if (isCmp) {
-        if (ea === EaCode.Invalid) return -1;
-        const sizeCode = (opmode === 0b000) ? Size.BYTE : (opmode === 0b001) ? Size.WORD : Size.LONG;
-        return sizeSelect(sizeCode, InstrCode.CMP);
-      }
-
-      return -1;
     }
 
     case 0xC: {
