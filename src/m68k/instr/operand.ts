@@ -215,7 +215,7 @@ export type Operand = (
 export const parseRegSet = (mask: number, reversed: boolean): Operand.RegSet => {
   const regs = new Set<`${'A'|'D'}${bit_trio}`>();
   for (let i = 0; i < 16; i++) {
-    const bit = reversed ? (0x80 >>> i) : (1 << i);
+    const bit = reversed ? (0x8000 >>> i) : (1 << i);
     if (mask & bit) {
       regs.add((i < 8) ? `D${i as bit_trio}` : `A${(i - 8) as bit_trio}`);
     }
