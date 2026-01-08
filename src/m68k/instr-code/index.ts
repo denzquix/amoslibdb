@@ -165,10 +165,10 @@ export function fromOpcode(opcode: number): number {
       const sizeCode = bit_duo(opcode, 6);
       const isMemoryForm = sizeCode === Size.NONE;
 
-      const group = bit_duo(opcode, 9);
       const left = bit(opcode, 8) === 1;
 
       if (isMemoryForm) {
+        const group = bit_duo(opcode, 9);
         if (bit(opcode, 11) !== 0) return -1;
         if (!(ea & EaCode.MemAlterable)) return -1;
         switch (group) {
@@ -178,12 +178,14 @@ export function fromOpcode(opcode: number): number {
           case 0b11: return left ? InstrCode.ROL_MEM.W : InstrCode.ROR_MEM.W;
         }
       }
-
-      switch (group) {
-        case 0b00: return sizeSelect(sizeCode, left ? InstrCode.ASL_REG : InstrCode.ASR_REG);
-        case 0b01: return sizeSelect(sizeCode, left ? InstrCode.LSL_REG : InstrCode.LSR_REG);
-        case 0b10: return sizeSelect(sizeCode, left ? InstrCode.ROXL_REG : InstrCode.ROXR_REG);
-        case 0b11: return sizeSelect(sizeCode, left ? InstrCode.ROL_REG : InstrCode.ROR_REG);
+      else {
+      const group = bit_duo(opcode, 3);
+        switch (group) {
+          case 0b00: return sizeSelect(sizeCode, left ? InstrCode.ASL_REG : InstrCode.ASR_REG);
+          case 0b01: return sizeSelect(sizeCode, left ? InstrCode.LSL_REG : InstrCode.LSR_REG);
+          case 0b10: return sizeSelect(sizeCode, left ? InstrCode.ROXL_REG : InstrCode.ROXR_REG);
+          case 0b11: return sizeSelect(sizeCode, left ? InstrCode.ROL_REG : InstrCode.ROR_REG);
+        }
       }
     }
 
