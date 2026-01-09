@@ -1,6 +1,7 @@
 
 import { createHash } from "node:crypto";
 import { parseHunk } from "./amiga-hunk.js";
+import { unpackHunkFile } from "./unpack.js";
 
 const loaderIDsByHash: {[hash: string]: string} = {
   'ddf9a12877a328162cecef459d9765a5': 'ProLoader',
@@ -8,7 +9,8 @@ const loaderIDsByHash: {[hash: string]: string} = {
 };
 
 export function parseAmosExecutable(buf: Buffer) {
-  const info = parseHunk(buf);
+  let info = parseHunk(buf);
+  info = unpackHunkFile(info);
   if (info.residentLibraries.length !== 0 || info.type !== 'complete') {
     throw new Error('invalid executable type')
   }
