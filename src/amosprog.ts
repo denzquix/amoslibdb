@@ -6,6 +6,8 @@ import { unpackHunkFile } from "./unpack.js";
 const loaderIDsByHash: {[hash: string]: string} = {
   'ddf9a12877a328162cecef459d9765a5': 'ProLoader',
   '0dbe48a6071ec6beae4239d26e7e8309': 'ClassicLoader',
+  '2680a6b417c606c6fb6d6235cb127e7f': 'ClassicLoader',
+  '7fcfb0d746a79495e277d9d08adc5e24': 'ClassicLoader',
 };
 
 export function parseAmosExecutable(buf: Buffer) {
@@ -159,7 +161,7 @@ function hashLoaderHunk(data: Buffer) {
     // blank the pivot
     copy.writeUint32BE(0, 0x8);
   }
-  else if (data.length === 2764) {
+  else if (data.length === 2764 || data.length === 2804 || data.length === 2292) {
     // blank the flags
     copy.writeUint16BE(0, 0x2);
   }
