@@ -1,9 +1,11 @@
 
 const HUNK_CODE = 0x3E9;
 const HUNK_END = 0x3F2;
+const HUNK_DATA = 0x3EA;
 
 export type Hunk = (
   | {type:'HUNK_CODE', data:Buffer}
+  | {type:'HUNK_DATA', data:Buffer}
   | {type:'HUNK_END'}
 );
 
@@ -40,6 +42,10 @@ export function parseHunk(buf: Buffer) {
         hunks.push({type:'HUNK_CODE' as const, data:bytes(u32be() * 4)});
         break;
       }
+      case HUNK_DATA: {
+        hunks.push({type:'HUNK_DATA' as const, data:bytes(u32be() * 4)});
+        break;
+      }
       case HUNK_END: {
         hunks.push({type:'HUNK_END' as const});
         break;
@@ -52,7 +58,7 @@ export function parseHunk(buf: Buffer) {
 
   if (localHunkCount === totalHunkCount) {
     return {
-      type: 'complete',
+      type: 'complete' as const,
       residentLibraries,
       hunks,
       allHunkSizes,
@@ -60,7 +66,7 @@ export function parseHunk(buf: Buffer) {
   }
   else {
     return {
-      type: 'partial',
+      type: 'partial' as const,
       residentLibraries,
       hunks,
       firstHunkOffset: firstHunk,
@@ -68,3 +74,5 @@ export function parseHunk(buf: Buffer) {
     };
   }
 }
+
+export type HunkFile = ReturnType<typeof parseHunk>;
