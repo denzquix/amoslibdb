@@ -718,3 +718,58 @@ export function getFirstRoutineOpcode(routine: RoutineDef): number {
   }
   return CodePattern.Section.getFirstOpcode(firstSection);
 }
+
+// -1 used as wildcard
+export function *eachRoutineWord(routine: RoutineDef): Generator<number> {
+  for (const section of routine.code.sections) {
+    switch (section.type) {
+      case 'literal': {
+        for (let ptr = 0; ptr < section.bytes.length; ptr += 2) {
+          yield section.bytes.readUint16BE(ptr);
+        }
+        break;
+      }
+      case 'Rdata': {
+        yield* [0x4e71, 0x4e71];
+        break;
+      }
+      case 'Rjmp': case 'Ljmp': {
+        yield* [0x4EF9, -1, -1];
+        break;
+      }
+      case 'Rjsr': case 'Ljsr': {
+        yield* [0x4EB9, -1, -1];
+        break;
+      }
+      case 'RjsrtR': {
+        const regNum = Number(section.register.slice(1));
+        yield* [0x206C | (regNum << 9), -1, 0x4E90 | regNum];
+        break;
+      }
+      case 'RjmptR': {
+        const regNum = Number(section.register.slice(1));
+        yield* [0x206C | (regNum << 9), -1, 0x4ED0 | regNum];
+        break;
+      } 
+      case 'Rlea': {
+        // LEA abs.L,An
+        const regNum = Number(section.register.slice(1));
+        yield* [0x41F9 | (regNum << 9), -1, -1];
+        break;
+      }
+      case 'Rbra': yield* [0x6000, -1]; break;
+      case 'Rbsr': yield* [0x6100, -1]; break;
+      case 'Rbhi': yield* [0x6200, -1]; break;
+      case 'Rbls': yield* [0x6300, -1]; break;
+      case 'Rbcc': yield* [0x6400, -1]; break;
+      case 'Rbcs': yield* [0x6500, -1]; break;
+      case 'Rbne': yield* [0x6600, -1]; break;
+      case 'Rbeq': yield* [0x6700, -1]; break;
+      case 'Rbpl': yield* [0x6A00, -1]; break;
+      case 'Rbmi': yield* [0x6B00, -1]; break;
+      case 'Rbge': yield* [0x6C00, -1]; break;
+      case 'Rblt': yield* [0x6D00, -1]; break;
+      case 'Rble': yield* [0x6F00, -1]; break;
+    }
+  }
+}
