@@ -713,5 +713,8 @@ export function getFirstRoutineOpcode(routine: RoutineDef): number {
     return 0x6000; // BRA      
   }
   const firstSection = routine.code.sections[0];
-  return firstSection ? CodePattern.Section.getFirstOpcode(firstSection) : -1;
+  if (!firstSection) {
+    return 0x4E75; // RTS
+  }
+  return CodePattern.Section.getFirstOpcode(firstSection);
 }
