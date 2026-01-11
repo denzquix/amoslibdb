@@ -86,6 +86,37 @@ export namespace CodePattern {
         default: return 4;
       }
     };
+    export const getFirstOpcode = (section: Section): number => {
+      switch (section.type) {
+        case 'literal': {
+          return section.bytes.readUint16BE(0);
+        }
+        case 'Ljmp': case 'Rjmp': return 0x4EF9;
+        case 'Ljsr': case 'Rjsr': return 0x4EB9;
+        case 'Rbcc': return 0x6400;
+        case 'Rbcs': return 0x6500;
+        case 'Rbeq': return 0x6700;
+        case 'Rbge': return 0x6C00;
+        case 'Rbhi': return 0x6200;
+        case 'Rble': return 0x6F00;
+        case 'Rbls': return 0x6300;
+        case 'Rblt': return 0x6D00;
+        case 'Rbmi': return 0x6B00;
+        case 'Rbne': return 0x6600;
+        case 'Rbpl': return 0x6A00;
+        case 'Rbra': return 0x6000;
+        case 'Rbsr': return 0x6100;
+        case 'Rdata': return 0x4e71;
+        case 'RjmptR': case 'RjsrtR': {
+          const regNum = Number(section.register.slice(1));
+          return 0x206C | (regNum << 9);
+        }
+        case 'Rlea': {
+          const regNum = Number(section.register.slice(1));
+          return 0x41F9 | (regNum << 9);
+        }
+      }
+    };
   };
   export type Section = (
     | {type:'literal', bytes:Buffer}
@@ -675,4 +706,12 @@ export function compileLibraryRoutines(routines: Array<RoutineDef>): CompiledLib
     relocations,
     routines: records,
   };
+}
+
+export function getFirstRoutineOpcode(routine: RoutineDef): number {
+  if (routine.code.redirectTarget !== false) {
+    return 0x6000; // BRA      
+  }
+  const firstSection = routine.code.sections[0];
+  return firstSection ? CodePattern.Section.getFirstOpcode(firstSection) : -1;
 }
