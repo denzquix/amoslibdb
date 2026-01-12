@@ -78,7 +78,7 @@ export namespace CodePattern {
       switch (section.type) {
         case 'literal': return section.bytes.length;
         case 'Rjmp': case 'Ljmp':
-        case 'RjsrtR': case 'RjmptR':
+        case 'Rjsrt': case 'Rjmpt':
         case 'Rjsr': case 'Ljsr':
         case 'Rlea': {
           return 6;
@@ -91,8 +91,8 @@ export namespace CodePattern {
         case 'literal': {
           return section.bytes.readUint16BE(0);
         }
-        case 'Ljmp': case 'Rjmp': return 0x4EF9;
-        case 'Ljsr': case 'Rjsr': return 0x4EB9;
+        case 'Ljmp': case 'Rjmp':  case 'Rjmpt': return 0x4EF9;
+        case 'Ljsr': case 'Rjsr': case 'Rjsrt': return 0x4EB9;
         case 'Rbcc': return 0x6400;
         case 'Rbcs': return 0x6500;
         case 'Rbeq': return 0x6700;
@@ -107,10 +107,6 @@ export namespace CodePattern {
         case 'Rbra': return 0x6000;
         case 'Rbsr': return 0x6100;
         case 'Rdata': return 0x4e71;
-        case 'RjmptR': case 'RjsrtR': {
-          const regNum = Number(section.register.slice(1));
-          return 0x206C | (regNum << 9);
-        }
         case 'Rlea': {
           const regNum = Number(section.register.slice(1));
           return 0x41F9 | (regNum << 9);
@@ -120,9 +116,9 @@ export namespace CodePattern {
   };
   export type Section = (
     | {type:'literal', bytes:Buffer}
-    | {type:'Rjmp' | 'Rjsr' | 'Rbra' | 'Rbsr' | 'Rbeq' | 'Rbne' | 'Rbcs' | 'Rbcc' | 'Rblt' | 'Rbge' | 'Rbls' | 'Rbhi' | 'Rble' | 'Rbpl' | 'Rbmi', target: number}
+    | {type:'Rjmp' | 'Rjsr' | 'Rbra' | 'Rbsr' | 'Rbeq' | 'Rbne' | 'Rbcs' | 'Rbcc' | 'Rblt' | 'Rbge' | 'Rbls' | 'Rbhi' | 'Rble' | 'Rbpl' | 'Rbmi' | 'Rjmpt' | 'Rjsrt', target: number}
     | {type:'Ljmp' | 'Ljsr', libraryNumber: number, target:number}
-    | {type:'RjsrtR' | 'RjmptR' | 'Rlea', target:number, register:'A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'A7'}
+    | {type:'Rlea', target:number, register:'A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'A7'}
     | {type:'Rdata'}
   );
   export const getLength = (pattern: CodePattern, nextRoutine = NaN) => {
@@ -216,7 +212,7 @@ export function toCodePattern(code: Buffer): CodePattern {
           if (registerNumber < 8) {
             pushLiteral();
             const register = `A${registerNumber as (0|1|2|3|4|5|6|7)}` as const;
-            sections.push({type:'RjmptR', target, register});
+            sections.push({type:'Rjmpt', target});
             literal_start_i = code_i += 6;
             continue escapeCheck;
           }
@@ -271,8 +267,7 @@ export function toCodePattern(code: Buffer): CodePattern {
           const target = code.readUint16BE(code_i + 4);
           if (registerNumber < 8) {
             pushLiteral();
-            const register = `A${registerNumber as 0|1|2|3|4|5|6|7}` as const;
-            sections.push({type:'RjsrtR', target, register});
+            sections.push({type:'Rjsrt', target});
             literal_start_i = code_i += 6;
             continue escapeCheck;
           }
@@ -547,23 +542,19 @@ export function compileLibraryRoutines(routines: Array<RoutineDef>): CompiledLib
           nextOffset += 6;
           break;
         }
-        case 'RjsrtR': {
-          // MOVE.L d(A4),An; JSR (An)
-          const regNum = Number(section.register.slice(1));
-          data.writeUint16BE(0x206C | (regNum << 9), nextOffset);
-          const displacement = getRelAddr(nextOffset + 2, v.libraryNumber, section.target);
-          data.writeInt16BE(displacement, nextOffset + 2);
-          data.writeUint16BE(0x4E90 | regNum, nextOffset + 4);
+        case 'Rjsrt': {
+          // JSR abs.L
+          data.writeUint16BE(0x4EB9, nextOffset);
+          data.writeUint32BE(getAbsAddr(0, section.target), nextOffset + 2);
+          relocations.push(nextOffset + 2);
           nextOffset += 6;
           break;
         }
-        case 'RjmptR': {
-          // MOVE.L d(A4),An; JMP (An)
-          const regNum = Number(section.register.slice(1));
-          data.writeUint16BE(0x206C | (regNum << 9), nextOffset);
-          const displacement = getRelAddr(nextOffset + 2, v.libraryNumber, section.target);
-          data.writeInt16BE(displacement, nextOffset + 2);
-          data.writeUint16BE(0x4ED0 | regNum, nextOffset + 4);
+        case 'Rjmpt': {
+          // JMP abs.L
+          data.writeUint16BE(0x4EF9, nextOffset);
+          data.writeUint32BE(getAbsAddr(0, section.target), nextOffset + 2);
+          relocations.push(nextOffset + 2);
           nextOffset += 6;
           break;
         } 
@@ -733,24 +724,14 @@ export function *eachRoutineWord(routine: RoutineDef): Generator<number> {
         yield* [0x4e71, 0x4e71];
         break;
       }
-      case 'Rjmp': case 'Ljmp': {
+      case 'Rjmp': case 'Ljmp': case 'Rjmpt': {
         yield* [0x4EF9, -1, -1];
         break;
       }
-      case 'Rjsr': case 'Ljsr': {
+      case 'Rjsr': case 'Ljsr': case 'Rjsrt': {
         yield* [0x4EB9, -1, -1];
         break;
       }
-      case 'RjsrtR': {
-        const regNum = Number(section.register.slice(1));
-        yield* [0x206C | (regNum << 9), -1, 0x4E90 | regNum];
-        break;
-      }
-      case 'RjmptR': {
-        const regNum = Number(section.register.slice(1));
-        yield* [0x206C | (regNum << 9), -1, 0x4ED0 | regNum];
-        break;
-      } 
       case 'Rlea': {
         // LEA abs.L,An
         const regNum = Number(section.register.slice(1));
