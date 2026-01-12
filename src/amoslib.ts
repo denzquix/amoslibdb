@@ -26,7 +26,9 @@ export function parseAmosLib(data: Buffer) {
     nextPos += codeBlock.length;
   }
   if (nextPos !== C_Title && C_Title !== C_Lib) {
-    throw new Error('needed ' + C_Title + ', got ' + nextPos);
+    if (nextPos > C_Title) {
+      throw new Error('needed ' + C_Title + ', got ' + nextPos);
+    }
   }
   let tkPos = C_Tk;
   const tokenInfo = new Array<{instrEntryPoint: number, funcEntryPoint: number, name: String, signature: string, terminator: number}>();
