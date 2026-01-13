@@ -2,12 +2,19 @@
 const HUNK_CODE = 0x3E9;
 const HUNK_END = 0x3F2;
 const HUNK_DATA = 0x3EA;
+const HUNK_RELOC32 = 0x3EC;
 
 export type Hunk = (
   | {type:'HUNK_CODE', data:Buffer}
   | {type:'HUNK_DATA', data:Buffer}
   | {type:'HUNK_END'}
+  | {type:'HUNK_RELOC32', relocations: Relocation[]}
 );
+
+export type Relocation = {
+  hunkNumber: number;
+  offsets: number[];
+};
 
 export function parseHunk(buf: Buffer) {
   let pos = 0;
@@ -48,6 +55,21 @@ export function parseHunk(buf: Buffer) {
       }
       case HUNK_END: {
         hunks.push({type:'HUNK_END' as const});
+        break;
+      }
+      case HUNK_RELOC32: {
+        const relocations: Relocation[] = [];
+        for  (;;) {
+          const count = u32be();
+          if (count === 0) break;
+          const hunkNumber = u32be();
+          const offsets = [];
+          for (let i = 0; i < count; i++) {
+            offsets.push(u32be());
+          }
+          relocations.push({hunkNumber, offsets});
+        }
+        hunks.push({type:'HUNK_RELOC32', relocations});
         break;
       }
       default: {
