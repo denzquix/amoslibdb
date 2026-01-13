@@ -56,7 +56,7 @@ export function parseAmosExecutable(buf: Buffer) {
     defaultBankHunk = null;
     errorMessagesHunk = null;
     amosLibHunk = null;
-    dynamicLibHunk = null;
+    dynamicLibHunk = mainHunk;
     flags = loaderHunk.readUint16BE(2);
     pivot = -1;
     bankHeaderMode = 'classic';
