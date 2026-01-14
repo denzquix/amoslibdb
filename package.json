@@ -4,7 +4,8 @@
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node --enable-source-maps ."
   },
   "keywords": [],
   "author": "denzquix <denzquix@gmail.com>",
