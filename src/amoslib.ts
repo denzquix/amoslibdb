@@ -31,7 +31,7 @@ export function parseAmosLib(data: Buffer) {
     }
   }
   let tkPos = C_Tk;
-  const tokenInfo = new Array<{instrEntryPoint: number, funcEntryPoint: number, name: String, signature: string, terminator: number}>();
+  const tokenInfo = new Array<{instrEntryPoint: number, funcEntryPoint: number, name: string, signature: string, terminator: number}>();
   let lastName = '';
   if (tkPos < C_Lib) for (;;) {
     if (tkPos >= C_Lib) {
@@ -754,5 +754,65 @@ export function *eachRoutineWord(routine: RoutineDef): Generator<number> {
       case 'Rblt': yield* [0x6D00, -1]; break;
       case 'Rble': yield* [0x6F00, -1]; break;
     }
+  }
+}
+
+const u16s = (v: number) => v.toString(16).padStart(4, '0');
+
+export function *eachRoutineToken(routine: RoutineDef): Generator<string> {
+  for (const section of routine.code.sections) {
+    switch (section.type) {
+      case 'literal': {
+        for (let ptr = 0; ptr < section.bytes.length; ptr += 2) {
+          yield u16s(section.bytes.readUint16BE(ptr));
+        }
+        break;
+      }
+      case 'Rdata': {
+        yield* [u16s(0x4e71), u16s(0x4e71)];
+        break;
+      }
+      case 'Rjmp': case 'Rjmpt': {
+        yield* [u16s(0x4EF9), `[A:0,${section.target}]`];
+        break;
+      }
+      case 'Ljmp': {
+        yield* [u16s(0x4EF9), `[A:${section.target}]`];
+        break;
+      }
+      case 'Rjsr': case 'Rjsrt': {
+        yield* [u16s(0x4EB9), `[A:0,${section.target}]`];
+        break;
+      }
+      case 'Ljsr': {
+        yield* [u16s(0x4EB9), `[A:${section.target}]`];
+        break;
+      }
+      case 'Rlea': {
+        // LEA abs.L,An
+        const regNum = Number(section.register.slice(1));
+        yield* [u16s(0x41F9 | (regNum << 9)), `[A:${section.target}]`];
+        break;
+      }
+      case 'Rbra': yield* [u16s(0x6000), `[R:${section.target}]`]; break;
+      case 'Rbsr': yield* [u16s(0x6100), `[R:${section.target}]`]; break;
+      case 'Rbhi': yield* [u16s(0x6200), `[R:${section.target}]`]; break;
+      case 'Rbls': yield* [u16s(0x6300), `[R:${section.target}]`]; break;
+      case 'Rbcc': yield* [u16s(0x6400), `[R:${section.target}]`]; break;
+      case 'Rbcs': yield* [u16s(0x6500), `[R:${section.target}]`]; break;
+      case 'Rbne': yield* [u16s(0x6600), `[R:${section.target}]`]; break;
+      case 'Rbeq': yield* [u16s(0x6700), `[R:${section.target}]`]; break;
+      case 'Rbpl': yield* [u16s(0x6A00), `[R:${section.target}]`]; break;
+      case 'Rbmi': yield* [u16s(0x6B00), `[R:${section.target}]`]; break;
+      case 'Rbge': yield* [u16s(0x6C00), `[R:${section.target}]`]; break;
+      case 'Rblt': yield* [u16s(0x6D00), `[R:${section.target}]`]; break;
+      case 'Rble': yield* [u16s(0x6F00), `[R:${section.target}]`]; break;
+    }
+  }
+  if (routine.code.fallthroughTarget !== false) {
+    yield `[X:${routine.code.fallthroughTarget}]`;
+  }
+  else if (routine.code.sections.length === 0) {
+    yield u16s(0x4e75);
   }
 }
