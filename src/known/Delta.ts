@@ -1,0 +1,65 @@
+import type { LibraryDef } from "../types.js";
+
+namespace Delta {
+  export const V1_40 = {
+    md5: '2ccbdc2d8219030905de5fff872663cf',
+    type: 'pro',
+    routines: {
+      DeltaAbout: 19,
+      DeltaAmericanMile: 24,
+      DeltaBrithday: 16,
+      DeltaChangeDisk: 13,
+      DeltaDecrunch: 3,
+      DeltaDegree: 26,
+      DeltaDriveMotorOff: 12,
+      DeltaDriveMotorOn: 15,
+      DeltaE: 18,
+      DeltaEnglishMile: 23,
+      DeltaEuler: 27,
+      DeltaFeet: 21,
+      DeltaInch: 22,
+      DeltaInterOff: 11,
+      DeltaInterOn: 6,
+      DeltaMouseOff: 9,
+      DeltaNoSynchro: 4,
+      DeltaNtsc: 8,
+      DeltaPal: 7,
+      DeltaPi: 17,
+      DeltaRadian: 25,
+      DeltaReset: 10,
+      DeltaWaitDoubleMouse: 5,
+      DeltaWaitFire: 28,
+      DeltaWaitLeftMouse: 14,
+      DeltaYard: 20,
+    },
+  } as const satisfies LibraryDef;
+  export const V1_60 = {
+    md5: '89d144195180f0c2ed053a13aa475004',
+    type: 'pro',
+    extends: V1_40,
+    routines: {
+      DeltaBeepAll: 33,
+      DeltaBlitOff: 30,
+      DeltaChangeBank: 36,
+      DeltaCrash: 31,
+      DeltaFindTask: 50,
+      DeltaHardReset: 29,
+      DeltaIntuitionMessage: 39,
+      DeltaKillTask: 51,
+      DeltaLockPubScreens: 46,
+      DeltaReqPalette: 56,
+      DeltaReqtoolsGetNumber: 55,
+      DeltaReqtoolsPalette: 41,
+      DeltaReqtoolsRequester: 53,
+      DeltaUnlockPubScreens: 47,
+      DeltaWbToBack: 45,
+      DeltaWbToFront: 44,
+      Jsr: 57,
+      Moveb: 58,
+      Movel: 60,
+      Movew: 59,
+    },
+  } as const satisfies LibraryDef;
+}
+
+export default Delta;

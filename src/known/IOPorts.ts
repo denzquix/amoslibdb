@@ -1,0 +1,55 @@
+
+import type { LibraryDef } from "../types.js";
+
+namespace IOPorts {
+  export const V2_00 = {
+    md5: '241e45afbbad3871e5dad9135dacd1cb',
+    type: 'pro',
+    routines: {
+      ParallelAbort: 47,
+      ParallelBase: 41,
+      ParallelCheck: 42,
+      ParallelClose: 44,
+      ParallelError: 49,
+      ParallelInput_I: 50,
+      ParallelInput_II: 51,
+      ParallelOpen: 43,
+      ParallelOut: 46,
+      ParallelSend: 45,
+      ParallelStatus: 48,
+      PrinterAbort: 32,
+      PrinterBase: 25,
+      PrinterCheck: 26,
+      PrinterClose: 28,
+      PrinterDump: 34,
+      PrinterDump_IIII: 35,
+      PrinterError: 29,
+      PrinterOnline: 33,
+      PrinterOpen: 27,
+      PrinterOut: 31,
+      PrinterSend: 30,
+      SerialAbort: 21,
+      SerialBase: 20,
+      SerialBits: 11,
+      SerialBuf: 14,
+      SerialCheck: 17,
+      SerialClose: 5,
+      SerialClose_I: 4,
+      SerialError: 18,
+      SerialFast: 15,
+      SerialGet: 8,
+      SerialInput: 9,
+      SerialOpen_II: 2,
+      SerialOpen_IIIII: 3,
+      SerialOut: 7,
+      SerialParity: 12,
+      SerialSend: 6,
+      SerialSlow: 16,
+      SerialSpeed_II: 10,
+      SerialStatus: 19,
+      SerialX: 13,
+    },
+  } as const satisfies LibraryDef;
+}
+
+export default IOPorts;
