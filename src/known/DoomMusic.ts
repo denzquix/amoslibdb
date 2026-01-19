@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace DoomMusic {
   export const V2_00 = {
+    name: 'DoomMusic',
+    version: 'V2_00',
     md5: '965dabb4821448cd20c4cfc7fcb7c9c9',
     type: 'pro',
     routines: {

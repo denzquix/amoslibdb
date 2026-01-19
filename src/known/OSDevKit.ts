@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace OSDevKit {
   export const V1_20 = {
+    name: 'OSDevKit',
+    version: 'V1_20',
     md5: '2b0a9648c59e20192d63811288f4f4f6',
     type: 'pro',
     routines: {
@@ -699,6 +701,8 @@ namespace OSDevKit {
     },
   } as const satisfies LibraryDef;
   export const V1_61 = {
+    name: 'OSDevKit',
+    version: 'V1_61',
     md5: '930d914a70af2a2c4b3c5b2f1bb0dc5d',
     type: 'pro',
     extends: V1_20,

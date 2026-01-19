@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Amon {
   export const V1_03 = {
+    name: 'Amon',
+    version: 'V1_03',
     md5: '520ca2adccb70f14b35233ed3222b360',
     type: 'pro',
     routines: {
@@ -27,6 +29,8 @@ namespace Amon {
     },
   } as const satisfies LibraryDef;
   export const V1_04 = {
+    name: 'Amon',
+    version: 'V1_04',
     md5: 'dfa5be99bec25c2e67fdce586b04f47f',
     type: 'pro',
     extends: V1_03,

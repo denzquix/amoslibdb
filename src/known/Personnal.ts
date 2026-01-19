@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Personnal {
   export const V1_00B = {
+    name: 'Personnal',
+    version: 'V1_00B',
     md5: '2fff6703e99c1ab281bfcdc01f78bb4c',
     type: 'pro',
     routines: {

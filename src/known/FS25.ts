@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace FD25 {
   export const V1_00 = {
+    name: 'FD25',
+    version: 'V1_00',
     md5: '8c831d039741f541fe88ba872eebd7aa',
     type: 'pro',
     routines: {

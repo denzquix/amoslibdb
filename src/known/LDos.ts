@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace LDos {
   export const V1_00 = {
+    name: 'LDos',
+    version: 'V1_00',
     md5: '926040371dec4d291448f45d8467f476',
     type: 'pro',
     routines: {
@@ -86,6 +88,8 @@ namespace LDos {
     },
   } as const satisfies LibraryDef;
   export const V1_10 = {
+    name: 'LDos',
+    version: 'V1_10',
     md5: '34e2572fa81d2b23238c8684835d53fc',
     extends: V1_00,
     type: 'pro',

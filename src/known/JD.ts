@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 export namespace JDColour {
   export const V2_00 = {
+    name: 'JDColour',
+    version: 'V2_00',
     md5: '264eda324a9da65718db49511df98206',
     type: 'pro',
     routines: {
@@ -68,6 +70,8 @@ export namespace JDColour {
 
 export namespace JDInt {
   export const V1_30 = {
+    name: 'JDInt',
+    version: 'V1_30',
     md5: 'af1fc552355df46ea40e5b7eaa7c3664',
     type: 'pro',
     routines: {
@@ -111,6 +115,8 @@ export namespace JDInt {
 
 export namespace JDK {
   export const V1_10 = {
+    name: 'JDK',
+    version: 'V1_10',
     md5: 'efaa5ad764b8a2d8cc4a652bbd4b3cea',
     type: 'pro',
     routines: {
@@ -126,6 +132,8 @@ export namespace JDK {
 
 export namespace JD {
   export const V4_60 = {
+    name: 'JD',
+    version: 'V4_60',
     md5: '0bceea592c953dc64ccd7fe0bece7733',
     type: 'pro',
     routines: {
@@ -259,6 +267,8 @@ export namespace JD {
     },
   } as const satisfies LibraryDef;
   export const V5_30 = {
+    name: 'JD',
+    version: 'V5_30',
     md5: 'c5ce74be26b1236a98307381e6f1758a',
     type: 'pro',
     extends: V4_60,
@@ -293,6 +303,8 @@ export namespace JD {
     },
   } as const satisfies LibraryDef;
   export const V5_90 = {
+    name: 'JD',
+    version: 'V5_90',
     md5: '0f43a4c5583d2ecb04bc8aacf7194d25',
     type: 'pro',
     extends: V5_30,
@@ -312,6 +324,8 @@ export namespace JD {
 
 export namespace Prt {
   export const V1_10 = {
+    name: 'Prt',
+    version: 'V1_10',
     md5: '82dc8261522d3b49e664b786d4b007aa',
     type: 'pro',
     routines: {
@@ -376,6 +390,8 @@ export namespace Prt {
     },
   } as const satisfies LibraryDef;
   export const V1_40 = {
+    name: 'Prt',
+    version: 'V1_40',
     md5: '1008c1ef6ab47c7309e79c63e042dd4b',
     type: 'pro',
     extends: V1_10,

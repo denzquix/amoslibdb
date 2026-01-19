@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace PowerBobs {
   export const BETA6 = {
+    name: 'PowerBobs',
+    version: 'BETA6',
     md5: '3f2760e9aada02aa8807d88cb42b764c',
     type: 'pro',
     routines: {
@@ -46,6 +48,8 @@ namespace PowerBobs {
     },
   } as const satisfies LibraryDef;
   export const V1_00 = {
+    name: 'PowerBobs',
+    version: 'V1_00',
     md5: '9503250d59a08c2fe564388ffa18361c',
     type: 'pro',
     extends: BETA6,

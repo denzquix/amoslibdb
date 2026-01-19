@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Make {
   export const V1_20 = {
+    name: 'Make',
+    version: 'V1_20',
     md5: 'c454b95d20ddc13920cc963a88895c2a',
     type: 'pro',
     routines: {
@@ -34,6 +36,8 @@ namespace Make {
     },
   } as const satisfies LibraryDef;
   export const V1_30 = {
+    name: 'Main',
+    version: 'V1_30',
     md5: '39ad8fe2a2eedaf497776fb498602c3d',
     type: 'pro',
     extends: V1_20,

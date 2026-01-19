@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Tools {
   export const V1_00 = {
+    name: 'Tools',
+    version: 'V1_00',
     md5: '6a291e6040b90879575c89e914cf3518',
     type: 'pro',
     routines: {
@@ -40,6 +42,8 @@ namespace Tools {
     },
   } as const satisfies LibraryDef;
   export const V1_01 = {
+    name: 'Tools',
+    version: 'V1_01',
     md5: 'bdba5e528c59c7300e517d966ff4889b',
     extends: V1_00,
     type: 'pro',

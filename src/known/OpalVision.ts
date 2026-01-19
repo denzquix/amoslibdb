@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 export namespace OpalVision {
   export const V1_1 = {
+    name: 'OpalVision',
+    version: 'V1_1',
     md5: '18ed1e8c39eb633bd26a5da129002a64',
     type: 'creator',
     routines: {

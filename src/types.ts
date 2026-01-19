@@ -10,6 +10,8 @@ export type RoutineDef = (
 export interface LibraryDef {
   md5: string;
   type: 'creator' | 'pro';
+  name: string;
+  version: string;
   extends?: LibraryDef;
   removed?: string[];
   renamed?: {[name: string]: string};

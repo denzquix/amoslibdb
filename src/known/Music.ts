@@ -3,6 +3,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Music {
   export const V1_30 = {
+    name: 'Music',
+    version: 'V1_30',
     md5: '3c8256a6215e654b1ab67e36997605c4',
     type: 'creator',
     routines: {
@@ -45,6 +47,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const V1_30_ALT = {
+    name: 'Music',
+    version: 'V1_30_ALT',
     md5: '2930c42cc76c486753030452435b3276',
     extends: V1_30,
     type: 'creator',
@@ -52,6 +56,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const V1_54 = {
+    name: 'Music',
+    version: 'V1_54',
     md5: '6cb4f7f1845fb72e8d6d4a5aab53cbd0',
     extends: V1_30,
     type: 'creator',
@@ -70,6 +76,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const V1_55 = {
+    name: 'Music',
+    version: 'V1_55',
     md5: 'd86281ab392f5fc5383c0b61c52448b6',
     extends: V1_54,
     type: 'creator',
@@ -77,6 +85,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const V1_62 = {
+    name: 'Music',
+    version: 'V1_62',
     md5: '48e2d5c65e440066bbef2af959906c0a',
     extends: V1_55,
     type: 'creator',
@@ -84,6 +94,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const V1_62_ALT = {
+    name: 'Nusic',
+    version: 'V1_62_ALT',
     md5: '9c1a647eb1c83fa3979620e6c7675f56',
     extends: V1_62,
     type: 'creator',
@@ -91,6 +103,8 @@ namespace Music {
     },
   } as const satisfies LibraryDef;
   export const ProV2_00 = {
+    name: 'Music',
+    version: 'V2_00',
     md5: 'ddf2f65aaa9df85d642317e199105d53',
     type: 'pro',
     routines: {

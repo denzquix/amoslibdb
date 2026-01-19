@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Game {
   export const V0_90 = {
+    name: 'Game',
+    version: 'V0_90',
     md5: '9bfc03ac89daf7ffb43f89e31e0f372f',
     type: 'pro',
     routines: {

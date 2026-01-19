@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace EasyLife {
   export const V1_09 = {
+    name: 'EasyLife',
+    version: 'V1_09',
     md5: 'c6a1d9f26d6900ce65dd5097b769bc63',
     type: 'pro',
     routines: {
@@ -204,6 +206,8 @@ namespace EasyLife {
     },
   } as const satisfies LibraryDef;
   export const V1_10 = {
+    name: 'EasyLife',
+    version: 'V1_10',
     md5: '938d5915b4eb486b6fa2da6a77e5165b',
     type: 'pro',
     extends: V1_09,
@@ -220,6 +224,8 @@ namespace EasyLife {
     },
   } as const satisfies LibraryDef;
   export const V1_44 = {
+    name: 'EasyLife',
+    version: 'V1_44',
     md5: 'eef3d7fa5da6a0bbb03d8f2a516b93b8',
     type: 'pro',
     extends: V1_10,

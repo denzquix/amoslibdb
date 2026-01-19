@@ -3,6 +3,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace AMOS {
   export const V1_3 = {
+    name: 'AMOS',
+    version: 'V1_3',
     md5: '',
     type: 'creator',
     routines: {
@@ -971,6 +973,8 @@ namespace AMOS {
   } as const satisfies LibraryDef;
 
   export const ProV2_00_Compiled = {
+    name: 'AMOS',
+    version: 'V2_00_Compiled',
     md5: '7bd692ec224a57f2b4bbdc0d9d81cd86',
     type: 'pro',
     routines: {
@@ -1422,6 +1426,8 @@ namespace AMOS {
     },
   } as const satisfies LibraryDef;
   export const ProV2_00 = {
+    name: 'AMOS',
+    version: 'V2_00',
     md5: 'ab1d615bde71d06d53de098768e5384e',
     type: 'pro',
     extends: ProV2_00_Compiled,
@@ -2471,6 +2477,8 @@ namespace AMOS {
   } as const satisfies LibraryDef;
 
   export const ProV2_00_ALT1 = {
+    name: 'AMOS',
+    version: 'V2_00_ALT1',
     md5: 'd3429df16a9810f55e724a808a87a32f',
     type: 'pro',
     extends: ProV2_00,
@@ -2479,6 +2487,8 @@ namespace AMOS {
   } as const satisfies LibraryDef;
 
   export const ProV2_00_ALT2 = {
+    name: 'AMOS',
+    version: 'V2_00_ALT2',
     md5: 'ca931a098b87141a11e9c8ec061a7cb5',
     type: 'pro',
     extends: ProV2_00,

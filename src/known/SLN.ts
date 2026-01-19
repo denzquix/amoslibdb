@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace SLN {
   export const V2_00 = {
+    name: 'SLN',
+    version: 'V2_00',
     md5: 'ad05eb48960430d9ffe48f82135ff51c',
     type: 'pro',
     routines: {

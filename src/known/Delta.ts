@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Delta {
   export const V1_40 = {
+    name: 'Delta',
+    version: 'V1_40',
     md5: '2ccbdc2d8219030905de5fff872663cf',
     type: 'pro',
     routines: {
@@ -34,6 +36,8 @@ namespace Delta {
     },
   } as const satisfies LibraryDef;
   export const V1_60 = {
+    name: 'Delta',
+    version: 'V1_60',
     md5: '89d144195180f0c2ed053a13aa475004',
     type: 'pro',
     extends: V1_40,

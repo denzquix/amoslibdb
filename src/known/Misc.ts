@@ -3,6 +3,8 @@ import type { LibraryDef } from "../types.js";
 
 export namespace Colours {
   export const V1_00 = {
+    name: 'Colours',
+    version: 'V1_00',
     md5: 'abdae43fb9bcc08a20588f1e588ba5fa',
     type: 'pro',
     routines: {
@@ -39,6 +41,8 @@ export namespace Colours {
 
 export namespace CoolStars {
   export const V1_00 = {
+    name: 'CoolStars',
+    version: 'V1_00',
     md5: '3f396c63b5930eb678c608016f85bf58',
     type: 'pro',
     routines: {
@@ -78,6 +82,8 @@ export namespace CoolStars {
 
 export namespace DBench {
   export const V0_42 = {
+    name: 'DBench',
+    version: 'V0_42',
     md5: '5c4763ee21d35b109e4f272a9628ff04',
     type: 'pro',
     routines: {
@@ -110,6 +116,8 @@ export namespace DBench {
 
 export namespace THX {
   export const V0_6 = {
+    name: 'THX',
+    version: 'V0_6',
     md5: 'dc22ca6e0e626e06a7044963d6a7fa6c',
     type: 'pro',
     routines: {
@@ -126,6 +134,8 @@ export namespace THX {
 
 export namespace Effects {
   export const V0_15 = {
+    name: 'Effects',
+    version: 'V0_15',
     md5: '896cfbace7e6e3aacc711e49dd260ce1',
     type: 'pro',
     routines: {
@@ -147,6 +157,8 @@ export namespace Effects {
 
 export namespace Ercole {
   export const V1_70 = {
+    name: 'Ercole',
+    version: 'V1_70',
     md5: '598f3c52426d00c38399303cfab5c717',
     type: 'pro',
     routines: {
@@ -167,6 +179,8 @@ export namespace Ercole {
 
 export namespace First {
   export const V0_10 = {
+    name: 'First',
+    version: 'V0_10',
     md5: '5ab1de0fd129b344505f134651a2c3ab',
     type: 'pro',
     routines: {
@@ -182,6 +196,8 @@ export namespace First {
 
 export namespace Jotre {
   export const V1_00 = {
+    name: 'Jotre',
+    version: 'V1_00',
     md5: '0128bd165441e7dc3476b33aab15ac2f',
     type: 'pro',
     routines: {
@@ -194,6 +210,8 @@ export namespace Jotre {
   } as const satisfies LibraryDef;
 
   export const V1_00_ALT = {
+    name: 'Jotre',
+    version: 'V1_00_ALT',
     md5: '458bf8c621cd53d696a913e3a3e1bd3b',
     type: 'pro',
     extends: V1_00,
@@ -204,6 +222,8 @@ export namespace Jotre {
 
 export namespace JVP {
   export const V1_01 = {
+    name: 'JVP',
+    version: 'V1_01',
     md5: '7b0f1233dbf051041d8aa9ec256980a5',
     type: 'pro',
     routines: {
@@ -226,6 +246,8 @@ export namespace JVP {
 
 export namespace Locale {
   export const V0_26 = {
+    name: 'Locale',
+    version: 'V0_26',
     md5: '1533b53d6fe0018d4a334934c2177609',
     type: 'pro',
     routines: {
@@ -257,6 +279,8 @@ export namespace Locale {
 
 export namespace Lserial {
   export const V1_00 = {
+    name: 'Lserial',
+    version: 'V1_00',
     md5: 'cd9a014db36652889319c3599568dedc',
     type: 'pro',
     routines: {
@@ -278,6 +302,8 @@ export namespace Lserial {
     },
   } as const satisfies LibraryDef;
   export const V1_00_ALT = {
+    name: 'Lserial',
+    version: 'V1_00_ALT',
     md5: '7abb0e24b19ecc37375a92a1bcfcc0fb',
     extends: V1_00,
     type: 'pro',
@@ -288,6 +314,8 @@ export namespace Lserial {
 
 export namespace Misc {
   export const V1_00 = {
+    name: 'Misc',
+    version: 'V1_00',
     md5: '705ae209c25563aa86997a3ee6bfe915',
     type: 'pro',
     routines: {
@@ -309,6 +337,8 @@ export namespace Misc {
 
 export namespace P61 {
   export const V1_10 = {
+    name: 'P61',
+    version: 'V1_10',
     md5: 'bd2ef5bbd17bc80a0ed29573c6b0d1c5',
     type: 'pro',
     routines: {
@@ -326,6 +356,8 @@ export namespace P61 {
     },
   } as const satisfies LibraryDef;
   export const V1_20 = {
+    name: 'P61',
+    version: 'V1_20',
     md5: '6e97e9396e27a2716e1e05fecd235beb',
     type: 'pro',
     extends: V1_10,
@@ -336,6 +368,8 @@ export namespace P61 {
 
 export namespace TFT {
   export const V0_6 = {
+    name: 'TFT',
+    version: 'V0_6',
     md5: '1e0403b9b3e49b03d9d2ca7d7a6f7a67',
     type: 'pro',
     routines: {

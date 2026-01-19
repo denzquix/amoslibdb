@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace AMCAF {
   export const V1_19 = {
+    name: 'AMCAF',
+    version: 'V1_19',
     md5: 'a31c52cb188bdd4a46b965b8341e95b3',
     type: 'pro',
     routines: {
@@ -291,6 +293,8 @@ namespace AMCAF {
     },
   } as const satisfies LibraryDef;
   export const V1_40_EN = {
+    name: 'AMCAF',
+    version: 'V1_40_EN',
     md5: 'a559461edcfa1b2aec74ed41a0baa24e',
     type: 'pro',
     extends: V1_19,
@@ -337,6 +341,8 @@ namespace AMCAF {
     },
   } as const satisfies LibraryDef;
   export const V1_40_DE = {
+    name: 'AMCAF',
+    version: 'V1_40_DE',
     md5: 'bfe92344c907c2ee8c90817e347c9a17',
     type: 'pro',
     extends: V1_40_EN,
@@ -344,6 +350,8 @@ namespace AMCAF {
     },
   } as const satisfies LibraryDef;
   export const V1_50B4_EN = {
+    name: 'AMCAF',
+    version: 'V1_50B4_EN',
     md5: '51c8c58f02fe003a58854688b5bd7e70',
     type: 'pro',
     extends: V1_40_EN,
@@ -365,6 +373,8 @@ namespace AMCAF {
     },
   } as const satisfies LibraryDef;
   export const V1_50B4_DE = {
+    name: 'AMCAF',
+    version: 'V1_50B4_DE',
     md5: '4650fed1f697fe9b834d12803ebd3f84',
     type: 'pro',
     extends: V1_50B4_EN,

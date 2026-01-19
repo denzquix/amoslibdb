@@ -1,7 +1,9 @@
 import type { LibraryDef } from "../types.js";
 
 namespace AGA {
-  export const Pro = {
+  export const ProV1_00 = {
+    name: 'AGA',
+    version: 'V1_00',
     md5: '0b00fbcde204d2b6b3597d97d30c8b95',
     type: 'pro',
     routines: {

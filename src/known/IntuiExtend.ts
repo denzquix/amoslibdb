@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace IntuiExtend {
   export const V1_30B = {
+    name: 'IntuiExtend',
+    version: 'V1_30B',
     md5: 'a5a3b5a11adfd2845b6b7408885f55da',
     type: 'pro',
     routines: {
@@ -215,6 +217,8 @@ namespace IntuiExtend {
     },
   } as const satisfies LibraryDef;
   export const V1_60 = {
+    name: 'IntuiExtend',
+    version: 'V1_60',
     md5: 'd0f8771b16caed52908b9cc40311e9d8',
     type: 'pro',
     extends: V1_30B,
@@ -316,6 +320,8 @@ namespace IntuiExtend {
     },
   } as const satisfies LibraryDef;
   export const V2_01B = {
+    name: 'IntuiExtend',
+    version: 'V2_01B',
     md5: '5e81953b5e7ecde80a817692b292af65',
     type: 'pro',
     extends: V1_60,

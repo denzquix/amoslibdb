@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 export namespace CRAFT {
   export const V1_00 = {
+    name: 'CRAFT',
+    version: 'V1_00',
     md5: 'ee3a95e1d1fc0ec92bfead522e05203e',
     type: 'pro',
     routines: {
@@ -168,6 +170,8 @@ export namespace CRAFT {
 
 export namespace MusiCRAFT {
   export const V1_00 = {
+    name: 'MusiCRAFT',
+    version: 'V1_00',
     md5: '8d33d663029ee69fdc74c50977d5d84e',
     type: 'pro',
     routines: {

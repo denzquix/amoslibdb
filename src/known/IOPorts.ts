@@ -3,6 +3,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace IOPorts {
   export const V2_00 = {
+    name: 'IOPorts',
+    version: 'V2_00',
     md5: '241e45afbbad3871e5dad9135dacd1cb',
     type: 'pro',
     routines: {

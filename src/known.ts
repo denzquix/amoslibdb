@@ -45,7 +45,7 @@ export const ALL: LibraryDef[] = [
   GUI.V1_70B,
   GUI.V1_75,
   GUI.V2_00,
-  AGA.Pro,
+  AGA.ProV1_00,
   Colours.V1_00,
   CoolStars.V1_00,
   CRAFT.V1_00,

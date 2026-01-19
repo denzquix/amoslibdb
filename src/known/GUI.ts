@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace GUI {
   export const V1_50B = {
+    name: 'GUI',
+    version: 'V1_50B',
     md5: 'f3806c48d7fdca9868635675056028f9',
     type: 'pro',
     routines: {
@@ -57,6 +59,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V1_61 = {
+    name: 'GUI',
+    version: 'V1_61',
     md5: 'f03385cbfb361debbd1270fa9b1842f9',
     type: 'pro',
     extends: V1_50B,
@@ -124,6 +128,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V1_62: LibraryDef = {
+    name: 'GUI',
+    version: 'V1_62',
     md5: '0b85b4f78298d0c08fdf50f9fc63297e',
     type: 'pro',
     extends: V1_61,
@@ -131,6 +137,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V1_70B = {
+    name: 'GUI',
+    version: 'V1_70B',
     md5: '42cd59f4acaa166be18e2a79758a12a4',
     type: 'pro',
     extends: V1_62,
@@ -213,6 +221,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V1_70 = {
+    name: 'GUI',
+    version: 'V1_70',
     md5: '70bf69ca5b0bca03af097d0ed6bd1c08',
     type: 'pro',
     removed: ['GuiAga', 'GuiScreenBase', 'GuiScreenMove'],
@@ -221,6 +231,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V1_75 = {
+    name: 'GUI',
+    version: 'V1_75',
     md5: '516eb7ce294be4a0c198bc20ca2bec65',
     type: 'pro',
     extends: V1_70,
@@ -234,6 +246,8 @@ namespace GUI {
     },
   } as const satisfies LibraryDef;
   export const V2_00 = {
+    name: 'GUI',
+    version: 'V2_00',
     md5: '73e6c7f6e44306f0d8d34296487915c7',
     type: 'pro',
     removed: ['GuiAmiga', 'GuiAmos', 'GuiAslOpen_I', 'GuiAslOpen_ISI', 'GuiScreenOpen_IIIII', 'GuiScreenOpen_IIIIISI', 'GuiSet',
