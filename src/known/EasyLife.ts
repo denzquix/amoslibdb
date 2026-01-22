@@ -147,7 +147,7 @@ namespace EasyLife {
       MuiDispose: 222,
       MuiDo: 213,
       MuiFlush: 227,
-      MuiFn: 213,
+      //MuiFn: 213, /* alias for MuiDo */
       MuiGet_IS__S: 209,
       MuiGet_II__S: 210,
       MuiGet_IS__I: 207,
@@ -231,7 +231,7 @@ namespace EasyLife {
     extends: V1_10,
     removed: [
       'ElcloseFont', 'ElcloseFonts', 'Elexists', 'ElopenFont', 'ElsetFont',
-      'MuiAdd', 'MuiApp', 'MuiApplication', 'MuiBegin', 'MuiDispose', 'MuiDo', 'MuiFlush', 'MuiFn',
+      'MuiAdd', 'MuiApp', 'MuiApplication', 'MuiBegin', 'MuiDispose', 'MuiDo', 'MuiFlush', //'MuiFn',
       'MuiGet_IS__S', 'MuiGet_II__S', 'MuiGet_IS__I', 'MuiGet_II__I',
       'MuiHook', 'MuiInput', 'MuiMakeButton', 'MuiMakePopbutton', 'MuiNew_SS', 'MuiNew_S', 'MuiNotify_ISIIS', 'MuiNotify_IIIIS',
       'MuiRemove', 'MuiRequest_ISSSS', 'MuiRequest_ISSS', 'MuiSet_ISI', 'MuiSet_III', 'MuiSetStr_ISS', 'MuiSetStr_IIS',

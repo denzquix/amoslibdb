@@ -2,6 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Int {
   export const V1_00 = {
+    name: 'Int',
+    version: 'V1_00',
     md5: 'fe9976e530c4e014afe97e7d1d93435d',
     type: 'pro',
     routines: {

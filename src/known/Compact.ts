@@ -13,7 +13,7 @@ namespace Compact {
       Spack_II: 4,
       Spack_IIIIII: 5,
       Unpack_I: 6,
-      Unpack_II: 7,
+      Unpack_II: 9,
     },
   } as const satisfies LibraryDef;
 }

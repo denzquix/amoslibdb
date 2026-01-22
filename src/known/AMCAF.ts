@@ -97,7 +97,7 @@ namespace AMCAF {
       DiskType: 96,
       Dload: 99,
       DosHash: 95,
-      Dsave: 101,
+      //Dsave: 101, /* Dsave is just an alias for Wsave */
       ExamineDir: 103,
       ExamineNext: 104,
       ExamineObject: 106,

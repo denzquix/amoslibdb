@@ -130,7 +130,7 @@ export namespace CRAFT {
       TrError: 97,
       TrExec_SI: 95,
       TrExec_S: 96,
-      TrForw: 107,
+      //TrForw: 107, /* alias for TrForward */
       TrForward: 107,
       TrGetAngle: 100,
       TrHome: 128,

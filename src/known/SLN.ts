@@ -45,7 +45,7 @@ namespace SLN {
       SIerase: 29,
       SIfree: 27,
       SIinit: 26,
-      SMask: -1,
+      //SMask: -1,
       SMotorOff: 67,
       SMotorOn: 66,
       SMouseButton: 5,
