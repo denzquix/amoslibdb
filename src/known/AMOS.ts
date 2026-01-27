@@ -7,6 +7,130 @@ namespace AMOS {
     version: 'V1_3',
     md5: '',
     type: 'creator',
+    signatures: {
+      _Mult: {in:{stack:'II'}, out:{stack:'I'}},
+      _MultF: {in:{stack:'FF'}, out:{stack:'F'}},
+      _Div: {in:{stack:'II'}, out:{stack:'I'}},
+      _DivF: {in:{stack:'FF'}, out:{stack:'F'}},
+      _Mod: {in:{stack:'II'}, out:{stack:'I'}},
+      _Puis: {in:{stack:'FF'}, out:{stack:'F'}},
+      _PlusF: {in:{stack:'FF'}, out:{stack:'F'}},
+      _MoinsF: {in:{stack:'FF'}, out:{stack:'F'}},
+      _NegFl: {in:{d3:'F'}, out:{d3:'F'}},
+      _PlusC: {in:{stack:'SS'}, out:{stack:'S'}},
+      _MoinsC: {in:{stack:'SS'}, out:{stack:'S'}},
+      _IntToFl: {in:{stack:'I'}, out:{stack:'F'}},
+      _IntToFl2: {in:{d3:'I'}, out:{d3:'F'}},
+      _FlToInt: {in:{stack:'F'}, out:{stack:'I'}},
+      _FlToInt2: {in:{d3:'F'}, out:{d3:'I'}},
+      _Eg: {in:{stack:'II'}, out:{stack:'I'}},
+      _EgF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _EgS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _Dif: {in:{stack:'II'}, out:{stack:'I'}},
+      _DifF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _DifS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _Inf: {in:{stack:'II'}, out:{stack:'I'}},
+      _InfF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _InfS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _Sup: {in:{stack:'II'}, out:{stack:'I'}},
+      _SupF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _SupS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _InfEg: {in:{stack:'II'}, out:{stack:'I'}},
+      _InfEgF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _InfEgS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _SupEg: {in:{stack:'II'}, out:{stack:'I'}},
+      _SupEgF: {in:{stack:'FF'}, out:{stack:'I'}},
+      _SupEgS: {in:{stack:'SS'}, out:{stack:'I'}},
+      _NextE: {out:{ccr:true}},
+      _NextF: {out:{ccr:true}},
+      _Tests: {in:{d3:'*'}, out:{ccr:true}},
+      _GetLabE: {in:{d3:'I'}, out:{a0:'A'}},
+      _GetLabA: {in:{d3:'S'}, out:{a0:'A'}},
+      _Return: {in:{stack:'A'}},
+      _Pop: {in:{stack:'*'}},
+      _End: {}, // never returns
+      _DProc1: {in:{d0:'I'}, out:{stack:'*'}}, // D0: "error on" flag; pushes context
+      _DProc2: {}, // D4=count D5=var flags D6=param flags - pops params
+      _FProc: {}, // restores context on procedure exit/end proc
+      _Dim: {}, // A0: var address, D0: dimension count, (A3)=dimensions; pops dimensions
+      _GetTable: {}, // A0: array address, D0: index count, (A3)=indices; pops indices; A0=element address
+      _Swap: {},
+      _FN: {},
+      _Sort: {},
+      _FFind: {},
+      _Add4: {},
+      _FLeft: {in:{stack:'SI'}, out:{stack:'S'}},
+      _FRight: {in:{stack:'SI'}, out:{stack:'S'}},
+      _FMid2: {in:{stack:'SI'}, out:{stack:'S'}},
+      _FMid3: {in:{stack:'SII'}, out:{stack:'S'}},
+      _ILeft: {in:{stack:'SI', a0:'V'}},
+      _IRight: {in:{stack:'SI', a0:'V'}},
+      _IMid2: {in:{stack:'SI', a0:'V'}},
+      _IMid3: {in:{stack:'SII', a0:'V'}},
+      _StrE: {in:{stack:'I'}, out:{stack:'S'}},
+      _StrF: {in:{stack:'F'}, out:{stack:'S'}},
+      _Val: {in:{stack:'S'}, out:{stack:'N'}},
+      _AbsE: {in:{stack:'I'}, out:{stack:'I'}},
+      _SgnE: {in:{stack:'I'}, out:{stack:'I'}},
+      _IntF: {in:{stack:'F'}, out:{stack:'F'}},
+      _MinE: {in:{stack:'II'}, out:{stack:'I'}},
+      _NaxE: {in:{stack:'II'}, out:{stack:'I'}},
+      _Sqr: {in:{stack:'F'}, out:{stack:'F'}},
+      _Log: {in:{stack:'F'}, out:{stack:'F'}},
+      _Ln: {in:{stack:'F'}, out:{stack:'F'}},
+      _Exp: {in:{stack:'F'}, out:{stack:'F'}},
+      _Sin: {in:{stack:'F'}, out:{stack:'F'}},
+      _Cos: {in:{stack:'F'}, out:{stack:'F'}},
+      _Tan: {in:{stack:'F'}, out:{stack:'F'}},
+      _ASin: {in:{stack:'F'}, out:{stack:'F'}},
+      _ACos: {in:{stack:'F'}, out:{stack:'F'}},
+      _ATan: {in:{stack:'F'}, out:{stack:'F'}},
+      _HSin: {in:{stack:'F'}, out:{stack:'F'}},
+      _HCos: {in:{stack:'F'}, out:{stack:'F'}},
+      _HTan: {in:{stack:'F'}, out:{stack:'F'}},
+      _PrintE: {in:{stack:'I'}},
+      _PrintF: {in:{stack:'F'}},
+      _PrintS: {in:{stack:'S'}},
+      _PrintX: {}, // end of print statement
+      _LPrintX: {}, // end of lprint statement
+      _CRPrint: {}, // print carriage return
+      _PrtRet: {}, // print newline
+      _PrtVir: {}, // print semicolon separator
+      _HPrintD: {}, // print# channel setup
+      _HPrintS: {in:{stack:'S'}}, // print# string
+      _HPrintX: {}, // end of print# statement
+      _UsingC: {in:{stack:'S'}}, // format string
+      _UsingS: {in:{stack:'*'}}, // value according to USING format
+      _InputC: {out:{stack:'S'}},
+      _LInputC: {out:{stack:'S'}},
+      _InputN: {out:{stack:'S'}},
+      _LInputH: {out:{stack:'S'}},
+      _CRet: {}, // carriage return handling
+      _Field: {}, // field statement
+      _Rest0: {}, // restore (to beginning)
+      _Rest1: {in:{stack:'A'}}, // restore label
+      _ReadE: {in:{a0:'A'}}, // write to variable address
+      _EvGosub: {}, // Every Gosub setup
+      _EvProc: {}, // Every Proc setup
+      _OnErr0: {}, // On Error Goto
+      _OnErr1: {}, // On Error Proc
+      _OnErr2: {}, // On Error (disable)
+      _Res0: {}, // Resume
+      _Res1: {}, // Resume Next
+      _Resl0: {}, // Resume Label
+      _Resl1: {}, // Resume Label (with label)
+      _Bset: {in:{stack:'AI'}},
+      _Bclr: {in:{stack:'AI'}},
+      _Bchr: {in:{stack:'AI'}},
+      _Btst: {in:{stack:'II'}, out:{stack:'I'}},
+      _BRor: {in:{stack:'II'}, out:{stack:'I'}},
+      _WRor: {in:{stack:'II'}, out:{stack:'I'}},
+      _LRor: {in:{stack:'II'}, out:{stack:'I'}},
+      _BRol: {in:{stack:'II'}, out:{stack:'I'}},
+      _WRol: {in:{stack:'II'}, out:{stack:'I'}},
+      _LRol: {in:{stack:'II'}, out:{stack:'I'}},
+      _Call: {in:{stack:'A'}},
+    },
     routines: {
       _Init1: 0, // sets up runtime environment
       _Init2: 1, // completes initialization
@@ -17,15 +141,29 @@ namespace AMOS {
       _IntToFl: 6, // int => float
       _FlToInt: 7, // float => int
       _Mult: 8,
+      _MultF: 9,
       _Div: 10,
+      _DivF: 11,
       _Mod: 12, // (number number) => number - modulo
       _Puis: 13, // (number number) => number - power
       _Eg: 14,
+      _EgF: 15,
+      _EgS: 16,
       _Dif: 17,
+      _DifF: 18,
+      _DifS: 19,
       _Inf: 20,
+      _InfF: 21,
+      _InfS: 22,
       _Sup: 23,
+      _SupF: 24,
+      _SupS: 25,
       _InfEg: 26,
+      _InfEgF: 27,
+      _InfEgS: 28,
       _SupEg: 29, // (number number) => 0/-1
+      _SupEgF: 30,
+      _SupEgS: 31,
       _CompCh: 32,
       _PrintE: 33,
       _PrintF: 34,
