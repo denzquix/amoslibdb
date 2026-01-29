@@ -12,8 +12,15 @@ export type RoutineDef = (
 type Access = {
   stack?: string;
   a0?: string;
+  a1?: string;
   d0?: string;
+  d1?: string;
+  d2?: string;
   d3?: string;
+  d4?: string;
+  d5?: string;
+  d6?: string;
+  d7?: string;
   ccr?: boolean;
 };
 
@@ -24,7 +31,9 @@ export interface LibraryDef {
   version: string;
   extends?: LibraryDef;
   removed?: string[];
+  skip?: string[];
   renamed?: {[name: string]: string};
   routines: {[name: string]: RoutineDef};
   signatures?: {[name: string]: {in?: Access, out?: Access}};
+  same?: {[name: string]: string};
 }

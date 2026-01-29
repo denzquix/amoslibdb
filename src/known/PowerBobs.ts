@@ -62,6 +62,7 @@ namespace PowerBobs {
       Pdebug: 116,
       Pdec: 71,
       Pdiv: 77,
+      Pdraw25fps_I: 38,
       PfastBobcol: 18,
       PfastBobsprcol: 50,
       PfastSprbobcol: 57,
