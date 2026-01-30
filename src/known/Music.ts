@@ -125,6 +125,8 @@ namespace Music {
       PlayOff: 25,
       PlayOff_I: 26,
       SamBank: 30,
+      SamLoopOn: 31,
+      SamLoopOn2: 32,
       SamLoopOff: 34,
       NoiseTo: 36,
       Sample: 37,
