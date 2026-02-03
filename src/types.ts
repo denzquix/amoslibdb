@@ -24,6 +24,11 @@ type Access = {
   ccr?: boolean;
 };
 
+export type SignatureDef = {
+  in?: Access;
+  out?: Access;
+};
+
 export interface LibraryDef {
   md5: string;
   type: 'creator' | 'pro';
@@ -36,4 +41,5 @@ export interface LibraryDef {
   routines: {[name: string]: RoutineDef};
   signatures?: {[name: string]: {in?: Access, out?: Access}};
   same?: {[name: string]: string};
+  ignore?: (routineNumber: number) => boolean;
 }

@@ -29,12 +29,18 @@ import Tools from "./known/Tools.js";
 import Turbo from "./known/Turbo.js";
 
 export const ALL: LibraryDef[] = [
-  AMOS.V1_3,
+  AMOS.V1_34,
   AMOS.ProV2_00,
   AMOS.ProV2_00_Compiled,
   AMOS.ProV2_00_ALT1,
   AMOS.ProV2_00_ALT2,
   Compact.ProV2_00,
+  Music.V1_30,
+  Music.V1_30_ALT,
+  Music.V1_54,
+  Music.V1_55,
+  Music.V1_62,
+  Music.V1_62_ALT,
   Music.ProV2_00,
   Requester.ProV2_00,
   IOPorts.V2_00,
