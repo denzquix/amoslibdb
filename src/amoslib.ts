@@ -1,4 +1,6 @@
 
+export type TokenInfo = {instrEntryPoint: number, funcEntryPoint: number, name: string, signature: string, terminator: number};
+
 export function parseAmosLib(data: Buffer) {
   let C_Off = 18;
   if (data.length < C_Off) {
@@ -31,7 +33,7 @@ export function parseAmosLib(data: Buffer) {
     }
   }
   let tkPos = C_Tk;
-  const tokenInfo = new Array<{instrEntryPoint: number, funcEntryPoint: number, name: string, signature: string, terminator: number}>();
+  const tokenInfo = new Array<TokenInfo>();
   let lastName = '';
   if (tkPos < C_Lib) for (;;) {
     if (tkPos >= C_Lib) {
@@ -63,7 +65,9 @@ export function parseAmosLib(data: Buffer) {
     const signature = str;
     tkPos += tkPos % 2; // even boundary
     tokenInfo.push({instrEntryPoint, funcEntryPoint, name:(name === '' && lastName.startsWith('!') ? lastName.slice(1) : name.replace(/^!/, '')), signature, terminator});
-    lastName = name;
+    if (!(lastName.startsWith('!') && name === '')) {
+      lastName = name;
+    }
   }
 
   return {
@@ -73,6 +77,8 @@ export function parseAmosLib(data: Buffer) {
     title,
   };
 }
+
+export type AmosLib = ReturnType<typeof parseAmosLib>;
 
 export namespace CodePattern {
   export namespace Section {
@@ -759,8 +765,8 @@ export function *eachRoutineWord(routine: RoutineDef): Generator<number> {
 
 const u16s = (v: number) => v.toString(16).padStart(4, '0');
 
-export function *eachRoutineToken(routine: RoutineDef): Generator<string> {
-  for (const section of routine.code.sections) {
+export function *eachCodePatternToken(code: CodePattern): Generator<string> {
+  for (const section of code.sections) {
     switch (section.type) {
       case 'literal': {
         for (let ptr = 0; ptr < section.bytes.length; ptr += 2) {
@@ -809,10 +815,69 @@ export function *eachRoutineToken(routine: RoutineDef): Generator<string> {
       case 'Rble': yield* [u16s(0x6F00), `[R:${section.target}]`]; break;
     }
   }
-  if (routine.code.fallthroughTarget !== false) {
-    yield `[X:${routine.code.fallthroughTarget}]`;
+  if (code.fallthroughTarget !== false) {
+    yield `[X:${code.fallthroughTarget}]`;
   }
-  else if (routine.code.sections.length === 0) {
+  else if (code.sections.length === 0) {
     yield u16s(0x4e75);
   }
 }
+
+export function eachRoutineToken(routine: RoutineDef): Generator<string> {
+  return eachCodePatternToken(routine.code);
+}
+
+export const stringifyRoutine = (isMain: boolean, codePatterns: CodePattern[], i: number, loopCheck: number[] = [i]): string => {
+  if (i < 0 || i >= codePatterns.length) {
+    throw new Error('routine not defined: ' + i);
+  }
+  const str = [...eachCodePatternToken(codePatterns[i]!)].join(' ').replace(/\[([RXA]:)(\d+)\]/g, (_, t, ns) => {
+    const n = Number(ns);
+    if (isMain) {
+      return '[' + t + '0,' + ns + ']';
+    }
+    if (n >= codePatterns.length || n < 0) {
+      return '[' + t + '!' + ns + ']';
+    }
+    const loopBack = loopCheck.indexOf(n);
+    if (loopBack !== -1) {
+      return '[' + t + '-' + (loopCheck.length-loopBack) + ']';
+    }
+    return '[' + t + stringifyRoutine(isMain, codePatterns, n, [...loopCheck, i]) + ']';
+  });
+  return str;
+};
+
+export const getReverseLookup = (tokens: TokenInfo[]): Map<number, {name: string, sig: string}[]> => {
+  const m = new Map<number, Array<{name: string, sig: string}>>();
+  const add = (num: number, name: string, sig: string) => {
+    const existing = m.get(num);
+    if (existing) existing.push({name, sig});
+    else m.set(num, [{name, sig}]);
+  }
+  for (const tk of tokens) {
+    if (!tk.name) continue;
+    if (tk.signature.startsWith('V')) {
+      if (tk.instrEntryPoint >= 2) {
+        add(tk.instrEntryPoint, tk.name, 's_' + tk.signature);
+      }
+      if (tk.funcEntryPoint >= 2) {
+        add(tk.funcEntryPoint, tk.name, 'g_' + tk.signature);
+      }
+    }
+    else if (tk.signature.startsWith('I')) {
+      if (tk.instrEntryPoint !== -1) {
+        add(tk.instrEntryPoint, tk.name, tk.signature);
+      }
+    }
+    else if (/^\d/.test(tk.signature)) {
+      if (tk.funcEntryPoint === -32768) {
+        add(tk.instrEntryPoint, tk.name, 's_V' + tk.signature);
+      }
+      else if (tk.funcEntryPoint !== -1) {
+        add(tk.funcEntryPoint, tk.name, tk.signature);
+      }
+    }
+  }
+  return m;
+};
