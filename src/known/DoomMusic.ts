@@ -39,6 +39,7 @@ namespace DoomMusic {
       DmeSamFreq: 43,
       DmeSamPlay_I: 46,
       DmeSamPlay_II: 47,
+      DmeSamPlay_III: 48,
       DmeSamRaw: 39,
       DmeSamStop: 44,
       DmeSamStop_I: 45,

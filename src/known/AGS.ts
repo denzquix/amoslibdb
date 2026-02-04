@@ -23,6 +23,7 @@ namespace AGA {
       AgaGetPalette: 5,
       AgaInk_I: 9,
       AgaInk_II: 10,
+      AgaInk_III: 11,
       AgaLoadBitplanes: 29,
       AgaPoint: 55,
       AgaPutBlock: 20,
