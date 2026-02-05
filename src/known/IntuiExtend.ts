@@ -226,7 +226,11 @@ namespace IntuiExtend {
     md5: 'd0f8771b16caed52908b9cc40311e9d8',
     type: 'pro',
     extends: V1_30B,
-    removed: ['Wb3dScreen', 'WbDraw', 'WbStringRequest', 'WbSysRequester'],
+    removed: [
+      'Wb3dScreen', 'WbDraw', 'WbStringRequest', 'WbSysRequester',
+      'WbCircle_IIII', 'WbNewMslideGadget_IIII', 'WbPoint_III',
+      'WbTextRequest',
+    ],
     same: {
       WbGetMenu: 'WbGetMenuAdr',
       IffGetError: 'WbMenuText',
@@ -337,16 +341,18 @@ namespace IntuiExtend {
     md5: '5e81953b5e7ecde80a817692b292af65',
     type: 'pro',
     extends: V1_60,
-    removed: ['Wb3dSort', 'WbMenuText', 'WbScroll'],
+    removed: [
+      'Wb3dSort', 'WbMenuText', 'WbScroll', 'WbGetMenuAdr',
+      'WbPubscreenStatus', 'WbRemoveAllGedget', 'WbSetPubscreenModes', 'WbTurtleplot',
+      'IffDisplay_II', 'IffMakePalette', 'Shearch',
+    ],
     same: {
       WbTurtlePlot: 'WbTurtleplot',
       IffGetError: 'WbMenuText',
       WbRemoveAllGadget: 'WbRemoveAllGedget',
       WbPubscreenStatut: 'WbPubscreenStatus',
       WbSetPubscreenMode: 'WbSetPubscreenModes',
-    },
-    renamed: {
-      Shearch: 'Search',
+      Search: 'Shearch',
     },
     routines: {
       GetMsgScancode: 53,

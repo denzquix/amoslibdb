@@ -285,6 +285,9 @@ export namespace JD {
       'JdSlideX',
       'JdSlideY',
       'JdStream',
+      'JdE__F',
+      'JdPi__F',
+      'JdScreenResolution__I',
     ],
     routines: {
       JdDay_III__I: 98,
@@ -316,7 +319,7 @@ export namespace JD {
     extends: V5_30,
     removed: [
       'JdCompare',
-      'JdScreenResolution__I',
+      'JdScreenResolution__V',
     ],
     routines: {
       JdChipset: 164,

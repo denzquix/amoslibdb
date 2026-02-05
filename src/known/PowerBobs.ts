@@ -55,7 +55,7 @@ namespace PowerBobs {
     md5: '9503250d59a08c2fe564388ffa18361c',
     type: 'pro',
     extends: BETA6,
-    removed: ['PfastCol', 'Psprite'],
+    removed: ['PfastCol', 'Psprite', 'Pdraw25fps'],
     routines: {
       Padd: 70,
       Pasl: 75,

@@ -800,6 +800,7 @@ namespace OSDevKit {
     md5: '930d914a70af2a2c4b3c5b2f1bb0dc5d',
     type: 'pro',
     extends: V1_20,
+    removed: ['BmWhatAttb'],
     same: {
       CpuWord_set_II: 'CpuUword_set_II',
       StructUbyte_set_III: 'StructByte_set_III',
