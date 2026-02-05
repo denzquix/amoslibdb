@@ -30,6 +30,7 @@ namespace Music {
       SamLoopOn2: 32,
       SamPlay_I: 39,
       SamPlay_II: 40,
+      SamPlay_III: 41,
       Sample: 37,
       SamRaw: 42,
       Say_S: 6,
@@ -72,6 +73,7 @@ namespace Music {
       TrackLoopOn: 91,
       TrackPlay: 93,
       TrackPlay_I: 94,
+      TrackPlay_II: 95,
       TrackStop: 90,
     },
   } as const satisfies LibraryDef;
