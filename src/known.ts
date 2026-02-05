@@ -28,6 +28,7 @@ import SLN from "./known/SLN.js";
 import Tools from "./known/Tools.js";
 import Turbo from "./known/Turbo.js";
 import AMOS3D from "./known/AMOS3D.js";
+import EME from "./known/EME.js";
 
 export const ALL: LibraryDef[] = [
   AMOS.V1_34,
@@ -44,6 +45,8 @@ export const ALL: LibraryDef[] = [
   Music.V1_62,
   Music.V1_62_ALT,
   Music.ProV2_00,
+  EME.V3_00DEMO,
+  EME.ProV3_00DEMO,
   Requester.ProV2_00,
   IOPorts.V2_00,
   GUI.V1_50B,
