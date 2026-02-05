@@ -27,6 +27,7 @@ import Requester from "./known/Requester.js";
 import SLN from "./known/SLN.js";
 import Tools from "./known/Tools.js";
 import Turbo from "./known/Turbo.js";
+import AMOS3D from "./known/AMOS3D.js";
 
 export const ALL: LibraryDef[] = [
   AMOS.V1_34,
@@ -34,6 +35,7 @@ export const ALL: LibraryDef[] = [
   AMOS.ProV2_00_Compiled,
   AMOS.ProV2_00_ALT1,
   AMOS.ProV2_00_ALT2,
+  AMOS3D.ProV1_02,
   Compact.ProV2_00,
   Music.V1_30,
   Music.V1_30_ALT,
