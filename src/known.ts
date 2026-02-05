@@ -36,6 +36,8 @@ export const ALL: LibraryDef[] = [
   AMOS.ProV2_00_Compiled,
   AMOS.ProV2_00_ALT1,
   AMOS.ProV2_00_ALT2,
+  AMOS3D.V1_00,
+  AMOS3D.V1_50,
   AMOS3D.ProV1_02,
   Compact.ProV2_00,
   Music.V1_30,
