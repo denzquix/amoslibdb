@@ -1,5 +1,5 @@
 import type { LibraryDef } from "./types.js";
-import AGA from "./known/AGS.js";
+import AGA from "./known/AGA.js";
 import AMCAF from "./known/AMCAF.js";
 import Amon from "./known/Amon.js";
 import AMOS from "./known/AMOS.js";
