@@ -25,6 +25,7 @@ namespace IOPorts {
       PrinterClose: 28,
       PrinterDump: 34,
       PrinterDump_IIII: 35,
+      PrinterDump_IIIIIII: 36,
       PrinterError: 29,
       PrinterOnline: 33,
       PrinterOpen: 27,
