@@ -29,6 +29,7 @@ import Tools from "./known/Tools.js";
 import Turbo from "./known/Turbo.js";
 import AMOS3D from "./known/AMOS3D.js";
 import EME from "./known/EME.js";
+import Serial from "./known/Serial.js";
 
 export const ALL: LibraryDef[] = [
   AMOS.V1_34,
@@ -57,6 +58,8 @@ export const ALL: LibraryDef[] = [
   Requester.V1_30_ALT,
   Requester.V1_41,
   Requester.ProV2_00,
+  Serial.V1_10,
+  Serial.V1_20,
   IOPorts.V2_00,
   GUI.V1_50B,
   GUI.V1_61,
