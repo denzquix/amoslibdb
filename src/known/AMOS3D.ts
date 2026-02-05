@@ -96,6 +96,7 @@ namespace AMOS3D {
     name: 'AMOS3D',
     type: 'creator',
     extends: V1_00,
+    removed: ['TdSetColour'],
     routines: {
       TdTony5: 82,
     },
