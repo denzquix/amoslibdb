@@ -30,6 +30,7 @@ import Turbo from "./known/Turbo.js";
 import AMOS3D from "./known/AMOS3D.js";
 import EME from "./known/EME.js";
 import Serial from "./known/Serial.js";
+import TOME from "./known/TOME.js";
 
 export const ALL: LibraryDef[] = [
   AMOS.V1_34,
@@ -133,6 +134,8 @@ export const ALL: LibraryDef[] = [
   Turbo.PlusV1_50,
   Turbo.PlusV2_00,
   Turbo.PlusV2_15,
+  TOME.V3_10,
+  TOME.V4_23,
 ];
 
 export const byMD5 = new Map(ALL.map(lib => [lib.md5, lib]));
