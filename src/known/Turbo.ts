@@ -2,8 +2,8 @@ import type { LibraryDef } from "../types.js";
 
 namespace Turbo {
   export const PlusV1_00 = {
-    name: 'Turbo',
-    version: 'PlusV1_00',
+    name: 'TurboPlus',
+    version: 'V1_00',
     md5: 'c123b0ab517d69709e0c23c01484d3cd',
     type: 'pro',
     routines: {
@@ -145,8 +145,8 @@ namespace Turbo {
     },
   } as const satisfies LibraryDef;
   export const PlusV1_50 = {
-    name: 'Turbo',
-    version: 'PlusV1_50',
+    name: 'TurboPlus',
+    version: 'V1_50',
     md5: 'b1ba58edbd19ca7c97ea635866524f26',
     type: 'pro',
     extends: PlusV1_00,
@@ -220,8 +220,8 @@ namespace Turbo {
     },
   } as const satisfies LibraryDef;
   export const PlusV2_00 = {
-    name: 'Turbo',
-    version: 'PlusV2_00',
+    name: 'TurboPlus',
+    version: 'V2_00',
     md5: 'ac48a18fb4cb10482223ad4c172d46c4',
     type: 'pro',
     extends: V1_90,
@@ -242,8 +242,8 @@ namespace Turbo {
     },
   } as const satisfies LibraryDef;
   export const PlusV2_15 = {
-    name: 'Turbo',
-    version: 'PlusV2_15',
+    name: 'TurboPlus',
+    version: 'V2_15',
     md5: '17e87325237c4d2bffda20731633c3f9',
     type: 'pro',
     extends: PlusV2_00,
