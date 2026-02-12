@@ -1,6 +1,50 @@
 {
 "dispatch": {
   "count": 1,
+  "4493": [
+    "tail-call",
+    {
+      "4a6d": "CRAFT_ProV1_00_TrBack",
+      "6100": "CRAFT_ProV1_00_TrLeft"
+    }
+  ],
+  "45f9": {
+    "00dc 0000 206d 0248 41e8 0142 6100": "JD_ProV5_30_JdTime",
+    "00dc 0000 206d 0248 41e8 0146 6100": "JD_ProV5_90_JdTime",
+    "00dc 0000 206d 0248 41e8 019a 6100": "JD_ProV4_60_JdTime",
+    "00dc 0000 206d 0258 d0fc 01c0 301a": {
+      "6100 0058": "IntuiExtend_ProV1_60_WbSwatch",
+      "614e 301a": "IntuiExtend_ProV2_01B_WbSwatch"
+    },
+    "00dc 0000 206d 0258 d0fc 029a 301a": "IntuiExtend_ProV1_30B_WbSwatch"
+  },
+  "45fa": {
+    "0006 6000": [
+      ["skip", 1],
+      {
+        "1b42 3000": "AMOS_ProV2_00_Paper_I_S",
+        "1b50 3000": "AMOS_ProV2_00_Pen_I_S"
+      }
+    ],
+    "c830 2052": "Personnal_ProV1_00B_ActiveSecondScreen",
+    "d646 2052": "Personnal_ProV1_00B_NormalPlayfields",
+    "d66e 2052": "Personnal_ProV1_00B_InversePlayfields"
+  },
+  "48c3": "JD_ProV5_30_JdScreenResolution__V",
+  "48e3": [
+    ["match", "ffe0 6100"],
+    ["skip", 1],
+    ["match", "202b 0040 6700"],
+    ["skip", 1],
+    ["match", "222b 003c 6700"],
+    ["skip", 1],
+    ["match", "7400 6100"],
+    "follow-rel",
+    {
+      "e582 b485 641e 3832 2000 b840 6704 5842": "EasyLife_ProV1_44_ElmzSet_IIIIII",
+      "e582 b485 641e 3832 2000 b840 6704 5882": "EasyLife_ProV1_09_ElmzSet_IIIIII"
+    }
+  ],
   "48e7": {
     "0002 2c6d": [
       ["match", "0228 4dee 02d4 2c56 bdfc 0000 0000 6700"],
