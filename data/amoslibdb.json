@@ -1,6 +1,810 @@
 {
 "dispatch": {
   "count": 1,
+  "48e7": {
+    "0002 2c6d": [
+      ["match", "0228 4dee 02d4 2c56 bdfc 0000 0000 6700"],
+      ["skip", 1],
+      {
+        "41fa 0010 4eae ff9a 4cdf 4000": "OSDevKit_ProV1_61_TimeElapsed",
+        "43fa 000c 4eae ffb8 4cdf 4000":
+        {
+          "4e75 80c0 0000 0000 0000 0000 0000": "OSDevKit_ProV1_61_SysDisown",
+          "4e75 80c0 0000 ffff ffff 0000 0000": "OSDevKit_ProV1_61_SysOwn"
+        },
+        "4eae ffd0 4cdf 4000 2600 4e75": "OSDevKit_ProV1_61_KeyPressed"
+      }
+    ],
+    "0002 2c78": "OSDevKit_ProV1_61_LowInit",
+    "0002 2c79": "JD_ProV5_30_JdFlush",
+    "0006 246d": {
+      "0258 d4fc 0004 4a92 6616 2c78 0004 226d 0258 d2fc 0706 4eae": "IntuiExtend_ProV1_60_WbDistance",
+      "0258 d4fc 0004 4a92 6616 2c78 0004 226d 0258 d2fc 06e8 4eae": "IntuiExtend_ProV2_01B_WbDistance"
+    },
+    "000a 241b": "Main_ProV1_30_MaRealloc",
+    "000e 201b": {
+      "48e7 0010 266d 0248": {
+        "48e7 0010 266d 0248": "JD_ProV4_60_JdExtend",
+        "47eb 017e 2680 4cdf": "JD_ProV5_30_JdExtend",
+        "47eb 0182 2680 4cdf": "JD_ProV5_90_JdExtend"
+      },
+      "b0bc 0000 0002 6400": [
+        ["skip", 1],
+        {
+          "4283 1639 00bf d000 b0bc 0000 0000 6600": "Ercole_ProV1_70_ExtFire",
+          "4283 1639 00bf e101 4603 b0bc 0000 0000": "Ercole_ProV1_70_ExtJoy",
+          "b0bc 0000 0001 6600 0022 0839 000c 00df": "Ercole_ProV1_70_Yfire",
+          "b0bc 0000 0001 6600 0022 0839 000e 00df": "Ercole_ProV1_70_Xfire"
+        }
+      ],
+      "b0bc 0000 0004 6400": [
+        ["skip", 1],
+        {
+          "b0bc 0000 0000 6600": "Ercole_ProV1_70_PadFire",
+          "b0bc 0000 0002 6400": "Ercole_ProV1_70_Paddle"
+        }
+      ]
+    },
+    "000e 203c": "LDos_ProV1_10_Lcompress",
+    "000e 205b": {
+      "2f08 3010": [
+        ["match", "6700"],
+        "follow-rel",
+        ["match", "4cdf 0100 4cdf 7000 2608 6100"],
+        "follow-rel",
+        ["match", "2043 48e7 0080 3010 6100"],
+        ["skip", 1],
+        {
+          "b0bc 0000 0000 6700 003a 48e7 0010 266d 0248 47eb 027e 2253": "JD_ProV4_60_JdSkip",
+          "b0bc 0000 0000 6700 003a 48e7 0010 266d 0248 47eb 0226 2253": "JD_ProV5_30_JdSkip",
+          "b0bc 0000 0000 6700 0038 48e7 0010 266d 0248 47eb 022a 2253": "JD_ProV5_90_JdSkip"
+        }
+      ],
+      "2f0b 6100": [
+        ["skip", 1],
+        {
+          "265f 4a90 6600 0006 6000": "LDos_ProV1_10_Lsize",
+          "265f 4a90 6600 00a2 7405": "LDos_ProV1_00_Lsize",
+          "265f b1fc 0000 0000 6600": [
+            ["match"],
+            {
+              "0006 6000": [
+                ["skip", 1],
+                {
+                  "2628 0004": "LDos_ProV1_10_LfileType",
+                  "2628 0074": "LDos_ProV1_10_LgetProt",
+                  "41e8 0090": "LDos_ProV1_10_LgetComment"
+                }
+              ],
+              "00a2 7405": [
+                ["match", "323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+                ["skip", 1],
+                {
+                  "2628 0004": "LDos_ProV1_00_LfileType",
+                  "2628 0074": "LDos_ProV1_00_LgetProt",
+                  "41e8 0090": "LDos_ProV1_00_LgetComment"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "3018 b07c": {
+        "0000 6334 5340 286d 0188 43ec 000c 2209 12d8 51c8 fffc 12bc 0000 2c6c 0070 243c ffff fffe 4eae ffac 6700 0014 2200 4eae ff82 4cdf 7000 4e75 7012 6000": "LDos_ProV1_10_Lldir",
+        "0000 6334 5340 286d 0188 43ec 000c 2209 12d8 51c8 fffc 12bc 0000 2c6c 0070 243c ffff fffe 4eae ffac 6700 00b0 2200 4eae ff82 4cdf 7000 4e75 7012 7405": "LDos_ProV1_00_Lldir",
+        "0000 6700 00c4 48e7 0010 266d 0248 47eb 01ca 2688 4cdf 0800 0c10 002d 6700 00c6 0c30 002d 0000 6700 00f4 0c10 0000 6700 0048 0c18 002d 66f2 226d 0248": "JD_ProV5_90_JdGetArea",
+        "0000 6700 00ce 48e7 0010 266d 0248 47eb 01c6 2688 4cdf 0800 0c10 002d 6700 00d0 0c30 002d 0000 6700 0100 0c10 0000 6700 004e 0c18 002d 6600 fff2 226d": "JD_ProV5_30_JdGetArea",
+        "0000 6700 00ce 48e7 0010 266d 0248 47eb 021e 2688 4cdf 0800 0c10 002d 6700 00d0 0c30 002d 0000 6700 0100 0c10 0000 6700 004e 0c18 002d 6600 fff2 226d": "JD_ProV4_60_JdGetArea"
+      },
+      "48e7 0080": [
+        ["match", "3010 6700"],
+        ["skip", 1],
+        ["match", "6100"],
+        ["skip", 1],
+        ["match", "b0bc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "48e7 0010 266d 0248 47eb 0226 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 0226 2613 4cdf 0800 4e75 0c10 0000 6700 002e 1418": "JD_ProV5_30_JdChange",
+          "48e7 0010 266d 0248 47eb 0226 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 0226 2613 4cdf 0800 4e75 1418 6700 003c b43c 0061": "JD_ProV5_30_JdFirstup",
+          "48e7 0010 266d 0248 47eb 022a 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 022a 2613 4cdf 0800 4e75 0c10 0000 6700 002c 1418": "JD_ProV5_90_JdChange",
+          "48e7 0010 266d 0248 47eb 022a 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 022a 2613 4cdf 0800 4e75 1418 6700 0034 b43c 0061": "JD_ProV5_90_JdFirstup",
+          "48e7 0010 266d 0248 47eb 027e 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 027e 2613 4cdf 0800 4e75 0c10 0000 6700 002e 1418": "JD_ProV4_60_JdChange",
+          "48e7 0010 266d 0248 47eb 027e 2253 4cdf 0800 4cdf 0100 32d8 6100 001c 4cdf 7000 7402 48e7 0010 266d 0248 47eb 027e 2613 4cdf 0800 4e75 1418 6700 003c b43c 0061": "JD_ProV4_60_JdFirstup"
+        }
+      ],
+      "7000 3018": "Lserial_ProV1_00_LserSend"
+    },
+    "000e 206d": {
+      "0188 d1fc 0000 0294 4a90": {
+        "6600 0008 7007 6000": [
+          ["skip", 1],
+          {
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0004 7400 4cdf 7000 4e75": "LDos_ProV1_10_LcatType",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0074 7400 4cdf 7000 4e75": "LDos_ProV1_10_LcatProt",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 007c 7400 4cdf 7000 4e75": "LDos_ProV1_10_LcatSize",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0080 7400 4cdf 7000 4e75": "LDos_ProV1_10_LcatBlocks",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0084 7400 4cdf 7000 4e75": "LDos_ProV1_10_LcatStamp",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 41e8 0090 2448 0c10 0000 6700": "LDos_ProV1_10_LcatComment"
+          }
+        ],
+        "6600 00a4 7007 7405": [
+          ["match", "0188 d1fc 0000 0294 4a90 6600 00a4 7007 7405 323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+          ["skip", 1],
+          {
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0004 7400 4cdf 7000 4e75": "LDos_ProV1_00_LcatType",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0074 7400 4cdf 7000 4e75": "LDos_ProV1_00_LcatProt",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 007c 7400 4cdf 7000 4e75": "LDos_ProV1_00_LcatSize",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0080 7400 4cdf 7000 4e75": "LDos_ProV1_00_LcatBlocks",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 2628 0084 7400 4cdf 7000 4e75": "LDos_ProV1_00_LcatStamp",
+            "206d 0188 d1fc 0000 018c 2f00 2008 0280 ffff fffc 0680 0000 0004 2040 201f 41e8 0090 2448 0c10 0000 6700": "LDos_ProV1_00_LcatComment"
+          }
+        ],
+        "6700 0010 2c6d 0188": {
+          "2c6e 0070 2210 4eae ffa6 205b 3018 286d 0188 43ec 000c 2449 5340 6a00 00a4 7003 7405": "LDos_ProV1_00_LcatFirst",
+          "2c6e 0070 2210 4eae ffa6 205b 3018 286d 0188 43ec 000c 2449 5340 6a00 0008 7003 6000": "LDos_ProV1_10_LcatFirst"
+        }
+      },
+      "052c 4cdb 7004 260c 6b00": "Amon_ProV1_04_ArrayPlot"
+    },
+    "000e 221b": "LDos_ProV1_00_LlargestFree",
+    "000e 225b": {
+      "205b 201b 2448 95c9": [
+        ["match", "6a00 0006 6000 0014 b3c8 6704 b020 66f8 2608 7400 4cdf 7000 4e75 7012"],
+        "tail-call",
+        {
+          "41fa 0012 7200 7409": "LDos_ProV1_10_LbackHunt",
+          "7405 323c ffff 33c1": "LDos_ProV1_00_LbackHunt"
+        }
+      ],
+      "205b 201b 2449 95c8": {
+        "6a00 0008 7008 6000": "LDos_ProV1_10_Lskip",
+        "6a00 00a4 7008 7405": "LDos_ProV1_00_Lskip"
+      },
+      "205b 221b 201b 2449": {
+        "205b 221b 201b 2449 95c8 6a00 0008 7008 6000": "LDos_ProV1_10_Lreplace",
+        "205b 221b 201b 2449 95c8 6a00 00a4 7008 7405": "LDos_ProV1_00_Lreplace"
+      },
+      "205b 241b 221b 201b": {
+        "2449 95c8 6a00 0008 7008 6000": "LDos_ProV1_10_Lfilter",
+        "2449 95c8 6a00 00a4 7008 7405": "LDos_ProV1_00_Lfilter"
+      },
+      "205b 2449 95c8 6a00": {
+        "0008 7008 6000": [
+          ["skip", 1],
+          {
+            "1a20 1a18 b3c8 6700": "LDos_ProV1_10_Lupbuffer",
+            "1a20 b3c8 6700 0018": "LDos_ProV1_10_Llobuffer"
+          }
+        ],
+        "00a4 7008 7405": [
+          ["match", "323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+          ["skip", 1],
+          {
+            "1a20 1a18 b3c8 6700": "LDos_ProV1_00_Lupbuffer",
+            "1a20 b3c8 6700 0018": "LDos_ProV1_00_Llobuffer"
+          }
+        ]
+      },
+      "205b 48e7 0050 6100": [
+        ["skip", 1],
+        {
+          "4cdf 0a00 b1fc 0000 0000 6600 0006 6000": "LDos_ProV1_10_LsetComment",
+          "4cdf 0a00 b1fc 0000 0000 6600 00a2 7405": "LDos_ProV1_00_LsetComment"
+        }
+      ],
+      "205b 7000 3018 b07c": "LDos_ProV1_00_Lbstr",
+      "2c79 0000 0004 4eae": "Ercole_ProV1_70_LibraryClose",
+      "3019 2c79 0000 0004": "Ercole_ProV1_70_LibraryOpen"
+    },
+    "000e 226d": {
+      "0188 d3fc 0000 0298 4aa9 000e 6600 0008 700a": "LDos_ProV1_10_Ldevice",
+      "0188 d3fc 0000 0298 4aa9 000e 6600 00a4 700a": "LDos_ProV1_00_Ldevice",
+      "0188 d3fc 0000 0298 4aa9 000e 6700 0008 7009": "LDos_ProV1_10_LdeviceOpen",
+      "0188 d3fc 0000 0298 4aa9 000e 6700 00a4 7009": "LDos_ProV1_00_LdeviceOpen",
+      "0188 d3fc 0000 02f6 2c11 285b 205b 2248 2448": {
+        "2c4c 9dca 6a00 0008 7008 6000": "LDos_ProV1_10_LstrTo_II",
+        "2c4c 9dca 6a00 00a4 7008 7405": "LDos_ProV1_00_LstrTo_II"
+      },
+      "0188 d3fc 0000 02fa 4a51 6600 0008 700f 6000": [
+        ["skip", 1],
+        {
+          "286d 0188 240c 0682 0000 000c 205b 2e1b 3018 5340 0c30 0000 0000": "LDos_ProV1_10_Lmatch",
+          "286d 0188 240c 0682 0000 000c 205b 3018 b07c 0032 6300 0008 7010": "LDos_ProV1_10_Lwild",
+          "286d 0188 2c4c ddfc 0000 000c 204e d1fc 0000 0050 220e 2408 215b": "LDos_ProV1_10_LsetFileDate",
+          "286d 0188 2c6c 0070 205b 225b 3019 5340 45ec 000c 14d9 51c8 fffc": "LDos_ProV1_10_LsetVar",
+          "286d 0188 2c6c 0070 205b 43ec 000c 3018 4a40 6600 0008 7012 6000": [
+            ["skip", 1],
+            {
+              "5340 12d8 51c8 fffc": "LDos_ProV1_10_LgetVar",
+              "5340 2209 12d8 51c8": "LDos_ProV1_10_LdeleteVar"
+            }
+          ]
+        }
+      ],
+      "0188 d3fc 0000 02fa 4a51 6600 00a4 700f 7405": [
+        ["match", "323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+        ["skip", 1],
+        {
+          "286d 0188 240c 0682 0000 000c 205b 2e1b 3018 5340 0c30 0000 0000 6700 00a4 7017 7405 323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188": "LDos_ProV1_00_Lmatch",
+          "286d 0188 240c 0682 0000 000c 205b 3018 b07c 0032 6300 00a4 7010 7405 323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200": "LDos_ProV1_00_Lwild",
+          "286d 0188 2c4c ddfc 0000 000c 204e d1fc 0000 0050 220e 2408 215b 0008 215b 0004 209b 225b 3019 b07c 0000 6400 00a4 7012 7405 323c ffff 33c1 00df f180 33c2 00df": "LDos_ProV1_00_LsetFileDate",
+          "286d 0188 2c6c 0070 205b 225b 3019 5340 45ec 000c 14d9 51c8 fffc 14bc 0000 7600 3618 283c 0000 0100 2408 220c 0681 0000 000c 4eae fc7c 2600 7400 4cdf 7000 4e75": "LDos_ProV1_00_LsetVar",
+          "286d 0188 2c6c 0070 205b 43ec 000c 3018 4a40 6600 00a4 7012 7405 323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d": [
+              ["match", "fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+              ["skip", 1],
+              {
+                "5340 12d8 51c8 fffc": "LDos_ProV1_00_LgetVar",
+                "5340 2209 12d8 51c8": "LDos_ProV1_00_LdeleteVar"
+              }
+            ]
+          }
+        ],
+        "0188 d3fc 0000 031a 229b 205b 48e7 0014 3018": {
+          "2c6d 0188 43ee 000c 2449 5340 6b06 12d8 51c8 fffc 12bc 0000 206d 0188 d1fc 0000 02fe 208a 2c6e 0074 206d 0188 d1fc 0000 02fc 226d 0188 d3fc 0000 030a 246d 0188 d5fc 0000 0460": "LDos_ProV1_10_Lfreq",
+          "2c6d 0188 43ee 000c 2449 5340 6b06 12d8 51c8 fffc 12bc 0000 206d 0188 d1fc 0000 02fe 208a 2c6e 0074 206d 0188 d1fc 0000 02fc 226d 0188 d3fc 0000 030a 246d 0188 d5fc 0000 0462": "LDos_ProV1_00_Lfreq"
+        },
+      "0188 d3fc 0000 05a8 2c51 201b 245b 3a1a 5345": "LDos_ProV1_10_LrexxSendMsg",
+      "0188 d3fc 0000 05a8 2c51 205b 3018 5340 0c30": "LDos_ProV1_10_LrexxExecute",
+      "0188 d3fc 0000 05a8 2c51 226d 0188 d3fc 0000": "LDos_ProV1_10_LrexxRemoveHost",
+      "0188 d3fc 0000 05a8 2c51 4a91 6600 0008 7018": "LDos_ProV1_10_LrexxMakeHost",
+      "0188 d3fc 0000 05a8 2c59 4a91 6600 0008 700e": "LDos_ProV1_10_LrexxReply",
+      "0188 d3fc 0000 05a8 4aa9 0004 6700 0008 700d": "LDos_ProV1_10_LrexxGetMsg",
+      "0188 d3fc 0000 05aa 2c51 201b 245b 3a1a 0c32": "LDos_ProV1_00_LrexxSendMsg",
+      "0188 d3fc 0000 05aa 2c51 205b 3018 5340 0c30": "LDos_ProV1_00_LrexxExecute",
+      "0188 d3fc 0000 05aa 2c51 226d 0188 d3fc 0000": "LDos_ProV1_00_LrexxRemoveHost",
+      "0188 d3fc 0000 05aa 2c51 4a91 6600 00a4 7018": "LDos_ProV1_00_LrexxMakeHost",
+      "0188 d3fc 0000 05aa 2c59 4a91 6600 00a4 700e": "LDos_ProV1_00_LrexxReply",
+      "0188 d3fc 0000 05aa 4aa9 0004 6700 00a4 700d": "LDos_ProV1_00_LrexxGetMsg",
+      "0198 2c78 0004 237c 0000 0009 001c 4eae fe38": "Lserial_ProV1_00_LserStatus",
+      "0198 337c 0009 001c 2c78 0004 4eae fe38 2629": "Lserial_ProV1_00_LserQuery",
+      "0198 337c 0009 001c 2c78 0004 4eae fe38 2829": {
+        "0020 4a84 6700 003a b8bc 0000 fa00 6500 0008 7003 6000": "Lserial_ProV1_00_LserRead",
+        "0020 4a84 6700 00da b8bc 0000 fa00 6500 00a8 7003 7405": "Lserial_ProV1_00_ALT_LserRead"
+      },
+      "0198 d3fc 0000 0074 2c78 0004 4eae fe2c 2600": "Lserial_ProV1_00_LserMulCheck"
+    },
+    "000e 241b": {
+      "205b 226d": {
+        "0188 2c69 0070 43e9 000c 2209 3018 5340 6a00 0008 7003 6000": "LDos_ProV1_10_LsetProt",
+        "0188 2c69 0070 43e9 000c 2209 3018 5340 6a00 00a4 7003 7405": "LDos_ProV1_00_LsetProt"
+      },
+      "2a1b 6100": [
+        ["skip", 1],
+        {
+          "4a45 6600 0008 7000 6000": "LDos_ProV1_10_Lseek",
+          "4a45 6600 00a4 7000 7405": "LDos_ProV1_00_Lseek"
+        }
+      ]
+    },
+    "000e 245b": "LDos_ProV1_10_Ldecompress",
+    "000e 246d": {
+      "0188 2c6a 0070 45ea 000c 2f00": {
+        "200a 0280 ffff fffc 0680 0000 0004 2440 201f 220a 4eae ff40 2612 7400 4cdf 7000": "LDos_ProV1_00_LsysStamp",
+        "200a 0280 ffff fffc 0680 0000 0004 2440 201f 220a 4eae ff40 263c 0000 0006 6100": "LDos_ProV1_00_LsysTime"
+      },
+      "0188 d5fc 0000 0502 284a 78ff": "LDos_ProV1_10_LgetFreqDir",
+      "0188 d5fc 0000 0504 284a 78ff": "LDos_ProV1_00_LgetFreqDir",
+      "0188 d5fc 0000 0586 284a 78ff": "LDos_ProV1_10_LgetFreqFile",
+      "0188 d5fc 0000 0588 284a 78ff": "LDos_ProV1_00_LgetFreqFile"
+    },
+    "000e 261b": {
+      "241b 2a1b 6100": [
+        ["skip", 1],
+        {
+          "4a45 6600 0008 7000 6000": [
+            ["skip", 1],
+            ["match", "5345 cafc 0004 2c6d 0188 49f6 5000 4a94 6600 0008 7002 6000"],
+            ["skip", 1],
+            {
+              "2214 2c6e 0070 4eae ffd0 4cdf 7000 2600 4e75": "LDos_ProV1_10_Lsave",
+              "2214 2c6e 0070 4eae ffd6 2600 7400 4cdf 7000": "LDos_ProV1_10_Lload"
+            }
+          ],
+          "4a45 6600 00a4 7000 7405": [
+            ["match", "323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+            ["skip", 1],
+            ["match", "5345 cafc 0004 2c6d 0188 49f6 5000 4a94 6600 00a4 7002 7405 323c ffff 33c1 00df f180 33c2 00df f102 51c9 fff2 51ca ffea 2c00 2c6d 0188 2c6e 007c 7200 206d fff8 4ea8 0120 7000 323c 001e 41fa 0016 4eae ffa6 7201 206d fff8 4ea8 0120 2006 6000 0052 000a 0f20 2055 4e52 4547 4953 5445 5245 4420 5348 4152 4557 4152 4520 7665 7273 696f 6e20 6f66 204c 446f 7321 2020 2020 4175 7468 6f72 2072 6561 6c6c 7920 7368 6f75 6c64 2072 6567 6973 7465 7221 0000 6000"],
+            ["skip", 1],
+            {
+              "2214 2c6e 0070 4eae ffd0 4cdf 7000 2600 4e75": "LDos_ProV1_00_Lsave",
+              "2214 2c6e 0070 4eae ffd6 2600 7400 4cdf 7000": "LDos_ProV1_00_Lload"
+            }
+          ]
+        }
+      ],
+      "b6bc 0000 0000": {
+        "6200 0008 7004 6000": "Lserial_ProV1_00_LserGet",
+        "6200 00a8 7004 7405": "Lserial_ProV1_00_ALT_LserGet"
+      }
+    },
+    "000e 281b": {
+      "205b 3018 2a1b 6100": [
+        ["skip", 1],
+        {
+          "4a45 6600 0008 7000 6000": "LDos_ProV1_10_Lopen",
+          "4a45 6600 00a4 7000 7405": "LDos_ProV1_00_Lopen"
+        }
+      ],
+      "245b b8bc 0000 0001": "LDos_ProV1_00_Lstr_II"
+    },
+    "000e 286d": {
+      "0188 206c 0080 b1fc ffff ffff 6700": {
+        "00a0 2010 e580 2040 b1fc 0000 0000 6700 0098": "LDos_ProV1_10_LdevNext",
+        "00a0 2010 e580 2040 b1fc 0000 0000 6700 0134": "LDos_ProV1_00_LdevNext"
+      },
+      "0188 206d 0188 d1fc 0000 0294 4a90": {
+        "6600 0008 7007 6000": "LDos_ProV1_10_LcatNext",
+        "6600 00a4 7007 7405": "LDos_ProV1_00_LcatNext"
+      },
+      "0188 2c6c 0070 206e 0022 2028 0018": "LDos_ProV1_00_LdevFirst",
+      "0188 49ec 000c 41fa 005a 20cc 201b": "LDos_ProV1_10_LdiskFont",
+      "0188 49ec 000c 41fa 0192 20cc 201b": "LDos_ProV1_00_LdiskFont",
+      "0198 4aac 000e 6700 0008 7000 6000": "Lserial_ProV1_00_LserOpen",
+      "0198 4aac 000e 6700 00a8 7000 7405": "Lserial_ProV1_00_ALT_LserOpen"
+    },
+    "000e 2a1b": [
+      ["match", "6100"],
+      ["skip", 1],
+      {
+        "4a45 6600 0008 7000 6000": "LDos_ProV1_10_Lclose",
+        "4a45 6600 00a4 7000 7405": "LDos_ProV1_00_Lclose"
+      }
+    ],
+    "000e 2c6d": {
+      "0188 43ee 000c 2209": "LDos_ProV1_00_Lexecute",
+      "0248 4dee 016a 2c9b": "JD_ProV5_30_JdExval_II",
+      "0248 4dee 01c2 2c9b": "JD_ProV4_60_JdExval_II",
+      "0248 4dee 01e6 2cfc": "JD_ProV5_90_JdExval_II"
+    },
+    "000e 2c78": {
+      "0004 203c ffff ffff 4eae feb6 41fa 0196": "LDos_ProV1_00_Lrun",
+      "0004 226d 0188 d3fc 0000 02c8 4aa9 0010": "LDos_ProV1_00_LdeviceClose",
+      "0004 226d 0198 201b 1340 004f 235b 0038": "Lserial_ProV1_00_LserParams",
+      "0004 226d 0198 337c 0009 001c 4eae fe38": "Lserial_ProV1_00_Lcarrier",
+      "0004 226d 0198 337c 000a 001c 4eae fe38": "Lserial_ProV1_00_LserBrk",
+      "0004 226d 0198 337c 000b 001c 2a1b 2345": "Lserial_ProV1_00_LserBaud",
+      "0004 226d 0198 d3fc 0000 0052 4aa9 0010": "Lserial_ProV1_00_LserClose"
+    },
+    "000e 41fa": {
+      "000e 41fa 056a 20bc": "Ercole_ProV1_70_Cli",
+      "000e 41fa ffd8 2b48": "Ercole_ProV1_70_PropOn"
+    },
+    "000e 42ad": "Ercole_ProV1_70_PropOff",
+    "000e 48e7": {
+      "0010 266d 0248 47eb 0212 26bc 0000 0000": "JD_ProV5_30_JdExval_IIS",
+      "0010 266d 0248 47eb 0216 26bc 0000 0000": "JD_ProV5_90_JdExval_IIS",
+      "0010 266d 0248 47eb 026a 26bc 0000 0000": "JD_ProV4_60_JdExval_IIS"
+    },
+    "000e 4cdb": {
+      "0300 3018 48e7 0010 266d 0248 47eb 01f6": "JD_ProV5_30_JdCompare",
+      "0300 3018 48e7 0010 266d 0248 47eb 01fa": "JD_ProV5_90_JdPattern",
+      "0300 3018 48e7 0010 266d 0248 47eb 024e": "JD_ProV4_60_JdCompare"
+    },
+    "000e 7000": "Lserial_ProV1_00_LserMulSend",
+    "000e 70ff": {
+      "246d 0268 4aaa 00b2 6714 4aaa 00be 670e": "GUI_ProV1_50B_GuiAslFont__I",
+      "246d 0268 4aaa 00b2 671a 4aaa 00ba 6714": "GUI_ProV1_50B_GuiAslScreen",
+      "246d 0268 4aaa 00dc 6714 4aaa 00e8 670e": "GUI_ProV1_61_GuiAslFont__I",
+      "246d 0268 4aaa 00dc 671a 4aaa 00e4 6714": "GUI_ProV1_61_GuiAslScreen",
+      "246d 0268 4aaa 00dc 6732 4aaa 00ec 672c": "GUI_ProV1_70_GuiAslScreen",
+      "246d 0268 4aaa 00dc 6736 4aaa 00ec 6730": "GUI_ProV1_70B_GuiAslScreen",
+      "246d 0268 4aaa 00e2 6736 4aaa 00f2 6730": "GUI_ProV1_75_GuiAslScreen",
+      "246d 0268 4aaa 0128 6736 4aaa 014c 6730": "GUI_ProV2_00_GuiAslScreen"
+    },
+    "000e 7600": {
+      "225b 0c59 0000 6700 0074 48e7 0010 266d 0248 47eb 0212 2689": "JD_ProV5_90_JdCount",
+      "225b 0c59 0000 6700 0078 48e7 0010 266d 0248 47eb 020e 2689": "JD_ProV5_30_JdCount",
+      "225b 0c59 0000 6700 0078 48e7 0010 266d 0248 47eb 0266 2689": "JD_ProV4_60_JdCount"
+    },
+    "000e 7e00": {
+      "205b 221b 225b 3018 2448 2400 5340 de18": "LDos_ProV1_00_Lcrypt",
+      "205b 221b 225b 3018 b07c 0004 6400 0008": "LDos_ProV1_10_Ldecrypt",
+      "205b 221b 225b 3018 b07c 0004 6400 00a4": "LDos_ProV1_00_Ldecrypt"
+    },
+    "0010 266d": {
+      "0208 47eb 0060 2613 4cdf 0800 4e75": "JDInt_ProV1_30_JdIntclass",
+      "0228 47eb 014c 2013 4cdf 0800 b0bc": {
+        "0000 0001 6600 0004": "JDColour_ProV2_00_JdSetoutputAmiga",
+        "0000 0001 6700 0004": "JDColour_ProV2_00_JdSetoutputAmos"
+      },
+      "0248 47eb 0036 2613 4cdf 0800 4e75": "JD_ProV5_30_JdCharX",
+      "0248 47eb 003a 2613 4cdf 0800 4e75": "JD_ProV5_30_JdCharY",
+      "0248 47eb 003e 2613 4cdf 0800 4e75": "JD_ProV5_90_JdCharY",
+      "0248 47eb 0048 2613 4cdf 0800 4e75": "JD_ProV4_60_JdCharX",
+      "0248 47eb 004c 2613 4cdf 0800 4e75": "JD_ProV4_60_JdCharY",
+      "0248 47eb 0176 26bc 0000 0000 266d": "JD_ProV5_30_JdResetArea",
+      "0248 47eb 017a 26bc 0000 0000 266d": "JD_ProV5_90_JdResetArea",
+      "0248 47eb 01ce 26bc 0000 0000 266d": "JD_ProV4_60_JdResetArea"
+    },
+    "0012 266d": {
+      "00f8 2c78 0004 202b": "Music_ProV2_00_TalkStop",
+      "01d8 4a2b 00fe 6714": "DoomMusic_ProV2_00_SidForward",
+      "01d8 4a2b 00fe 6718": "DoomMusic_ProV2_00_SidRewind"
+    },
+    "001e 201b": "Int_ProV1_00_WbPutChr",
+    "001e 205b": {
+      "41fa b9a2 2010 b0bc 0000 0000 67ff 0000": "Personnal_ProV1_00B_MplotSave",
+      "4280 3018 b0bc 0000 0001 6dff 0000 0130": "Personnal_ProV1_00B_MplotLoad",
+      "4280 3018 b0bc 0000 0001 6dff ffff ffd2": "Personnal_ProV1_00B_AgaIconLoad",
+      "45fa bddc 0c92 0000 0000 67ff 0000 00aa": "Personnal_ProV1_00B_AgaIconSave"
+    },
+    "001e 206d": {
+      "01d8 4a28 007c 670c": "DoomMusic_ProV2_00_Fc13Stop",
+      "01d8 4a28 0088 670c": "DoomMusic_ProV2_00_Fc14Stop",
+      "01d8 4a28 0094 670c": "DoomMusic_ProV2_00_SmonStop",
+      "01d8 4a28 00a0 670c": "DoomMusic_ProV2_00_Sfx13Stop",
+      "01d8 4a28 00ac 670c": "DoomMusic_ProV2_00_DbStop",
+      "01d8 4a28 00ba 670c": "DoomMusic_ProV2_00_TfmxStop",
+      "01d8 4a28 00e6 670c": "DoomMusic_ProV2_00_S3mStop",
+      "01d8 4a28 00f2 670c": "DoomMusic_ProV2_00_XmStop",
+      "0208 41e8 0122 48e7": "JDInt_ProV1_30_JdRemIntzones",
+      "0268 41e8 0398 2c6d": "GUI_ProV2_00_GuiClipRead",
+      "fff4 4ea8 0038 48e7": "JDColour_ProV2_00_JdRprint",
+      "fffc 4ea8 0084 206d": "AMOS_ProV2_00_SpriteUpdate",
+      "fffc 4ea8 00d0 206d": "AMOS_ProV2_00_BobDraw",
+      "fffc 4ea8 00d8 206d": "AMOS_ProV2_00_BobUpdate",
+      "fffc 4ea8 00d8 4cdf": "AMOS_ProV2_00_BobClear"
+    },
+    "001e 221b": {
+      "201b": {
+        "0481 0000 0001 0480 0000 0001 c0fc 0006 c2fc 0006 49fa b2e0": "Personnal_ProV1_00B_MplotDpf2Draw",
+        "0481 0000 0001 0480 0000 0001 c0fc 0006 c2fc 0006 49fa b416": "Personnal_ProV1_00B_MplotDpf1Draw",
+        "0481 0000 0001 0480 0000 0001 c0fc 0006 c2fc 0006 49fa b85e": "Personnal_ProV1_00B_MplotDraw"
+      },
+      "6b00": "Amon_ProV1_04_FastCircle"
+    },
+    "001e 226d": {
+      "01d8 d2fc 181a 2c79 0000 0004 4eae fe68 48e7 0010 266d 01d8 d6fc 15f0 2680 4cdf 0800 2c40 4eae feaa 4cdf 7800 4e75": "Delta_ProV1_60_DeltaWbToFront",
+      "01d8 d2fc 181a 2c79 0000 0004 4eae fe68 48e7 0010 266d 01d8 d6fc 15f0 2680 4cdf 0800 2c40 4eae feb0 4cdf 7800 4e75": "Delta_ProV1_60_DeltaWbToBack"
+    },
+    "001e 246d": {
+      "01d8 206a 0034 3628 002e 48c3 7400 4cdf": "DoomMusic_ProV2_00_P61SongLength",
+      "01d8 266a 0002 266b 0028 7000 102b 0003": "DoomMusic_ProV2_00_ThxEnd",
+      "01d8 4a2a 0052 670e 2c6a 004a 4eae ffa0": "DoomMusic_ProV2_00_DmedPrevPatt",
+      "01d8 4a2a 0052 670e 2c6a 004a 4eae ffa6": "DoomMusic_ProV2_00_DmedNextPatt",
+      "01d8 4a2a 0060 670e 2c6a 0058 4eae ffa0": "DoomMusic_ProV2_00_OmedPrevPatt",
+      "01d8 4a2a 0060 670e 2c6a 0058 4eae ffa6": "DoomMusic_ProV2_00_OmedNextPatt",
+      "01d8 4a2a 006e 670e 2c6a 0066 4eae ff8e": "DoomMusic_ProV2_00_OmixPrevPatt",
+      "01d8 4a2a 006e 670e 2c6a 0066 4eae ff94": "DoomMusic_ProV2_00_OmixNextPatt",
+      "01d8 4a2a 007c 670e 2c6a 0074 4eae ffc4": "DoomMusic_ProV2_00_Fc13PrevPatt",
+      "01d8 4a2a 007c 670e 2c6a 0074 4eae ffca": "DoomMusic_ProV2_00_Fc13NextPatt",
+      "01d8 4a2a 0088 670e 2c6a 0080 4eae ffc4": "DoomMusic_ProV2_00_Fc14PrevPatt",
+      "01d8 4a2a 0088 670e 2c6a 0080 4eae ffca": "DoomMusic_ProV2_00_Fc14NextPatt",
+      "01d8 4a2a 0094 670e 2c6a 008c 4eae ffca": "DoomMusic_ProV2_00_SmonPrevPatt",
+      "01d8 4a2a 0094 670e 2c6a 008c 4eae ffd0": "DoomMusic_ProV2_00_SmonNextPatt",
+      "01d8 4a2a 00a0 670e 2c6a 0098 4eae ffb8": "DoomMusic_ProV2_00_Sfx13PrevPatt",
+      "01d8 4a2a 00a0 670e 2c6a 0098 4eae ffbe": "DoomMusic_ProV2_00_Sfx13NextPatt",
+      "01d8 4a2a 00ac 670e 2c6a 00a4 4eae ffa0": "DoomMusic_ProV2_00_DbPrevPatt",
+      "01d8 4a2a 00ac 670e 2c6a 00a4 4eae ffa6": "DoomMusic_ProV2_00_DbNextPatt",
+      "01d8 4a2a 00ba 670e 2c6a 00b2 4eae ffac": "DoomMusic_ProV2_00_TfmxNextPatt",
+      "01d8 4a2a 00ba 670e 2c6a 00b2 4eae ffb2": "DoomMusic_ProV2_00_TfmxPrevPatt",
+      "01d8 4a2a 00e6 670e 2c6a 00de 4eae ffca": "DoomMusic_ProV2_00_S3mNextPatt",
+      "01d8 4a2a 00e6 670e 2c6a 00de 4eae ffd0": "DoomMusic_ProV2_00_S3mPrevPatt",
+      "01d8 4a2a 00f2 670e 2c6a 00ea 4eae ffc4": "DoomMusic_ProV2_00_XmNextPatt",
+      "01d8 4a2a 00f2 670e 2c6a 00ea 4eae ffca": "DoomMusic_ProV2_00_XmPrevPatt",
+      "0228 45ea 015c 7000 206d 052c 3028 0060": [
+        ["match", "5380 b0bc 0000 001f 6f00 0004 700f 48e7 0010 266d 0228 47eb 0158 2680 4cdf 0800 48e7 8000 2200 6100"],
+        ["skip", 1],
+        ["match", "2401 6100"],
+        ["skip", 1],
+        {
+          "d443 d242 34c1 4cdf 0001 51c8 ffe4 48e7 0010 266d 0228 47eb 0158 2013 4cdf 0800 246d 0228 45ea 015c 243c 0000 0fff 321a": "JDColour_ProV2_00_JdDarkestColour",
+          "d443 d242 34c1 4cdf 0001 51c8 ffe4 48e7 0010 266d 0228 47eb 0158 2013 4cdf 0800 246d 0228 45ea 015c 7400 321a b441 6c00": "JDColour_ProV2_00_JdLightestColour"
+        }
+      ]
+    },
+    "001e 266d": {
+      "01c8 206b 01be 2c6b 00ea 4eae ff82 4cdf": "Game_ProV0_90_GSwapBuffers",
+      "0268 277c 0000 0000 02fe 45eb 0240 740f": "GUI_ProV1_70B_TcpClose",
+      "0268 277c 0000 0000 030e 45eb 024c 740f": "GUI_ProV1_75_TcpClose"
+    },
+    "001e 286d": {
+      "01d8 266c 0002 4a54": {
+        "663a 38bc 0001 2c6b": "DoomMusic_ProV2_00_ThxCont",
+        "676c 2c6b 0028 426e": "DoomMusic_ProV2_00_ThxNextPatt",
+        "67e6 2c6b 0028 426e": "DoomMusic_ProV2_00_ThxPrevPatt"
+      },
+      "0278 201b 0c80 0000": {
+        "0015 6e12": "Int_ProV1_00_WbWindowBase",
+        "0063 6e16": "Int_ProV1_00_WbScreenBase"
+      },
+      "0278 201b 0c80 ffff": "Int_ProV1_00_WbScreenNum",
+      "0278 201b 2940 0dfa": "Int_ProV1_00_WbAslInfo",
+      "0278 202c 0de6 0c80": {
+        "ffff ffff 6712 2040": "Int_ProV1_00_WbMoveScreen",
+        "ffff ffff 6722 2040": "Int_ProV1_00_WbScreenOffset"
+      },
+      "0278 205b 4280 3018": "Int_ProV1_00_WbAslDir",
+      "0278 206c 0a96 2068": "Int_ProV1_00_WbFile",
+      "0278 222b 0020 2401": "Int_ProV1_00_WbPalette",
+      "0278 245b 301a 0c40": "Int_ProV1_00_WbAslPattern",
+      "0278 262c 0e02 7400": "Int_ProV1_00_WbCurrentWindow",
+      "0278 2c1b 0c86 0000": "Int_ProV1_00_WbCloseScreen",
+      "0278 2c1b 202c 0de6": "Int_ProV1_00_WbLoadRgb",
+      "0278 2e1b 201b 6700": "Int_ProV1_00_WbGetIffPalette",
+      "0278 2e2c 0b66 42ac": "Int_ProV1_00_WbDefault",
+      "0278 3e2c 0d94 6100": "Int_ProV1_00_WbGtString",
+      "0278 41ec 0864 302c": "Int_ProV1_00_WbOpenScreen",
+      "0278 41ec 0b02 7017": "Int_ProV1_00_WbDtImageToScreen",
+      "0278 4287 3e2c 0d94": [
+        ["match", "6100"],
+        ["skip", 1],
+        {
+          "4a80 6700 009e 2c00": "Int_ProV1_00_WbSetGtString",
+          "4a80 671c 2240 2269": "Int_ProV1_00_WbDrawMode",
+          "4a80 673c 2240 41ec": "Int_ProV1_00_WbActivateGt",
+          "4a80 6768 2240 2269": "Int_ProV1_00_WbBox"
+        }
+      ],
+      "0278 43ec 0e4c 7025": "Int_ProV1_00_WbSaveIff",
+      "0278 43ec 16ba 201b": "Int_ProV1_00_WbPasteIcon",
+      "0278 4aac 0d8c 6604": "Int_ProV1_00_WbGtGadget",
+      "0278 7000 201b 3940": "Int_ProV1_00_WbWindowNum",
+      "0278 7200 201b d280": "Int_ProV1_00_WbScreenFlags",
+      "0278 7c00 2c1b 7a00": "Int_ProV1_00_WbDraw",
+      "0278 7e00 3e2c 0d94": "Int_ProV1_00_WbIntuitext"
+    },
+    "001e 2c6d": {
+      "02b8 206d 0248 41e8 0136": "JD_ProV5_30_JdDate",
+      "02b8 206d 0248 41e8 013a": "JD_ProV5_90_JdDate",
+      "02b8 206d 0248 41e8 018e": "JD_ProV4_60_JdDate"
+    },
+    "001e 2c79": {
+      "0000 0004 202d e752 48e7 0010 266d 0248 47eb 001e": "JD_ProV5_30_JdTextfont",
+      "0000 0004 202d e752 48e7 0010 266d 0248 47eb 0022": "JD_ProV5_90_JdTextfont",
+      "0000 0004 226d 0248 43e9 001e 4eae fe68 48e7 0010": "JD_ProV4_60_JdTextfont"
+    },
+    "001e 2e13": "Personnal_ProV1_00B_AgaReserveIcon",
+    "001e 2e1b": {
+      "2c1b 2a1b babc 0000 0001 6dff 0000 008a": "Personnal_ProV1_00B_AgaGetIcon",
+      "2c1b 2a1b babc 0000 0001 6dff 0000 0090": "Personnal_ProV1_00B_AgaPasteIcon"
+    },
+    "001e 2f09": {
+      "226d 0248 d2fc 2bca 7000 1011 225f 0280 0000 0001 0c80 0000 0001 6600 003a": "Jotre_ProV1_00_StopThx",
+      "226d 0248 d2fc 2bca 7000 1011 225f 0280 0000 0001 0c80 0000 0001 6600 006c": "Jotre_ProV1_00_DeinitThx",
+      "226d 0248 d2fc 2bca 7000 1011 225f 0280 0000 0001 0c80 0000 0001 6700 004c": "Jotre_ProV1_00_InitThx"
+    },
+    "001e 2f0d": "AMOS_ProV2_00_Update",
+    "001e 2f2d": "FD25_ProV1_00_LvoWaitselect",
+    "001e 3e2d": "EasyLife_ProV1_09_MuiInput",
+    "001e 41fa": "Personnal_ProV1_00B_MplotReserve",
+    "001e 4286": "Int_ProV1_00_WbJoy",
+    "001e 45fa": {
+      "bb46 2012": "Personnal_ProV1_00B_MplotErase",
+      "bfb8 2012": "Personnal_ProV1_00B_AgaEraseIcon"
+    },
+    "001e 48e7": {
+      "0010 266d 0248 47eb 0032 2053 4cdf 0800": "JD_ProV5_30_JdPrint",
+      "0010 266d 0248 47eb 0036 2053 4cdf 0800": "JD_ProV5_90_JdPrint",
+      "0010 266d 0248 47eb 0044 2053 4cdf 0800": "JD_ProV4_60_JdPrint"
+    },
+    "001e 6100": [
+      "push",
+      "follow-rel",
+      {  
+        "226d 01d8 d2fc": "Delta_ProV1_60_DeltaBeepAll",
+        "226d 0238 43e9": [
+          "pop",
+          ["skip", 1],
+          {
+            "4cdf 7800 206d 0238 41e8 01e2 201b 6b00": [
+              ["skip", 1],
+              {
+                "b0bc 0000 0002 6c00": [
+                  ["skip", 1],
+                  {
+                    "3140 00a8 48e7 001e": "Prt_ProV1_40_JdPrtImage",
+                    "3140 00aa 48e7 001e": "Prt_ProV1_40_JdPrtAspect"
+                  }
+                ],
+                "b0bc 0000 0004 6c00": "Prt_ProV1_40_JdPrtShade"
+              }
+            ],
+            "4cdf 7800 206d 0238 41e8 01e2 201b b0bc": [
+              ["match", "0000 0001 6b00"],
+              ["skip", 1],
+              {
+                "b0bc 0000 0008 6c00": "Prt_ProV1_40_JdPrtDensity",
+                "b0bc 0000 0010 6c00": "Prt_ProV1_40_JdPrtThreshold"
+              }
+            ]
+          }
+        ],
+        "261b 6100 003e": {
+          "2703 c6fc 0004 206d 0248 41e8 0a44 2e30": "JD_ProV5_30_JdDrawAngle",
+          "2703 c6fc 0004 206d 0248 41e8 0a7c 2e30": "JD_ProV4_60_JdDrawAngle",
+          "261b 6100 003e 2703 c6fc 0004 206d 0248": "JD_ProV5_90_JdDrawAngle"
+        },
+    "48e7 0010 266d": {
+      "0208 47eb 0000 2253": [
+        "pop",
+        ["skip", 1],
+        {
+          "3629 0024": "JDInt_ProV1_30_JdIntcursX",
+          "3629 0026": "JDInt_ProV1_30_JdIntcursY"
+        }
+      ],
+      "0208 47eb 0000 2813": "JDInt_ProV1_30_JdIntevent",
+      "48e7 0010 266d 0248": [
+        "pop",
+        ["skip", 1],
+        {
+          "48e7 0010 266d": "JD_ProV4_60_JdInstall",
+          "4cdf 7800 221b": "JD_ProV4_60_JdGetNumber",
+          "4cdf 7800 225b": "JD_ProV4_60_JdLinstr",
+          "4cdf 7800 245b": "JD_ProV4_60_JdPaste",
+          "4cdf 7800 2e1b": "JD_ProV4_60_JdDetab",
+          "4cdf 7800 3e3c": "JD_ProV4_60_JdOct_"
+        }
+      ]
+    },
+    "48e7 c01e 2f0e": "Int_ProV1_00_WbMouseKey",
+    "48e7 fffe 48e7": [
+      "pop",
+      ["skip", 1],
+      {
+        "48e7 0010 266d 0248 584b 2053 4cdf 0800 41e8 0618 2648 43fa 0020": "JD_ProV5_30_JdInstall",
+        "4cdf 7800 245b 225b 205b 48e7 001e 48e7 0010 266d 0248 47eb 01fa": "JD_ProV5_30_JdPaste",
+        "48e7 0010 266d 0248 504b 2053 41e8 0618 4cdf 0800 2648 43fa 0020": "JD_ProV5_90_JdInstall",
+        "4cdf 7800 245b 225b 205b 48e7 001e 48e7 0010 266d 0248 47eb 01fe": "JD_ProV5_90_JdPaste"
+      }
+    ],
+    "48e7 fffe 4eb9": [
+      "pop",
+      ["skip", 1],
+      {
+        "206d fffc 4ea8 0034 4a41 6600 fff0": "JD_ProV4_60_JdMwait",
+        "206d fffc 4ea8 0034 4a41 66f0 6100": "JD_ProV5_90_JdMwait"
+      }
+    ]
+    }
+    ],
+    "001e 7000": {
+      "4239 00bf": "Int_ProV1_00_WbClearKey",
+      "6100 001a": "JDK_ProV1_10_JdToggleClick",
+      "7600 1039": "Int_ProV1_00_WbKeycode"
+    },
+    "001e 7004": "DoomMusic_ProV2_00_PtmEnd",
+    "001e 7e00": "JDColour_ProV2_00_JdPseudoPalette",
+    "0022 205b": {
+      "3018 6744 246d 01f8 226a 0010 2c6a 0014": "Make_ProV1_20_MaFilelen",
+      "3018 6744 246d 01f8 226a 0020 2c6a 0024": "Main_ProV1_30_MaFilelen"
+    },
+    "0022 221b": "Main_ProV1_30_MaFclose",
+    "003e 2a1b": "Int_ProV1_00_WbScroll",
+    "0062 225b": "Main_ProV1_30_MaFopen",
+    "00f0 286d": {
+      "0278 262c 0a8a 7400": "Int_ProV1_00_WbMenu",
+      "0278 3e2c 0d94 6100": [
+        ["skip", 1],
+        {
+          "4a80 2040 262c 0a86": "Int_ProV1_00_WbItem",
+          "4a80 2040 262c 0a8e": "Int_ProV1_00_WbSubItem"
+        }
+      ]
+    },
+    "00fe 201b": "Game_ProV0_90_GScreen",
+    "00fe 203c": "Game_ProV0_90_GGetscr",
+    "00fe 206d": {
+      "01c8 2028 012c 4a80": "Game_ProV0_90_GReset",
+      "01c8 43e8 01f6 2029": "Game_ProV0_90_GDefPalette"
+    },
+    "00fe 266d": {
+      "01c8 202b 012c 4a80 6700 0042 2c6b 012c": "Game_ProV0_90_GCloseGms",
+      "01c8 203c 0000 00c8 223c 0001 0000 2c78": "Game_ProV0_90_GMakeRp",
+      "01c8 266d 01c8 202b 012c 4a80 6700 0008": "Game_ProV0_90_GInitGms",
+      "01c8 266d 01c8 2c6b 012c 202b 0195 49eb": "Game_ProV0_90_GCls",
+      "01c8 266d 01c8 2c6b 012c 206b 0b2e 362b": "Game_ProV0_90_GYMouse",
+      "01c8 266d 01c8 2c6b 012c 206b 0b2e 4eae": "Game_ProV0_90_GXMouse",
+      "01c8 2c6b 0058 206b 00d0 4eae ffac 2600": "Game_ProV0_90_GPtlength",
+      "01c8 2c6b 0058 206b 00d0 4eae ffb2 2600": "Game_ProV0_90_GPtpos",
+      "01c8 2c6b 0058 206b 00d0 4eae ffc4 4cdf": "Game_ProV0_90_GPtunpause",
+      "01c8 2c6b 0058 206b 00d0 4eae ffca 4cdf": "Game_ProV0_90_GPtpause",
+      "01c8 2c6b 00ea 4eae ffc4 4cdf 7f00 4e75": "Game_ProV0_90_GUpdate",
+      "01c8 2c78 0004 206b 0b22 4a88 6700 007a": "Game_ProV0_90_GIconCheck",
+      "01c8 2c78 0004 43eb 0020 203c 0000 0000": "Game_ProV0_90_GOpenReqtools",
+      "01c8 41eb 0352 2608 7400 4cdf 7f00 4e75": "Game_ProV0_90_GGetmem",
+      "01c8 7009 08c1 0000 243c 0001 86a0 41eb": "Game_ProV0_90_GInitEncyrpt",
+      "01c8 9dce 91c8 2c6b 0058 6700 0016 206b": "Game_ProV0_90_GPtstop"
+    },
+    "00fe 286d": "Int_ProV1_00_WbBoolGadget",
+    "00fe 2c78": {
+      "0004 266d 01c8 226b 000c 4eae fe62 4cdf 7f00 4e75": "Game_ProV0_90_GCloseReq",
+      "0004 266d 01c8 226b 001c 4eae fe62 4cdf 7f00 4e75": "Game_ProV0_90_GCloseReqtools",
+      "0004 266d 01c8 226b 0b36 202b 0b3a 4eae fed4 4cdf": "Game_ProV0_90_GUnhandicap",
+      "0004 266d 01c8 93c9 4eae feda 2740 0b36 2240 203c": "Game_ProV0_90_GHandicap"
+    },
+    "031e 2c6d": "OSDevKit_ProV1_61_Call",
+    "07fe 286d": "Int_ProV1_00_WbEvent",
+    "0f1e 2c6d": {
+      "e75a 4eae feaa 4cdf 78f0": [
+        "tail-call",
+        {
+          "7400 7600 4a80 6702": "EasyLife_ProV1_09_ElwbTest",
+          "4a80 6712 48e7 e75a": "EasyLife_ProV1_09_ElwbClose"
+        }
+      ],
+      "e75a 4eae ff2e 4cdf 78f0": "EasyLife_ProV1_09_ElwbOpen"
+    },
+    "0f1e 2e1b": "Int_ProV1_00_WbFindString",
+    "0ffe 286d": "Int_ProV1_00_WbAslReq",
+    "c01e 286d": {
+      "0278 7000 7200 2940 0190 201b 2200 201b": "Int_ProV1_00_WbWindowFlags",
+      "0278 7000 7200 2940 0dca 201b 2200 201b": "Int_ProV1_00_WbWindowIds",
+      "0278 7e00 3e2c 0d94 cefc 0004 45ec 04f4": "Int_ProV1_00_WbMenuTitle"
+    },
+    "c01e 307c": "Int_ProV1_00_WbFlashScreen",
+    "c03e 286d": {
+      "0278 7800 7a00 281b da84 281b da84 281b da84 281b da84 41ec 0698": "Int_ProV1_00_WbMenuItem",
+      "0278 7800 7a00 281b da84 281b da84 281b da84 281b da84 41ec 06ac": "Int_ProV1_00_WbMenuSubItem"
+    },
+    "c0f0 266d": {
+      "00f8 202b 0004 671a 426b 0004": "Music_ProV2_00_MusicStop",
+      "00f8 42ab 0004 426b 008c 6100": "Music_ProV2_00_MusicOff"
+    },
+    "c0fe 286d": [
+      ["match", "0278 7e00 3e2c 0d94 6100"],
+      ["skip", 1],
+      {
+        "2240 670e 7600 3629 000c 7400 4cdf 7f03": "Int_ProV1_00_WbMousey",
+        "2240 670e 7600 3629 000e 7400 4cdf 7f03": "Int_ProV1_00_WbMousex"
+      }
+    ],
+    "e0e2 206d": {
+      "00f8 2028 05d4 6716": "Music_ProV2_00_MedCont",
+      "00f8 4a28 05d8 670c": "Music_ProV2_00_MedStop",
+      "01d8 4a28 0052 670c": "DoomMusic_ProV2_00_DmedStop",
+      "01d8 4a28 0060 670c": "DoomMusic_ProV2_00_OmedStop",
+      "01d8 4a28 006e 670c": "DoomMusic_ProV2_00_OmixStop",
+      "01d8 4a28 00fe 6718": "DoomMusic_ProV2_00_SidStop"
+    },
+    "e0e2 246d": {
+      "e0e2 246d 0168 222a 02a0 670c 2c6d 02b8": "AMCAF_ProV1_19_ExamineStop",
+      "e0e2 246d 0168 222a 037c 670c 2c6d 02b8": "AMCAF_ProV1_40_EN_ExamineStop"
+    },
+    "f81e 286d": "Int_ProV1_00_WbMenuOn",
+    "ff1e 286d": "Int_ProV1_00_WbFillBox",
+    "ff7e 286d": "Int_ProV1_00_WbImageToWindow",
+    "ffe0 08ed": "AMOS_ProV2_00__Test_PaSaut",
+    "fffe 246d": {
+      "01b8 3e2a 00f4 6700": "PowerBobs_ProBETA6_PspriteErase",
+      "01b8 3e2a 024c 6700": "PowerBobs_ProV1_00_PspriteErase"
+    },
+    "fffe 286d": {
+      "0278 245b 301a 225b": "Int_ProV1_00_WbTitles",
+      "0278 2e1b 2f07 6100": "Int_ProV1_00_WbCloseWindow",
+      "0278 41fa e728 42a8": "Int_ProV1_00_WbOpenWindow",
+      "0278 4aac 0dee 6616": "Int_ProV1_00_WbIffToBank",
+      "0278 7000 201b 7e00": [
+        ["match", "3e2c 0d94 2f00 6100"],
+        ["skip", 1],
+        {
+          "4a80 6720 2240 201f 2269 0032 2f0e 2c6d e752 4eae fea4 2c5f 4cdf 7fff 429b 6100": "Int_ProV1_00_WbBackPen",
+          "4a80 6720 2240 201f 2269 0032 2f0e 2c6d e752 4eae feaa 2c5f 4cdf 7fff 429b 6100": "Int_ProV1_00_WbFrontPen"
+        }
+      ],
+      "0278 7200 221b 7000": {
+        "201b 7e00 3e2c 0d94 2f00 6100": "Int_ProV1_00_WbMoveWindow",
+        "201b 7e00 3e2c 0d94 48e7 8100": "Int_ProV1_00_WbText"
+      },
+      "0278 7600 261b 7400": "Int_ProV1_00_WbEllipse"
+    },
+    "fffe 48e7": {
+      "00fe 203c 0000 0064": "Game_ProV0_90_GPalette",
+      "00fe 48e7 00fe 266d": "Game_ProV0_90_GIconify_SS"
+    }
+  },
+  "48ed": "AMOS_ProV2_00__SaveRegs",
+  "4a28": "Misc_ProV1_00_PalOn",
+  "4a2d": "AMOS_ProV2_00_CloseWorkbench",
+  "4a53": [
+    ["match", "6600"],
+    ["skip", 1],
+    {
+      "201b 6700": "MusiCRAFT_ProV1_00_StLoad",
+      "281b 221b": "CRAFT_ProV1_00_HexDump_III"
+    }
+  ],
   "4a6d": {
     "0414 6772": "AMOS_ProV2_00_Assign",
     "052a 6700": [
