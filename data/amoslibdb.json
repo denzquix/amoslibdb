@@ -1,6 +1,79 @@
 {
 "dispatch": {
   "count": 1,
+  "43fa": {
+    "0006 2709": "EasyLife_ProV1_09_MuiNew_S",
+    "0006 6000": [
+      "push",
+      "follow-rel",
+      {
+        "0603 0030 1343": [
+          "pop",
+          ["skip", 1],
+          {
+            "1b42 3000": "AMOS_ProV2_00_Paper_I_V",
+            "1b44 3000": "AMOS_ProV2_00_CursPen",
+            "1b50 3000": "AMOS_ProV2_00_Pen_I_V"
+          }
+        ],
+        "4a6d 052a 6700": [
+          "pop",
+          ["skip", 1],
+          {
+            "0c00": "AMOS_ProV2_00_Home",
+            "1900": "AMOS_ProV2_00_Clw",
+            "1a00": "AMOS_ProV2_00_Cline_V",
+            "1b43": {
+              "3000": "AMOS_ProV2_00_CursOff",
+              "3100": "AMOS_ProV2_00_CursOn"
+            },
+            "1b49": {
+              "3000": "AMOS_ProV2_00_InverseOff",
+              "3100": "AMOS_ProV2_00_InverseOn"
+            },
+            "1b4d": {
+              "3000": "AMOS_ProV2_00_MemorizeX",
+              "3100": "AMOS_ProV2_00_RememberX",
+              "3200": "AMOS_ProV2_00_MemorizeY",
+              "3300": "AMOS_ProV2_00_RememberY"
+            },
+            "1b53": {
+              "3000": "AMOS_ProV2_00_ShadeOff",
+              "3100": "AMOS_ProV2_00_ShadeOn"
+            },
+            "1b55": {
+              "3000": "AMOS_ProV2_00_UnderOff",
+              "3100": "AMOS_ProV2_00_UnderOn"
+            },
+            "1b56": {
+              "3000": "AMOS_ProV2_00_ScrollOff",
+              "3100": "AMOS_ProV2_00_ScrollOn"
+            },
+            "1c00": "AMOS_ProV2_00_Cright_V",
+            "1d00": "AMOS_ProV2_00_Cleft_V",
+            "1e00": "AMOS_ProV2_00_Cup_V",
+            "1f00": "AMOS_ProV2_00_Cdown_V"
+          }
+        ],
+        "b6bc 0000 0004": [
+          "pop",
+          ["skip", 1],
+          {
+            "1000 1100 1200 1300": "AMOS_ProV2_00_Hscroll",
+            "1400 1500 1600 1700": "AMOS_ProV2_00_Vscroll"
+          }
+        ]
+      }
+    ],
+    "000c 206d": "AMOS_ProV2_00__CRet",
+    "0022 7000": "TurboPlus_ProV2_00_Debug",
+    "0024 235b": "EasyLife_ProV1_09_MuiSet_III",
+    "df40 d3fc": "Personnal_ProV1_00B_ScreenYSize",
+    "df60 2611": "Personnal_ProV1_00B_ScreenXSize",
+    "e184 2051": "Personnal_ProV1_00B_CopperNextLine",
+    "e358 2051": "Personnal_ProV1_00B_XFade",
+    "e410 2611": "Personnal_ProV1_00B_Test"
+  },
   "4493": [
     "tail-call",
     {
