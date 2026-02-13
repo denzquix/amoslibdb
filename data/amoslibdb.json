@@ -1,6 +1,181 @@
 {
 "dispatch": {
   "count": 1,
+
+  "41e8": "AMOS_ProV2_00__InRestore1",
+  "41ed": "AMOS_ProV2_00_DefaultPalette",
+  "41f9": {
+    "00bf d000": {
+      "43f9 00bf": "AMCAF_ProV1_50B4_EN_Pjoy",
+      "7600 7400": "AMCAF_ProV1_50B4_EN_Pfire"
+    },
+    "00bf d0c8": "JD_ProV4_60_JdCheckprt",
+    "00df f004": "IntuiExtend_ProV1_60_SysAgnus",
+    "00df f07d": "IntuiExtend_ProV1_60_SysChip",
+    "else": [
+      "push",
+      "follow-abs",
+      {
+        "0281 0000 3fff 6700": [
+          ["skip", 1],
+          ["match", "2001 6100"],
+          "follow-rel",
+          ["match", "7200 6100"],
+          "follow-rel",
+          {
+            "48e7 c000 7001 6100": "AMOS_ProV2_00_SpriteBase",
+            "48e7 c000 7002 6100": "AMOS_ProV2_00_IconBase"
+          }
+        ],
+        "4461 7461 2020 2020": [
+          "pop",
+          ["skip", 2],
+          {
+            "7201": "AMOS_ProV2_00_ReserveAsData",
+            "7203": "AMOS_ProV2_00_ReserveAsChipData"
+          }
+        ],
+        "48e7 fffe 6100 00b8": "AMOS_ProV2_00_DevFirst",
+        "576f 726b 2020 2020": [
+          "pop",
+          ["skip", 2],
+          {
+            "7200": "AMOS_ProV2_00_ReserveAsWork",
+            "7202": "AMOS_ProV2_00_ReserveAsChipWork"
+          }
+        ]
+      }
+    ]
+  },
+  "41fa": {
+    "0008 2608 7402": "AMCAF_ProV1_50B4_EN_AmcafVersion",
+    "0008 2708 6000": [
+      "follow-rel",
+      {
+        "205b 3018 b07c 0001": "AMCAF_ProV1_50B4_EN_Itemstr_SI",
+        "245b 341a 5342 6500": [
+          ["skip", 1],
+          {
+            "225b 7000 3019 6716 5340 650e 1219 3602": "CRAFT_ProV1_00_LeftTrim_S",
+            "225b 7000 3019 6718 d2c0 5340 650e 1221": "CRAFT_ProV1_00_RightTrim_S"
+          }
+        ]
+      }
+    ],
+    "0010 215b 0006": "IntuiExtend_ProV1_60_WbTag",
+    "0012 7400 7600": "EasyLife_ProV1_44_Elcompiled",
+    "00d6 7400 7600": "EasyLife_ProV1_09_Elcompiled",
+    "1064 208d 48e7": "Lserial_ProV1_00_Lxpr",
+    "1384 208d 48e7": "Lserial_ProV1_00_ALT_Lxpr",
+    "b49e 221b 20db": "Personnal_ProV1_00B_MplotOrigin",
+    "b884 2610 4e75": "Personnal_ProV1_00B_MplotBase",
+    "bdec 2610 4e75": "Personnal_ProV1_00B_AgaIconBase",
+    "c070 43fa c41a": "Personnal_ProV1_00B_SwapPlanes",
+    "ca0c 2093 205b": "Personnal_ProV1_00B_S32VerticeToScreen",
+    "caa8 2093 205b": "Personnal_ProV1_00B_S32BlockToScreen",
+    "d642 2010 b0bc": "Personnal_ProV1_00B_ActiveCopper",
+    "da5e 208b 2013": "Personnal_ProV1_00B_MosaicX32",
+    "db22 201b 43fa": "Personnal_ProV1_00B_CopperWaitLine",
+    "db4c 208b 2013": "Personnal_ProV1_00B_MosaicX16",
+    "dc3a 208b 2013": "Personnal_ProV1_00B_MosaicX8",
+    "dcfe 208b 2013": "Personnal_ProV1_00B_MosaicX4",
+    "dda6 208b 2013": "Personnal_ProV1_00B_MosaicX2",
+    "dde8 209b 41fa": "Personnal_ProV1_00B_IffConvert",
+    "e110 2610 243c": "Personnal_ProV1_00B_CopperLine",
+    "e230 208b 2053": "Personnal_ProV1_00B_CreateStandard",
+    "e2ba 2610 243c": "Personnal_ProV1_00B_CopperBase__I",
+    "e3d2 281b 261b": "Personnal_ProV1_00B_NewColorValue"
+  },
+  "4267": {
+    "2003 6100": "AMOS_ProV2_00__InLineInputH",
+    "2803 6700": "AMOS_ProV2_00_Pload"
+  },
+  "426d": {
+    "0772": "AMOS_ProV2_00_MenuMouseOff",
+    "094c": "AMOS_ProV2_00_EveryGosub",
+    "09c6": [
+      "tail-call",
+      {
+        "206d 050a": [
+          ["match", "4210 206d 050e 4210 6100"],
+          ["skip", 1],
+          "tail-call",
+          {
+            "3b7c 0001 04ba 206d": "AMOS_ProV2_00_DirW",
+            "426d 04ba 3b6d 04bc": "AMOS_ProV2_00_Dir"
+          }
+        ],
+        "2443 6100": [
+          ["skip", 1],
+          "tail-call",
+          {
+            "3b7c 0001 04ba 206d": "AMOS_ProV2_00_DirW_S",
+            "426d 04ba 3b6d 04bc": "AMOS_ProV2_00_Dir_S_V"
+          }
+        ]
+      }
+    ],
+    "0a04": "AMOS_ProV2_00_Radian",
+    "ff70": "AMOS_ProV2_00_AmosUnlock"
+  },
+  "4280": {
+    "205b 3018 5340 226d": "SLN_ProV2_00_SDelete",
+    "2700 273c 0000 0001": "SLN_ProV2_00_SAeraseAll",
+    "4281 2c1b 241b 225b": "SLN_ProV2_00_SCompare"
+  },
+  "4282": {
+    "4283 0839 0002 00bf": "SLN_ProV2_00_SMouseButton",
+    "4283 203c 0000 0007": "SLN_ProV2_00_SIfree"
+  },
+  "4283": "SLN_ProV2_00_SDiskDevCheck",
+  "4287": "SLN_ProV2_00_SSamLoad_S",
+  "42a3": [
+    "tail-call",
+    {
+      "222b": "AMOS3D_ProV1_02_TdBackground_IIIIIII",
+      "246d": {
+        "0168 226d": "AMCAF_ProV1_50B4_EN_ChangeFont_SI",
+        "0168 6100": "AMCAF_ProV1_50B4_EN_PtPlay_I",
+        "01d8 6100": "DoomMusic_ProV2_00_SidPlay_I",
+        "0278 2052": "P61_ProV1_10_P61Fade_I"
+      },
+      "6100": [
+        "follow-rel",
+        ["match", "246d 0278 4a6a 0010 6706 7202 6100"],
+        "follow-rel",
+        {
+          "48e7 3f3e 4df9 00df f000 6106 4cdf 7cfc 4e75 5341 6b12 5341 6b74 5341 6b00 03b8": "P61_ProV1_10_P61Play_I",
+          "48e7 3f3e 4df9 00df f000 6106 4cdf 7cfc 4e75 5341 6b12 5341 6b74 5341 6b00 03bc": "P61_ProV1_20_P61Play_I"
+        }
+      ],
+      "70ff": "AMCAF_ProV1_50B4_EN_TurboText_IIS"
+    }
+  ],
+  "42ad": {
+    "0526 2403": "AMOS_ProV2_00_SetTempras_II",
+    "0526 4e75": "AMOS_ProV2_00_SetTempras"
+  },
+  "43ed": {
+    "e762 2011 6724 246d 01a8 246a 034e 2240": "Turbo_ProV1_90_BuildStaticBlock",
+    "e762 2011 6724 246d 01a8 246a 0350 2240": "TurboPlus_ProV1_00_BuildStaticBlock"
+  },
+  "43f9": {
+    "00bf e101 7600 7400 201b 6712 b03c 0001 6600": [
+      ["skip", 1],
+      {
+        "0811 0004 6602 76ff": "AMCAF_ProV1_50B4_EN_Pjup",
+        "0811 0005 6602 76ff": "AMCAF_ProV1_50B4_EN_Pjdown",
+        "0811 0006 6602 76ff": "AMCAF_ProV1_50B4_EN_Pjleft",
+        "0811 0007 6602 76ff": "AMCAF_ProV1_50B4_EN_Pjright"
+      }
+    ],
+    "00df f000 206d 052c 3e28 0050 3c28 00b2 e246": {
+      "3a28 004e ed45 dc45 7200 243c 01f0 0000": "TurboPlus_ProV2_00_BlitClear",
+      "3a28 004e ed45 dc45 7200 74ff 201b 6b38": "Turbo_ProV1_90_BlitClear",
+      "3a28 004e ed45 dc45 7200 74ff 246d 01a8": "TurboPlus_ProV1_00_BlitClear"
+    },
+    "00df f000 337c 8400 0096 0829 0006 0002 66f2": "AMCAF_ProV1_50B4_EN_BlitterWait"
+  },
   "43fa": {
     "0006 2709": "EasyLife_ProV1_09_MuiNew_S",
     "0006 6000": [
