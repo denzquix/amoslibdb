@@ -2,6 +2,83 @@
 "dispatch": {
   "count": 1,
 
+  "3079": {
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0004 12fc 0031 12fc 0038 12fc 0035": "Delta_ProV1_40_DeltaEnglishMile",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0006 12fc 0030 12fc 002e 12fc 0030": "Delta_ProV1_40_DeltaInch",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0006 12fc 0030 12fc 002e 12fc 0033": "Delta_ProV1_40_DeltaFeet",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0006 12fc 0030 12fc 002e 12fc 0039": "Delta_ProV1_40_DeltaYard",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0007 12fc 0030 12fc 002e 12fc 0035": "Delta_ProV1_40_DeltaEuler",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0007 12fc 0031 12fc 0038 12fc 0035": "Delta_ProV1_40_DeltaAmericanMile",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0009 12fc 0030 12fc 002e 12fc 0030": "Delta_ProV1_40_DeltaDegree",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0009 12fc 0035 12fc 0037 12fc 002e": "Delta_ProV1_40_DeltaRadian",
+    "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0016 12fc 0044 12fc 0065 12fc 006c": "Delta_ProV1_40_DeltaAbout"
+  },
+  "3200": "AMOS_ProV2_00__Plt",
+  "323c": "AMOS_ProV2_00_Space",
+  "33fc": {
+    "0000 00df f09a 4e75": "Delta_ProV1_40_DeltaInterOn",
+    "0000 00df f1dc 2078": "AMCAF_ProV1_50B4_EN_SetNtsc",
+    "0000 00df f1fc 33fc": "Personnal_ProV1_00B_AgaOff",
+    "0020 00df f096 4e75": "IntuiExtend_ProV1_60_WbMouseOff",
+    "0020 00df f1dc 2078": "AMCAF_ProV1_50B4_EN_SetPal",
+    "0080 00df f1dc 4e75": "IntuiExtend_ProV1_60_Switch72",
+    "4000 00df f09a 4e75": "Delta_ProV1_40_DeltaInterOff",
+    "8020 00df f096 4e75": "IntuiExtend_ProV1_60_WbMouseOn"
+  },
+  "3403": {
+    "673a e54a": "AMOS_ProV2_00__DProc2F",
+    "6756 e54a": "AMOS_ProV2_00__DProc2D"
+  },
+  "343c": {
+    "4000": "AMOS_ProV2_00_VrevBlock",
+    "8000": "AMOS_ProV2_00_HrevBlock"
+  },
+  "362d": {
+    "052a 5343 48c3": "AMOS_ProV2_00_Screen__I",
+    "0a02 426d 0a02": "AMOS_ProV2_00_Choice",
+    "ea7c 48c3 4e75": "JDColour_ProV2_00_JdMouse",
+    "ff72 0c43 0000": "SLN_ProV2_00_SIconify",
+    "ffea 48c3 4e75": "AMOS_ProV2_00_PrgState"
+  },
+  "363c": "IntuiExtend_ProV1_30B_PalNegativ",
+  "3802": "AMOS_ProV2_00_Val",
+  "382d": "AMOS_ProV2_00__Test_Force",
+  "3b43": "AMOS_ProV2_00_ColourBack",
+  "3b7c": {
+    "0000 ff70": "GUI_ProV1_50B_GuiAmos",
+    "0001 0772": "AMOS_ProV2_00_MenuMouseOn",
+    "0001 09c6": [
+      "tail-call",
+      {
+        "206d 050a": [
+          ["match", "4210 206d 050e 4210 6100"],
+          ["skip", 1],
+          "tail-call",
+          {
+            "3b7c 0001 04ba 206d": "AMOS_ProV2_00_LdirW",
+            "426d 04ba 3b6d 04bc": "AMOS_ProV2_00_Ldir"
+          }
+        ],
+        "2443 6100": [
+          ["skip", 1],
+          "tail-call",
+          {
+            "3b7c 0001 04ba 206d": "AMOS_ProV2_00_LdirW_S",
+            "426d 04ba 3b6d 04bc": "AMOS_ProV2_00_Ldir_S"
+          }
+        ]
+      }
+    ],
+    "ffff 094c": "AMOS_ProV2_00_EveryProc",
+    "ffff 0a04": "AMOS_ProV2_00_Degree"
+  },
+  "3c3c": "IntuiExtend_ProV1_60_QuickScroll",
+  "3f3c": {
+    "0001 2f3c": "AMOS_ProV2_00_OpenOut",
+    "0002 2f3c": "AMOS_ProV2_00_OpenIn",
+    "0007 2f3c": "AMOS_ProV2_00_OpenPort",
+    "002c 2003": "AMOS_ProV2_00__InInputH"
+  },
   "41e8": "AMOS_ProV2_00__InRestore1",
   "41ed": "AMOS_ProV2_00_DefaultPalette",
   "41f9": {
