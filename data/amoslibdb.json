@@ -2,6 +2,109 @@
 "dispatch": {
   "count": 1,
 
+  "303c": {
+    "0001": "AMOS_ProV2_00_Append",
+    "0080": "AMOS_ProV2_00_OpenRandom",
+    "03e8": "AMOS_ProV2_00_Edit",
+    "03e9": "AMOS_ProV2_00_Direct",
+    "03ea": "AMOS_ProV2_00_System",
+    "fde4": "AMOS3D_ProV1_02_TdSurface",
+    "fdfc": "AMOS3D_ProV1_02_TdObject",
+    "fe16": {
+      "323c 0024 7400 246d": "AMOS3D_ProV1_02_TdMoveX",
+      "323c 0024 7401 246d": "AMOS3D_ProV1_02_TdMoveY",
+      "323c 0024 7402 246d": "AMOS3D_ProV1_02_TdMoveZ",
+      "323c 0034 7400 246d": "AMOS3D_ProV1_02_TdAngleA",
+      "323c 0034 7401 246d": "AMOS3D_ProV1_02_TdAngleB",
+      "323c 0034 7402 246d": "AMOS3D_ProV1_02_TdAngleC"
+    },
+    "fe22": {
+      "323c 0014 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdLoad",
+      "323c 0018 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdDir"
+    },
+    "fe32": {
+      "323c 004c 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdAnim",
+      "323c 004c 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdAnimRel",
+      "323c 0058 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdSetZone"
+    },
+    "fe36": {
+      "323c 0028 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdMove",
+      "323c 002c 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdMoveRel",
+      "323c 0038 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdAngle",
+      "323c 003c 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdAngleRel",
+      "323c 0084 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdSurfacePoints",
+      "323c 00a4 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdRotate"
+    },
+    "fe38": "AMOS3D_ProV1_02_TdSetColour",
+    "fe3a": {
+      "323c 0074 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdForward",
+      "323c 0090 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdPriority",
+      "323c 0098 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdPragma",
+      "323c 009c 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdDeleteZone"
+    },
+    "fe3c": {
+      "323c 0004 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdScreenHeight",
+      "323c 0020 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdKill"
+    },
+    "fe3e": {
+      "323c 001c 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdClearAll",
+      "323c 0084 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdSurfacePointsOff"
+    },
+    "fe66": {
+      "323c 0064 7404 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldX_IIII",
+      "323c 0064 7405 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldY_IIII",
+      "323c 0064 7406 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldZ_IIII",
+      "323c 0068 7404 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewX_IIII",
+      "323c 0068 7405 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewY_IIII",
+      "323c 0068 7406 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewZ_IIII",
+      "323c 0078 740c 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdFace_IIII",
+      "323c 007c 740c 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingA_IIII",
+      "323c 007c 740d 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingB_IIII",
+      "323c 007c 740e 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingR_IIII"
+    },
+    "fe68": {
+      "323c 006c 7404 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdScreenX_III",
+      "323c 006c 7405 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdScreenY_III"
+    },
+    "fe6a": {
+      "323c 0048 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdRange",
+      "323c 0050 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdAnimPointX",
+      "323c 0050 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdAnimPointY",
+      "323c 0050 7402 246d 0128 4eea": "AMOS3D_ProV1_02_TdAnimPointZ",
+      "323c 005c 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdCollide_II",
+      "323c 0060 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdZoneX",
+      "323c 0060 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdZoneY",
+      "323c 0060 7402 246d 0128 4eea": "AMOS3D_ProV1_02_TdZoneZ",
+      "323c 0060 7403 246d 0128 4eea": "AMOS3D_ProV1_02_TdZoneR",
+      "323c 0078 7408 246d 0128 4eea": "AMOS3D_ProV1_02_TdFace_II",
+      "323c 007c 7408 246d 0128 4eea": "AMOS3D_ProV1_02_TdBearingA_II",
+      "323c 007c 7409 246d 0128 4eea": "AMOS3D_ProV1_02_TdBearingB_II",
+      "323c 007c 740a 246d 0128 4eea": "AMOS3D_ProV1_02_TdBearingR_II",
+      "323c 0094 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdPragmaStatus"
+    },
+    "fe6c": {
+      "323c 0030 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdPositionX",
+      "323c 0030 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdPositionY",
+      "323c 0040 7400 246d 0128 4eea": "AMOS3D_ProV1_02_TdAttitudeA",
+      "323c 0040 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdAttitudeB",
+      "323c 0044 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdVisible",
+      "323c 005c 7401 246d 0128 4eea": "AMOS3D_ProV1_02_TdCollide_I",
+      "323c 008c 246d 0128 4eea fdd0": "AMOS3D_ProV1_02_TdAdvanced"
+    },
+    "fe6e": {
+      "323c 0064 7400 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldX",
+      "323c 0064 7401 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldY",
+      "323c 0064 7402 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdWorldZ",
+      "323c 0068 7400 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewX",
+      "323c 0068 7401 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewY",
+      "323c 0068 7402 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdViewZ",
+      "323c 006c 7400 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdScreenX",
+      "323c 006c 7401 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdScreenY",
+      "323c 007c 7400 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingA",
+      "323c 007c 7401 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingB",
+      "323c 007c 7402 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdBearingR"
+    }
+  },
   "3079": {
     "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0004 12fc 0031 12fc 0038 12fc 0035": "Delta_ProV1_40_DeltaEnglishMile",
     "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0006 12fc 0030 12fc 002e 12fc 0030": "Delta_ProV1_40_DeltaInch",
