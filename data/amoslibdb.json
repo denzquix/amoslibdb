@@ -2,6 +2,62 @@
 "dispatch": {
   "count": 1,
 
+  "2e3c": {
+    "0000 0002": "SLN_ProV2_00_SSamChipLoad_S",
+    "0000 008b": [
+      ["match", "6100"],
+      "push",
+      "follow-rel",
+      {
+        "246d 0258 d4fc 0000": "IntuiExtend_ProV2_01B_WbPubscreenName",
+        "2607 5283 0243 fffe": [
+          "pop",
+          ["skip", 1],
+          {
+            "3e18 226d 0258 d2fc 00e6 7c00 6100": "IntuiExtend_ProV1_60_WbPubscreenName",
+            "3e18 226d 0258 d2fc 0122 7c00 6100": "IntuiExtend_ProV1_30B_WbPubscreenName"
+          }
+        ]
+      }
+    ],
+    "8000 587e": [
+      "tail-call",
+      ["match", "6100"],
+      ["skip", 1],
+      {
+        "225b 5489 6100": "EasyLife_ProV1_09_ElxpkBsave_IISS",
+        "2c1b 5486 6100": "EasyLife_ProV1_09_ElxpkSave_ISS"
+      }
+    ]
+  },
+  "2f00": "Game_ProV0_90_GExit",
+  "2f03": {
+    "201b": "AMOS_ProV2_00_Bsave",
+    "6b00": "AMOS_ProV2_00_IffAnim_SII"
+  },
+  "2f06": "AMOS_ProV2_00__Modulo",
+  "2f08": {
+    "206d": {
+      "00f8 4a28 05ee 672c": "Music_ProV2_00_TrackStop",
+      "00f8 4a28 0be6 6748": "EME_ProV3_00DEMO_TrackStop"
+    },
+    "246d": [
+      ["match", "09f6 4e92 6b00"],
+      ["skip", 1],
+      {
+        "b6bc 8000 0000 670a b43c 0002 6708": "AMOS_ProV2_00__InReadS",
+        "b6bc 8000 0000 6710 5302 6710 6a00": "AMOS_ProV2_00__InReadF",
+        "b6bc 8000 0000 6710 5302 6b0e 6600": "AMOS_ProV2_00__InRead"
+      }
+    ],
+    "6100": "AMOS_ProV2_00__InResume1"
+  },
+  "2f0c": {
+    "286d 0020 206c fcd0": "AMOS_ProV2_00_KillEditor",
+    "286d 0020 206c fcd8": "AMOS_ProV2_00_CloseEditor",
+    "286d 0020 206c fce0": "AMOS_ProV2_00_PrgUnder",
+    "2f0e 2c79 0000 0004": "CoolStars_ProV1_00_CstarsReserve"
+  },
   "2f0e": {
     "201b": {
       "225b 2209 6708 2c78": "Main_ProV1_30_MaFreemem",
