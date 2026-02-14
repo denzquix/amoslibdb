@@ -2,6 +2,283 @@
 "dispatch": {
   "count": 1,
 
+  "2f0e": {
+    "201b": {
+      "225b 2209 6708 2c78": "Main_ProV1_30_MaFreemem",
+      "225b 2c78 0004 4eae": "Make_ProV1_20_MaFreemem"
+    },
+    "205b": {
+      "225b 247c 0000 0000 2c6d e75a 4eae fe32": "IntuiExtend_ProV1_30B_WbActivateGadget",
+      "225b 95ca 2c6d e75a 4eae fe32 2c5f 4e75": "IntuiExtend_ProV1_60_WbActivateGadget",
+      "225b 95ca 2c6d e75a 4eae ff46 2c5f 4e75": "IntuiExtend_ProV1_30B_WbOnGadget",
+      "225b 95ca 2c6d e75a 4eae ff52 2c5f 4e75": "IntuiExtend_ProV1_30B_WbOffGadget",
+      "2268 003e 7000 2c6d e75a 4eae fe44 2c5f": "IntuiExtend_ProV1_30B_WbRemoveAllGedget",
+      "2c78 0004 4eae fefe 2600 7400 2c5f 4e75": "Make_ProV1_20_MaRemhead",
+      "5448 2c6d e75a 221b 7000 4eae ffa6 2c5f": "IntuiExtend_ProV1_30B_WbDisplayAlert"
+    },
+    "206d": {
+      "0258 d0fc 0090 201b 3140 000c 201b 3140 0008 201b 3140 0006 201b 3140 0004 201b 3140 0002 201b 3080 2c6d": "IntuiExtend_ProV2_01B_WbScreenOpen",
+      "0258 d0fc 0090 201b 3140 000c 201b 3140 0008 201b 3140 0006 201b 3140 0004 201b 3140 0002 201b 3140 0000": "IntuiExtend_ProV1_60_WbScreenOpen",
+      "0258 d0fc 00cc 201b 3140 000c 201b 3140 0008 201b 3140 0006 201b 3140 0004 201b 3140 0002 201b 3140 0000": "IntuiExtend_ProV1_30B_WbScreenOpen",
+      "0258 d0fc 0701 4a10 6738 2c78 0004 4eae ff7c 4eae ff88 206d e752 1028 00ec 0880 0001 0880 0002 0880 0003": "IntuiExtend_ProV1_60_WbKillAga"
+    },
+    "221b": {
+      "201b 2c78 0004 4eae ff3a 2c5f 2600 4e75": "Make_ProV1_20_MaAllocmem",
+      "201b 5080 5880 2400 2c78 0004 4eae ff3a": "Make_ProV1_20_MaMalloc",
+      "201b 5880 2400 2c78 0004 4eae ff3a 4a80": "Make_ProV1_20_MaAllocvec"
+    },
+    "225b": {
+      "2009 670a 2021 2c78 0004 4eae": "Main_ProV1_30_MaFreevec",
+      "2009 6718 43e9 fff4 2449 2c78": "Main_ProV1_30_MaFree",
+      "2021 2c78 0004 4eae ff2e 2c5f": "Make_ProV1_20_MaFreevec",
+      "205b 2c78 0004 4eae ff0a 2c5f": "Make_ProV1_20_MaAddtail",
+      "205b 2c78 0004 4eae ff10 2c5f": "Make_ProV1_20_MaAddhead",
+      "205b 95ca 2c6d e75a 4eae ffd6": "IntuiExtend_ProV1_30B_WbInsertGadget",
+      "2069 003e 7000 2c6d e75a 4eae": "IntuiExtend_ProV1_30B_WbRefreshAllGadget",
+      "2c78 0004 4eae ff04 2c5f 4e75": "Make_ProV1_20_MaRemove",
+      "43e9 fff4 2449 2c78 0004 4eae": "Make_ProV1_20_MaFree"
+    },
+    "245b": {
+      "206d 0268 41e8 0398 2c6d 02b8 2208 243c 0000 03ee 4eae ffe2 4a80 6774 2800 3c1a 48c6 2c78 0004 2006": "GUI_ProV2_00_GuiClipWrite",
+      "246a 0056 2c78 0004 204a 4eae fe80 204a 4eae fe8c 2240 2469 0014 206d 0258 d0fc 0074 4290 42a8 0004": "IntuiExtend_ProV1_30B_GetMsg",
+      "246a 0056 2c78 0004 204a 4eae fe80 204a 4eae fe8c 2240 2469 0014 206d 0258 d0fc 0078 3169 0018 0000": "IntuiExtend_ProV1_60_GetMsg",
+      "246a 0056 2c79 0000 0004 204a 4eae fe80 204a 4eae fe8c 2240 2469 0014 206d 0258 d0fc 0078 3169 0018": "IntuiExtend_ProV2_01B_GetMsg"
+    },
+    "246d": {
+      "01f8 45ea": "Make_ProV1_20_MaFreeAll",
+      "0228 226a": "AGA_ProV1_00_AgaCls"
+    },
+    "261b": {
+      "241b 221b 6710 2c6d 01f8 2c6e 0024 4eae ffbe 2600 7400 2c5f 4e75": "Main_ProV1_30_MaFseek",
+      "241b 221b 6710 2c6d 01f8 2c6e 0024 4eae ffd0 2600 7400 2c5f 4e75": "Main_ProV1_30_MaFwrite",
+      "241b 221b 6710 2c6d 01f8 2c6e 0024 4eae ffd6 2600 7400 2c5f 4e75": "Main_ProV1_30_MaFread"
+    },
+    "281a": "AMOS_ProV2_00__InNextF",
+    "2c1b": "IntuiExtend_ProV1_30B_WbBlitCopy",
+    "2c6d": {
+      "0258 dcfc 000c 4a96 670c 205b": "IntuiExtend_ProV1_60_WbFreeDiskobject",
+      "0278 201b 205b 2c6e 0000 4eae": {
+        "fee6 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoGethostname",
+        "ff58 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoSeterrnoptr"
+      },
+      "0278 201b 2c6e 0000 4eae ff04": "FD25_ProV1_00_LvoGetprotobynumber",
+      "0278 201b 2c6e 0000 4eae ff40": "FD25_ProV1_00_LvoInetNetof",
+      "0278 201b 2c6e 0000 4eae ff46": "FD25_ProV1_00_LvoInetLnaof",
+      "0278 201b 2c6e 0000 4eae ff52": "FD25_ProV1_00_LvoInetNtoA",
+      "0278 201b 2c6e 0000 4eae ff88": "FD25_ProV1_00_LvoClosesocket",
+      "0278 205b 201b 2c6e 0000 4eae": "FD25_ProV1_00_LvoGetservbyport",
+      "0278 205b 221b 201b 2c6e 0000": "FD25_ProV1_00_LvoIoctlsocket",
+      "0278 205b 2c6e 0000 4eae fed4": "FD25_ProV1_00_LvoGetsocketevents",
+      "0278 205b 2c6e 0000 4eae feda": "FD25_ProV1_00_LvoSocketbasetaglist",
+      "0278 205b 2c6e 0000 4eae ff0a": "FD25_ProV1_00_LvoGetprotobyname",
+      "0278 205b 2c6e 0000 4eae ff22": "FD25_ProV1_00_LvoGetnetbyname",
+      "0278 205b 2c6e 0000 4eae ff2e": "FD25_ProV1_00_LvoGethostbyname",
+      "0278 205b 2c6e 0000 4eae ff34": "FD25_ProV1_00_LvoInetNetwork",
+      "0278 205b 2c6e 0000 4eae ff4c": "FD25_ProV1_00_LvoInetAddr",
+      "0278 221b 201b 205b 2c6e 0000": "FD25_ProV1_00_LvoGethostbyaddr",
+      "0278 221b 201b 2c6e 0000 4eae": {
+        "fef8 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoDup2socket",
+        "ff1c 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoGetnetbyaddr",
+        "ff3a 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoInetMakeaddr",
+        "ff64 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoReleasecopyofsocket",
+        "ff6a 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoReleasesocket",
+        "ffac 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoShutdown",
+        "ffd6 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoListen"
+      },
+      "0278 221b 205b 201b 2c6e 0000": {
+        "4eae feec 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoRecvmsg",
+        "4eae fef2 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoSendmsg",
+        "4eae ffca 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoConnect",
+        "4eae ffdc 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoBind"
+      },
+      "0278 225b 205b 201b 2c6e 0000": {
+        "4eae fefe 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoVsyslog",
+        "4eae ff94 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoGetpeername",
+        "4eae ff9a 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoGetsockname",
+        "4eae ffd0 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoAccept"
+      },
+      "0278 225b 205b 241b 221b 201b": "FD25_ProV1_00_LvoGetsockopt",
+      "0278 225b 205b 2c6e 0000 4eae": "FD25_ProV1_00_LvoGetservbyname",
+      "0278 241b 221b 201b 2c6e 0000": {
+        "4eae ff7c 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoSetsocketsignals",
+        "4eae ffe2 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoSocket"
+      },
+      "0278 241b 221b 205b 201b 2c6e": {
+        "0000 4eae ffb2 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoRecv",
+        "0000 4eae ffbe 2600 7400 2c5f 4e75": "FD25_ProV1_00_LvoSend"
+      },
+      "0278 245b 225b 241b 221b 205b": "FD25_ProV1_00_LvoRecvfrom",
+      "0278 261b 205b 241b 221b 201b": "FD25_ProV1_00_LvoSetsockopt",
+      "0278 261b 225b 241b 221b 205b": "FD25_ProV1_00_LvoSendto",
+      "0278 261b 241b 221b 201b 2c6e": "FD25_ProV1_00_LvoObtainsocket",
+      "0278 2c6e 0000 4eae fee0 2600": "FD25_ProV1_00_LvoGethostid",
+      "0278 2c6e 0000 4eae ff5e 2600": "FD25_ProV1_00_LvoErrno",
+      "0278 2c6e 0000 4eae ff76 2600": "FD25_ProV1_00_LvoGetdtablesize",
+      "02b8 205b 3218 2208 4eae ff6a": {
+        "206d 0258 d0fc 0080 2080 4a80 6700 0006 6000": "IntuiExtend_ProV1_30B_LoadSeg",
+        "206d 0258 d0fc 0084 2080 4a80 6700 0006 6000": "IntuiExtend_ProV1_60_LoadSeg",
+        "206d 0258 d0fc 0084 2080 4a80 6702 6006 20bc": "IntuiExtend_ProV2_01B_LoadSeg"
+      },
+      "02b8 206d 0258 d0fc 0204 2208": "IntuiExtend_ProV2_01B_WbDate",
+      "02b8 206d 0258 d0fc 0222 2208": "IntuiExtend_ProV1_60_WbDate",
+      "02b8 206d 0258 d0fc 02fc 2208": "IntuiExtend_ProV1_30B_WbDate",
+      "02b8 221b 4eae ff64 206d 0258": {
+        "d0fc 0080 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_30B_UnloadSeg",
+        "d0fc 0084 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_60_UnloadSeg"
+      },
+      "02b8 245b 544a 220a 243c 0000": "IntuiExtend_ProV1_30B_WriteMem",
+      "02b8 2e1b 2c1b 2a1b 245b 321a": "IntuiExtend_ProV1_30B_PpWrite",
+      "02b8 4eae ff7c 2c5f 2600 4e75": "CRAFT_ProV1_00_DiscError",
+      "02b8 4eae ffc4 2200 205b 7600": "AMCAF_ProV1_50B4_EN_WriteCli",
+      "02b8 4eae ffc4 2200 670c 205b": "CRAFT_ProV1_00_CliPrint",
+      "02b8 4eae ffc4 2600 4eae ffca": "CRAFT_ProV1_00_CliExecute",
+      "02b8 4eae ffca 262d 0662 4a80": {
+        "6736 206d 0268 2200 2428 02b4 263c 0000": "GUI_ProV2_00_GuiInput",
+        "6736 206d 0268 2200 2428 030c 263c 0000": "GUI_ProV1_70B_GuiInput",
+        "6736 206d 0268 2200 2428 031c 263c 0000": "GUI_ProV1_75_GuiInput"
+      },
+      "e752 201b 225b 4eae fe9e 2c5f": "IntuiExtend_ProV1_30B_WbGfxMode",
+      "e752 201b 4eae fc88 2c5f 4e75": "IntuiExtend_ProV1_30B_WbSetchipRev",
+      "e752 221b 201b 225b 206d 0258": {
+        "d0fc 0084 2410 4eae feb6 2c5f 4e75": "IntuiExtend_ProV1_30B_WbPaint",
+        "d0fc 0088 2410 4eae feb6 2c5f 4e75": "IntuiExtend_ProV1_60_WbPaint"
+      },
+      "e752 221b 201b 225b 4eae febc": "IntuiExtend_ProV1_30B_WbPlot",
+      "e752 221b 201b 225b d069 0024": {
+        "d269 0026 4eae febc 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTurtleplot",
+        "d269 0026 4eae ff0a 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTurtleDraw"
+      },
+      "e752 221b 201b 2a1b 281b 225b": "IntuiExtend_ProV1_30B_WbDraw",
+      "e752 221b 201b 2a1b 281b 261b": "IntuiExtend_ProV1_30B_WbScroll",
+      "e752 225b 201b 3340 0026 241b": "IntuiExtend_ProV1_30B_WbGfxCentre",
+      "e752 261b 2403 221b 201b 225b": "IntuiExtend_ProV1_30B_WbCircle_IIII",
+      "e752 261b 241b 221b 201b 205b": "IntuiExtend_ProV1_30B_WbSetColour",
+      "e752 261b 241b 221b 201b 225b": {
+        "4eae fece 2c5f 4e75": "IntuiExtend_ProV1_30B_WbBar",
+        "4eae ff4c 2c5f 4e75": "IntuiExtend_ProV1_30B_WbEllipse"
+      },
+      "e752 281b 2a1b 2c1b 2e1b 225b": "IntuiExtend_ProV1_30B_WbBox",
+      "e752 281b 2a1b 2c1b 2e1b 241b": "IntuiExtend_ProV1_30B_WbBevelBox",
+      "e752 2e1b 201b 245b 224a 4eae": "IntuiExtend_ProV1_30B_WbGfxInk",
+      "e75a 201b 205b 4eae ff40 2c5f": "IntuiExtend_ProV1_30B_WbOnMenu",
+      "e75a 201b 205b 4eae ff4c 2c5f": "IntuiExtend_ProV1_30B_WbOffMenu",
+      "e75a 201b 205b 4eae ff6a 2c5f": "IntuiExtend_ProV1_30B_WbNewIdcmp",
+      "e75a 201b 205b 4eae ff70 2600": "IntuiExtend_ProV1_30B_WbFindMenuItem",
+      "e75a 205b 225b 95ca 4eae ff22": "IntuiExtend_ProV1_30B_WbRefreshGadget",
+      "e75a 205b 4eae fec8 2c5f 4e75": "IntuiExtend_ProV1_30B_WbWindFront",
+      "e75a 205b 4eae fece 2c5f 4e75": "IntuiExtend_ProV1_30B_WbWindBack",
+      "e75a 205b 4eae ff04 2c5f 4e75": "IntuiExtend_ProV1_30B_WbScreenFront",
+      "e75a 205b 4eae ff0a 2c5f 4e75": "IntuiExtend_ProV1_30B_WbScreenBack",
+      "e75a 205b 4eae ffa0 2c5f 4e75": "IntuiExtend_ProV1_30B_WbDisplayBeep",
+      "e75a 205b 4eae ffb8 206d 0258": {
+        "d0fc 0000 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_30B_WbWindClose",
+        "d0fc 0018 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_60_WbWindClose"
+      },
+      "e75a 205b 4eae ffbe 206d 0258": {
+        "d0fc 0088 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_30B_WbScreenClose",
+        "d0fc 008c 20bc ffff ffff 2c5f 4e75": "IntuiExtend_ProV1_60_WbScreenClose"
+      },
+      "e75a 205b 4eae ffca 2c5f 4e75": "IntuiExtend_ProV1_30B_WbKillMenu",
+      "e75a 221b 201b 205b 225b 4eae": "IntuiExtend_ProV1_30B_WbDrawImage",
+      "e75a 221b 201b 205b 4eae fee0": "IntuiExtend_ProV1_30B_WbWindSize",
+      "e75a 221b 201b 205b 4eae ff58": "IntuiExtend_ProV1_30B_WbWindMove",
+      "e75a 221b 201b 205b 4eae ff5e": "IntuiExtend_ProV1_30B_WbScreenMove",
+      "e75a 225b 205b 4eae fef8 2600": "IntuiExtend_ProV1_30B_WbMenuToWindow",
+      "e75a 225b 205b 95ca 4eae ff1c": "IntuiExtend_ProV1_30B_WbRemoveGadget",
+      "e75a 261b 241b 221b 201b 205b": "IntuiExtend_ProV1_30B_WbWindLimit",
+      "e75a 4eae feaa 2c5f 1b40 04f1": "CRAFT_ProV1_00_WbToFront",
+      "e75a 4eae feb0 2c5f 1b40 04f1": "CRAFT_ProV1_00_WbToBack",
+      "e75a 4eae ff2e 2600 7400 2c5f": "IntuiExtend_ProV1_30B_WbOpen",
+      "e75a 4eae ff2e 2c5f 4a80 57c0": "CRAFT_ProV1_00_OpenWorkbench",
+      "e75a 4eae ffb2 2600 243c 0000": "IntuiExtend_ProV1_30B_WbClose"
+    },
+    "2c78": {
+      "0004 201b 225b 4eae fed4": "IntuiExtend_ProV1_30B_SetTaskpri",
+      "0004 201b 225b 4eae ff2e": "IntuiExtend_ProV1_30B_FreeMem",
+      "0004 203c 0000 005a 223c": {
+        "0001 0001 4eae ff3a 226d 0258 d2fc 018c 2280 0680 0000 0038 226d 0258 d2fc 0184 2280 70ff 4eae feb6 226d 0258 d2fc 0184 2251 42a9 000a 4229 0009 137c 0004 0008 4229 000e 1340 000f 236d ffe4 0010 43e9 0014 2289 5891 2349 0008 226d 0258 d2fc 0184 2251 4eae fe9e 206d": "IntuiExtend_ProV1_60_WbTdOpen",
+        "0001 0001 4eae ff3a 226d 0258 d2fc 018c 2280 0680 0000 0038 226d 0258 d2fc 0184 2280 70ff 4eae feb6 226d 0258 d2fc 0184 2251 42a9 000a 4229 0009 137c 0004 0008 4229 000e 1340 000f 236d ffe4 0010 43e9 0014 2289 5891 2349 0008 226d 0258 d2fc 0184 2251 4eae fe9e 226d": "IntuiExtend_ProV2_01B_WbTdOpen",
+        "0001 0001 4eae ff3a 226d 0258 d2fc 0266 2280 0680 0000 0038 226d 0258 d2fc 025e 2280 70ff 4eae feb6 226d 0258 d2fc 025e 2251 42a9 000a 4229 0009 137c 0004 0008 4229 000e 1340 000f 236d ffe4 0010 43e9 0014 2289 5891 2349 0008 226d 0258 d2fc 025e 2251 4eae fe9e 206d": "IntuiExtend_ProV1_30B_WbTdOpen"
+      },
+      "0004 221b 201b 4eae ff3a": "IntuiExtend_ProV1_30B_AllocMem",
+      "0004 221b 4eae ff28 2600": "IntuiExtend_ProV1_30B_AvailMem",
+      "0004 225b 201b 4eae ff34": "IntuiExtend_ProV1_30B_AllocAbs",
+      "0004 226d 0258 d2fc 0038": {
+        "4eae fdd8": "IntuiExtend_ProV1_30B_PpCrunch",
+        "7000 4eae": "IntuiExtend_ProV1_30B_PpDecrunch"
+      },
+      "0004 246d 0258 d4fc 004c": "IntuiExtend_ProV1_30B_PpFree",
+      "0004 2e1b 2c07 2247 4eae": "IntuiExtend_ProV1_30B_WbTdClose",
+      "0004 4eae fd66 2c5f 2600": "IntuiExtend_ProV1_60_WbCreateMsgport",
+      "0004 4eae ff76 2c5f 4e75": "CRAFT_ProV1_00_MultiOn",
+      "0004 4eae ff7c 2c5f 4e75": "CRAFT_ProV1_00_MultiOff",
+      "0004 7600 162e 0213 7400": "IntuiExtend_ProV1_30B_PowerFreq",
+      "0004 93c9 4eae feda 2240": {
+        "7000 4eae fed4 2c5f 4e75": "TurboPlus_ProV1_00_MultiYes",
+        "7014 4eae fed4 2c5f 4e75": "TurboPlus_ProV1_00_MultiNo"
+      }
+    },
+    "303c": {
+      "0013 261b 383c ffff": "IntuiExtend_ProV1_30B_WbNewHslideGadget",
+      "0013 261b 78ff 221b": "IntuiExtend_ProV1_60_WbNewHslideGadget",
+      "0015 363c ffff 281b": "IntuiExtend_ProV1_30B_WbNewVslideGadget",
+      "0015 76ff 281b 72ff": "IntuiExtend_ProV1_60_WbNewVslideGadget",
+      "0017 281b 261b 241b": "IntuiExtend_ProV1_30B_WbNewMslideGadget_IIII"
+    },
+    "6100": [
+      ["skip", 1],
+      {
+        "206d 0258 d0fc 0000 4a90 6724 2c50 201b": "IntuiExtend_ProV1_60_PpCrunch",
+        "206d 0258 d0fc 0000 4a90 6738 2c50 2e1b": "IntuiExtend_ProV1_60_PpDecrunch",
+        "206d 0258 d0fc 0000 4a90 676a 2c6d 02b8": "IntuiExtend_ProV2_01B_PpWrite",
+        "206d 0258 d0fc 0000 4a90 676c 2c6d 02b8": "IntuiExtend_ProV1_60_AppFreeIcon",
+        "2c6d 0258 dcfc 0008 4a96 6726 2c56 7000": "IntuiExtend_ProV1_60_AppCreateIcon",
+        "201b 205b 246d 0258 d4fc 0014 281b 261b": "IntuiExtend_ProV1_60_IffSaveClip",
+        "201b 205b 246d 0258 d4fc 0014 2e1b 225b": "IntuiExtend_ProV1_60_IffSaveBitmap",
+        "205b 201b 225b 246d 0258 d4fc 0014 4a92": "IntuiExtend_ProV1_60_IffWriteChunk",
+        "205b 225b 246d 0258 d4fc 0014 4a92 6706": "IntuiExtend_ProV1_60_IffDisplay_II",
+        "225b 246d 0258 d4fc 0014 4a92 6706 2c52": "IntuiExtend_ProV1_60_IffClose",
+        "225b 246d 0258 d4fc 0014 4a92 6708 2c52": "IntuiExtend_ProV2_01B_IffGetVmode",
+        "246d 0258 d4fc 0014 4a92 6716 2c52 205b": "IntuiExtend_ProV2_01B_IffDecodePicture",
+        "246d 0258 d4fc 0014 4a92 671a 2c52 205b": "IntuiExtend_ProV2_01B_IffDisplay_III",
+        "d4fc 004c 2212 2606 2405 4eae ffd0 2212": "IntuiExtend_ProV1_60_PpWrite"
+      }
+    ],
+    "70ff": {
+      "246d 0268 4aaa 00dc": "GUI_ProV1_70B_GuiAslFont__S",
+      "246d 0268 4aaa 00e2": "GUI_ProV1_75_GuiAslFont__S",
+      "246d 0268 4aaa 0128": "GUI_ProV2_00_GuiAslFont__S"
+    },
+    "76ff": [
+      ["match", "6100"],
+      ["skip", 1],
+      {
+        "246d 0258 d4fc 0014 205b 225b 4a92 6708 2c52 4eae ffca 2600 2c5f 4e75": "IntuiExtend_ProV2_01B_IffGetCtable",
+        "246d 0258 d4fc 0014 225b 4a92 670c 2c52 4eae ffd0 2040 7600 3610 2c5f": "IntuiExtend_ProV2_01B_IffGetWidth",
+        "246d 0258 d4fc 0014 225b 4a92 670e 2c52 4eae ffd0 2040 7600 1628 0008": "IntuiExtend_ProV2_01B_IffGetDepth",
+        "246d 0258 d4fc 0014 225b 4a92 670e 2c52 4eae ffd0 2040 7600 3628 0002": "IntuiExtend_ProV2_01B_IffGetHeight",
+        "246d 0258 d4fc 0014 225b 4a92 670e 2c52 4eae ffd0 2040 7600 3628 0004": "IntuiExtend_ProV2_01B_IffGetXpos",
+        "246d 0258 d4fc 0014 225b 4a92 670e 2c52 4eae ffd0 2040 7600 3628 0006": "IntuiExtend_ProV2_01B_IffGetYpos"
+      }
+    ]
+  },
+  "2f13": "SLN_ProV2_00_SSamDel",
+  "2f1b": {
+    "2e3c": "SLN_ProV2_00_SSamChipLoad_SI",
+    "4287": "SLN_ProV2_00_SSamLoad_SI",
+    "6100": [
+      "follow-rel",
+      {
+        "206d 0268 d0fc 0112 4280 3010 0c80 0000": "SLN_ProV2_00_SSetFreq",
+        "48e7 8080 2f0e 2c6d 0268 dcfc 0010 3016": "SLN_ProV2_00_SDiskRename"
+      }
+    ]
+  },
+  "3039": {
+    "00df f00a": "Amon_ProV1_03_FastJoy0",
+    "00df f00c": "Amon_ProV1_03_FastJoy1",
+    "00df f00e": "Personnal_ProV1_00B_PlayfieldsCol"
+  },
   "303c": {
     "0001": "AMOS_ProV2_00_Append",
     "0080": "AMOS_ProV2_00_OpenRandom",
