@@ -1,6 +1,297 @@
 {
 "dispatch": {
   "count": 1,
+  "2a03": {
+    "245b": "AMOS_ProV2_00__FnMid2",
+    "261b": {
+      "221b": "AMOS_ProV2_00_Amreg_set_II",
+      "223c": "AMOS_ProV2_00_Amreg_set_I"
+    },
+    "281b": {
+      "281b 261b 241b 221b 206d": "AMOS_ProV2_00_LimitBob_IIIII",
+      "281b 261b 241b 221b 4a81": "AMOS_ProV2_00_PutBlock_IIIII",
+      "281b 261b 241b 221b 6100": "AMOS_ProV2_00_ScreenDisplay",
+      "281b 261b 241b 221b 6300": "AMOS_ProV2_00_SetZone",
+      "281b 261b 241b 7200 4a6d": "AMOS_ProV2_00_Clip_IIII_V"
+    },
+    "6700": "AMOS_ProV2_00_DelCblock_I",
+    "6b00": "AMOS_ProV2_00__FnRight"
+  },
+  "2a0e": "AMCAF_ProV1_50B4_EN_OpenWorkbench",
+  "2a1b": {
+    "201b 48e7": [
+      ["match", "001e 48e7 8400 6100"],
+      "push",
+      "follow-rel",
+      {
+        "206d 0228 5848 20fc": [
+          "pop",
+          ["skip", 1],
+          ["match", "2200 6100"],
+          ["skip", 1],
+          {
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0228 5848 20bc 0000 0000 2143 0004 53a8 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c 2143 0010 2168 0004": "JDColour_ProV2_00_JdSlideLeft",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0228 5848 20bc 0000 0000 217c 0000 0000 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c 2143 0010 2028 0010": "JDColour_ProV2_00_JdSlideX",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0228 5848 20bc 0000 0000 217c 0000 0000 0004 217c 0000 0000 0018 2140 001c 2145 0008 2144 000c 2143 0010 2028 000c": "JDColour_ProV2_00_JdSlideY",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0228 5848 217c 0000 0000 0004 2143 0010 217c 0000 0000 0018 2140 001c 2145 0008 2144 000c 5384 2084 2144 0014 266d": "JDColour_ProV2_00_JdSlideUp",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0228 5848 217c 0000 0000 0004 2143 0010 217c 0000 0000 0018 2140 001c 2145 0008 217c 0000 0001 000c 20bc 0000 0000": "JDColour_ProV2_00_JdSlideDown",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 48e7 1000 206d 0228 5848 20bc 0000 0000 217c 0000 0000 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c 217c 0000": "JDColour_ProV2_00_JdSlideRight"
+          }
+        ],
+        "206d 0248 41e8 0050": [
+          "pop",
+          ["skip", 1],
+          ["match", "2200 6100"],
+          ["skip", 1],
+          {
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0248 41e8 0050 217c 0000 0000 0000 2143 0004 53a8 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c 2143 0010": "JD_ProV4_60_JdSlideLeft",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0248 41e8 0050 217c 0000 0000 0000 217c 0000 0000 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c 2143 0010": "JD_ProV4_60_JdSlideX",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0248 41e8 0050 217c 0000 0000 0000 217c 0000 0000 0004 217c 0000 0000 0018 2140 001c 2145 0008 2144 000c 2143 0010": "JD_ProV4_60_JdSlideY",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0248 41e8 0050 217c 0000 0000 0004 2143 0010 217c 0000 0000 0018 2140 001c 2145 0008 2144 000c 5384 2144 0000 2144": "JD_ProV4_60_JdSlideUp",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 206d 0248 41e8 0050 217c 0000 0000 0004 2143 0010 217c 0000 0000 0018 2140 001c 2145 0008 217c 0000 0001 000c 217c 0000": "JD_ProV4_60_JdSlideDown",
+            "4cdf 0021 3628 004c 3828 004e 48c3 48c4 48e7 1000 206d 0248 41e8 0050 217c 0000 0000 0000 217c 0000 0000 0004 217c 0000 0000 0014 2140 001c 2145 0008 2144 000c": "JD_ProV4_60_JdSlideRight"
+          }
+        ]
+      }
+    ],
+    "201b 4e75": "AMCAF_ProV1_50B4_EN_RncUnpack",
+    "201b 7600": {
+      "5345 6b00": "EasyLife_ProV1_44_ElfNthAsc",
+      "5385 6b00": "EasyLife_ProV1_09_ElfNthAsc"
+    },
+    "201b ba80": "AMCAF_ProV1_50B4_EN_ImploderUnpack",
+    "205b 3018": "GUI_ProV2_00_TcpDownload_ISI",
+    "205b 6100": [
+      ["skip", 1],
+      ["match", "6604 6000"],
+      ["skip", 1],
+      ["match", "2e01 6100"],
+      ["skip", 1],
+      {
+        "2c00 7200 2005 6a04 4440 5441 41fa 002e": "AMCAF_ProV1_50B4_EN_Wload",
+        "2c00 7201 2005 6a06 4680 5240 5441 41fa": "AMCAF_ProV1_50B4_EN_Dload"
+      }
+    ],
+    "241b 6700": [
+      ["skip", 1],
+      {
+        "221b 6b00": "TurboPlus_ProV2_00_SceneScanY",
+        "d482 221b": "TurboPlus_ProV2_00_SceneScanX"
+      }
+    ],
+    "245b 361a": {
+      "48c3 201b 7457 7e14 206d 0268 2145 0310": "GUI_ProV1_70B_TcpSend_ISI",
+      "48c3 201b 7457 7e14 206d 0268 2145 0320": "GUI_ProV1_75_TcpSend_ISI"
+    },
+    "245b 7000": {
+      "5345 7600": "EasyLife_ProV1_44_ElfNthChar",
+      "5385 7600": "EasyLife_ProV1_09_ElfNthChar"
+    },
+    "261b 201b": {
+      "247c 000f 4240 7414 7e14 206d 0268 2145 0310 2a00 41e8 0240": "GUI_ProV1_70B_TcpSignal",
+      "247c 000f 4240 7414 7e14 206d 0268 2145 0320 2a00 41e8 024c": "GUI_ProV1_75_TcpSignal"
+    },
+    "261b 245b": {
+      "201b 7452 7e14 206d 0268 2145 0310 2a00": "GUI_ProV1_70B_TcpRead_IIII__I",
+      "201b 7452 7e14 206d 0268 2145 0320 2a00": "GUI_ProV1_75_TcpRead_IIII__I",
+      "201b 7457 7e14 206d 0268 2145 0310 2a00": "GUI_ProV1_70B_TcpSend_IIII",
+      "201b 7457 7e14 206d 0268 2145 0320 2a00": "GUI_ProV1_75_TcpSend_IIII"
+    },
+    "281b 201b": "CRAFT_ProV1_00_SetWbPrefs_III",
+    "281b 205b": {
+      "3018 b07c 0050 6e00 00ba 5340 48e7 001e 5345 5344 3e05 9e44 226d 01a8 d2fc 0014": "TurboPlus_ProV1_00_ObjectSave",
+      "3018 b07c 0050 6e00 00ba 5340 48e7 001e 5345 5344 3e05 9e44 226d 01a8 d2fc 0016": "Turbo_ProV1_90_ObjectSave"
+    },
+    "281b 261b": {
+      "206d 01c8 202b 01c2": "Game_ProV0_90_GLine_III",
+      "241b 221b 201b 2c03": "IntuiExtend_ProV1_30B_Wb3dPosition",
+      "241b 221b 201b 2e1b": "Game_ProV0_90_GCopyarea",
+      "241b 221b 201b 2f0b": "AGA_ProV1_00_AgaGetBlock_IIIIII",
+      "241b 221b 205b 6100": "GUI_ProV2_00_GuiSetZone",
+      "241b 221b 48e7 0010": "JDColour_ProV2_00_JdScreenBorder",
+      "241b 221b 48e7 00fe": "Game_ProV0_90_GLine_IIIII",
+      "7400 b685 6e06 b684": "Tools_ProV1_01_Range"
+    },
+    "281b 6d00": "PowerBobs_ProV1_00_PmulShift",
+    "281b b8bc": [
+      ["match", "0001 0000 6400"],
+      ["skip", 1],
+      ["match", "4a84 6700"],
+      ["skip", 1],
+      ["match", "babc 0001 0000 6400"],
+      ["skip", 1],
+      "tail-call",
+      ["match", "2e1b 2c1b 221b 4eb9"],
+      ["skip", 2],
+      ["match", "2268 00d2 7400 3428 00d6 4a84 6a06 7801 2a02 600c ba44 6500"],
+      ["skip", 1],
+      ["match", "b445 6500"],
+      ["skip", 1],
+      {
+      "e784 e785 dd71 48f8 df71 48fa dd71 48fc df71 48fe ba84 6704 5044 60e8 4e75": "EasyLife_ProV1_44_ElznShift_IIIII",
+      "e784 e785 dd71 48f8 df71 48fa dd71 48fc df71 48fe ba84 6704 5084 60e8 4e75": "EasyLife_ProV1_09_ElznShift_IIIII"
+      }
+    ],
+    "2c1b 2e1b": {
+      "206d 0258 d0fc 05aa": "IntuiExtend_ProV2_01B_Wb3dPoint",
+      "206d 0258 d0fc 05c8": "IntuiExtend_ProV1_60_Wb3dPoint"
+    },
+    "2c1b 48e7": "Game_ProV0_90_GStcUnpack",
+    "674a 281b": {
+      "261b 241b 6742 221b 201b 206d 01a8 3c28 0074 3e28": "TurboPlus_ProV1_00_Line3d",
+      "261b 241b 6742 221b 201b 206d 01a8 3c28 0076 3e28": "Turbo_ProV1_90_Line3d",
+      "261b 241b 6742 221b 201b 206d 0268 3c28 02a0 3e28": "GUI_ProV2_00_GuiLine3d"
+    }
+    },
+    "2a2d": [
+      ["match", "052c 6700"],
+      ["skip", 1],
+      {
+        "2045 2c1b 5246 0286": "EasyLife_ProV1_44_ElmzReserve",
+        "2045 2c1b 5286 0286": "EasyLife_ProV1_09_ElmzReserve"
+      }
+    ],
+    "2a3c": "LDos_ProV1_00_LchkBoot",
+    "2a6d": "CRAFT_ProV1_00_GuruMeditation",
+    "2b43": {
+      "0542 4e75": "AMOS_ProV2_00_Randomize",
+      "069c 4e75": "AMOS_ProV2_00_MaskIff",
+      "ff76 4e75": "AMOS_ProV2_00_Timer_set"
+    },
+    "2b48": "AMOS_ProV2_00__InOnBreak",
+    "2b57": "AMOS_ProV2_00_Trap",
+    "2b5b": {
+      "e736 06ad": "IntuiExtend_ProV1_60_WbScreen",
+      "e736 4e75": "IntuiExtend_ProV1_30B_WbScreen"
+    },
+    "2b6d": "AMOS_ProV2_00__InRestore",
+    "2c13": [
+      ["match", "6100"],
+      ["skip", 1],
+      ["match", "2046 7000 3018 221b b27c 0000 6700 0106 b681 6500 0108 0c10 0022 6700 004c 0c10 0020 6700 003c 0c10 002c 6700 0034 0c10 0009 6700 002c 5341 b27c 0000 6700 0078 1a18 5340 0c10 0020 6700 0016 0c10 002c 6700 000e 0c10 0009 6700 0006 6000 ffe2 1a18 5340 6000 ffb0 7800 1a18 5340 6700 0086 5341 b27c 0000 6700 0010 5340 0c18 0022 6600 fff8 6000 ff8e 1a20 2448 7800 5244 1a18 0c10 0022 6700 0010 5340 6700 0010 5244 1a18 6000 ffec 5244 6000 0048 5244 6000 0042 2448 1a18 7800 5244 5340 6700 0034 0c10 0020 6700 002c 0c10 002c 6700 0024 0c10 0009 6700 001c 0c10 0022 6700 0014 5244 1a18 5340 6700 000a 6b00 0006 6000 ffd0 2604 b67c 0000 6700 0016 6100"],
+      ["skip", 1],
+      ["match", "2608 30c4 5344 10da 51cc fffc 7402 4e75 262d 0662 7402 4e75 48e7 000e 7015"],
+      "tail-call",
+      {
+        "41fa": "LDos_ProV1_10_Lword",
+        "7405": "LDos_ProV1_00_Lword"
+      }
+    ],
+    "2c1b": {
+      "201b": {
+        "2f00": "AMCAF_ProV1_50B4_EN_BankStretch",
+        "6b00": "AMCAF_ProV1_50B4_EN_RainFade"
+      },
+      "205b": {
+        "225b 5489 246d 0258 d4fc 0010 4a92 6700": "IntuiExtend_ProV1_60_RtFontReq",
+        "225b 5489 246d 0258 d4fc 0010 4a92 6766": "IntuiExtend_ProV2_01B_RtFontReq",
+        "7e00 3e18 cefc 0003 e547 e746 5446 de46": "IntuiExtend_ProV1_60_Wb3dShape"
+      },
+      "206d": "TFT_ProV0_6_TftError",
+      "225b": {
+        "205b 3018 3219 7400 7600 bc7c 0000 6600 0004 7c01 b07c 0000 6700": {
+          "002a": "JD_ProV5_90_JdNinstr_SSI",
+          "002c": "JD_ProV5_30_JdNinstr_SSI"
+        },
+        "205b 48e7 001e 7e00 b3c8 6700 006e 2448 1a1a ba06 6700 0008 5247": "JD_ProV4_60_JdStream",
+        "d2fc 0002 1b7c 0000 069a 7200 206d fff8 4ea8 0120 48e7 fffe 6100": "Game_ProV0_90_GLoadIff"
+      },
+      "241b": "Amon_ProV1_03_FastCircle",
+      "245b": "AMCAF_ProV1_50B4_EN_MaskCopy_IIIIIIIIII",
+      "281b": "GUI_ProV1_75_TcpSave",
+      "2a1b": {
+      "281b 201b 4eb9": [
+        ["skip", 2],
+        ["match", "2e28 ffec 5187 5187 8efc 0006 5387 2448 221b 2601 4eb9"],
+        ["skip", 2],
+        {
+          "48e7 001e 224a e14b 246d 01d8 e54b 47ea 0920 d7c3 2a58 2c50 3019 363c 1fff 3219": "Effects_ProV0_15_StarclearOne",
+          "48e7 001e 224a e14b 246d 01d8 e54b 47ea 0920 d7c3 2a58 49ea 0108 2c50 3019 363c": "Effects_ProV0_15_StarfieldOne"
+        }
+      ],
+      "281b 261b 241b": "IntuiExtend_ProV1_60_WbGauge",
+      "281b 3606 e183": "IntuiExtend_ProV1_60_WbCircle_III",
+      "e75e e75d 206d": {
+        "0258 d0fc 00b0 3146": "IntuiExtend_ProV1_60_WbPrintLocate",
+        "0258 d0fc 00ec 3146": "IntuiExtend_ProV1_30B_WbPrintLocate"
+      }
+    },
+    "2e1b": {
+    "222b 0004 4eb9": "AMCAF_ProV1_50B4_EN_BlitterFill_IIII",
+    "225b 337c 0002": {
+      "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbBlockRead",
+      "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbBlockRead",
+      "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbTrackRead",
+      "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTrackRead"
+    },
+    "48e7 00fe 266d": "Game_ProV0_90_GScreenCopy"
+    },
+    "48e7": "Game_ProV0_90_GScreenShow",
+    "5346": "IntuiExtend_ProV1_60_WbRollScreen",
+    "6100": "EasyLife_ProV1_09_MuiFlush",
+    "6b00": [
+      ["skip", 1],
+      ["match", "2a1b 6f00"],
+      ["skip", 1],
+      ["match", "281b 6f00"],
+      ["skip", 1],
+      ["match", "202b 0008 4eb9"],
+      ["skip", 1],
+      {
+        "223c 5363": "TurboPlus_ProV2_00_SceneFill",
+        "261b 6b00": "TurboPlus_ProV2_15_SceneFill"
+      }
+    ],
+    "6f00": [
+      ["skip", 1],
+      ["match", "2e1b 6f00"],
+      ["skip", 1],
+      ["match", "221b 3801 4eb9"],
+      ["skip", 2],
+      ["match", "3a28 0050 ba7c 0001 6700"],
+      ["skip", 1],
+      ["match", "ba46 6d00"],
+      ["skip", 1],
+      ["match", "ba47 6d00"],
+      ["skip", 1],
+      {
+        "5346 5347 e54e e54f 43d0 2031 6000 2231 7000 c141": "TurboPlus_ProV2_15_PlaneSwap",
+        "5346 5347 e54e e54f c8fc 0018 dc44 de44 43d0 2031": "TurboPlus_ProV1_00_PlaneSwap",
+        "5346 5347 e54e e54f c8fc 0018 dc44 de44 43e8 0000": "Turbo_ProV1_90_PlaneSwap"
+      }
+    ],
+    "7a40": [
+      ["match", "e54d 9a86 201b 4eb9"],
+      ["skip", 2],
+      ["match", "2448 201b 4eb9"],
+      ["skip", 2],
+      ["match", "2e08 201b 4eb9"],
+      ["skip", 2],
+      {
+        "2247 2e28 ffec 5187 5187 7400 7608 7000": "Effects_ProV0_15_BankInterpolateB",
+        "2247 2e28 ffec 5187 5187 e28f 7400 7608": "Effects_ProV0_15_BankInterpolateW",
+        "2247 2e28 ffec 5187 5187 e48f 7400 7608": "Effects_ProV0_15_BankInterpolateL"
+      }
+    ]
+  },
+  "2c2b": "AMCAF_ProV1_50B4_EN_BlitterFill_IIIIII",
+  "2c78": {
+    "0004 0c6e 0024 0014": "IntuiExtend_ProV1_30B_WbReset",
+    "0004 4eae fd2a 4e75": "Game_ProV0_90_GReboot",
+    "0004 4eae ff88 4bfa": {
+      "0006": "CRAFT_ProV1_00_WarmReset",
+      "0004": "CRAFT_ProV1_00_HardReset"
+    }
+  },
+  "2c79": "Delta_ProV1_60_DeltaHardReset",
+  "2e0e": {
+    "2c6d 02b8 4eae ff7c 2c47 2600 4e75": "AMCAF_ProV1_50B4_EN_IoError__I",
+    "93c9 2c78 0004 4eae feda 2c47 2040": {
+    "2628 008c 4e75": "AMCAF_ProV1_50B4_EN_AmosCli",
+    "4aa8 008c 6718": "AMCAF_ProV1_50B4_EN_CommandName"
+    },
+    "93c9 2c78 0004 4eae feda 2c47 2600": "AMCAF_ProV1_50B4_EN_AmosTask"
+  },
   "2e1b": {
     "0287": [
       ["match", "0000 000f 6700"],
