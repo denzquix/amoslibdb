@@ -1,6 +1,37 @@
 {
 "dispatch": {
   "count": 1,
+  "2803": {
+    "241b": "AMOS_ProV2_00_Fill",
+    "245b": {
+      "4283 361a": "AMOS_ProV2_00__MoinsC",
+      "7400 341a": "AMOS_ProV2_00__FnLeft"
+    },
+    "261b": {
+      "241b 221b 201b 6f00": "AMOS_ProV2_00_DialogUpdate_IISII",
+      "241b 221b 206d fff8": {
+        "4ea8 00d4 6600": "AMOS_ProV2_00_Rainbow",
+        "241b 221b 206d": "AMOS_ProV2_00_CopWait_IIII"
+      },
+      "241b 221b 206d fffc": "AMOS_ProV2_00_Sprite",
+      "241b 221b 2a1b 6700": "AMOS_ProV2_00_GetCblock"
+    },
+    "2a1b": {
+      "245b 7400 341a": "AMOS_ProV2_00__FnMid3",
+      "babc 0000 0100": "AMOS_ProV2_00_Scan_II"
+    },
+    "6b00": [
+      ["skip", 1],
+      {
+        "7400 245b": "AMOS_ProV2_00_Instr_SSI",
+        "201b 4eb9": "Music_ProV2_00_SamSwap"
+      }
+    ],
+    "7602": "OSDevKit_ProV1_61_ChrW",
+    "7604": "OSDevKit_ProV1_61_ChrL",
+    "b8bc": "Music_ProV2_00_SetEnvel"
+  },
+  "281a": "AMOS_ProV2_00__InNext",
   "281b": {
     "2013": "EasyLife_ProV1_09_StSet_III",
     "201b": [
