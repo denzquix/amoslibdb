@@ -287,8 +287,8 @@
   "2e0e": {
     "2c6d 02b8 4eae ff7c 2c47 2600 4e75": "AMCAF_ProV1_50B4_EN_IoError__I",
     "93c9 2c78 0004 4eae feda 2c47 2040": {
-    "2628 008c 4e75": "AMCAF_ProV1_50B4_EN_AmosCli",
-    "4aa8 008c 6718": "AMCAF_ProV1_50B4_EN_CommandName"
+      "2628 008c 4e75": "AMCAF_ProV1_50B4_EN_AmosCli",
+      "4aa8 008c 6718": "AMCAF_ProV1_50B4_EN_CommandName"
     },
     "93c9 2c78 0004 4eae feda 2c47 2600": "AMCAF_ProV1_50B4_EN_AmosTask"
   },
