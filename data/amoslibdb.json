@@ -1,6 +1,164 @@
 {
 "dispatch": {
   "count": 1,
+  "273c": {
+    "0000 0000": [
+      "tail-call",
+      {
+        "206d": {
+          "01e8 201b 3140 0046": "EasyLife_ProV1_44_Elmzone_II",
+          "01e8 201b 3140 0074": "EasyLife_ProV1_09_Elmzone_II"
+        },
+        "226d": "SLN_ProV2_00_STrackPlay_II",
+        "261b": [
+          ["match", "6b00"],
+          ["skip", 1],
+          ["match", "7000 6100"],
+          ["skip", 1],
+          {
+            "b1c1 640e 1018 b03c 0020 64f4 2608 9689 4e75 7600 226d 01e8 4a69 00a0 6704 2606 5283 4e75": "EasyLife_ProV1_09_ElfControl_S",
+            "b1c1 640e 1018 b03c 0020 64f4 2608 9689 4e75 7600 226d 01e8 4a69 0100 6704 2606 5243 4e75": "EasyLife_ProV1_44_ElfControl_S"
+          }
+        ],
+        "273c": "SLN_ProV2_00_STrackPlay_I",
+        "6100": "OSDevKit_ProV1_20_WndWhatActive"
+      }
+    ],
+    "0000 0001": [
+      "tail-call",
+      {
+        "2c1b": {
+          "225b 205b 3018 3219 7400 7600 bc7c 0000 6600 0004 7c01 b07c 0000 6700 002a": "JD_ProV5_90_JdNinstr_SS",
+          "225b 205b 3018 3219 7400 7600 bc7c 0000 6600 0004 7c01 b07c 0000 6700 002c": "JD_ProV5_30_JdNinstr_SS"
+        },
+        "273c": {
+          "0000 0000 273c": "SLN_ProV2_00_SAerase",
+          "0000 0014 6000": "IntuiExtend_ProV2_01B_WbItext",
+          "0000 0014 6100": "IntuiExtend_ProV1_60_WbItext"
+        },
+        "6100": "SLN_ProV2_00_SSamBankErase_I"
+      }
+    ],
+    "0000 0006": [
+      "tail-call",
+      {
+        "201b 2600": "SLN_ProV2_00_SSamBankReserve",
+        "2e1b 4280": "SLN_ProV2_00_SSamBankLoad_S"
+      }
+    ],
+    "0000 0007": "SLN_ProV2_00_STrackLoad_S",
+    "0000 000f": [
+      "tail-call",
+      {
+        "221b 0281 0000 000f": "EME_ProV3_00DEMO_SamStop",
+        "246d 01d8 206a 0134": "DoomMusic_ProV2_00_DmeSamStop"
+      }
+    ],
+    "0000 0014": {
+      "6000": "IntuiExtend_ProV1_60_WbFreeImage",
+      "6100": "IntuiExtend_ProV1_30B_WbFreeImage"
+    },
+    "0000 0020": "IntuiExtend_ProV1_60_WbCreatePort",
+    "0000 002c": "IntuiExtend_ProV1_30B_WbFreeToggleGadget",
+    "0000 0050": {
+      "273c": [
+        ["match", "0001 0001 6100"],
+        ["skip", 1],
+        {
+          "4a83 6600 0006 6000 004c 2003 2040 0680": "IntuiExtend_ProV1_30B_WbInitNumGadget",
+          "4a83 6600 0006 6000 0050 2003 2040 0680": "IntuiExtend_ProV1_30B_WbInitStrGadget",
+          "4a83 6700 004c 2003 2040 0680 0000 002c": "IntuiExtend_ProV1_60_WbInitNumGadget",
+          "4a83 6700 0050 2003 2040 0680 0000 002c": "IntuiExtend_ProV1_60_WbInitStrGadget",
+          "4a83 674a 2003 2040 0680 0000 002c 2140": "IntuiExtend_ProV2_01B_WbInitNumGadget",
+          "4a83 674e 2003 2040 0680 0000 002c 2140": "IntuiExtend_ProV2_01B_WbInitStrGadget"
+        }
+      ],
+      "6000": "IntuiExtend_ProV1_60_WbFreeNumGadget",
+      "6100": "IntuiExtend_ProV1_30B_WbFreeNumGadget"
+    },
+    "0000 0056": {
+      "273c": [
+        ["match", "0001 0001 6100"],
+        ["skip", 1],
+        {
+          "4a83 6600 0006 6000 0060 2003 2040 0680 0000 002c 2140 0022 0680 0000 0016 2140 0012 201b 3140 000c 217c ffff ffff 002e 217c ffff ffff 0032 317c 0113 002c 201b": "IntuiExtend_ProV1_30B_WbInitHslideGadget",
+          "4a83 6600 0006 6000 0060 2003 2040 0680 0000 002c 2140 0022 0680 0000 0016 2140 0012 201b 3140 000c 217c ffff ffff 002e 217c ffff ffff 0032 317c 0115 002c 201b": "IntuiExtend_ProV1_30B_WbInitVslideGadget",
+          "4a83 6600 0006 6000 0060 2003 2040 0680 0000 002c 2140 0022 0680 0000 0016 2140 0012 201b 3140 000c 217c ffff ffff 002e 217c ffff ffff 0032 317c 0117 002c 201b": "IntuiExtend_ProV1_30B_WbInitMslideGadget",
+          "4a83 675a 221b 241b 281b 2a1b 2c1b 2e1b 2043 2003 0640 002c 2140 0022 0640 0016 2140 0012 3141 000c 217c ffff ffff 002e 217c ffff ffff 0032 3142 000a 3144 0008": "IntuiExtend_ProV1_60_WbInitHslideGadget"
+        }
+      ],
+      "6000": "IntuiExtend_ProV1_60_WbFreeSlideGadget",
+      "6100": "IntuiExtend_ProV1_30B_WbFreeSlideGadget"
+    },
+    "0000 0074": {
+      "273c": [
+        ["match", "0000 0074 273c 0001 0001 6100"],
+        ["skip", 1],
+        {
+          "221b 241b 281b 2a1b": "IntuiExtend_ProV1_60_WbInitBoolGadget",
+          "4a83 6600 0006 6000": "IntuiExtend_ProV1_30B_WbInitBoolGadget"
+        }
+      ],
+      "6000": "IntuiExtend_ProV1_60_WbFreeBoolGadget",
+      "6100": "IntuiExtend_ProV1_30B_WbFreeBoolGadget"
+    },
+    "0000 0090": [
+      ["match", "273c 0001 0001 6100"],
+      ["skip", 1],
+      {  
+        "245b 4a83 6700 00f4": "IntuiExtend_ProV1_60_WbBevelGadget",
+        "4a83 6700 00fa 2003": "IntuiExtend_ProV1_30B_WbBevelGadget"
+      }
+    ],
+    "0000 00f0": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIII",
+    "0000 00fc": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIIII",
+    "0000 3d09": "AMCAF_ProV1_50B4_EN_PtInstrPlay_II",
+    "0001 0000": "CRAFT_ProV1_00_BwInstr_SS",
+    "3b9a c9ff": "IntuiExtend_ProV1_60_WbFlushMemory",
+    "8000 0000": [
+      "tail-call",
+      {
+        "246d": {
+          "00f8 6100": "EME_ProV3_00DEMO_MedPlay_I",
+          "01d8 6100": [
+            "follow-rel",
+            {
+              "246d 01d8 4a2a 0128 6716 422a 0128 48e7": "DoomMusic_ProV2_00_PtmPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 004a 662c 43fa": "DoomMusic_ProV2_00_DmedPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 0058 6630 43fa": "DoomMusic_ProV2_00_OmedPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 0066 6630 43fa": "DoomMusic_ProV2_00_OmixPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 0074 6618 43fa": "DoomMusic_ProV2_00_Fc13Play",
+              "48e7 e0e0 246d 01d8 4aaa 0080 6618 43fa": "DoomMusic_ProV2_00_Fc14Play",
+              "48e7 e0e0 246d 01d8 4aaa 008c 6618 43fa": "DoomMusic_ProV2_00_SmonPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 0098 6618 43fa": "DoomMusic_ProV2_00_Sfx13Play",
+              "48e7 e0e0 246d 01d8 4aaa 00a4 6618 43fa": "DoomMusic_ProV2_00_DbPlay",
+              "48e7 e0e0 246d 01d8 4aaa 00b2 6618 43fa": "DoomMusic_ProV2_00_TfmxPlay_I",
+              "48e7 e0e0 246d 01d8 4aaa 00de 6618 43fa": "DoomMusic_ProV2_00_S3mPlay",
+              "48e7 e0e0 246d 01d8 4aaa 00ea 6618 43fa": "DoomMusic_ProV2_00_XmPlay"
+            }
+          ]
+        },
+        "273c": [
+          ["match", "8000 0000"],
+          "tail-call",
+          {
+            "246d 00f8": "EME_ProV3_00DEMO_MedPlay",
+            "2e1b 0c93": "EME_ProV3_00DEMO_TrackPlay"
+          }
+        ],
+        "2e1b": "EME_ProV3_00DEMO_TrackPlay_I",
+        "4eb9": "AMOS_ProV2_00__InMenu3",
+        "6100": [
+          "follow-rel",
+          {
+            "246d 01d8 4a52 6716": "DoomMusic_ProV2_00_ThxPlay_I",
+            "246d 01d8 4a6a 003a": "DoomMusic_ProV2_00_P61Play"
+          }
+        ]
+      }
+    ],
+    "ffff fffe": "EasyLife_ProV1_09_MuiRequest_ISSS"
+  },
   "2803": {
     "241b": "AMOS_ProV2_00_Fill",
     "245b": {
