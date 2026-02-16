@@ -1,6 +1,217 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "2703": [
+    "tail-call",
+    {
+      "202b": {
+        "0004 6100": "Music_ProV2_00_SamPlay_III",
+        "202b 0010": "IOPorts_ProV2_00_SerialOpen_IIIII"
+      },
+      "202d": "AMOS_ProV2_00_ArexxAnswer_IS",
+      "222b": "Music_ProV2_00_Wave",
+      "226d": "AMOS_ProV2_00_SetCurs",
+      "246d": "IOPorts_ProV2_00_PrinterDump_IIII",
+      "262d": [
+        ["match", "0662"],
+        "tail-call",
+        ["match", "2703"],
+        {
+          "202d": "AMOS_ProV2_00_ArexxAnswer_I",
+          "2703": {
+            "4eb9": "AMOS_ProV2_00_Fsel_SS",
+            "2703": "AMOS_ProV2_00_Fsel_S"
+          },
+          "4eb9": "AMOS_ProV2_00_Fsel_SSS"
+        }
+      ],
+      "263c": {
+        "0000 00cc": [
+          "tail-call",
+          {
+            "221b 6100": "AMOS_ProV2_00_ScreenCopy_II",
+            "222b 0008": "AMOS_ProV2_00_ScreenCopy_IIIIIIII"
+          }
+        ],
+        "0000 0100": "AMOS_ProV2_00_ReadText_SII",
+        "0000 0400": "AMOS_ProV2_00_DialogOpen_ISI",
+        "8000 0000": [
+          "tail-call",
+          {
+            "0c93": "Music_ProV2_00_TrackPlay_I",
+            "245b": "AMOS_ProV2_00_Load_S",
+            "246d": "Music_ProV2_00_MedPlay_I",
+            "2703": [
+              "tail-call",
+              {
+                "2703 241b": "AMOS_ProV2_00_DialogRun_II",
+                "2703 2703": [
+                  "tail-call",
+                  {
+                    "2803": "AMOS_ProV2_00_DialogUpdate_II",
+                    "2703": "AMOS_ProV2_00_PutBlock_I"
+                  }
+                ],
+                "2703 272d": "AMOS_ProV2_00_DialogBox_S",
+                "2703 2803": "AMOS_ProV2_00_DialogUpdate_IIS",
+                "2703 2a03": "AMOS_ProV2_00_PutBlock_III",
+                "2703 4a6d": "AMOS_ProV2_00_Ink_I",
+                "2703 4aad": "AMOS_ProV2_00_DialogBox_SIS",
+                "2703 6100": [
+                  ["skip", 1],
+                  ["match", "4aad 0408 6700"],
+                  ["skip", 1],
+                  {
+                    "206d 0020": "AMOS_ProV2_00_AskEditor_I",
+                    "2f2d 0424": "AMOS_ProV2_00_CallEditor_I"
+                  }
+                ]
+              }
+            ],
+            "272d": "AMOS_ProV2_00_DialogBox_SI",
+            "2803": "AMOS_ProV2_00_DialogUpdate_IISI",
+            "2a03": "AMOS_ProV2_00_PutBlock_IIII",
+            "4a6d": "AMOS_ProV2_00_Ink_II",
+            "4aad": "AMOS_ProV2_00_FramePlay_II",
+            "6100": [
+              "push",
+              "follow-rel",
+              {
+                "206d 050a 226d": [
+                  "pop",
+                  ["skip", 1],
+                  ["match", "4aad 0408 6700"],
+                  ["skip", 1],
+                  {
+                    "206d 0020 2068": "AMOS_ProV2_00_AskEditor_II",
+                    "2f2d 0424 48e7": "AMOS_ProV2_00_CallEditor_II"
+                  }
+                ],
+                "42ad 04a2 4e75": "AMOS_ProV2_00_LoadIff_S"
+              }
+            ]
+          }
+        ]
+      },
+      "273c": {
+        "0000 0010": "AMOS_ProV2_00_DialogOpen_IS",
+        "ffff ffff": "AMOS_ProV2_00_DialogRun_I"
+      },
+      "42a3": {
+        "42a3": [
+          ["match", "263c 0000 2710 2703"],
+          "tail-call",
+          ["match", "6100"],
+          ["skip", 1],
+          ["match", "6100"],
+          ["skip", 1],
+          {
+            "0680": "Compact_ProV2_00_Spack_II",
+            "6100": "Compact_ProV2_00_Pack_II"
+          }
+        ],
+        "763f": "AMOS_ProV2_00_Amplay_II"
+      },
+      "48e7": "IOPorts_ProV2_00_PrinterDump_IIIIIII",
+      "4eb9": "AMOS_ProV2_00_Fsel_SSSS",
+      "6100": [
+        "follow-rel",
+        {
+          "48e7 c000 7001 6100": "AMOS_ProV2_00_DelSprite_I",
+          "48e7 c000 7002 6100": "AMOS_ProV2_00_DelIcon_I"
+        }
+      ],
+      "7600": [
+        "tail-call",
+        {
+          "2003": {
+            "2a1b 281b 261b 241b": "AMOS_ProV2_00_GetBlock_IIIII",
+            "b0bc 0000 0003 6400": "AMOS_ProV2_00_Writing_I"
+          },
+          "2703": [
+            "tail-call",
+            {
+              "4a6d": "AMOS_ProV2_00_WindOpen_IIIII",
+              "2703": "IOPorts_ProV2_00_SerialOpen_II"
+            }
+          ],
+          "2803": "AMOS_ProV2_00_Scan_I",
+          "4a6d": "AMOS_ProV2_00_WindOpen_IIIIII",
+          "6100": [
+            ["skip", 1],
+            {
+              "2c03 6b00": "AMOS_ProV2_00_Appear_III",
+              "2e03 2c1b": "AMOS_ProV2_00_SetRainbow_IIISSS"
+            }
+          ]
+        }
+      ],
+      "7601": [
+        "tail-call",
+        {
+          "2403 221b": [
+            ["match", "201b 4eb9"],
+            ["skip", 2],
+            ["match", "6600"],
+            ["skip", 1],
+            {
+              "4a02 6700": "AMOS_ProV2_00_Rdialog_II_S",
+              "4a02 6704": "AMOS_ProV2_00_Rdialog_II_I"
+            }
+          ],
+          "2f03 6b00": "AMOS_ProV2_00_IffAnim_SI",
+          "4aad 052c": "AMOS_ProV2_00_SaveIff_S",
+          "4aad 08b0": [
+            ["match", "6600"],
+            ["skip", 1],
+            ["match", "6100"],
+            ["skip", 1],
+            {
+              "2e03 6f00": "AMOS_ProV2_00_FrameLoad_II",
+              "2e03 bebc": [
+                ["match", "0000 8000 6400"],
+                ["skip", 1],
+                ["match", "201b 6100"],
+                "follow-rel",
+                {
+                  "b0bc 0000 000a 6400": "AMOS_ProV2_00_FrameLength_I",
+                  "b0bc 0000 0400 6c0a": "AMOS_ProV2_00_FrameSkip_I"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "76ff": [
+        "tail-call",
+        {
+          "221b": "AMOS_ProV2_00_GetPalette_I",
+          "4a6d": "AMOS_ProV2_00_Paint_II",
+          "2703": [
+            "tail-call",
+            {
+              "2403 221b 2a1b 6700": "AMOS_ProV2_00_PutCblock_I",
+              "2803 261b 241b 221b": "AMOS_ProV2_00_CopWait_II"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "2713": [
+    "tail-call",
+    {
+      "226d": "CRAFT_ProV1_00_TrProportions_I",
+      "4eb9": [
+        ["skip", 2],
+        {
+          "6c02 2613 588b 4e75": "AMOS_ProV2_00__FnMinF",
+          "6f02 2613 588b 4e75": "AMOS_ProV2_00__FnMaxF"
+        }
+      ],
+      "6100": "AMOS_ProV2_00__FnMinS"
+    }
+  ],
   "273c": {
     "0000 0000": [
       "tail-call",
