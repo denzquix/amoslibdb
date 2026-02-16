@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpcodeDispatch",
+  "description": "A schema for opcode matching structures",
+  
+  "definitions": {
+    "OpcodeMatchLiteral": {
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{4}(\\s+[0-9A-Fa-f]{4})*$",
+      "description": "A string of one or more hex quads separated by spaces"
+    },
+    
+    "OpcodeMatchValue": {
+      "oneOf": [
+        { "$ref": "#/definitions/OpcodeMatchMap" },
+        { "$ref": "#/definitions/OpcodeMatchSeq" },
+        { "type": "string" }
+      ],
+      "description": "Valid value types for OpcodeMatchMap entries"
+    },
+    
+    "OpcodeMatchSeq": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/OpcodeMatchMap" },
+          {
+            "type": "array",
+            "items": [
+              { "const": "match" },
+              { "$ref": "#/definitions/OpcodeMatchLiteral" }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          { "const": "tail-call" },
+          { "const": "follow-rel" },
+          { "const": "follow-abs" },
+          { "const": "push" },
+          { "const": "pop" },
+          {
+            "type": "array",
+            "items": [
+              { "const": "skip" },
+              { "type": "number" }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          {
+            "type": "array",
+            "items": [
+              { "const": "result" },
+              { "type": "string" }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          {
+            "type": "array",
+            "items": [
+              { "const": "TODO" },
+              { "type": "string" }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        ]
+      },
+      "description": "An array of opcode match operations"
+    },
+    
+    "OpcodeMatchMap": {
+      "type": "object",
+      "properties": {
+        "else": {
+          "$ref": "#/definitions/OpcodeMatchValue"
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/OpcodeMatchValue"
+      },
+      "propertyNames": {
+        "oneOf": [
+          { "$ref": "#/definitions/OpcodeMatchLiteral" },
+          { "const": "else" }
+        ]
+      },
+      "description": "An object mapping hex quad literals (or 'else') to match structures or strings"
+    }
+  },
+  
+  "type": "object",
+  "properties": {
+    "dispatch": {
+      "$ref": "#/definitions/OpcodeMatchValue"
+    }
+  },
+  "required": ["dispatch"]
+}
