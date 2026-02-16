@@ -1,6 +1,893 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "246d": {
+    "00f8 4aaa": "Music_ProV2_00_MouthRead",
+    "00f8 6100": [
+      ["skip", 1],
+      ["match", "6100"],
+      ["skip", 1],
+      {
+        "42aa 05d4 2a03 0c93": "Music_ProV2_00_MedPlay_II",
+        "42aa 05d4 1e2a 05ec": "EME_ProV3_00DEMO_MedPlay_II"
+      }
+    ],
+    "0128 4eea": "AMOS3D_ProV1_02_TdQuit",
+    "0148 4aaa": "IOPorts_ProV2_00_PrinterClose",
+    "0148 6100": "IOPorts_ProV2_00_PrinterDump",
+    "0148 d4fc": {
+      "d4fc 0000 7403": "IOPorts_ProV2_00_SerialClose",
+      "d4fc 0030 4eb9": [
+        ["skip", 2],
+        {
+          "2003 6700": "IOPorts_ProV2_00_PrinterOut",
+          "2043 7000": "IOPorts_ProV2_00_PrinterSend",
+          "206d 0148": "IOPorts_ProV2_00_PrinterOnline",
+          "2609 4e75": "IOPorts_ProV2_00_PrinterBase",
+          "7600 1629": "IOPorts_ProV2_00_PrinterError",
+          "2600 6702": "IOPorts_ProV2_00_PrinterCheck"
+        }
+      ],
+      "d4fc 0030 4ef9": "IOPorts_ProV2_00_PrinterAbort",
+      "d4fc 003c 4eb9": [
+        ["skip", 2],
+        {
+          "08a9 0001": "IOPorts_ProV2_00_ParallelInput_I",
+          "08e9 0001": "IOPorts_ProV2_00_ParallelInput_II",
+          "2003 6700": "IOPorts_ProV2_00_ParallelOut",
+          "2043 7000": "IOPorts_ProV2_00_ParallelSend",
+          "2609 4e75": "IOPorts_ProV2_00_ParallelBase",
+          "7009 4eb9": "IOPorts_ProV2_00_ParallelStatus",
+          "7600 2252": "IOPorts_ProV2_00_ParallelError",
+          "2600 6702": "IOPorts_ProV2_00_ParallelCheck"
+        }
+      ],
+      "d4fc 003c 4ef9": [
+        "follow-abs",
+        ["TODO", "distinguish 608 (IOPorts_ProV2_00_ParallelClose) from 613 (IOPorts_ProV2_00_ParallelAbort)"]
+      ]
+    },
+    "0168 201b": {
+      "0240": "AMCAF_ProV1_50B4_EN_VecRotAngles",
+      "2540": "AMCAF_ProV1_50B4_EN_PtileBank",
+      "322a": {
+        "02ee e360 3540 02f4 4e75": "AMCAF_ProV1_50B4_EN_SmouseX",
+        "02ee e360 3540 02f6 4e75": "AMCAF_ProV1_50B4_EN_SmouseY"
+      },
+      "3540": {
+        "027e 4e75": "AMCAF_ProV1_50B4_EN_SplintersFuel",
+        "0282 4e75": "AMCAF_ProV1_50B4_EN_SplintersMax",
+        "0304 201b": "AMCAF_ProV1_50B4_EN_VecRotPos",
+        "0344 2e1b": [
+          ["match", "221b 4eb9"],
+          ["skip", 2],
+          ["match", "3828 0050 be44 6c00"],
+          ["skip", 1],
+          ["match", "e58f 2570 7000 0330 3028 004c e648 3540 0338 2e1b 221b 4eb9"],
+          ["skip", 2],
+          ["match", "3828 0050 be44 6c00"],
+          {
+            "e58f 2570 7000 0346": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIII",
+            "e58f 2570 7000 034a": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIIIII",
+            "e58f 2570 7000 034e": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIIIIIII"
+          }
+        ]
+      },
+      "4eb9": [
+        ["skip", 2],
+        {
+          "2540 0266 4e75": "AMCAF_ProV1_50B4_EN_CoordsBank_I",
+          "2540 02c4 4e75": "AMCAF_ProV1_50B4_EN_PtSamBank",
+          "2548 0496 4e75": "AMCAF_ProV1_50B4_EN_SetTransSource"
+        }
+      ],
+      "6700": "AMCAF_ProV1_50B4_EN_ShadeBobPlanes",
+      "6708": "AMCAF_ProV1_50B4_EN_ShadeBobMask",
+      "6a02": "AMCAF_ProV1_50B4_EN_PtSamVolume_I",
+      "6b00": "AMCAF_ProV1_50B4_EN_Bzoom"
+    },
+    "0168 202a": {
+      "02bc 6700": [
+        ["skip", 1],
+        {
+          "2040 201b": "AMCAF_ProV1_50B4_EN_PtInstrLength",
+          "7004 6100": "AMCAF_ProV1_50B4_EN_PtInstrAddress"
+        }
+      ],
+      "02c4 6700": [
+        ["skip", 1],
+        {
+          "2040 7c00 221b 2e1b": "AMCAF_ProV1_50B4_EN_PtSamPlay_III",
+          "2040 7c00 2e1b 6700": [
+            ["skip", 1],
+            ["match", "6a04 4487 7c01 be50 6200"],
+            ["skip", 1],
+            {
+              "de47 de47 d1f0 70fe 5088 3218 2018 241b": "AMCAF_ProV1_50B4_EN_PtSamPlay_II",
+              "de47 de47 d1f0 70fe 5088 3218 2018 740f": "AMCAF_ProV1_50B4_EN_PtSamPlay_I"
+            }
+          ]
+        }
+      ]
+    },
+    "0168 205b": "AMCAF_ProV1_50B4_EN_SetObjectComment",
+    "0168 206a": {
+      "024a 2008 6700": [
+        ["skip", 1],
+        {
+          "3e2a 0264 201b be40 6b00": "AMCAF_ProV1_50B4_EN_TdStarsMove_I",
+          "3e2a 0264 226d 052c 2009": [
+            ["match", "6700"],
+            ["skip", 1],
+            ["match", "3029 0050 b07c 0002 6c06 700f 6000"],
+            ["skip", 1],
+            {
+              "3c29 004c e64e 302a 0260 322a 0262 2471 0000 2271 1000 3010 ec48 1400 4602 e648 48c0 3228 0002 ec49 c2c6 d280 05b2 1800": "AMCAF_ProV1_50B4_EN_TdStarsSingleDel",
+              "3c29 004c e64e 302a 0260 322a 0262 2471 0000 2271 1000 3010 ec48 1400 4602 e648 48c0 3228 0002 ec49 c2c6 d280 3628 0008": "AMCAF_ProV1_50B4_EN_TdStarsDraw",
+              "3c29 004c e64e 302a 0260 322a 0262 2471 0000 2271 1000 3028 0004 ec48 1400 4602 e648 48c0 3228 0006 ec49 c2c6 d280 05b2": "AMCAF_ProV1_50B4_EN_TdStarsDoubleDel"
+            }
+          ],
+          "3e2a 0264 43f9 00df f006": [
+            ["match", "3c11 6100"],
+            ["skip", 1],
+            {
+              "41e8 000c": "AMCAF_ProV1_50B4_EN_TdStarsMove",
+              "42a8 0004": "AMCAF_ProV1_50B4_EN_TdStarsInit"
+            }
+          ]
+        }
+      ],
+      "026a 2008 6700": [
+        ["skip", 1],
+        {
+          "3e2a 0280 202a 0266 6700": "AMCAF_ProV1_50B4_EN_SplintersMove",
+          "3e2a 0280 226d 052c 2009": [
+            ["match", "6700"],
+            ["skip", 1],
+            {
+              "382a 027c 2f09 2c08 1a28 0011 ba3c 00ff 6732 4a28 0013 662c": "AMCAF_ProV1_50B4_EN_SplintersSingleDel",
+              "382a 027c 2f09 2c08 1a28 0012 ba3c 00ff 672c 2228 0008 1401": "AMCAF_ProV1_50B4_EN_SplintersDoubleDel",
+              "382a 027c 2f0b 2f09 1a28 0010 ba3c 00ff 672c 2228 0004 1401": "AMCAF_ProV1_50B4_EN_SplintersDraw",
+              "382a 027c 2f0b 2f09 1a28 0010 ba3c 00ff 6732 2228 0004 1401": "AMCAF_ProV1_50B4_EN_SplintersBack"
+            }
+          ],
+          "3e2a 0280 70ff 41e8 0010": "AMCAF_ProV1_50B4_EN_SplintersInit",
+          "3e2a 0280 7600 7400 70ff": "AMCAF_ProV1_50B4_EN_SplintersActive"
+        }
+      ],
+      "06aa 7400 201b": "AMCAF_ProV1_50B4_EN_Qsin",
+      "06ae 2e1b 2c1b": "AMCAF_ProV1_50B4_EN_Qarc"
+    },
+    "0168 206d": {
+      "052c 2008 6700": [
+        ["skip", 1],
+        {
+          "42aa 024e 3028 004c": "AMCAF_ProV1_50B4_EN_TdStarsLimit",
+          "42aa 026e 3028 004c": "AMCAF_ProV1_50B4_EN_SplintersLimit"
+        }
+      ],
+      "052c 7000 7200": "AMCAF_ProV1_50B4_EN_LimitSmouse"
+    },
+    "0168 221b": {
+      "201b": {
+        "3540 025a 3541 025c": "AMCAF_ProV1_50B4_EN_TdStarsGravity",
+        "3540 0276 3541 0278": "AMCAF_ProV1_50B4_EN_SplintersGravity",
+        "ed48 ed49 3540 0256": "AMCAF_ProV1_50B4_EN_TdStarsOrigin"
+      },
+      "4eb9": [
+        ["skip", 2],
+        {
+          "201b 6b00": [
+            ["match", "201b 6b00"],
+            ["skip", 1],
+            ["match", "b07c 0008 6c00"],
+            ["skip", 1],
+            {
+              "43e8 0062 45ea 04aa ed48 d5c0 7e0f 22da": "AMCAF_ProV1_50B4_EN_PalSetScreen",
+              "43e8 0062 45ea 04aa ed48 d5c0 7e0f 24d9": "AMCAF_ProV1_50B4_EN_PalGetScreen"
+            }
+          ],
+          "42aa 0358": "AMCAF_ProV1_50B4_EN_BlitterCopyLimit_I"
+        }
+      ],
+      "672a": "AMCAF_ProV1_50B4_EN_PtCiaSpeed",
+      "6b00": "AMCAF_ProV1_50B4_EN_PalGet"
+    },
+    "0168 222a": "AMCAF_ProV1_50B4_EN_ExamineNext",
+    "0168 226a": "AMCAF_ProV1_50B4_EN_VecRotPrecalc",
+    "0168 226d": [
+      ["match", "052c 2009 6700"],
+      ["skip", 1],
+      {
+        "2269 0148 2269 0034": "AMCAF_ProV1_50B4_EN_ChangeFont_SII",
+        "2269 0148 2c09 6100": "AMCAF_ProV1_50B4_EN_Fellipse",
+        "3029 0050 241b 221b": "AMCAF_ProV1_50B4_EN_SplintersColour",
+        "3029 0050 b07c 0002": "AMCAF_ProV1_50B4_EN_TdStarsPlanes"
+      }
+    ],
+    "0168 241b": {
+      "221b": "AMCAF_ProV1_50B4_EN_PalSet",
+      "2542": "AMCAF_ProV1_50B4_EN_AllocCodeBank",
+      "6700": [
+        ["skip", 1],
+        {
+          "7200 201b 3802 5344 3544 0264 c4fc 000c": "AMCAF_ProV1_50B4_EN_TdStarsBank",
+          "7200 201b 3802 5344 3544 0280 c4fc 0016": "AMCAF_ProV1_50B4_EN_SplintersBank",
+          "7200 201b 7800 3802 2e04 e58a 5082 41fa": "AMCAF_ProV1_50B4_EN_CoordsBank_II"
+        }
+      ]
+    },
+    "0168 261b": {
+      "241b 221b 201b 3540 02f8 3541 02fa 3542 02fc 3543 02fe": "AMCAF_ProV1_50B4_EN_LimitSmouse_IIII",
+      "3543 04a0 241b 0642 001f 0242 ffe0 3542 049e 201b 4eb9": "AMCAF_ProV1_50B4_EN_SetTransMap",
+      "3543 04a0 241b 0642 001f 0242 ffe0 3542 049e c4c3 d482": "AMCAF_ProV1_50B4_EN_AllocTransMap"
+    },
+    "0168 262a": {
+      "0104 4e75": "AMCAF_ProV1_50B4_EN_ObjectType",
+      "0174 4e75": "AMCAF_ProV1_50B4_EN_ObjectProtection__I",
+      "017c 4e75": "AMCAF_ProV1_50B4_EN_ObjectSize",
+      "0180 4e75": "AMCAF_ProV1_50B4_EN_ObjectBlocks",
+      "0184 4e75": "AMCAF_ProV1_50B4_EN_ObjectDate"
+    },
+    "0168 2713": "AMCAF_ProV1_50B4_EN_Fcircle",
+    "0168 273c": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIIIIII",
+    "0168 281b": {
+      "205b 6100": "AMCAF_ProV1_50B4_EN_FileCopy",
+      "362a 02ee": "AMCAF_ProV1_50B4_EN_SmouseSpeed"
+    },
+    "0168 2c1b": "AMCAF_ProV1_50B4_EN_TurboDraw_IIIIII",
+    "0168 2e0e": {
+      "202d 02cc 661c 43fa": "AMCAF_ProV1_50B4_EN_ToolTypes",
+      "4a6a 03a6 6608 4a6a": "AMCAF_ProV1_19_AudioFree",
+      "4a6a 0490 6608 4a6a": "AMCAF_ProV1_40_EN_AudioFree"
+    },
+    "0168 2e1b": {
+      "221b 4eb9": "AMCAF_ProV1_50B4_EN_BlitterFill_IIIIIIII",
+      "2c1b 2a1b": {
+        "3545 033e": "AMCAF_ProV1_50B4_EN_BlitterClear_IIIIII",
+        "3545 035a": "AMCAF_ProV1_50B4_EN_BlitterCopyLimit_IIII"
+      }
+    },
+    "0168 357c": {
+      "0004 02d2": "AMCAF_ProV1_50B4_EN_AmcafAgaNotationOn",
+      "0008 02d2": "AMCAF_ProV1_50B4_EN_AmcafAgaNotationOff"
+    },
+    "0168 362a": {
+      "02f4 302a 02ee e063": "AMCAF_ProV1_50B4_EN_XSmouse",
+      "02f6 302a 02ee e063": "AMCAF_ProV1_50B4_EN_YSmouse"
+    },
+    "0168 41ea": {
+      "0108 7402": "AMCAF_ProV1_50B4_EN_ObjectName",
+      "018a 3610": "AMCAF_ProV1_50B4_EN_ObjectTime",
+      "0190 7402": "AMCAF_ProV1_50B4_EN_ObjectComment",
+      "024e 261b": "AMCAF_ProV1_50B4_EN_TdStarsLimit_IIII",
+      "026e 261b": "AMCAF_ProV1_50B4_EN_SplintersLimit_IIII"
+    },
+    "0168 426a": "AMCAF_ProV1_50B4_EN_TdStarsAccelerateOff",
+    "0168 45ea": {
+      "0380 220a 2e0e 2c6d 02b8 4eae ff40 2c47 2612 4e75": "AMCAF_ProV1_50B4_EN_CurrentDate",
+      "0380 220a 2e0e 2c6d 02b8 4eae ff40 2c47 362a 0006": "AMCAF_ProV1_50B4_EN_CurrentTime"
+    },
+    "0168 48e7": [
+      ["match", "0006 6100"],
+      ["skip", 1],
+      {
+        "4a46 6b00 0098 302a": "AMCAF_ProV1_50B4_EN_ShadeBobDown",
+        "4a46 6b00 009a 302a": "AMCAF_ProV1_50B4_EN_ShadeBobUp"
+      }
+    ],
+    "0168 4a6a": "AMCAF_ProV1_50B4_EN_AudioLock",
+    "0168 4eb9": "AMCAF_ProV1_50B4_EN_PtBank",
+    "0168 50ea": "AMCAF_ProV1_50B4_EN_TdStarsAccelerateOn",
+    "0168 6100": [
+      "push",
+      "follow-rel",
+      {
+        "246d 0168": "AMCAF_ProV1_50B4_EN_PtPlay_II",
+        "48e7 c0e0": [
+          "pop",
+          ["skip", 1],
+          {
+            "206b": "AMCAF_ProV1_50B4_EN_ImploderLoad",
+            "6100": [
+              ["skip", 1],
+              {
+                "206b 0004 6100": "AMCAF_ProV1_50B4_EN_Ppfromdisk",
+                "221b 201b 2e1b": "AMCAF_ProV1_50B4_EN_Pptodisk_SII",
+                "2e1b 201b be80": "AMCAF_ProV1_50B4_EN_Ppunpack"
+              }
+            ]
+          }
+        ],
+        "7e08 7400": [
+          "pop",
+          ["skip", 1],
+          {
+            "3604 48c3": "AMCAF_ProV1_50B4_EN_VecRotY_III",
+            "3605 48c3": "AMCAF_ProV1_50B4_EN_VecRotZ_III",
+            "48c3 4e75": "AMCAF_ProV1_50B4_EN_VecRotX_III"
+          }
+        ]
+      }
+    ],
+    "0168 7004": [
+      ["skip", 1],
+      {
+        "201b 6a02 7000": "AMCAF_ProV1_50B4_EN_PtVolume",
+        "201b 72ff 2141": "AMCAF_ProV1_50B4_EN_PtVoice",
+        "202a 02bc 6700": "AMCAF_ProV1_50B4_EN_PtContinue",
+        "206a 02cc 43e8": {
+          "000e 41f9 00df f0a0 201b 7201 7e03 0800": "AMCAF_ProV1_50B4_EN_PtSamStop",
+          "000e 41f9 00df f0a0 221b 6a02 7200 b27c": "AMCAF_ProV1_50B4_EN_PtSamFreq",
+          "000e 41f9 00df f0a0 261b 6a02 7600 b67c": "AMCAF_ProV1_50B4_EN_PtSamVolume_II"
+        },
+        "262a 02cc 4e75": "AMCAF_ProV1_50B4_EN_PtDataBase",
+        "4a6a 02ba 6608": "AMCAF_ProV1_50B4_EN_PtStop",
+        "7400 7600 226a": "AMCAF_ProV1_50B4_EN_PtFreeVoice_I",
+        "7600 7400 1628": "AMCAF_ProV1_50B4_EN_PtSignal"
+      }
+    ],
+    "0168 7400": {
+      "3239 00df f006": "AMCAF_ProV1_50B4_EN_Qrnd",
+      "362a 030c 48c3": "AMCAF_ProV1_50B4_EN_VecRotX",
+      "362a 030e 48c3": "AMCAF_ProV1_50B4_EN_VecRotY",
+      "362a 0310 48c3": "AMCAF_ProV1_50B4_EN_VecRotZ",
+      "7600 2c1b 6b00": "AMCAF_ProV1_50B4_EN_Xfire"
+    },
+    "0168 7401": "AMCAF_ProV1_50B4_EN_AllocTransSource",
+    "0168 7600": {
+      "41f9 00df f000 317c": "AMCAF_ProV1_50B4_EN_SmouseKey",
+      "7400 206a 02cc 1628": "AMCAF_ProV1_50B4_EN_PtCpattern",
+      "7400 206a 02cc 3628": "AMCAF_ProV1_50B4_EN_PtCpos"
+    },
+    "0168 7800": "AMCAF_ProV1_50B4_EN_PastePtile",
+    "0168 7c00": "AMCAF_ProV1_50B4_EN_PtInstrPlay_III",
+    "01a8 0c6a": {
+      "0000 0008 671a 2252": "TurboPlus_ProV1_00_CheckErase",
+      "0000 0008 671c 226a": "Turbo_ProV1_90_CheckErase"
+    },
+    "01a8 201b": {
+      "6608": "TurboPlus_ProV1_00_BlitIntWait",
+      "6b00": [
+        ["skip", 1],
+        {
+          "b0bc 0000 7d00 6e38 4a80 6742 4a6a 0388 6628 2e00 2f0a 244e 2c78 0004 c0fc 004a 223c 0001 0002 4eae": "TurboPlus_ProV1_00_Scene16Limit",
+          "b0bc 0000 7d00 6e38 4a80 6742 4a6a 0388 6628 2e00 2f0a 244e 2c78 0004 c0fc 004e 223c 0001 0001 4eae": "TurboPlus_ProV2_00_Scene16Limit",
+          "b0bc 0000 7d00 6e4c 4a80 6756 4a6a 000a 663c 2f0a 2e00 e588 244e 2c78 0004 223c 0001 0001 4eae ff3a": "TurboPlus_ProV1_00_ObjectLimit",
+          "b0bc 0000 7d00 6e4c 4a80 6756 4a6a 000a 663c 2f0a 2e00 e588 244e 2c78 0004 223c 0001 0002 4eae ff3a": "Turbo_ProV1_90_ObjectLimit"
+        }
+      ],
+      "6f00": [
+        ["skip", 1],
+        ["match", "b06a 0388 6200"],
+        ["skip", 1],
+        {
+          "5340 c0fc 004a 246a": "TurboPlus_ProV1_00_Scene16Restore",
+          "5340 c0fc 004e 246a": "TurboPlus_ProV2_00_Scene16Restore"
+        }
+      ]
+    },
+    "01a8 202a": {
+      "034e 6700": "Turbo_ProV1_90_StaticBlockErase",
+      "0350 6700": "TurboPlus_ProV1_00_StaticBlockErase"
+    },
+    "01a8 202b": [
+      ["match", "0018 6f00"],
+      ["skip", 1],
+      ["match", "b06a 0388 6200"],
+      ["skip", 1],
+      {
+        "5340 2e00 c0fc 004a": "TurboPlus_ProV1_00_Scene16Def",
+        "5340 2e00 c0fc 004e": "TurboPlus_ProV2_00_Scene16Def"
+      }
+    ],
+    "01a8 261b": [
+      ["match", "6700"],
+      ["skip", 1],
+      {
+        "5343 b66a 01fc 6c00": "TurboPlus_ProV1_00_StarsCompute",
+        "5343 b66a 01fe 6c00": "Turbo_ProV1_90_StarsCompute"
+      }
+    ],
+    "01a8 281b": [
+      ["match", "261b 241b 6b00"],
+      ["skip", 1],
+      ["match", "221b 6b00"],
+      ["skip", 1],
+      ["match", "201b 6f00"],
+      ["skip", 1],
+      {
+        "5340 4a6a 01fc 6716": "TurboPlus_ProV1_00_DefineStar",
+        "5340 4a6a 01fe 6716": "Turbo_ProV1_90_DefineStar"
+      }
+    ],
+    "01a8 2e1b": [
+      ["match", "6b00"],
+      ["skip", 1],
+      ["match", "2c1b 6b00"],
+      ["skip", 1],
+      ["match", "0246 fff0 206d 052c 3a28 004e be45 6c00"],
+      ["skip", 1],
+      {
+        "3606 e64b 3543 0376 3c03 3828 00b2 9644": [
+          ["match", "6c00"],
+          ["skip", 1],
+          ["match", "3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 4443 e24b 241b 6f00"],
+          ["skip", 1],
+          ["match", "281b 6f00"],
+          ["skip", 1],
+          ["match", "b843 6f02 3803 9a47 e84d 6700"],
+          ["skip", 1],
+          ["match", "b445 6e02 3a02 221b 6b00"],
+          ["skip", 1],
+          ["match", "201b 6b00"],
+          ["skip", 1],
+          {
+            "48e7 001a 2c6d 01a8": "TurboPlus_ProV1_00_Scene16Draw",
+            "48e7 001a 43f9 00df": "TurboPlus_ProV2_00_Scene16Draw"
+          }
+        ],
+        "3606 e64b 3543 0382 3c03 3828 00b2 9644": [
+          ["match", "6c00"],
+          ["skip", 1],
+          ["match", "3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 4443 e44b 241b 6f00"],
+          ["skip", 1],
+          ["match", "281b 6f00"],
+          ["match", "b843 6f02 3803 9a47 ea4d 6700"],
+          ["skip", 1],
+          ["match", "b445 6e02 3a02 221b 6b00"],
+          ["skip", 1],
+          ["match", "201b 6b00"],
+          ["skip", 1],
+          {
+            "48e7 001a 2c6d 01a8": "TurboPlus_ProV1_00_Scene32Draw",
+            "48e7 001a 43f9 00df": "TurboPlus_ProV2_00_Scene32Draw"
+          }
+        ],
+        "e64e 3546 0376 3606 3828 00b2 9644 6c00": "TurboPlus_ProV2_15_Scene16Draw"
+      }
+    ],
+    "01a8 302a": {
+      "01fc 6736 48c0": "TurboPlus_ProV1_00_StarsErase",
+      "01fe 6736 48c0": "Turbo_ProV1_90_StarsErase",
+      "03b8 48c0 4eb9": [
+        ["skip", 2],
+        ["match", "261b 6f00"],
+        ["skip", 1],
+        {
+          "b640 6e1a": "TurboPlus_ProV1_00_IconCheck",
+          "b650 6e1a": "TurboPlus_ProV2_00_IconCheck"
+        }
+      ]
+    },
+    "01a8 322a": {
+      "0398 206d 052c b268 00bc 6600": [
+        ["skip", 1],
+        {
+          "3e2a 039c 3c2a 039a 3606 e64b 3543 0376 3c03 3828 00b2 3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 3a2a 03a0 382a 039e 7000 7200": "TurboPlus_ProV1_00_Scene16Do",
+          "3e2a 039c 3c2a 039a 3606 e64b 3543 0376 3c03 3828 00b2 3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 3a2a 03a0 7801 7000 7200 6100": "TurboPlus_ProV1_00_Scene16Left",
+          "3e2a 039c 3c2a 039a 3606 e64b 3543 0376 3c03 3828 00b2 3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 7a01 382a 039e 7000 7200 6100": "TurboPlus_ProV1_00_Scene16Top",
+          "3e2a 039c 3c2a 03b0 3606 e64b 3543 0376 3c03 3828 00b2 3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 3a2a 03a0 7801 7000 7200 302a": "TurboPlus_ProV1_00_Scene16Right",
+          "3e2a 03ac 3c2a 039a 3606 e64b 3543 0376 3c03 3828 00b2 3407 c4c4 2542 0370 3404 e94a 2542 0378 5544 3544 0374 7a01 382a 039e 7000 7200 322a": "TurboPlus_ProV1_00_Scene16Bottom"
+        }
+      ],
+      "03a2 206d 052c b268 00bc 6600": [
+        ["skip", 1],
+        {
+          "3e2a 03a6 3c2a 03a4 3606 e64b 3543 0382 3c03 3828 00b2 3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 3a2a 03aa 382a 03a8 7000 7200": "TurboPlus_ProV1_00_Scene32Do",
+          "3e2a 03a6 3c2a 03a4 3606 e64b 3543 0382 3c03 3828 00b2 3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 3a2a 03aa 7801 7000 7200 6100": "TurboPlus_ProV1_00_Scene32Left",
+          "3e2a 03a6 3c2a 03a4 3606 e64b 3543 0382 3c03 3828 00b2 3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 7a01 382a 03a8 7000 7200 6100": "TurboPlus_ProV1_00_Scene32Top",
+          "3e2a 03a6 3c2a 03b4 3606 e64b 3543 0382 3c03 3828 00b2 3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 3a2a 03aa 7801 7000 7200 302a": "TurboPlus_ProV1_00_Scene32Right",
+          "3e2a 03ae 3c2a 03a4 3606 e64b 3543 0382 3c03 3828 00b2 3407 c4c4 2542 037c 3404 eb4a 2542 0384 5944 3544 0380 7a01 382a 03a8 7000 7200 322a": "TurboPlus_ProV1_00_Scene32Bottom"
+        }
+      ]
+    },
+    "01a8 3e2a": {
+      "01fc 6700": [
+        ["skip", 1],
+        {
+          "5347 2f0c 2f0e 286d": "TurboPlus_ProV1_00_StarsDraw",
+          "5347 48e7 001e 2c6a": "TurboPlus_ProV1_00_DisplayStars"
+        }
+      ],
+      "01fe 6700": [
+        ["skip", 1],
+        {
+          "5347 2f0c 2f0e 286d": "Turbo_ProV1_90_FStars",
+          "5347 48e7 001e 2c6a": "Turbo_ProV1_90_DisplayStars"
+        }
+      ],
+      "03a0 3c2a": "TurboPlus_ProV2_00_Scene16Right",
+      "03a2 3c2a": "TurboPlus_ProV2_00_Scene16Bottom",
+      "03b0 3c2a": "TurboPlus_ProV2_00_Scene32Right",
+      "03b2 3c2a": "TurboPlus_ProV2_00_Scene32Bottom"
+    },
+    "01a8 4a2a": "TurboPlus_ProV2_15_MultiBlError",
+    "01a8 4a6a": {
+      "01fc 6700 0074 4a6a": "TurboPlus_ProV1_00_StarsIntOn",
+      "01fe 6700 0082 4a6a": "Turbo_ProV1_90_StarsIntOn",
+      "0220 6748 426a 0222": "TurboPlus_ProV1_00_StarsIntOff",
+      "0222 6750 426a 0224": "Turbo_ProV1_90_StarsIntOff",
+      "0224 6744 426a 0224": "TurboPlus_ProV1_00_BlitIntOff",
+      "0226 674c 426a 0226": "Turbo_ProV1_90_BlitIntOff"
+    },
+    "01a8 4aaa": {
+      "034e 6600": "Turbo_ProV1_90_ReserveStaticBlock",
+      "0350 6600": "TurboPlus_ProV1_00_ReserveStaticBlock"
+    },
+    "01a8 4caa": {
+      "00e0 039c 3546 0376 7801 7000": "TurboPlus_ProV2_00_Scene16Left",
+      "00e0 03ac 3546 0382 7801 7000": "TurboPlus_ProV2_00_Scene32Left",
+      "00f0 039a 3546 0376 7000 7200": "TurboPlus_ProV2_00_Scene16Do",
+      "00f0 039a 3546 0376 7a01 7000": "TurboPlus_ProV2_00_Scene16Top",
+      "00f0 03aa 3546 0382 7000 7200": "TurboPlus_ProV2_00_Scene32Do",
+      "00f0 03aa 3546 0382 7a01 7000": "TurboPlus_ProV2_00_Scene32Top"
+    },
+    "01a8 7400": {
+      "7600 246a 035c 3612 4e75": "TurboPlus_ProV1_00_SceneX",
+      "7600 246a 035c 362a 0002": "TurboPlus_ProV1_00_SceneY",
+      "7600 4a6a 06d4 6604 76ff": "TurboPlus_ProV2_15_MultiBlEnded"
+    },
+    "01b8 0a6a": {
+      "01b8 0a6a 0004 0010 4e75": "PowerBobs_ProBETA6_PswapClear",
+      "01b8 0a6a 0004 0014 4e75": "PowerBobs_ProV1_00_PswapClear"
+    },
+    "01b8 201b": {
+      "01b8 201b 6706 50ea 01ba": "PowerBobs_ProV1_00_SetFastpbobMode",
+      "01b8 201b 670c 357c ffff": {
+        "000c 42aa 000e 4e75": "PowerBobs_ProBETA6_PbobDbuf",
+        "0010 42aa 0012 4e75": "PowerBobs_ProV1_00_PbobDbuf"
+      },
+      "01b8 201b 6712 50ea 01b9": "PowerBobs_ProV1_00_Pdraw25fps_I",
+      "01b8 201b b06a 024e 6200": "PowerBobs_ProV1_00_PbobspriteFastcol_III"
+    },
+    "01b8 221b": {
+      "201b": {
+        "b0bc 8000 0000 6704 2540 0504 b2bc 8000": "PowerBobs_ProV1_00_SetPincRange",
+        "b0bc 8000 0000 6704 2540 051c b2bc 8000": "PowerBobs_ProV1_00_SetPdecRange",
+        "b0bc 8000 0000 6704 2540 054c b2bc 8000": "PowerBobs_ProV1_00_SetPsumRange"
+      },
+      "6b00": [
+        ["skip", 1],
+        ["match", "201b 6b00"],
+        ["skip", 1],
+        ["match", "b280 6d00"],
+        ["skip", 1],
+        {
+          "b26a 00f6 6200": "PowerBobs_ProBETA6_PspriteOff_II",
+          "b26a 024e 6200": "PowerBobs_ProV1_00_PspriteOff_II"
+        }
+      ]
+    },
+    "01b8 2e1b": {
+      "2c1b": [
+        ["match", "be46 6d00"],
+        ["skip", 1],
+        {
+          "be6a 0008 6200": [
+            ["skip", 1],
+            {
+              "5346 e74e e74f 302a 000e dc40 de40 48aa": "PowerBobs_ProBETA6_PbobDraw",
+              "5346 e74e e74f 302a 0010 dc40 de40 43f9": "PowerBobs_ProBETA6_PbobClear"
+            }
+          ],
+          "be6a 000c 6200": [
+            ["skip", 1],
+            {
+              "5346 e74e e74f 302a 0012 dc40 de40 48aa": "PowerBobs_ProV1_00_PbobDraw",
+              "5346 e74e e74f 302a 0014 dc40 de40 43f9": "PowerBobs_ProV1_00_PbobClear"
+            }
+          ]
+        }
+      ],
+      "6d00": "PowerBobs_ProV1_00_Psprite_IIIII",
+      "6f00": [
+        ["skip", 1],
+        {
+          "be6a 0008": "PowerBobs_ProBETA6_Pbob_IIIII",
+          "be6a 000c": "PowerBobs_ProV1_00_Pbob_IIIII",
+          "be6a 024c": "PowerBobs_ProV1_00_Psprite_IIII"
+        }
+      ],
+      "be6a": "PowerBobs_ProV1_00_PspritebobFastcol_III"
+    },
+    "01b8 302a": {
+      "00f6 6d00": "PowerBobs_ProBETA6_PspriteOff",
+      "024e 2a1b": "PowerBobs_ProV1_00_PspriteFastcol_III",
+      "024e 2e1b": "PowerBobs_ProV1_00_PspriteFastcol_II",
+      "024e 6d00": "PowerBobs_ProV1_00_PspriteOff"
+    },
+    "01b8 3a2a": {
+      "0008 222b 0004": "PowerBobs_ProBETA6_PbobspriteFastcol_III",
+      "0008 2e1b 6f00": [
+        ["skip", 1],
+        {
+          "be45 6200": "PowerBobs_ProBETA6_PbobFastcol_II",
+          "be7c 003f": "PowerBobs_ProBETA6_PbobspriteFastcol_II"
+        }
+      ],
+      "0008 2e2b 0004": "PowerBobs_ProBETA6_PbobFastcol_III",
+      "000c 2e1b 6f00": [
+        ["skip", 1],
+        {
+          "be45 6200": "PowerBobs_ProV1_00_PbobFastcol_II",
+          "be6a 024e": "PowerBobs_ProV1_00_PbobspriteFastcol_II"
+        }
+      ],
+      "000c 2e2b 0004": "PowerBobs_ProV1_00_PbobFastcol_III"
+    },
+    "01b8 3e2a": {
+      "0008 6700": "PowerBobs_ProBETA6_PbobUpdate",
+      "0008 677e": "PowerBobs_ProBETA6_PbobErase",
+      "0008 6f00": [
+        ["skip", 1],
+        {
+          "2052 2c1b 6f00": "PowerBobs_ProBETA6_PbobOff_II",
+          "2052 e74f 7c00": "PowerBobs_ProBETA6_PbobOff",
+          "2c1b bc47 6200": "PowerBobs_ProBETA6_PchannelToPbob",
+          "4aad e7d2 6700": "PowerBobs_ProBETA6_PsyncPbob"
+        }
+      ],
+      "000c 6700": "PowerBobs_ProV1_00_PbobUpdate",
+      "000c 677e": "PowerBobs_ProV1_00_PbobErase",
+      "000c 6f00": [
+        ["skip", 1],
+        {
+          "2052 2c1b": "PowerBobs_ProV1_00_PbobOff_II",
+          "2052 e74f": "PowerBobs_ProV1_00_PbobOff",
+          "2c1b bc47": "PowerBobs_ProV1_00_PchannelToPbob",
+          "4aad e7d2": "PowerBobs_ProV1_00_PsyncPbob"
+        }
+      ],
+      "024e 6f00": "PowerBobs_ProV1_00_PchannelToPsprite"
+    },
+    "01b8 4a6a": {
+      "00f4 6700": "PowerBobs_ProBETA6_PspriteUpdate",
+      "024c 6700": "PowerBobs_ProV1_00_PspriteUpdate"
+    },
+    "01b8 50ea": "PowerBobs_ProBETA6_Pdraw25fps",
+    "01b8 51ea": "PowerBobs_ProV1_00_UnsetPsumRange",
+    "01b8 7400": {
+      "7600 201b 6b22 322a": [
+        ["match", "000c 6740 b041 6200"],
+        ["skip", 1],
+        {
+          "206d 01b8 d0fc 0134": "PowerBobs_ProV1_00_PfastBobcol",
+          "206d 01b8 d0fc 0178": "PowerBobs_ProV1_00_PfastSprbobcol"
+        }
+      ],
+      "7600 322a 0008 673e": "PowerBobs_ProBETA6_PfastCol",
+      "7600 3e2a 024e 6700": [
+        ["skip", 1],
+        ["match", "201b 6b1c b047 6200"],
+        ["skip", 1],
+        {
+          "206d 01b8 d0fc 002e": "PowerBobs_ProV1_00_PfastBobsprcol",
+          "206d 01b8 d0fc 00b0": "PowerBobs_ProV1_00_PfastSprcol"
+        }
+      ]
+    },
+    "01b8 be6a": "PowerBobs_ProV1_00_PspritebobFastcol_II",
+    "01b8 d4fc": {
+      "0554 51d2 4e75": "PowerBobs_ProV1_00_UnsetPincRange",
+      "0557 51d2 4e75": "PowerBobs_ProV1_00_UnsetPdecRange",
+      "055a 51d2 4e75": "PowerBobs_ProV1_00_UnsetPaddRange"
+    },
+    "01c8 7600": "Game_ProV0_90_GRightClick",
+    "01d8 201b": {
+      "2540 012c": "DoomMusic_ProV2_00_DmeSamBank",
+      "6a02 7000": "DoomMusic_ProV2_00_DmeSamVolume_I"
+    },
+    "01d8 206a": {
+      "0034 317c 0001 0020 426a 003c 4e75": "DoomMusic_ProV2_00_P61Cont",
+      "0134 43e8 0010 41f9 00df f0a0 201b": "DoomMusic_ProV2_00_DmeSamStop_I",
+      "0134 43e8 0010 41f9 00df f0a0 221b": {
+        "6a02 7200 b27c 0040": "DoomMusic_ProV2_00_DmeSamVolume_II",
+        "6a02 7200 b27c 0190": "DoomMusic_ProV2_00_DmeSamFreq"
+      }
+    },
+    "01d8 2c1b": "Effects_ProV0_15_CreateScreenTable",
+    "01d8 2e1b": {
+      "206a 0100 de47 0247 07fe 3570": [
+        ["match", "7000 0104 0647 0200 0247 07fe 3e30 7000 4447 3547 0106 2c1b 2a1b 281b 201b 4eb9"],
+        ["skip", 2],
+        ["match", "2e28 ffec 5187 5187 8efc 0006 5387 2448 221b 2601 4eb9"],
+        ["skip", 2],
+        {
+          "48e7 001e 2c48 206d 01d8 224a e14b 246d 01d8 e54b 47ea 0920 d7c3 2a5e 2c56 3019": "Effects_ProV0_15_StarclearTwo",
+          "48e7 001e 2c48 206d 01d8 224a e14b 246d 01d8 e54b 47ea 0920 d7c3 2a5e 49ea 0108": "Effects_ProV0_15_StarfieldTwo"
+        }
+      ],
+      "b287 671c bebc 0000 001f 6300": "DoomMusic_ProV2_00_PtmCiaSpeed"
+    },
+    "01d8 4a2a": {
+      "0042 670e 7600 206a": {
+        "0042 670e 7600 206a 0034 3628 0028 7400": "DoomMusic_ProV2_00_P61SongPos",
+        "0042 670e 7600 206a 0034 3628 002c 7400": "DoomMusic_ProV2_00_P61PattPos"
+      },
+      "0054 6716 302a 0048": [
+        ["match", "4eb9"],
+        ["skip", 2],
+        {
+          "7600 3628 002c 4883": "DoomMusic_ProV2_00_DmedPattPos",
+          "7600 3628 002e 4883": "DoomMusic_ProV2_00_DmedSongPos"
+        }
+      ],
+      "0062 6714 302a 0056": [
+        ["match", "4eb9"],
+        ["skip", 2],
+        {
+        "7600 3628 002c 7400": "DoomMusic_ProV2_00_OmedPattPos",
+        "7600 3628 002e 7400": "DoomMusic_ProV2_00_OmedSongPos"
+        }
+      ],
+      "0070 6714 302a 0064": [
+        ["match", "4eb9"],
+        ["skip", 2],
+        {
+          "7600 3628 002c 7400": "DoomMusic_ProV2_00_OmixPattPos",
+          "7600 3628 002e 7400": "DoomMusic_ProV2_00_OmixSongPos"
+        }
+      ],
+      "0128 660a 157c 0001": "DoomMusic_ProV2_00_PtmCont",
+      "0128 6716 422a 0128": "DoomMusic_ProV2_00_PtmStop",
+      "0128 6738 7004 6100": "DoomMusic_ProV2_00_PtmPrevPatt",
+      "0128 673e 7004 6100": "DoomMusic_ProV2_00_PtmNextPatt",
+      "0129 6710 7004 6100": "DoomMusic_ProV2_00_PtmSongPos",
+      "0129 6712 7004 6100": "DoomMusic_ProV2_00_PtmPattPos"
+    },
+    "01d8 4a52": "DoomMusic_ProV2_00_ThxStop",
+    "01d8 4a6a": {
+      "0008 671c 48e7 001e 266a 0002 266b 0028": "DoomMusic_ProV2_00_ThxSongPos",
+      "003a 6730 426a 003a 48e7 c0d0 7003 6100": "DoomMusic_ProV2_00_P61Stop",
+      "003c 662c 206a 0034 4268 0020 357c 0001": "DoomMusic_ProV2_00_P61Pause"
+    },
+    "01d8 6100": [
+      "push",
+      "follow-rel",
+      {
+        "246d 01d8 4a2a 0128 6716 422a 0128 48e7 001e 6100": "DoomMusic_ProV2_00_PtmPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 004a 662c 43fa 0048 7002": "DoomMusic_ProV2_00_DmedPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 0058 6630 43fa 004c 7002": "DoomMusic_ProV2_00_OmedPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 0066 6630 43fa 004c 7002": "DoomMusic_ProV2_00_OmixPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 008c 6618 43fa 0026 7002": "DoomMusic_ProV2_00_SmonPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 00b2 6618 43fa 0026 7001": "DoomMusic_ProV2_00_TfmxPlay_II",
+        "48e7 e0e0 246d 01d8 4aaa 00f6 6620 43fa 0040 7000": "DoomMusic_ProV2_00_SidPlay_II"
+      }
+    ],
+    "01e8 202a": {
+      "0088 2040 6700": [
+        ["skip", 1],
+        {
+          "2068 0056": "EasyLife_ProV1_09_EliconifyTest",
+          "257c 0000": "EasyLife_ProV1_09_EliconifyEnd"
+        }
+      ],
+      "00e8 2040 6700": [
+        ["skip", 1],
+        {
+          "2068 0056": "EasyLife_ProV1_44_EliconifyTest",
+          "257c 0000": "EasyLife_ProV1_44_EliconifyEnd"
+        }
+      ]
+    },
+    "01e8 222a": {
+      "0090 6606 7011 6000": [
+        ["skip", 1],
+        {
+          "261b b6bc": "EasyLife_ProV1_09_Elin",
+          "2f0e 2c6d": "EasyLife_ProV1_09_ElinGet"
+        }
+      ],
+      "0094 6606 7010 6000": "EasyLife_ProV1_09_Elout",
+      "00f0 6606 7015 6000": [
+        ["skip", 1],
+        {
+          "261b b6bc": "EasyLife_ProV1_44_Elin",
+          "2f0e 2c6d": "EasyLife_ProV1_44_ElinGet"
+        }
+      ],
+      "00f4 6606 7014 6000": "EasyLife_ProV1_44_Elout"
+    },
+    "01e8 262a": {
+      "0090 6702 76ff 4e75": "EasyLife_ProV1_09_ElinExists",
+      "0094 6702 76ff 4e75": "EasyLife_ProV1_09_EloutExists",
+      "00f0 6702 76ff 4e75": "EasyLife_ProV1_44_ElinExists",
+      "00f4 6702 76ff 4e75": "EasyLife_ProV1_44_EloutExists"
+    },
+    "01e8 45ea": {
+      "01e8 45ea 007c 2012 6724 2440 226a 0004": "EasyLife_ProV1_09_ElcloseFonts",
+      "01e8 45ea 09c4 261b 221b 241b 201b 4892": "Amon_ProV1_03_LimitRodent",
+      "01e8 45ea 09cc 4cdb 0003 4892 0003 4e75": "Amon_ProV1_03_SetRodent"
+    },
+    "01e8 4aaa": {
+      "01e8 4aaa 0088 6600": "EasyLife_ProV1_09_EliconifyBegin",
+      "01e8 4aaa 00e8 6600": "EasyLife_ProV1_44_EliconifyBegin"
+    },
+    "01f8 202a": {
+      "01f8 202a 0000 670e": "Locale_ProV0_26_CloseCatalog",
+      "01f8 202a 000c 6600": "Locale_ProV0_26_EmitCatalogDescription"
+    },
+    "01f8 222a": "Locale_ProV0_26_EmitClose",
+    "0228 206d": "AGA_ProV1_00_AgaColour_I__I",
+    "0228 4a12": "THX_ProV0_6_ThxStop",
+    "0238 0caa": "DBench_ProV0_42_DbSelectFirst",
+    "0238 202a": {
+      "0004 d0aa 0000 2f00": "DBench_ProV0_42_DbClose",
+      "0004 d0aa 0000 4eb9": [
+        ["skip", 2],
+        {
+          "6600": "DBench_ProV0_42_DbUse",
+          "6700": "DBench_ProV0_42_DbState"
+        }
+      ]
+    },
+    "0238 257c": "DBench_ProV0_42_DbSelectNext",
+    "0258 2252": [
+      ["match", "7800 1819 e14c 1819 48e7 0060 2604 0243 fffe 5443 4eb9"],
+      ["skip", 2],
+      {
+        "43f1 3002 2b49 066a 4cdf 0600 2608 30c4 4a44 6708 5344 10d9": "Tools_ProV1_00_GetString",
+        "43f1 3002 2b49 066a 4cdf 0600 2608 30c4 4a44 670c 5344 1099": "Tools_ProV1_00_GetCrypt"
+      }
+    ],
+    "0258 d4fc": {
+      "0050 2712 24bc 0000": "IntuiExtend_ProV1_60_PpFree",
+      "05d6 2a1b 3545 0000": "IntuiExtend_ProV2_01B_WbSpline",
+      "05f4 2a1b 3545 0000": "IntuiExtend_ProV1_60_WbSpline",
+      "075c 262a 0000 4e75": "IntuiExtend_ProV1_60_RtGetDisplayId",
+      "075c 262a 000c 4e75": "IntuiExtend_ProV1_60_RtGetAutoscroll",
+      "075c 7600 362a 0004": "IntuiExtend_ProV1_60_RtGetDisplayWidth",
+      "075c 7600 362a 0006": "IntuiExtend_ProV1_60_RtGetDisplayHeight",
+      "075c 7600 362a 0008": "IntuiExtend_ProV1_60_RtGetDisplayDepth",
+      "075c 7600 362a 000a": "IntuiExtend_ProV1_60_RtGetOverscanType"
+    },
+    "0268 202d": {
+      "0662 4aaa 015c 672a": "GUI_ProV1_70B_GuiPubName",
+      "0662 4aaa 0166 672a": "GUI_ProV1_75_GuiPubName",
+      "0662 4aaa 01d6 672a": "GUI_ProV2_00_GuiPubName"
+    },
+    "0268 262d": "GUI_ProV2_00_GuiAppName",
+    "0268 2f0e": "GUI_ProV1_61_TcpTrash",
+    "0268 d4fc": {
+      "0010 3012 0800 000e 6700 0022 103c 0003 48e7 8080 206d 0268 d0fc 0010 3010 0880": "SLN_ProV2_00_STrackStop",
+      "0018 2e1b 0687 0000 0001 2c1b 0686 0000 0001 2a1b 0685 0000 0001 281b 261b 0c43": "SLN_ProV2_00_SAinit_IIIII",
+      "0018 2e1b 0687 0000 0001 2c1b 0686 0000 0002 2a1b 0685 0000 0003 281b 241b 0c82": "SLN_ProV2_00_SAinit_IIIIII"
+    },
+    "0278 201b": {
+      "3540 09d6 4cdb 000f 357c 0000 09d4 7c00 2801 9883 4a84 670a": "Amon_ProV1_04_CountColour",
+      "6a02 7000 b07c 0040 6d02 7040 2052 3140 0000 3140 0002 4e75": "P61_ProV1_10_P61Volume",
+      "b07c 0020 6e02 7020 b07c 00ff 6d04 303c 00ff 2052 2228 1810": "P61_ProV1_10_P61CiaSpeed",
+      "b07c 0020 6e02 7020 b07c 00ff 6d04 303c 00ff 2052 2228 1814": "P61_ProV1_20_P61CiaSpeed"
+    },
+    "0278 2052": {
+      "201b 3140": "P61_ProV1_10_P61Fade_II",
+      "317c 0001": "P61_ProV1_10_P61Continue"
+    },
+    "0278 357c": "Amon_ProV1_04_FindColour",
+    "0278 45ea": {
+      "09c4 261b": "Amon_ProV1_04_LimitRodent",
+      "09cc 4cdb": "Amon_ProV1_04_SetRodent"
+    },
+    "0278 4a6a": [
+      ["match", "0010 6706 7202 6100"],
+      "follow-rel",
+      {
+        "48e7 3f3e 4df9 00df f000 6106 4cdf 7cfc 4e75 5341 6b12 5341 6b74 5341 6b00 03b8": "P61_ProV1_10_P61Stop",
+        "48e7 3f3e 4df9 00df f000 6106 4cdf 7cfc 4e75 5341 6b12 5341 6b74 5341 6b00 03bc": "P61_ProV1_20_P61Stop"
+      }
+    ],
+    "0278 4aaa": "P61_ProV1_10_P61Pause",
+    "04f2 45ea": "AMOS_ProV2_00_CommandLine_get",
+    "052c 281b": "AMCAF_ProV1_50B4_EN_ShadePix_III"
+  },
+  "2478": {
+    "0004 162a 0212 0283": "IntuiExtend_ProV1_30B_VblFreq",
+    "0004 7600 162a 0213": "IntuiExtend_ProV2_01B_PowerFreq"
+  },
+  "260d": "CRAFT_ProV1_00_AmosBase",
+  "2610": "AMOS_ProV2_00_Array",
+  "2613": "TurboPlus_ProV2_00_ReserveScene",
   "261b": {
     "0243": "IntuiExtend_ProV1_60_GetMenuCode",
     "0643": "IntuiExtend_ProV1_30B_WbScreenRastport",
