@@ -1,6 +1,86 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "243c": {
+    "0000 0000 263c": {
+      "0000 0000 0839 0002": "Personnal_ProV1_00B_RightClick",
+      "0000 0000 0839 0004": "Personnal_ProV1_00B_Fire13",
+      "0000 0000 0839 0006": "Personnal_ProV1_00B_Fire12"
+    },
+    "0000 0000 4e75": "Game_ProV0_90_Gham"
+  },
+  "2443": {
+    "205b": "AMOS_ProV2_00_Poke_IS",
+    "263c": "AMOS_ProV2_00_ReadText_S",
+    "341a": {
+      "0c32": "AMOS_ProV2_00_Drive",
+      "206d": "AMOS_ProV2_00__PrintS",
+      "41ed": "AMOS_ProV2_00_ArexxOpen",
+      "6100": [
+        ["skip", 1],
+        {
+          "206d 04f2 7000": "AMOS_ProV2_00_ArexxExist",
+          "222d 04f2 7400": "AMOS_ProV2_00_TitleTop",
+          "226d 04f2 221b": "AMOS_ProV2_00_Key_set_I",
+          "242d 04f2 7200": "AMOS_ProV2_00_TitleBottom",
+          "281b 201b 6100": "AMOS_ProV2_00_Hunt"
+        }
+      ],
+      "6700": [
+        ["skip", 1],
+        {
+          "2602": "AMOS_ProV2_00_Flip",
+          "6100": "AMOS_ProV2_00_Exec"
+        }
+      ],
+      "b47c": {
+        "0040 6400": "AMOS_ProV2_00_PutKey",
+        "0100 6400": "AMOS_ProV2_00_CommandLine_set"
+      }
+    },
+    "4a52": "AMOS_ProV2_00_Exist",
+    "6100": [
+      ["skip", 1],
+      {
+        "206d": "AMOS_ProV2_00_Rename",
+        "222d": "AMOS_ProV2_00_Kill",
+        "243c": "AMOS_ProV2_00_Save_S",
+        "6100": "AMOS_ProV2_00_Dir_set",
+        "767e": "AMOS_ProV2_00_DiscInfo"
+      }
+    ],
+    "7400": [
+      ["match", "341a 2602 6700"],
+      ["skip", 2],
+      ["match", "4eb9"],
+      ["skip", 2],
+      {
+        "30c3 5343 101a b03c 0041 650a b03c 005a": "AMOS_ProV2_00_Lower",
+        "30c3 5343 101a b03c 0061 650a b03c 007a": "AMOS_ProV2_00_Upper"
+      }
+    ],
+    "7600": {
+      "301a 6702": "AMOS_ProV2_00_Asc",
+      "361a 4e75": "AMOS_ProV2_00_Len"
+    },
+    "b5fc": "AMOS_ProV2_00_SetDir_IS"
+  },
+  "244e": {
+    "223c 0002 0002 2c78 0004 4eae": "TurboPlus_ProV2_15_ChipLargest",
+    "223c 0002 0004 2c78 0004 4eae": "TurboPlus_ProV2_15_FastLargest",
+    "226d e736 2609 2c6d e752 2e1b": "TurboPlus_ProV1_00_RBox",
+    "226d e736 2c6d e752 221b 201b": "TurboPlus_ProV1_00_RDraw",
+    "226d e736 2c6d e752 3029 0024": "TurboPlus_ProV1_00_RBar",
+    "2c6d e752 4eae fef2 2c4a 4e75": "GUI_ProV1_50B_GuiWaitVbl",
+    "2c6d e75a 226d 0268 2029 0158": "GUI_ProV1_70B_GuiPubScreen",
+    "2c6d e75a 226d 0268 2029 015e": "GUI_ProV1_75_GuiPubScreen",
+    "2c6d e75a 226d 0268 2029 01ca": "GUI_ProV2_00_GuiPubScreen",
+    "2c6d e75a 4eae ff2e 2c4a 4e75": "TurboPlus_ProV1_00_WorkbenchOpen",
+    "2c6d e75a 91c8 4eae ffa0 2c4a": "GUI_ProV1_61_GuiBeep",
+    "2c78 0004 322e 0128 0801 0003": "TurboPlus_ProV1_00_CpuInfo",
+    "7200 206d fff8 4ea8 0120 3b7c": "GUI_ProV1_50B_GuiAmiga"
+  },
+  "2453": "EasyLife_ProV1_09_StDup",
   "245b": {
     "201b": [
       ["match", "4eb9"],
