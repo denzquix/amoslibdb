@@ -1,6 +1,77 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "2403": {
+    "201b": "IOPorts_ProV2_00_SerialSend",
+    "221b": {
+      "201b": {
+        "4eb9": [
+          ["skip", 2],
+          ["match", "6600"],
+          ["skip", 1],
+          {
+            "2601 4e75": "AMOS_ProV2_00_Zdialog",
+            "4a02 6700": "AMOS_ProV2_00_Rdialog_III_S",
+            "4a02 6704": "AMOS_ProV2_00_Rdialog_III_I"
+          }
+        ],
+        "6100": "IOPorts_ProV2_00_SerialBits"
+      },
+      "206d": {
+        "fff8 4ea8 00dc 6600": "AMOS_ProV2_00_Rain_get_II",
+        "fff8 4ea8 00f8 6600": "AMOS_ProV2_00_CopMove",
+        "fff8 4ea8 00fc 6600": "AMOS_ProV2_00_CopMovel"
+      },
+      "261b": [
+        "tail-call",
+        ["match", "5283 4a6d 052a 6700"],
+        ["skip", 1],
+        {
+          "7808 206d fffc 4ea8 003c 6600": "AMOS_ProV2_00_Scin_III",
+          "7a08 206d fffc 4ea8 0048 4a40": "AMOS_ProV2_00_Hzone_III",
+          "7a08 206d fffc 4ea8 00e8 4a40": "AMOS_ProV2_00_Zone_III_I"
+        }
+      ],
+      "2a1b": "AMOS_ProV2_00_PutCblock_III",
+      "7609": "AMOS_ProV2_00_Hex_II",
+      "7621": "AMOS_ProV2_00_Bin_II",
+      "76ff": [
+        "tail-call",
+        ["match", "5283 4a6d 052a 6700"],
+        ["skip", 1],
+        {
+          "7808 206d fffc 4ea8 003c 6600": "AMOS_ProV2_00_Scin_II",
+          "7a08 206d fffc 4ea8 0048 4a40": "AMOS_ProV2_00_Hzone_II",
+          "7a08 206d fffc 4ea8 00e8 4a40": "AMOS_ProV2_00_Zone_II_I"
+        }
+      ]
+    },
+    "223c": "AMOS_ProV2_00_YMouse_set",
+    "261b": [
+      ["match", "5283"],
+      "tail-call",
+      {
+        "7200 206d fffc 4ea8 002c 6600": "AMOS_ProV2_00_YHard_II",
+        "7200 206d fffc 4ea8 0030 6600": "AMOS_ProV2_00_YScreen_II"
+      }
+    ],
+    "6300": "AMOS_ProV2_00_Circle",
+    "6b00": [
+      ["skip", 1],
+      {
+        "221b": "AMOS_ProV2_00_KeySpeed",
+        "6700": "IOPorts_ProV2_00_SerialOut"
+      }
+    ],
+    "7600": {
+      "720f 7a01 206d 00f8": "Music_ProV2_00_Bell_I",
+      "7800 7200 4a82 6724": "AMOS_ProV2_00_Cmove_II_S",
+      "7800 7200 b4bc 8000": "AMOS_ProV2_00_At"
+    },
+    "7610": "AMOS_ProV2_00_Str",
+    "b4bc": "AMOS_ProV2_00_Amplay_IIII",
+    "b6bc": "AMOS_ProV2_00_Chr"
+  },
   "241b": {
     "201b": {
       "206d": "TFT_ProV0_6_InitTimer",
