@@ -1,6 +1,24 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "2078": [
+    ["match", "0004"],
+    "tail-call",
+    {
+      "2068 0114 1628 0009": "CRAFT_ProV1_00_AmosPri",
+      "2068 0114 2068 00ac": "CRAFT_ProV1_00_CliHere",
+      "3028 0128 0800 0001": "AMCAF_ProV1_50B4_EN_C2pConvert",
+      "3028 0128 263c 0001": "AMCAF_ProV1_50B4_EN_Cpu",
+      "3028 0128 7600 0800": "AMCAF_ProV1_50B4_EN_Fpu",
+      "3228 0128 7629 0801": "IntuiExtend_ProV1_60_SysCpu",
+      "48e7 031e 487a 0014": "AMOS_ProV2_00_Execall",
+      "7600 3628 0128 4e75": "Game_ProV0_90_GAmiga"
+    }
+  ],
+  "2079": {
+    "0000 0004 3228 0128 0801 0003 6622 0801": "JD_ProV5_90_JdCpu",
+    "0000 0004 3228 0128 7628 0801 0003 661a": "IntuiExtend_ProV2_01B_SysCpu"
+  },
   "2203": {
     "0241": "AMOS_ProV2_00_HotSpot_II",
     "0281": "Music_ProV2_00_SamStop_I",
