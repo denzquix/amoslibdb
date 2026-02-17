@@ -1,6 +1,161 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "2203": {
+    "0241": "AMOS_ProV2_00_HotSpot_II",
+    "0281": "Music_ProV2_00_SamStop_I",
+    "201b": {
+      "226d": "AMOS_ProV2_00_DrawTo",
+      "4eb9": "AMOS_ProV2_00_Vdialog_get_II_I",
+      "6100": [
+        ["skip", 1],
+        {
+          "2341": {
+            "0034": "IOPorts_ProV2_00_SerialBuf",
+            "003c": "IOPorts_ProV2_00_SerialSpeed_II"
+          },
+          "2600": "AMOS_ProV2_00_Point",
+          "3029": "AMOS_ProV2_00_Plot_II",
+          "6600": "AMOS_ProV2_00_BankShrink",
+          "08a9": "IOPorts_ProV2_00_SerialParity",
+          "08e9": "IOPorts_ProV2_00_SerialX"
+        }
+      ]
+    },
+    "206d": {
+      "fff8 4ea8 00cc 6600": "AMOS_ProV2_00_RainbowDel_I",
+      "fffc 4ea8 007c 6600": "AMOS_ProV2_00_SpriteOff_I",
+      "fffc 4ea8 00c8 4e75": "AMOS_ProV2_00_BobOff_I",
+      "fffc 4ea8 00fc 2600": "AMOS_ProV2_00_Col_I_I"
+    },
+    "243c": "AMOS_ProV2_00_XMouse_set",
+    "261b": {
+      "5243": "AMOS_ProV2_00_XHard_II",
+      "5283": "AMOS_ProV2_00_XScreen_II"
+    },
+    "5381": "AMOS_ProV2_00_Key_get_I",
+    "6100": [
+      "push",
+      "follow-rel",
+      {
+        "0281 0000 3fff 6700": [
+          ["skip", 1],
+          ["match", "2001 6100"],
+          "follow-rel",
+          ["match", "7200 6100"],
+          {
+            "48e7 c000 7001 6100": [
+              "pop",
+              ["skip", 1],
+              ["match", "6600"],
+              ["skip", 1],
+              ["match", "7a00"],
+              "tail-call",
+              {
+                "4a92 670c 206d fffc": "AMOS_ProV2_00_MakeMask_I",
+                "4a92 671c 4aaa 0004": "AMOS_ProV2_00_NoMask_I"
+              }
+            ],
+            "48e7 c000 7002 6100": [
+              "pop",
+              ["skip", 1],
+              ["match", "6600"],
+              ["skip", 1],
+              ["match", "7a00"],
+              "tail-call",
+              {
+                "4a92 670c 206d fffc": "AMOS_ProV2_00_MakeIconMask_I",
+                "4a92 671c 4aaa 0004": "AMOS_ProV2_00_NoIconMask_I"
+              }
+            ]
+          }
+        ],
+        "4a2d 09b6 660c b2bc": [
+          "pop",
+          ["skip", 1],
+          {
+            "206d fff8 4ea8": {
+              "0010 6600": "AMOS_ProV2_00_ScreenClose",
+              "0014 6600": "AMOS_ProV2_00_ScreenToFront_I",
+              "0018 6600": "AMOS_ProV2_00_ScreenToBack_I",
+              "001c 6600": "AMOS_ProV2_00_Screen_I_V",
+              "0078 6600": "AMOS_ProV2_00_ScreenSwap_I",
+              "0080 6700": [
+                ["skip", 1],
+                {
+                  "2040 7600 3628 004c 4e75": "AMOS_ProV2_00_ScreenWidth_I",
+                  "2040 7600 3628 004e 4e75": "AMOS_ProV2_00_ScreenHeight_I"
+                }
+              ]
+            },
+            "2401 221b 6100": [
+              ["skip", 1],
+              {
+                "206d fff8 4ea8 0084": "AMOS_ProV2_00_DualPlayfield",
+                "206d fff8 4ea8 0088": "AMOS_ProV2_00_DualPriority"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "6700": "AMOS_ProV2_00_DelBlock_I",
+    "6b00": [
+      ["skip", 1],
+      {
+        "206d": {
+          "fff8 4ea8 009c 6b00": "AMOS_ProV2_00_Font",
+          "fffc 4ea8 0110 6600": [
+            ["skip", 1],
+            {
+              "3601 48c3": "AMOS_ProV2_00_XBob",
+              "3602 48c3": "AMOS_ProV2_00_YBob",
+              "48c3 4e75": "AMOS_ProV2_00_IBob"
+            }
+          ],
+          "fffc 4ea8 0114 6600": [
+            ["skip", 1],
+            {
+              "3601 48c3": "AMOS_ProV2_00_XSprite",
+              "3602 48c3": "AMOS_ProV2_00_YSprite",
+              "48c3 4e75": "AMOS_ProV2_00_ISprite"
+            }
+          ],
+          "fffc 4ea8 0118 6600": "AMOS_ProV2_00_PutBob"
+        },
+        "4a6d": [
+          ["match", "052a 6700"],
+          {
+            "206d fffc 4ea8 004c": "AMOS_ProV2_00_ReserveZone_I",
+            "206d fffc 4ea8 0050": "AMOS_ProV2_00_ResetZone_I"
+          }
+        ],
+        "5281": "AMOS_ProV2_00_LimitMouse_I",
+        "6100": [
+          ["skip", 1],
+          {
+            "4a92 6600": "AMOS_ProV2_00_PasteBob",
+            "4a92 6714": "AMOS_ProV2_00_PasteIcon"
+          }
+        ],
+        "6700": "Music_ProV2_00_DelWave",
+        "7400": {
+          "08c2 001f 263c 0000": "AMOS_ProV2_00_SpritebobCol_I",
+          "08c2 001f 763f 206d": "AMOS_ProV2_00_BobspriteCol_I",
+          "263c 0000 2710 206d": "AMOS_ProV2_00_BobCol_I",
+          "763f 206d fffc 4ea8": "AMOS_ProV2_00_SpriteCol_I"
+        }
+      }
+    ],
+    "7000": "Music_ProV2_00_NoiseTo",
+    "7400": "AMOS_ProV2_00_Cls_I",
+    "74ff": {
+      "7609": "AMOS_ProV2_00_Hex_I",
+      "7621": "AMOS_ProV2_00_Bin_I"
+    },
+    "b2bc": "AMOS_ProV2_00_SetSpriteBuffer"
+  },
+  "2210": "AMOS_ProV2_00__FnFn",
   "221b": [
     "tail-call",
     {
