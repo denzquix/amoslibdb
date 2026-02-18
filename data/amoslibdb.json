@@ -1,6 +1,840 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": {
+  "206b": [
+    ["match", "0008 201b 241b 6700"],
+    ["skip", 1],
+    {
+      "2208 b018 6704 51ca fffa 5348 91c1 2708": "EasyLife_ProV1_44_Elmem_III__S",
+      "2208 b018 6704 51ca fffa 5388 91c1 2708": "EasyLife_ProV1_09_Elmem_III__S"
+    }
+  ],
+  "206d": {
+    "00f8": {
+      "117c 0001": {
+        "05ef 4e75": "Music_ProV2_00_TrackLoopOn",
+        "0be8 4e75": "EME_ProV3_00DEMO_TrackLoopOn",
+        "0be9 4e75": "EME_ProV3_00DEMO_PattLoopOn"
+      },
+      "117c 0002": "EME_ProV3_00DEMO_PattLoopNo",
+      "2608 4e75": "Music_ProV2_00_Mubase",
+      "4228 05ef": "Music_ProV2_00_TrackLoopOf",
+      "4228 0be8": "EME_ProV3_00DEMO_TrackLoopOf",
+      "4228 0be9": "EME_ProV3_00DEMO_PattLoopOf",
+      "7009 6000": "EME_ProV3_00DEMO_TrackSampleOn",
+      "7400 7600": "EME_ProV3_00DEMO_Trstat",
+      "d0fc 054a": {
+        "1628 0058 4883 48c3": "Music_ProV2_00_MouthWidth",
+        "1628 0059 4883 48c3": "Music_ProV2_00_MouthHeight",
+        "7400 1628 0058 4883": "EME_ProV3_00DEMO_MouthWidth",
+        "7400 1628 0059 4883": "EME_ProV3_00DEMO_MouthHeight"
+      },
+      "d0fc 05d9": "Music_ProV2_00_MedMidiOn"
+    },
+    "0188": {
+      "d1fc 0000 0294 225b 22d0": "LDos_ProV1_00_LcatPush",
+      "d1fc 0000 0314 201b 30c0": "LDos_ProV1_00_LcustFreq",
+      "d1fc 0000 036a 201b 30c0": "LDos_ProV1_00_LposFreq",
+      "d1fc 0000 036c 7600 3610": "LDos_ProV1_00_LfontsizeFreq",
+      "d1fc 0000 05b0 2610 4e75": "LDos_ProV1_10_LrexxResult1",
+      "d1fc 0000 05b2 2610 4e75": "LDos_ProV1_00_LrexxResult1",
+      "d1fc 0000 05b4 2610 4e75": "LDos_ProV1_10_LrexxResult2",
+      "d1fc 0000 05b6 2610 4e75": "LDos_ProV1_00_LrexxResult2",
+      "d1fc 0000 05bc 10bc 0000": "LDos_ProV1_10_LhicolOff",
+      "d1fc 0000 05bc 10bc 0001": "LDos_ProV1_10_LhicolOn"
+    },
+    "01a8": {
+      "261b 6f00": [
+        ["skip", 1],
+        {
+          "b668 000a 6e6a 5343 2268 000c d683 2a03 d683 2031 3800 6752 2440 2068 0010 3a30 5800 5345 2f0e 226d e736 2809 2c6d e752 361a 6724 6b16 b67c 0001 6718 301a 4eae feaa 301a 4eae fe9e 51cd ffe6 235a 0024 51cd ffde 2c5f 4e75 4c9a 0003 4eae ff0a 2244 51cd ffcc 2c5f 4e75 7003 6000": "TurboPlus_ProV1_00_ObjectDraw",
+          "b668 000a 6e6a 5343 2268 000e d683 2a03 d683 2031 3800 6752 2440 2068 0012 3a30 5800 5345 2f0e 226d e736 2809 2c6d e752 361a 6724 6b16 b67c 0001 6718 301a 4eae feaa 301a 4eae fe9e 51cd ffe6 235a 0024 51cd ffde 2c5f 4e75 4c9a 0003 4eae ff0a 2244 51cd ffcc 2c5f 4e75 7003 6000": "Turbo_ProV1_90_ObjectDraw"
+        }
+      ],
+      "d0fc 03bc": "TurboPlus_ProV1_00_SceneMaskPalette"
+    },
+    "01c8": {
+      "201b 221b 2140 0b34 2141": "Game_ProV0_90_GSetMouse",
+      "2268 00da 337c 0001 002e": "Game_ProV0_90_GOwnBlitter",
+      "2268 0bce 201b e340 3631": "Game_ProV0_90_Gsin",
+      "2268 0bd2 201b e340 3631": "Game_ProV0_90_Gcos",
+      "226c 01be 237c 0000 0101": "Game_ProV0_90_GDoubleBuffer",
+      "226c 01be 237c 0000 0102": "Game_ProV0_90_GTripleBuffer"
+    },
+    "01d8": {
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 226d 01d8 d2fc 1952 32fc 0016 12fc 0044 12fc 0065": "Delta_ProV1_60_DeltaAbout",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0004 12fc 0031 12fc 0038 12fc 0035 12fc 0032": "Delta_ProV1_60_DeltaEnglishMile",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0006 12fc 0030 12fc 002e 12fc 0030 12fc 0032": "Delta_ProV1_60_DeltaInch",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0006 12fc 0030 12fc 002e 12fc 0033 12fc 0030": "Delta_ProV1_60_DeltaFeet",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0006 12fc 0030 12fc 002e 12fc 0039 12fc 0031": "Delta_ProV1_60_DeltaYard",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0007 12fc 0030 12fc 002e 12fc 0035 12fc 0037": "Delta_ProV1_60_DeltaEuler",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0007 12fc 0031 12fc 0038 12fc 0035 12fc 0033": "Delta_ProV1_60_DeltaAmericanMile",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0009 12fc 0030 12fc 002e 12fc 0030 12fc 0031": "Delta_ProV1_60_DeltaDegree",
+      "d0fc 195c 206d 01d8 d0fc 195c 226d 01d8 d2fc 1952 32fc 0009 12fc 0035 12fc 0037 12fc 002e 12fc 0032": "Delta_ProV1_60_DeltaRadian"
+    },
+    "01e8": {
+      "201b 3140 0046": "EasyLife_ProV1_44_Elmzone_III",
+      "201b 3140 0074": "EasyLife_ProV1_09_Elmzone_III",
+      "2028 004a 6716": "EasyLife_ProV1_44_ElppKeepOff",
+      "2028 0078 6716": "EasyLife_ProV1_09_ElppKeepOff",
+      "2028 0098 6716": "EasyLife_ProV1_09_ElpatFree",
+      "2028 00be 6700": "EasyLife_ProV1_09_TagBlockSize",
+      "2028 00f8 6716": "EasyLife_ProV1_44_ElpatFree",
+      "202b 0010 b093": {
+        "6406 2140 00ae 6004": "EasyLife_ProV1_09_ElOverlap",
+        "6406 2140 010e 6004": "EasyLife_ProV1_44_ElOverlap"
+      },
+      "2628 00a2 4e75": "EasyLife_ProV1_09_ElLapsx",
+      "2628 00a6 4e75": "EasyLife_ProV1_09_ElLapsy",
+      "2628 00aa 4e75": "EasyLife_ProV1_09_ElLapex",
+      "2628 00ae 4e75": "EasyLife_ProV1_09_ElLapey",
+      "2628 00b6 4e75": "EasyLife_ProV1_09_ElxpkError",
+      "2628 00c6 7000": "EasyLife_ProV1_09_TagStr_S__I",
+      "2628 00e8 4e75": "EasyLife_ProV1_09_MuiApp",
+      "2628 0102 4e75": "EasyLife_ProV1_44_ElLapsx",
+      "2628 0106 4e75": "EasyLife_ProV1_44_ElLapsy",
+      "2628 010a 4e75": "EasyLife_ProV1_44_ElLapex",
+      "2628 010e 4e75": "EasyLife_ProV1_44_ElLapey",
+      "2628 0112 4e75": "EasyLife_ProV1_44_ElxpkError",
+      "3028 004e b07c": "EasyLife_ProV1_44_EllockFont",
+      "317c 0000 00a0": "EasyLife_ProV1_09_ElfFailStart",
+      "317c 0000 0100": "EasyLife_ProV1_44_ElfFailStart",
+      "317c ffff 00a0": "EasyLife_ProV1_09_ElfFailEnd",
+      "317c ffff 0100": "EasyLife_ProV1_44_ElfFailEnd",
+      "41e8 00ca 209b": "EasyLife_ProV1_09_TagKeep",
+      "41e8 00ca 4a90": "EasyLife_ProV1_09_MuiSetStr_IIS",
+      "4aa8 004a 6610": "EasyLife_ProV1_44_ElppKeepOn",
+      "4aa8 0078 6610": "EasyLife_ProV1_09_ElppKeepOn",
+      "7600 3628 0048": "EasyLife_ProV1_44_Elmzoneg",
+      "7600 3628 0076": "EasyLife_ProV1_09_Elmzoneg",
+      "d0fc 004e 2448": "EasyLife_ProV1_44_ElunlockFonts"
+    },
+    "01f8": {
+      "2028 000a 6700": "CoolStars_ProV1_00_CstarsClear",
+      "2028 0012 6700": [
+        ["skip", 1],
+        {
+          "2240 2f0b 3028 0016": "CoolStars_ProV1_00_CstarsBclear",
+          "2240 3228 0016 303c": {
+            "0000 4469 0004 d3fc": "CoolStars_ProV1_00_CstarsXRev",
+            "0000 4469 0006 d3fc": "CoolStars_ProV1_00_CstarsYRev"
+          },
+          "2240 3228 0016 7000": "CoolStars_ProV1_00_CstarsMakeOrigins",
+          "2240 7e01 3c28 0016": [
+            "tail-call",
+            {
+              "48e7 0018 7000 3007 5340 c0fc 0022 d3c0 2468 000a 2668 0028 2012 b093 6700 0006": "CoolStars_ProV1_00_CstarsDraw",
+              "48e7 0018 7000 3007 5340 c0fc 0022 d3c0 2468 000a 2668 0028 363c 000e 383c 001e": "CoolStars_ProV1_00_CstarsBdraw",
+              "7000 3007 5340 c0fc 0022 d3c0 7000 3228 0016 48e7 001c 3468 0002 3668 0004 3868": "CoolStars_ProV1_00_CstarsCalc"
+            }
+          ],
+          "317c 0000 0002 317c": "CoolStars_ProV1_00_CstarsLimit"
+        }
+      ],
+      "0004 4e75": "Locale_ProV0_26_CatalogActive",
+      "0008 4e75": "Locale_ProV0_26_LocaleActive",
+      "317c 0000 0000": "CoolStars_ProV1_00_CstarsOriginOff"
+    },
+    "0208": "CRAFT_ProV1_00_TrMemorizeA",
+    "0218": {
+      "4268 05e2": "MusiCRAFT_ProV1_00_StPauseOn",
+      "43e8 04aa": "MusiCRAFT_ProV1_00_StPauseOff",
+      "4ee8 f41e": "MusiCRAFT_ProV1_00_StStop"
+    },
+    "0228": {
+      "41e8 0268 201b e588": "OSDevKit_ProV1_61_Dreg_set_II",
+      "41e8 0268 e58b 2630": "OSDevKit_ProV1_61_Dreg_get_I__I",
+      "41e8 0288 201b e588": "OSDevKit_ProV1_61_Areg_set_II",
+      "41e8 0288 e58b 2630": "OSDevKit_ProV1_61_Areg_get_I__I",
+      "43e8 0002 4aa9 002c": "THX_ProV0_6_ThxEnd"
+    },
+    "0238": {
+      "217c 0000": "DBench_ProV0_42_DbSavedOff",
+      "217c ffff": "DBench_ProV0_42_DbSavedOn",
+      "2608 4e75": "DBench_ProV0_42_DbAddress",
+      "0238 2628": {
+        "0004 4e75": "DBench_ProV0_42_DbSel",
+        "0008 4e75": "DBench_ProV0_42_DbOpencount",
+        "0020 4e75": "DBench_ProV0_42_DbRecsaved"
+      }
+    },
+    "0258": {
+      "201b d190": "Tools_ProV1_00_AddPos",
+      "209b 4e75": "Tools_ProV1_00_SetPos",
+      "2250 1619": "Tools_ProV1_00_GetLong",
+      "2250 201b": "Tools_ProV1_00_SetByte",
+      "2250 245b": "Tools_ProV1_00_SetCrypt",
+      "2250 5490": "Tools_ProV1_00_SetWord",
+      "2250 5890": "Tools_ProV1_00_SetLong",
+      "2250 7600": {
+        "1619 2089": "Tools_ProV1_00_GetByte",
+        "1619 e14b": "Tools_ProV1_00_GetWord"
+      },
+      "245b 7400": "Tools_ProV1_00_SetString",
+      "2610 4e75": "Tools_ProV1_00_GetPos",
+      "41e8 000c": {
+        "2010 4eb9": [
+          ["skip", 2],
+          {
+            "6712 221b 201b 2618": "Tools_ProV1_00_ArrayGet",
+            "6712 241b 221b 201b": "Tools_ProV1_00_ArraySet"
+          }
+        ],
+        "209b 4e75": "Tools_ProV1_00_SetArrayBank",
+        "7400 2610": "Tools_ProV1_00_ArrayBank"
+      },
+      "41e8 0014": "Tools_ProV1_00_ArrayDim",
+      "41e8 0018": {
+        "2010 4eb9": [
+          ["skip", 2],
+          {
+            "670a 201b 1630 0000 7400 4e75 7024 4ef9": "Tools_ProV1_00_OuiData",
+            "670a 221b 201b 1181 0000 4e75 7024 4ef9": "Tools_ProV1_00_OuiSetData",
+            "6712 201b 221b e348 eb49 d081 3630 0000": "Tools_ProV1_00_OuiEdata",
+            "6712 241b 201b 221b e348 eb49 d081 3182": "Tools_ProV1_00_OuiSetEdata",
+            "6722 7000 1010 b028 0001 6220 eb48 41f0": [
+              ["match", "000c 7005 221b 3101 51c8 fffa 317c 0001 001a 4e75 7024 4ef9"],
+              ["skip", 2],
+              ["match", "7000"],
+              "tail-call",
+              {
+                "241b 245b": "Tools_ProV1_01_OuiNew",
+                "41fa 000e": "Tools_ProV1_00_OuiNew"
+              }
+            ]
+          }
+        ],
+        "209b 4e75": "Tools_ProV1_00_OuiSetBank",
+        "7400 2610": "Tools_ProV1_00_OuiBank"
+      },
+      "d0fc 0000": "IntuiExtend_ProV1_30B_WbWindBase",
+      "d0fc 0004": "IntuiExtend_ProV1_30B_WbWindOpen",
+      "d0fc 0010": {
+        "4a90 6700 002a 2f0e 2c50 7000 91c8 4eae ffe2 4a80 6700 0014 2440": "IntuiExtend_ProV1_60_RtDirReq",
+        "4a90 6700 0034 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6700 0020 225b": "IntuiExtend_ProV1_60_RtNumberReq",
+        "4a90 6700 003a 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6700 0026 2e00": "IntuiExtend_ProV1_60_RtPaletteReq",
+        "4a90 6700 0046 2f0e 2c50 7000 91c8 4eae ffe2 4a80 6700 0030 2440": "IntuiExtend_ProV1_60_RtMultifileReq",
+        "4a90 6700 0054 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6700 0040 2440": "IntuiExtend_ProV1_60_RtTextReq",
+        "4a90 6700 0056 2f0e 2c50 7000 91c8 4eae ffe2 4a80 6700 0040 2440": "IntuiExtend_ProV1_60_RtFileReq",
+        "4a90 6700 006a 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6700 0056 2440": "IntuiExtend_ProV1_60_RtStringReq",
+        "4a90 6700 006a 2f0e 2c50 7003 91c8 4eae ffe2 4a80 6700 0054 2e00": "IntuiExtend_ProV1_60_RtScreenModeReq",
+        "4a90 6714 2f0e 2c78 0004 2250 20bc 0000 0000 4eae fe62 2c5f 4e75": "IntuiExtend_ProV1_60_RtLibClose",
+        "4a90 6726 2f0e 2c50 7000 91c8 4eae ffe2 4a80 6712 2440 249b 257c": "IntuiExtend_ProV2_01B_RtDirReq",
+        "4a90 6730 2f0e 2c50 7001 91c8 4eae ffe2 4a80 671e 225b 245b d5fc": "IntuiExtend_ProV2_01B_RtNumberReq",
+        "4a90 6736 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6724 2e00 205b 205b": "IntuiExtend_ProV2_01B_RtPaletteReq",
+        "4a90 6742 2f0e 2c50 7000 91c8 4eae ffe2 4a80 672e 2440 249b 257c": "IntuiExtend_ProV2_01B_RtMultifileReq",
+        "4a90 6750 2f0e 2c50 7001 91c8 4eae ffe2 4a80 673e 2440 249b 255b": "IntuiExtend_ProV2_01B_RtTextReq",
+        "4a90 6752 2f0e 2c50 7000 91c8 4eae ffe2 4a80 673e 2440 249b 257c": "IntuiExtend_ProV2_01B_RtFileReq",
+        "4a90 6766 2f0e 2c50 7001 91c8 4eae ffe2 4a80 6754 2440 249b 255b": "IntuiExtend_ProV2_01B_RtStringReq",
+        "4a90 6766 2f0e 2c50 7003 91c8 4eae ffe2 4a80 6752 2e00 205b 205b": "IntuiExtend_ProV2_01B_RtScreenModeReq"
+      },
+      "d0fc 0018": "IntuiExtend_ProV1_60_WbWindBase",
+      "d0fc 001c": {
+        "201b 3140 0006 201b": "IntuiExtend_ProV2_01B_WbEasyWindOpen",
+        "215b 000e 201b 3140": "IntuiExtend_ProV2_01B_WbWindOpen",
+        "215b 000e 301b 315b": "IntuiExtend_ProV1_60_WbWindOpen"
+      },
+      "d0fc 004c": "IntuiExtend_ProV1_30B_PpStart",
+      "d0fc 0050": "IntuiExtend_ProV1_30B_PpLen",
+      "d0fc 0054": "IntuiExtend_ProV1_60_PpLen",
+      "d0fc 0074": "IntuiExtend_ProV1_30B_GetMsgCode",
+      "d0fc 0076": "IntuiExtend_ProV1_30B_GetMsgQualifier",
+      "d0fc 0078": {
+        "2610 4e75": "IntuiExtend_ProV1_30B_GetMsgIadr",
+        "3610 0283": "IntuiExtend_ProV2_01B_GetMsgScancode",
+        "3610 4e75": "IntuiExtend_ProV1_60_GetMsgCode"
+      },
+      "d0fc 007a": "IntuiExtend_ProV1_60_GetMsgQualifier",
+      "d0fc 007c": {
+        "2610 4e75": "IntuiExtend_ProV1_60_GetMsgIadr",
+        "3610 4e75": "IntuiExtend_ProV1_30B_GetMsgXm"
+      },
+      "d0fc 007e": "IntuiExtend_ProV1_30B_GetMsgYm",
+      "d0fc 0080": {
+        "2610 4e75": "IntuiExtend_ProV1_30B_SegmentBase",
+        "3610 4e75": "IntuiExtend_ProV1_60_GetMsgXm"
+      },
+      "d0fc 0082": "IntuiExtend_ProV1_60_GetMsgYm",
+      "d0fc 0084": {
+        "209b 4e75": "IntuiExtend_ProV1_30B_WbPaintMode",
+        "2610 4e75": "IntuiExtend_ProV1_60_SegmentBase"
+      },
+      "d0fc 0088": {
+        "209b 4e75": "IntuiExtend_ProV1_60_WbPaintMode",
+        "2610 4e75": "IntuiExtend_ProV1_30B_WbScreenBase"
+      },
+      "d0fc 008c": "IntuiExtend_ProV1_60_WbScreenBase",
+      "d0fc 00b0": {
+        "201b 1140 0001 201b": "IntuiExtend_ProV1_60_WbPrintInk",
+        "201b 1140 0002 4e75": "IntuiExtend_ProV1_60_WbPrintMode",
+        "7600 3628 0004 4e75": "IntuiExtend_ProV1_60_WbXPrint",
+        "7600 3628 0004 e65b": "IntuiExtend_ProV1_60_WbXLocate",
+        "7600 3628 0006 4e75": "IntuiExtend_ProV1_60_WbYPrint",
+        "7600 3628 0006 e65b": "IntuiExtend_ProV1_60_WbYLocate"
+      },
+      "d0fc 00ec": {
+        "201b 1140 0001 201b": "IntuiExtend_ProV1_30B_WbPrintInk",
+        "201b 1140 0002 4e75": "IntuiExtend_ProV1_30B_WbPrintMode",
+        "7600 3628 0004 4e75": "IntuiExtend_ProV1_30B_WbXPrint",
+        "7600 3628 0004 e65b": "IntuiExtend_ProV1_30B_WbXLocate",
+        "7600 3628 0006 4e75": "IntuiExtend_ProV1_30B_WbYPrint",
+        "7600 3628 0006 e65b": "IntuiExtend_ProV1_30B_WbYLocate"
+      },
+      "d0fc 0194": "IntuiExtend_ProV1_60_WbTdError",
+      "d0fc 01fe": "IntuiExtend_ProV1_30B_WbTextRequest",
+      "d0fc 0240": "IntuiExtend_ProV1_30B_WbStringRequest",
+      "d0fc 026e": "IntuiExtend_ProV1_30B_WbTdError",
+      "d0fc 05b6": {
+        "2610 4e75": "IntuiExtend_ProV2_01B_Wb3dX",
+        "2628 0004": "IntuiExtend_ProV2_01B_Wb3dY",
+        "2628 0008": "IntuiExtend_ProV2_01B_Wb3dZ"
+      },
+      "d0fc 05c2": "IntuiExtend_ProV2_01B_Wb3dEye",
+      "d0fc 05ce": "IntuiExtend_ProV2_01B_Wb3dCentre",
+      "d0fc 05d4": {
+        "0000 4e75": "IntuiExtend_ProV1_60_Wb3dX",
+        "0004 4e75": "IntuiExtend_ProV1_60_Wb3dY",
+        "0008 4e75": "IntuiExtend_ProV1_60_Wb3dZ"
+      },
+      "d0fc 05e0": "IntuiExtend_ProV1_60_Wb3dEye",
+      "d0fc 05ec": "IntuiExtend_ProV1_60_Wb3dCentre",
+      "d0fc 0602": "IntuiExtend_ProV1_60_RtGetName",
+      "d0fc 0670": "IntuiExtend_ProV1_60_RtGetDir",
+      "d0fc 06e2": "IntuiExtend_ProV2_01B_GetSubitemMsg",
+      "d0fc 06e4": "IntuiExtend_ProV2_01B_AppGetNumarg",
+      "d0fc 06fe": "IntuiExtend_ProV1_60_GetMenuMsg",
+      "d0fc 06ff": "IntuiExtend_ProV1_60_GetItemMsg",
+      "d0fc 0700": "IntuiExtend_ProV1_60_GetSubitemMsg",
+      "d0fc 0701": "IntuiExtend_ProV1_60_WbCheckAga",
+      "d0fc 0702": "IntuiExtend_ProV1_60_AppGetNumarg",
+      "d0fc 0f1c": "IntuiExtend_ProV1_30B_Wb3dPoint",
+      "d0fc 0f34": {
+        "2610 4e75": "IntuiExtend_ProV1_30B_Wb3dX",
+        "2628 0004": "IntuiExtend_ProV1_30B_Wb3dY",
+        "2628 0008": "IntuiExtend_ProV1_30B_Wb3dZ"
+      },
+      "d0fc 0f40": "IntuiExtend_ProV1_30B_Wb3dEye",
+      "d0fc 0f4c": "IntuiExtend_ProV1_30B_Wb3dCentre",
+      "d0fc 0f54": "IntuiExtend_ProV1_30B_WbSpline",
+      "d0fc 0f70": "IntuiExtend_ProV1_30B_Wb3dScreen",
+      "d0fc 0f90": "IntuiExtend_ProV1_30B_Wb3dInk",
+      "d0fc 0f92": {
+        "4a90 6700 002a 2f0e": "IntuiExtend_ProV1_30B_RtDirReq",
+        "4a90 6700 0046 2f0e": "IntuiExtend_ProV1_30B_RtMultifileReq",
+        "4a90 6700 0054 2f0e": "IntuiExtend_ProV1_30B_RtTextReq",
+        "4a90 6700 0056 2f0e": "IntuiExtend_ProV1_30B_RtFileReq",
+        "4a90 6714 2f0e 2c78": "IntuiExtend_ProV1_30B_RtLibClose"
+      },
+      "d0fc 0f96": "IntuiExtend_ProV1_30B_RtGetName",
+      "d0fc 1004": "IntuiExtend_ProV1_30B_RtGetDir"
+    },
+    "0268": {
+      "08a8": {
+        "0000 006b 4e75": "GUI_ProV1_50B_GuiSensitiveOff",
+        "0000 007f 4e75": "GUI_ProV1_70B_GuiSensitiveOff",
+        "0000 0083 4e75": "GUI_ProV1_61_GuiSensitiveOff",
+        "0000 0085 4e75": "GUI_ProV2_00_GuiSensitiveOff"
+      },
+      "08e8": {
+        "0000 006b": "GUI_ProV1_50B_GuiSensitiveOn",
+        "0000 007f": "GUI_ProV1_70B_GuiSensitiveOn",
+        "0000 0083": "GUI_ProV1_61_GuiSensitiveOn",
+        "0000 0085": "GUI_ProV2_00_GuiSensitiveOn",
+        "0003 007f": [
+          "tail-call",
+          ["match", "6100"],
+          "follow-rel",
+          {
+            "48e7 78fe 266d 0268 177c 0000 007e 376d ff70 016c 3b7c ffff ff70 4a6d ff72 6720": "GUI_ProV1_70B_GuiEvent",
+            "48e7 78fe 266d 0268 177c 0000 007e 376d ff70 0176 3b7c ffff ff70 4a6d ff72 6720": "GUI_ProV1_75_GuiEvent"
+          }
+        ],
+        "0003 0083": [
+          "tail-call",
+          ["match", "6100"],
+          ["skip", 1],
+          ["match", "2600 7400 7e00 0c80 ffff fffd 6700"],
+          "follow-rel",
+          ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
+          ["skip", 2],
+          {
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468 6973 2069 736e 2774 2061": "GUI_ProV1_61_GuiEvent",
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468 6973 2069 736e 2774 2061": "GUI_ProV1_62_GuiEvent"
+          }
+        ],
+        "0003 0085": "GUI_ProV2_00_GuiEvent"
+      },
+      "201b": {
+        "3140 0060 4e75": "GUI_ProV2_00_GuiSetMode",
+        "3140 023c 4e75": "GUI_ProV1_70B_GuiMouseMode",
+        "3140 0248 4e75": "GUI_ProV1_75_GuiMouseMode",
+        "3140 029c 4e75": "GUI_ProV2_00_GuiMouseMode"
+      },
+      "2028": {
+        "0144 670e 244e 2c40 4eae ff5e": "GUI_ProV2_00_TcpError",
+        "0158 660a 7e11 2028 0154 6700": [
+          ["skip", 1],
+          {
+            "2240 3629 000c 48c3 4e75": "GUI_ProV1_70B_GuiScreenWidth",
+            "2240 3629 000e 48c3 4e75": "GUI_ProV1_70B_GuiScreenHeight",
+            "2240 43e9 0054 2269 0004": {
+              "7400 7600 1629 0005 4e75": "GUI_ProV1_70B_GuiScreenDepth",
+              "7400 7601 1429 0005 5382": "GUI_ProV1_70B_GuiScreenColours"
+            }
+          }
+        ],
+        "0158 6718 2240 217c 0000 0000": "GUI_ProV1_70B_GuiPubFree",
+        "015e 671e 2240 217c 0000 0000": "GUI_ProV1_75_GuiPubFree",
+        "01ca 671e 2240 217c 0000 0000": "GUI_ProV2_00_GuiPubFree",
+        "02c8 670c 2040 2028 0004 6100": "GUI_ProV2_00_TcpClose"
+      },
+      "202d": {
+        "0662 0828 0001 006a 6710 08a8 0001 006a 2068 0090 7000 6100": "GUI_ProV1_50B_GuiCode_S",
+        "0662 0828 0001 007e 6710 08a8 0001 007e 2068 00a6 7000 6100": [
+          "follow-rel",
+          {
+            "48e7 78e0 2208 2448": "GUI_ProV1_70B_GuiCode_S",
+            "48e7 7fe0 2208 2448": "GUI_ProV1_75_GuiCode_S"
+          }
+        ],
+        "0662 0828 0001 0082 6710 08a8 0001 0082 2068 00a8 7000 6100": "GUI_ProV1_61_GuiCode_S",
+        "0662 0828 0001 0084 6710 08a8 0001 0084 2068 00e0 7000 6100": "GUI_ProV2_00_GuiCode_S"
+      },
+      "2068": {
+        "00ec 2610 4e75": "GUI_ProV1_70B_GuiAslId",
+        "00ec 0004 4e75": "GUI_ProV1_70B_GuiAslWidth",
+        "00ec 0008 4e75": "GUI_ProV1_70B_GuiAslHeight",
+        "00ec 281b 245b": [
+          ["match", "2c1b 2028 0004 2228 0008 2610 3e28 000c 48c7 5307 7401 e39a 51cf fffc 6100"],
+          "follow-rel",
+          {
+            "48e7 7ffe 226d 0268 237c 0000 0000 0086 2c78 0004 48e7 c000 3a1a 675a 48c5 2005": "GUI_ProV1_70_GuiAslOpen_ISI",
+            "48e7 7ffe 226d 0268 237c 0000 0000 0086 4aa9 00e0 6604 246d 0662 2c78 0004 48e7": "GUI_ProV1_70B_GuiAslOpen_ISI"
+          }
+        ],
+        "00ec 2c1b 2028": [
+          ["match", "0004 2228 0008 2610 3828 000c 48c4 5304 7401 e39a 51cc fffc 246d 0662 7800 6100"],
+          "follow-rel",
+          {
+            "48e7 7ffe 226d 0268 237c 0000 0000 0086 2c78 0004 48e7 c000 3a1a 675a 48c5 2005": "GUI_ProV1_70_GuiAslOpen_I",
+            "48e7 7ffe 226d 0268 237c 0000 0000 0086 4aa9 00e0 6604 246d 0662 2c78 0004 48e7": "GUI_ProV1_70B_GuiAslOpen_I"
+          }
+        ],
+        "00ec 3628 000c": "GUI_ProV1_70B_GuiAslDepth",
+        "00ec 7400 7601": "GUI_ProV1_70B_GuiAslColours",
+        "00f2 2610 4e75": "GUI_ProV1_75_GuiAslId",
+        "00f2 0004 4e75": "GUI_ProV1_75_GuiAslWidth",
+        "00f2 0008 4e75": "GUI_ProV1_75_GuiAslHeight",
+        "00f2 281b 245b": "GUI_ProV1_75_GuiAslOpen_ISI",
+        "00f2 2c1b 2028": "GUI_ProV1_75_GuiAslOpen_I",
+        "00f2 3628 000c": "GUI_ProV1_75_GuiAslDepth",
+        "00f2 7400 7601": "GUI_ProV1_75_GuiAslColours",
+        "014c 2610 4e75": "GUI_ProV2_00_GuiAslId",
+        "014c 0004 4e75": "GUI_ProV2_00_GuiAslWidth",
+        "014c 0008 4e75": "GUI_ProV2_00_GuiAslHeight",
+        "014c 3628 000c": "GUI_ProV2_00_GuiAslDepth",
+        "014c 7400 7601": "GUI_ProV2_00_GuiAslColours",
+        "02b4 117c 0000": "GUI_ProV2_00_TcpResponse",
+        "030c 117c 0000": "GUI_ProV1_70B_TcpResponse",
+        "031c 117c 0000": "GUI_ProV1_75_TcpResponse"
+      },
+      "215b": {
+        "02ba 4e75": "GUI_ProV1_61_TcpLimit",
+        "0302 4e75": "GUI_ProV1_70B_TcpLimit",
+        "0312 4e75": "GUI_ProV1_75_TcpLimit"
+      },
+      "221b": {
+        "201b 2a1b 281b 261b 241b 7e0b 4aa8 00ea 6700": "GUI_ProV1_50B_GuiScroll",
+        "201b 2a1b 281b 261b 241b 7e0b 4aa8 0120 6700": [
+          "follow-rel",
+          ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
+          ["skip", 2],
+          {
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468 6973 2069 736e 2774 2061": "GUI_ProV1_61_GuiScroll",
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468 6973 2069 736e 2774 2061": "GUI_ProV1_62_GuiScroll"
+          }
+        ],
+        "201b 2a1b 281b 261b 241b 7e0b 4aa8 0146 6700": "GUI_ProV1_70B_GuiScroll",
+        "201b 2a1b 281b 261b 241b 7e0b 4aa8 014c 6700": "GUI_ProV1_75_GuiScroll",
+        "201b 2a1b 281b 261b 241b 7e0b 4aa8 01b8 6700": "GUI_ProV2_00_GuiScroll"
+      },
+      "244e": {
+        "2c6d 02b8 41e8 010e 2208 4eae ff40 2040 2228 0004 2028 0008 80fc 0032 206d 0268": "GUI_ProV1_61_TcpReset",
+        "2c6d 02b8 41e8 010e 2208 4eae ff40 2040 0004 2428 0008 84fc 0032 206d 0268": "GUI_ProV1_61_TcpTime",
+        "2c6d 02b8 41e8 0128 2208 4eae ff40 2040 2228 0004 2028 0008 80fc 0032 206d 0268": "GUI_ProV1_70B_TcpReset",
+        "2c6d 02b8 41e8 0128 2208 4eae ff40 2040 0004 2428 0008 84fc 0032 206d 0268": "GUI_ProV1_70B_TcpTime"
+      },
+      "2628": {
+        "0090 4e75": "GUI_ProV2_00_GuiAppId",
+        "029e 4e75": "GUI_ProV1_61_TcpCode",
+        "02a2 4e75": "GUI_ProV1_61_TcpError",
+        "02a6 4e75": "GUI_ProV1_61_TcpPacket",
+        "02a8 4e75": "GUI_ProV2_00_XfaModeId",
+        "02ae 4e75": "GUI_ProV1_61_TcpType",
+        "02b0 4e75": "GUI_ProV2_00_XfaFrames",
+        "02b6 4e75": "GUI_ProV1_61_TcpCount",
+        "02bc 4e75": "GUI_ProV2_00_TcpRecvd",
+        "02be 4e75": "GUI_ProV1_61_TcpChannel",
+        "02c2 4e75": "GUI_ProV1_61_TcpBuffer",
+        "02d0 4e75": "GUI_ProV2_00_TcpSocket",
+        "02d4 4e75": "GUI_ProV2_00_TcpTotal",
+        "02e6 4e75": "GUI_ProV1_70B_TcpCode",
+        "02ea 4e75": "GUI_ProV1_70B_TcpError",
+        "02ee 4e75": "GUI_ProV1_70B_TcpPacket",
+        "02f2 4e75": "GUI_ProV1_75_TcpCode",
+        "02f6 4e75": "GUI_ProV1_70B_TcpType",
+        "02fa 4e75": "GUI_ProV1_75_TcpPacket",
+        "02fe 4e75": "GUI_ProV1_70B_TcpCount",
+        "0302 4e75": "GUI_ProV1_75_TcpType",
+        "0308 4e75": "GUI_ProV1_70B_TcpBuffer",
+        "030e 4e75": "GUI_ProV1_75_TcpCount",
+        "0310 4e75": "GUI_ProV1_70B_TcpUser",
+        "0314 4e75": "GUI_ProV1_70B_TcpAddress",
+        "0318 4e75": "GUI_ProV1_75_TcpBuffer",
+        "0320 4e75": "GUI_ProV1_75_TcpUser",
+        "0324 4e75": "GUI_ProV1_75_TcpAddress",
+        "0328 4e75": "GUI_ProV1_75_TcpTotal"
+      },
+      "262d": {
+        "262d 0662 4aa8 00c2": "GUI_ProV1_50B_GuiFile",
+        "262d 0662 4aa8 00c6": "GUI_ProV1_50B_GuiDir",
+        "262d 0662 4aa8 00ec": "GUI_ProV1_61_GuiFile",
+        "262d 0662 4aa8 00f0": "GUI_ProV1_61_GuiDir",
+        "262d 0662 4aa8 00f4": "GUI_ProV1_70B_GuiFile",
+        "262d 0662 4aa8 00f8": "GUI_ProV1_70B_GuiDir",
+        "262d 0662 4aa8 00fa": "GUI_ProV1_75_GuiFile",
+        "262d 0662 4aa8 00fe": "GUI_ProV1_75_GuiDir",
+        "262d 0662 4aa8 0154": "GUI_ProV2_00_GuiFile",
+        "262d 0662 4aa8 0158": "GUI_ProV2_00_GuiDir"
+      },
+      "2f0e": "GUI_ProV2_00_TcpHost",
+      "3628": {
+        "00de 48c3 4e75": "GUI_ProV2_00_GuiWindow",
+        "00fc 48c3 4e75": "GUI_ProV1_70B_GuiFontSize",
+        "0102 48c3 4e75": "GUI_ProV1_75_GuiFontSize",
+        "010c 48c3 4e75": "GUI_ProV1_61_GuiOs",
+        "0126 48c3 4e75": "GUI_ProV1_70B_GuiOs",
+        "012c 48c3 4e75": "GUI_ProV1_75_GuiOs",
+        "013e 48c3 4e75": "GUI_ProV1_70B_GuiArray",
+        "0144 48c3 4e75": "GUI_ProV1_75_GuiArray",
+        "015c 48c3 4e75": "GUI_ProV2_00_GuiFontSize",
+        "0186 48c3 4e75": "GUI_ProV2_00_GuiOs",
+        "019c 48c3 4e75": "GUI_ProV2_00_GuiArray",
+        "01ca 48c3 4e75": "GUI_ProV1_61_GuiXFont",
+        "01cc 48c3 4e75": "GUI_ProV1_61_GuiYFont",
+        "0230 48c3 4e75": "GUI_ProV1_70B_GuiXFont",
+        "0232 48c3 4e75": "GUI_ProV1_70B_GuiYFont",
+        "0238 48c3 4e75": "GUI_ProV1_70B_GuiMouseUx",
+        "023a 48c3 4e75": "GUI_ProV1_70B_GuiMouseUy",
+        "023c 48c3 4e75": "GUI_ProV1_75_GuiXFont",
+        "023e 48c3 4e75": "GUI_ProV1_75_GuiYFont",
+        "0244 48c3 4e75": "GUI_ProV1_75_GuiMouseUx",
+        "0246 48c3 4e75": "GUI_ProV1_75_GuiMouseUy",
+        "0290 48c3 4e75": "GUI_ProV2_00_GuiXFont",
+        "0292 48c3 4e75": "GUI_ProV2_00_GuiYFont",
+        "0298 48c3 4e75": "GUI_ProV2_00_GuiMouseUx",
+        "029a 48c3 4e75": "GUI_ProV2_00_GuiMouseUy",
+        "0306 48c3 4e75": "GUI_ProV1_70B_TcpChannel",
+        "0316 48c3 4e75": "GUI_ProV1_75_TcpChannel"
+      },
+      "45e8": "GUI_ProV1_61_TcpClose",
+      "4aa8": {
+        "015c 6616 244e 2c6d": "GUI_ProV1_70B_GuiPubList",
+        "015c 6714 217c 0000": "GUI_ProV1_70B_GuiPubListFree",
+        "0166 6616 244e 2c6d": "GUI_ProV1_75_GuiPubList",
+        "0166 6714 217c 0000": "GUI_ProV1_75_GuiPubListFree",
+        "01d6 6616 244e 2c6d": "GUI_ProV2_00_GuiPubList",
+        "01d6 6714 217c 0000": "GUI_ProV2_00_GuiPubListFree"
+      },
+      "6100": [
+        ["skip", 1],
+        {
+          "2168 0306 030a 4e75": "GUI_ProV1_75_TcpReset",
+          "0306 2028 030a": "GUI_ProV1_75_TcpTime"
+        }
+      ],
+      "70ff": {
+        "0828 0000 006a 670a": "GUI_ProV1_50B_GuiCode_I",
+        "0828 0000 007e 670a": "GUI_ProV1_70B_GuiCode_I",
+        "0828 0000 0082 670a": "GUI_ProV1_61_GuiCode_I",
+        "0828 0000 0084 670a": "GUI_ProV2_00_GuiCode_I"
+      },
+      "7600": {
+        "1628 02ac": "GUI_ProV2_00_XfaDepth",
+        "1628 02ae": "GUI_ProV2_00_XfaPack",
+        "2068 005e": {
+          "3628 0010": "GUI_ProV1_50B_GuiMouseY",
+          "3628 0012": "GUI_ProV1_50B_GuiMouseX"
+        },
+        "2068 0076": {
+          "3628 0010": "GUI_ProV1_61_GuiMouseY",
+          "3628 0012": "GUI_ProV1_61_GuiMouseX"
+        },
+        "2068 0154": {
+          "3628 0010": "GUI_ProV1_70B_GuiMouseY",
+          "3628 0012": "GUI_ProV1_70B_GuiMouseX"
+        },
+        "2068 0162": {
+          "3628 0010": "GUI_ProV1_75_GuiMouseY",
+          "3628 0012": "GUI_ProV1_75_GuiMouseX"
+        },
+        "2068 01ce": {
+          "3628 0010": "GUI_ProV2_00_GuiMouseY",
+          "3628 0012": "GUI_ProV2_00_GuiMouseX"
+        },
+        "00a0 4e75": "GUI_ProV2_00_GuiZone",
+        "3628 00aa": "GUI_ProV1_70B_GuiKeyShift",
+        "3628 00ac": "GUI_ProV1_61_GuiKeyShift",
+        "3628 00e4": "GUI_ProV2_00_GuiKeyShift",
+        "3628 02a4": "GUI_ProV2_00_XfaWidth",
+        "3628 02a6": "GUI_ProV2_00_XfaHeight",
+        "4aa8 0086": "GUI_ProV2_00_GuiUserCatalog"
+      },
+      "76ff": {
+        "2068 029a 41e8 0014 b1e8 0008 6600": "GUI_ProV1_61_TcpCheck",
+        "2068 02e2 41e8 0014 b1e8 0008 6600": "GUI_ProV1_70B_TcpCheck",
+        "2068 02ee 41e8 0014 b1e8 0008 6600": "GUI_ProV1_75_TcpCheck",
+        "4aa8 0062 6706 7600 3628 00f4 4e75": "GUI_ProV1_50B_GuiActual",
+        "4aa8 0076 6706 7600 3628 0150 4e75": "GUI_ProV1_70B_GuiActual",
+        "4aa8 0076 6706 7600 3628 0156 4e75": "GUI_ProV1_75_GuiActual",
+        "4aa8 007a 6706 7600 3628 012a 4e75": "GUI_ProV1_61_GuiActual",
+        "4aa8 007c 6706 7600 3628 01c2 4e75": "GUI_ProV2_00_GuiActual",
+        "4aa8 0082 670a 7600 2268 0082 3629": "GUI_ProV1_50B_GuiWindow",
+        "4aa8 0096 670a 7600 2268 0096 3629": "GUI_ProV1_70B_GuiWindow",
+        "4aa8 009a 670a 7600 2268 009a 3629": "GUI_ProV1_61_GuiWindow"
+      },
+      "7e07": {
+        "241b 205b 6100": [
+          "follow-rel",
+          {
+            "48e7 40e0 2208 7000 246d 0268 7e0a 4a41 6d30 4aaa 0076 672a 0c81 8000 0000 6728 206a 0076 4aa8 0004 670e 2268 0004 b268 000c c348 670a 60ec c348 b269 000c 6602 2009 4cdf 0702 4e75 7000 4a6a 014a 66f2 206a 014c 2028 0078 60e8": "GUI_ProV1_70B_GuiMouseReport",
+            "48e7 40e0 2208 7000 246d 0268 7e0a 4a41 6d30 4aaa 0076 672a 0c81 8000 0000 6728 206a 0076 4aa8 0004 670e 2268 0004 b268 000c c348 670a 60ec c348 b269 000c 6602 2009 4cdf 0702 4e75 7000 4a6a 0150 66f2 206a 0152 2028 0078 60e8": "GUI_ProV1_75_GuiMouseReport",
+            "48e7 40e0 2208 7000 246d 0268 7e0a 4a41 6d30 4aaa 007c 672a 0c81 8000 0000 6728 206a 007c 4aa8 0004 670e 2268 0004 b268 000c c348 670a 60ec c348 b269 000c 6602 2009 4cdf 0702 4e75 7000 4a6a 01bc 66f2 206a 01be 2028 0078 60e8": "GUI_ProV2_00_GuiMouseReport"
+          }
+        ],
+        "4aa8 0146 6700": "GUI_ProV1_70B_GuiTextBase",
+        "4aa8 014c 6700": "GUI_ProV1_75_GuiTextBase",
+        "4aa8 01b8 6700": "GUI_ProV2_00_GuiTextBase"
+      },
+      "7e0a": {
+        "4aa8 014c 6700": [
+          ["skip", 1],
+          {
+            "2068 014c 3628 000c": "GUI_ProV1_70B_GuiMouseWy",
+            "2068 014c 3628 000e": "GUI_ProV1_70B_GuiMouseWx"
+          }
+        ],
+        "4aa8 0152 6700": [
+          ["skip", 1],
+          {
+            "2068 0152 3628 000c": "GUI_ProV1_75_GuiMouseWy",
+            "2068 0152 3628 000e": "GUI_ProV1_75_GuiMouseWx"
+          }
+        ],
+        "4aa8 01be 6700": [
+          ["skip", 1],
+          {
+            "2068 01be 3628 000c": "GUI_ProV2_00_GuiMouseWy",
+            "2068 01be 3628 000e": "GUI_ProV2_00_GuiMouseWx"
+          }
+        ]
+      },
+      "7e11": {
+        "2028 0162 6700": [
+          ["skip", 1],
+          {
+            "2240 3629 000c 48c3": "GUI_ProV1_75_GuiScreenWidth",
+            "2240 3629 000e 48c3": "GUI_ProV1_75_GuiScreenHeight",
+            "2240 43e9 0054 2269": {
+              "0004 7400 7600 1629": "GUI_ProV1_75_GuiScreenDepth",
+              "0004 7400 7601 1429": "GUI_ProV1_75_GuiScreenColours"
+            }
+          }
+        ],
+        "2028 01ce 6700": [
+          ["skip", 1],
+          {
+            "2240 3629 000c 48c3": "GUI_ProV2_00_GuiScreenWidth",
+            "2240 3629 000e 48c3": "GUI_ProV2_00_GuiScreenHeight",
+            "2240 43e9 0054 2269": {
+              "0004 7400 7600 1629": "GUI_ProV2_00_GuiScreenDepth",
+              "0004 7400 7601 1429": "GUI_ProV2_00_GuiScreenColours"
+            }
+          }
+        ]
+      },
+      "d0fc": {
+        "0008 209b 4e75": "SLN_ProV2_00_SXMouse_I__V",
+        "0008 2610 4282": "SLN_ProV2_00_SXMouse__I",
+        "000c 209b 4e75": "SLN_ProV2_00_SYMouse_I__V",
+        "000c 2610 4282": "SLN_ProV2_00_SYMouse__I",
+        "0010 226d 0268": "SLN_ProV2_00_SVolume",
+        "0010 3010 0800": "SLN_ProV2_00_SDiskClose",
+        "0010 3010 0880": "SLN_ProV2_00_SMouseOff",
+        "0010 3010 08c0": "SLN_ProV2_00_SMouseOn",
+        "00c1 4283 1610": "SLN_ProV2_00_STrackTempo__I",
+        "00c2 226d 0268": "SLN_ProV2_00_SIerase",
+        "0112 201b 3080": "SLN_ProV2_00_SSamBank_I__V",
+        "0112 3f10 201b": "SLN_ProV2_00_SSamBankSave_SI",
+        "0112 4280 3010": {
+          "0c80": "SLN_ProV2_00_SSamBase",
+          "2700": [
+            "tail-call",
+            {
+              "206d 0268 d0fc 0112": "SLN_ProV2_00_SSamBankSave_S",
+              "273c 0000 0001 6100": "SLN_ProV2_00_SSamBankErase"
+            }
+          ]
+        },
+        "0112 4282 4283": "SLN_ProV2_00_SSamBank__I"
+      }
+    },
+    "0278": {
+      "2068": {
+        "001a 0c90 4d53 4742 6700 0008 7600 7400 4e75 fff0": "JVP_ProV1_01_JvpMsgBank",
+        "001a 0c90 4d53 4742 6700 000c 203c 0000 0000 6000": [
+          ["skip", 1],
+          ["match", "241b 221b 201b 6100"],
+          ["skip", 1],
+          {
+            "2609 4e75": "JVP_ProV1_01_JvpMsgExists",
+            "b3c8 6e00": "JVP_ProV1_01_JvpMsg_III"
+          }
+        ]
+      },
+      "217c": "TFT_ProV0_6_StopInt",
+      "225b": "TFT_ProV0_6_InitBplScroll",
+      "6100": "TFT_ProV0_6_StartInt",
+      "7400": {
+        "3628 0008": "TFT_ProV0_6_GetXmouse",
+        "3628 000a": "TFT_ProV0_6_GetYmouse"
+      }
+    },
+    "02b8": [
+      "tail-call",
+      {
+        "2068 0022 08a8 0018": "JDK_ProV1_10_JdStarJokerOff",
+        "2068 0022 08e8 0018": "JDK_ProV1_10_JdStarJokerOn",
+        "48e7 031e 487a 0014": "AMOS_ProV2_00_Doscall"
+      }
+    ],
+    "04be": {
+      "226d 050a 12d8": "AMOS_ProV2_00_Dfree",
+      "4a10 660e 4eb9": "AMOS_ProV2_00_Parent"
+    },
+    "04f2": [
+      "tail-call",
+      {
+        "20bc": "AMOS_ProV2_00__CRPrint",
+        "2248": "AMOS_ProV2_00__InFade1",
+        "4eb9": "AMOS_ProV2_00__PrintF",
+        "6100": "AMOS_ProV2_00__LPrintX"
+      }
+    ],
+    "052c": {
+      "2008 6700": [
+        ["skip", 1],
+        {
+          "0140 4e75": "AMCAF_ProV1_50B4_EN_ScrnLayerinfo",
+          "0144 4e75": "AMCAF_ProV1_50B4_EN_ScrnLayer",
+          "0148 4e75": "AMCAF_ProV1_50B4_EN_ScrnRastport",
+          "014c 4e75": "AMCAF_ProV1_50B4_EN_ScrnRegion",
+          "0150 4e75": "AMCAF_ProV1_50B4_EN_ScrnBitmap"
+        }
+      ],
+      "2068 0148": "AMCAF_ProV1_50B4_EN_MakeBankFont",
+      "261b 6b00": "Amon_ProV1_03_FastPlot",
+      "2e1b 6b42": "Amon_ProV1_04_FastPoint",
+      "2f08 6700": [
+        ["skip", 1],
+        ["match", "6100"],
+        ["skip", 1],
+        "tail-call",
+        ["match", "2013 6f00"],
+        ["skip", 1],
+        ["match", "6100"],
+        "follow-rel",
+        ["match", "7200 6100"],
+        "follow-rel",
+        {
+          "48e7 c000 7001 6100": "AMOS_ProV2_00_GetSprite_IIIII",
+          "48e7 c000 7002 6100": "AMOS_ProV2_00_GetIcon_IIIII"
+        }
+      ],
+      "3028 0050": "AMCAF_ProV1_50B4_EN_BestPen_I",
+      "3628 00ce": "JD_ProV5_30_JdXoffset",
+      "3628 00d0": "JD_ProV5_30_JdYoffset",
+      "41e8 0048": "JD_ProV4_60_JdScreenResolution__I",
+      "41e8 0050": "JD_ProV4_60_JdScreenPlanes",
+      "43e8 0062": "AMCAF_ProV1_50B4_EN_PalSpread",
+      "7000 3228": "AMCAF_ProV1_50B4_EN_TurboDraw_IIIII",
+      "7400 261b": "TurboPlus_ProV1_00_FPlot"
+    },
+    "e736": {
+      "201b 0280 0000 00ff 1140 0018 246d": "TurboPlus_ProV2_15_SetPlanes",
+      "201b 0280 0000 00ff 1140 0018 4e75": "TurboPlus_ProV1_00_SetPlanes"
+    },
+    "e752": [
+      "tail-call",
+      {
+        "48e7 031e": "AMOS_ProV2_00_Gfxcall",
+        "41e8 00ec": "JD_ProV5_90_JdChipset"
+      }
+    ],
+    "e75a": [
+      "tail-call",
+      {
+        "0034 4e75": "IntuiExtend_ProV1_30B_WbCurrentWindow",
+        "0038 4e75": "IntuiExtend_ProV1_30B_WbCurrentScreen",
+        "003c 4e75": "IntuiExtend_ProV1_30B_FirstScreen",
+        "48e7 031e 487a": "AMOS_ProV2_00_Intcall"
+      }
+    ],
+    "fff8": {
+      "4ea8 0004 08ad": "AMOS_ProV2_00_View",
+      "4ea8 0020 206d": "AMOS_ProV2_00_Ntsc",
+      "4ea8 0064 4e75": "AMOS_ProV2_00_DelCblock",
+      "4ea8 0070 4a40": [
+        ["match", "6b00"],
+        {
+          "2408 303c fe3e 323c 000c 246d 0128 4eea": "AMOS3D_ProV1_02_TdCls",
+          "2408 303c fe3e 323c 0054 246d 0128 4eea": "AMOS3D_ProV1_02_TdRedraw"
+        }
+      ],
+      "4ea8 00b0 4e75": "AMOS_ProV2_00_DelBlock",
+      "4ea8 00ec 6600": "AMOS_ProV2_00_CopReset",
+      "4ea8 00f0 6600": "AMOS_ProV2_00_CopSwap",
+      "4ea8 0100 6600": "AMOS_ProV2_00_CopLogic",
+      "4ea8 0128 201b": "CRAFT_ProV1_00_BeamWait",
+      "4ea8 0128 2601": "AMOS_ProV2_00_DisplayHeight"
+    },
+    "fffc": {
+      "4ea8 0000 4a41": "Lserial_ProV1_00_Linkey",
+      "4ea8 0000 4a81": {
+        "660e": "AMOS_ProV2_00_WaitKey",
+        "6700": "AMOS_ProV2_00_Inkey"
+      },
+      "4ea8 0004 4e75": "AMOS_ProV2_00_ClearKey",
+      "4ea8 0004 6100": [
+        ["skip", 1],
+        {
+          "206d fffc 4e90 4a41": "JD_ProV5_90_JdWaitEvent",
+          "206d fffc 4ea8 0000": "JD_ProV4_60_JdWaitEvent"
+        }
+      ],
+      "4ea8 0008 2601": "AMOS_ProV2_00_KeyShift",
+      "4ea8 0028 3601": "AMOS_ProV2_00_XMouse_get",
+      "4ea8 0028 3602": "AMOS_ProV2_00_YMouse_get",
+      "4ea8 0034 7600": "AMOS_ProV2_00_MouseKey",
+      "4ea8 005c 4eb9": "AMOS_ProV2_00_WaitVbl",
+      "4ea8 0080 08ed": "AMOS_ProV2_00_SpriteOff",
+      "4ea8 00bc 4e75": "AMOS_ProV2_00_Freeze_V",
+      "4ea8 00c0 4e75": "AMOS_ProV2_00_Unfreeze",
+      "4ea8 00cc 4e75": "AMOS_ProV2_00_BobOff",
+      "4ea8 0108 4e75": "AMOS_ProV2_00_Synchro",
+      "4ea8 0120 7600": "AMOS_ProV2_00_MouseClick"
+    }
+  },
   "2078": [
     ["match", "0004"],
     "tail-call",
