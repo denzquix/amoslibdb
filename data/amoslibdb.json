@@ -1,6 +1,6 @@
 {
   "$schema": "./omm.schema.json",
-"dispatch": {
+"dispatch": ["tail-call", "tail-call", "tail-call", {
   "206b": [
     ["match", "0008 201b 241b 6700"],
     ["skip", 1],
@@ -142,11 +142,269 @@
       "4ee8 f41e": "MusiCRAFT_ProV1_00_StStop"
     },
     "0228": {
-      "41e8 0268 201b e588": "OSDevKit_ProV1_61_Dreg_set_II",
-      "41e8 0268 e58b 2630": "OSDevKit_ProV1_61_Dreg_get_I__I",
-      "41e8 0288 201b e588": "OSDevKit_ProV1_61_Areg_set_II",
-      "41e8 0288 e58b 2630": "OSDevKit_ProV1_61_Areg_get_I__I",
-      "43e8 0002 4aa9 002c": "THX_ProV0_6_ThxEnd"
+      "20bc 0000 0000": {
+        "201b": "OSDevKit_ProV1_20_TagSet",
+        "221b": "OSDevKit_ProV1_20_MemAlloc",
+        "2a1b": "OSDevKit_ProV1_20_GmnSet",
+        "6100": "OSDevKit_ProV1_20_ChnFree_II"
+      },
+      "41e8 0000 2050": "OSDevKit_ProV1_61_DosWhatDir",
+      "41e8 0086 2003": "OSDevKit_ProV1_61_FxBank",
+      "41e8 0086 2010": "OSDevKit_ProV1_61_FxPlay_II",
+      "41e8 0142 2608": "OSDevKit_ProV1_61_ScrOpen",
+      "41e8 014a 3083": "OSDevKit_ProV1_61_ScrDefBody",
+      "41e8 014d 1083": "OSDevKit_ProV1_61_ScrDefPens",
+      "41e8 014e 3083": "OSDevKit_ProV1_61_ScrDefVmodes",
+      "41e8 014e 7600": "OSDevKit_ProV1_61_ScrWdefVmodes",
+      "41e8 0150 3083": "OSDevKit_ProV1_61_ScrDefType",
+      "41e8 0150 7600": "OSDevKit_ProV1_61_ScrWdefType",
+      "41e8 0152 2083": "OSDevKit_ProV1_61_ScrDefFont",
+      "41e8 0152 2610": "OSDevKit_ProV1_61_ScrWdefFont",
+      "41e8 0154 2610": "OSDevKit_ProV1_20_BaseDos",
+      "41e8 0156 2083": "OSDevKit_ProV1_61_ScrDefTitle",
+      "41e8 0156 2610": "OSDevKit_ProV1_61_ScrWdefTitle",
+      "41e8 0158 2610": "OSDevKit_ProV1_20_BaseGfx",
+      "41e8 015c 2610": "OSDevKit_ProV1_20_BaseInt",
+      "41e8 015e 2083": "OSDevKit_ProV1_61_ScrDefBmap",
+      "41e8 015e 2610": "OSDevKit_ProV1_61_ScrWdefBmap",
+      "41e8 0160 2610": "OSDevKit_ProV1_20_BaseGad",
+      "41e8 0162 2608": "OSDevKit_ProV1_61_WndOpen",
+      "41e8 0162 7600": "OSDevKit_ProV1_61_WndWdefLeft",
+      "41e8 0164 2610": "OSDevKit_ProV1_20_BaseWb",
+      "41e8 0164 7600": "OSDevKit_ProV1_61_WndWdefTop",
+      "41e8 0166 7600": "OSDevKit_ProV1_61_WndWdefWidth",
+      "41e8 0168 2610": "OSDevKit_ProV1_20_BaseIcon",
+      "41e8 0168 3083": "OSDevKit_ProV1_61_WndDefBody",
+      "41e8 0168 7600": "OSDevKit_ProV1_61_WndWdefHeight",
+      "41e8 016a 7600": "OSDevKit_ProV1_61_WndWdefDPen",
+      "41e8 016b 1083": "OSDevKit_ProV1_61_WndDefPens",
+      "41e8 016b 7600": "OSDevKit_ProV1_61_WndWdefBPen",
+      "41e8 016c 2083": "OSDevKit_ProV1_61_WndDefIdcmp",
+      "41e8 016c 2610": "OSDevKit_ProV1_20_BaseAsl",
+      "41e8 0170 2083": "OSDevKit_ProV1_61_WndDefFlags",
+      "41e8 0170 2610": "OSDevKit_ProV1_20_BaseLoc",
+      "41e8 0174 2083": "OSDevKit_ProV1_61_WndDefGad",
+      "41e8 0174 2610": "OSDevKit_ProV1_61_WndWdefGad",
+      "41e8 0174 2708": "OSDevKit_ProV1_20_ScrOpen",
+      "41e8 0178 2083": "OSDevKit_ProV1_61_WndDefImage",
+      "41e8 0178 2610": "OSDevKit_ProV1_61_WndWdefImage",
+      "41e8 017c 201b": "OSDevKit_ProV1_20_ScrDefBody",
+      "41e8 017c 2083": "OSDevKit_ProV1_61_WndDefTitle",
+      "41e8 017c 2610": "OSDevKit_ProV1_61_WndWdefTitle",
+      "41e8 017f 201b": "OSDevKit_ProV1_20_ScrDefPens",
+      "41e8 0180 201b": "OSDevKit_ProV1_20_ScrDefVmodes",
+      "41e8 0180 2083": "OSDevKit_ProV1_61_WndDefScr",
+      "41e8 0180 2610": "OSDevKit_ProV1_61_WndWdefScr",
+      "41e8 0180 7600": "OSDevKit_ProV1_20_ScrWdefVmodes",
+      "41e8 0182 201b": "OSDevKit_ProV1_20_ScrDefType",
+      "41e8 0182 7600": "OSDevKit_ProV1_20_ScrWdefType",
+      "41e8 0184 2083": "OSDevKit_ProV1_61_WndDefBmap",
+      "41e8 0184 209b": "OSDevKit_ProV1_20_ScrDefFont",
+      "41e8 0184 2610": "OSDevKit_ProV1_20_ScrWdefFont",
+      "41e8 0188 209b": "OSDevKit_ProV1_20_ScrDefTitle",
+      "41e8 0188 2610": "OSDevKit_ProV1_20_ScrWdefTitle",
+      "41e8 0188 7600": "OSDevKit_ProV1_61_WndWdefMinWidth",
+      "41e8 018a 7600": "OSDevKit_ProV1_61_WndWdefMinHeight",
+      "41e8 018c 7600": "OSDevKit_ProV1_61_WndWdefMaxWidth",
+      "41e8 018e 3083": "OSDevKit_ProV1_61_WndDefLimits",
+      "41e8 018e 7600": "OSDevKit_ProV1_61_WndWdefMaxHeight",
+      "41e8 0190 209b": "OSDevKit_ProV1_20_ScrDefBmap",
+      "41e8 0190 2610": "OSDevKit_ProV1_20_ScrWdefBmap",
+      "41e8 0190 3083": "OSDevKit_ProV1_61_WndDefType",
+      "41e8 0190 7600": "OSDevKit_ProV1_61_WndWdefType",
+      "41e8 0192 2143": "OSDevKit_ProV1_61_GgadDefine",
+      "41e8 0192 7600": "OSDevKit_ProV1_61_GgadWdefLeft",
+      "41e8 0194 2708": "OSDevKit_ProV1_20_WndOpen",
+      "41e8 0194 7600": {
+        "3610 48c3": "OSDevKit_ProV1_61_GgadWdefTop",
+        "3610 4e75": "OSDevKit_ProV1_20_WndWdefLeft"
+      },
+      "41e8 0196 7600": "OSDevKit_ProV1_20_WndWdefTop",
+      "41e8 0198 7600": "OSDevKit_ProV1_20_WndWdefWidth",
+      "41e8 019a 201b": "OSDevKit_ProV1_20_WndDefBody",
+      "41e8 019a 2083": "OSDevKit_ProV1_61_GgadDefText",
+      "41e8 019a 2610": "OSDevKit_ProV1_61_GgadWdefText",
+      "41e8 019a 7600": "OSDevKit_ProV1_20_WndWdefHeight",
+      "41e8 019c 7600": "OSDevKit_ProV1_20_WndWdefDPen",
+      "41e8 019d 201b": "OSDevKit_ProV1_20_WndDefPens",
+      "41e8 019d 7600": "OSDevKit_ProV1_20_WndWdefBPen",
+      "41e8 019e 2083": "OSDevKit_ProV1_61_GgadDefFont",
+      "41e8 019e 2610": "OSDevKit_ProV1_20_WndWdefIdcmp",
+      "41e8 01a2 2610": "OSDevKit_ProV1_20_WndWdefFlags",
+      "41e8 01a2 3083": "OSDevKit_ProV1_61_GgadDefId",
+      "41e8 01a2 7600": "OSDevKit_ProV1_61_GgadWdefId",
+      "41e8 01a4 2083": "OSDevKit_ProV1_61_GgadDefFlags",
+      "41e8 01a4 2610": "OSDevKit_ProV1_61_GgadWdefFlags",
+      "41e8 01a6 2610": "OSDevKit_ProV1_20_WndWdefGad",
+      "41e8 01a8 2083": "OSDevKit_ProV1_61_GgadDefVinf",
+      "41e8 01a8 2610": "OSDevKit_ProV1_61_GgadWdefVinf",
+      "41e8 01aa 2610": "OSDevKit_ProV1_20_WndWdefImage",
+      "41e8 01ac 2083": "OSDevKit_ProV1_61_GgadDefUser",
+      "41e8 01ac 2610": "OSDevKit_ProV1_61_GgadWdefUser",
+      "41e8 01ae 2610": "OSDevKit_ProV1_20_WndWdefTitle",
+      "41e8 01b2 2610": "OSDevKit_ProV1_20_WndWdefScr",
+      "41e8 01b6 2610": "OSDevKit_ProV1_20_WndWdefBmap",
+      "41e8 01ba 7600": "OSDevKit_ProV1_20_WndWdefMinWidth",
+      "41e8 01bc 7600": "OSDevKit_ProV1_20_WndWdefMinHeight",
+      "41e8 01be 7600": "OSDevKit_ProV1_20_WndWdefMaxWidth",
+      "41e8 01c0 201b": "OSDevKit_ProV1_20_WndDefLimits",
+      "41e8 01c0 7600": "OSDevKit_ProV1_20_WndWdefMaxHeight",
+      "41e8 01c2 201b": "OSDevKit_ProV1_20_WndDefType",
+      "41e8 01c2 3103": "OSDevKit_ProV1_61_ScrIdDefDriPensV1",
+      "41e8 01c2 7600": "OSDevKit_ProV1_20_WndWdefType",
+      "41e8 01c8 3103": "OSDevKit_ProV1_61_ScrIdDefDriPensV2",
+      "41e8 01ca 4a83": "OSDevKit_ProV1_61_ScrIdFixDriPens",
+      "41e8 01cc 2610": "OSDevKit_ProV1_20_GgadWdefText",
+      "41e8 01ce 2610": "OSDevKit_ProV1_61_ScrIdInUse",
+      "41e8 01d0 2610": "OSDevKit_ProV1_20_GgadWdefFont",
+      "41e8 01d6 2050": {
+        "b1fc 0000 0000 670e 217c 0000 0000 0008": "OSDevKit_ProV1_61_ScrIdPatternOff",
+        "b1fc 0000 0000 6712 226d 0228 43e9 010e": "OSDevKit_ProV1_61_ScrIdPatternOn",
+        "b1fc 0000 0000 6712 4a83 6608 0268 fff7": "OSDevKit_ProV1_61_ScrIdSetPaint"
+      },
+      "41e8 01d6 2610": "OSDevKit_ProV1_20_GgadWdefFlags",
+      "41e8 01d6 2710": [
+        "tail-call",
+        "tail-call",
+        {
+          "2003 225b b3fc 0000 0000 6710 48e7 0002": {
+            "2c6d e752 4eae fe9e 4cdf 4000 4e75": "OSDevKit_ProV1_61_ScrIdGrWriting",
+            "2c6d e752 4eae ff16 4cdf 4000 4e75": "OSDevKit_ProV1_61_ScrIdCls"
+          },
+          "205b b1fc 0000 0000 6704 3143 0022 4e75": "OSDevKit_ProV1_61_ScrIdSetLine"
+        }
+      ],
+      "41e8 01da 2610": "OSDevKit_ProV1_20_GgadWdefVinf",
+      "41e8 01de 2610": "OSDevKit_ProV1_20_GgadWdefUser",
+      "41e8 01e2 2050": [
+        ["match", "b1fc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "7600 3628 006c 4e75": "OSDevKit_ProV1_61_WndIdInnerXMouse",
+          "7600 3628 006e 4e75": "OSDevKit_ProV1_61_WndIdInnerYMouse",
+          "7600 3628 0070 4e75": "OSDevKit_ProV1_61_WndIdInnerWidth",
+          "7600 3628 0072 4e75": "OSDevKit_ProV1_61_WndIdInnerHeight"
+        }
+      ],
+      "41e8 01e2 2610": [
+        "tail-call",
+        "tail-call",
+        ["match", "2043 b1fc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "3628 000c 48c3 4e75": "OSDevKit_ProV1_61_WndIdYMouse",
+          "3628 000e 48c3 4e75": "OSDevKit_ProV1_61_WndIdXMouse",
+          "7600 1628 0036 4e75": "OSDevKit_ProV1_61_WndIdLeftBdr",
+          "7600 1628 0037 4e75": "OSDevKit_ProV1_61_WndIdTopBdr",
+          "7600 1628 0038 4e75": "OSDevKit_ProV1_61_WndIdRightBdr",
+          "7600 1628 0039 4e75": "OSDevKit_ProV1_61_WndIdBottomBdr",
+          "7600 3628 0004 4e75": "OSDevKit_ProV1_61_WndIdX",
+          "7600 3628 0006 4e75": "OSDevKit_ProV1_61_WndIdY",
+          "7600 3628 0008 4e75": "OSDevKit_ProV1_61_WndIdWidth",
+          "7600 3628 000a 4e75": "OSDevKit_ProV1_61_WndIdHeight"
+        }
+      ],
+      "41e8 01e6 2050": {
+        "b1fc 0000 0000 670e 217c 0000 0000 0008 117c": "OSDevKit_ProV1_61_WndIdPatternOff",
+        "b1fc 0000 0000 6712 226d 0228 43e9 010e 2149": "OSDevKit_ProV1_61_WndIdPatternOn",
+        "b1fc 0000 0000 6712 4a83 6608 0268 fff7 0020": "OSDevKit_ProV1_61_WndIdSetPaint"
+      },
+      "41e8 01e6 2610": [
+        "tail-call",
+        "tail-call",
+        ["match", "2043 b1fc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "3628 0024 48c3 4e75": "OSDevKit_ProV1_61_WndIdXgr",
+          "3628 0026 48c3 4e75": "OSDevKit_ProV1_61_WndIdYgr"
+        }
+      ],
+      "41e8 01e6 2710": [
+        "tail-call",
+        "tail-call",
+        {
+          "2003 225b b3fc 0000 0000 6710 48e7 0002": {
+            "2c6d e752 4eae fe9e 4cdf 4000 4e75": "OSDevKit_ProV1_61_WndIdGrWriting",
+            "2c6d e752 4eae ff16 4cdf 4000 4e75": "OSDevKit_ProV1_61_WndIdCls"
+          },
+          "205b b1fc 0000 0000 6704 3143 0022 4e75": "OSDevKit_ProV1_61_WndIdSetLine"
+        }
+      ],
+      "41e8 01ea 2003": "OSDevKit_ProV1_61_GtGadgetsBank",
+      "41e8 01ee 2003": "OSDevKit_ProV1_61_GtMenusBank",
+      "41e8 0202 2103": "OSDevKit_ProV1_61_GtSetMode",
+      "41e8 020a 2608": "OSDevKit_ProV1_20_BaseTopaz",
+      "41e8 0212 2103": "OSDevKit_ProV1_61_GtSetIntegerMode",
+      "41e8 0212 226d": {
+        "0228 43e9 0174 3091 3169 0002 0002 3169 000a 000a 2169 0010": "OSDevKit_ProV1_20_ScrOpen_IIIII",
+        "0228 43e9 0174 3091 3169 0002 0002 3169 000a 000a 3169 000c": "OSDevKit_ProV1_20_ScrOpen_III",
+        "0228 43e9 0194 261b 241b 221b 201b 2708 30c0 30c1 30c2 30c3": "OSDevKit_ProV1_20_WndOpen_IIII",
+        "0228 43e9 0194 2a1b 281b 261b 241b 221b 201b 2c1b 2708 30c0": "OSDevKit_ProV1_20_WndOpen_IIIIIII"
+      },
+      "41e8 022a 2103": "OSDevKit_ProV1_61_GtSetListviewMode",
+      "41e8 023a 2103": "OSDevKit_ProV1_61_GtSetStringMode",
+      "41e8 0254 2610": "OSDevKit_ProV1_61_CxBroker",
+      "41e8 025c 2610": "OSDevKit_ProV1_61_CxIdEventType",
+      "41e8 0260 2610": "OSDevKit_ProV1_61_CxIdEventId",
+      "41e8 0264 2610": "OSDevKit_ProV1_61_CxIdEventData",
+      "41e8 0268 201b": "OSDevKit_ProV1_61_Dreg_set_II",
+      "41e8 0268 e58b": "OSDevKit_ProV1_61_Dreg_get_I__I",
+      "41e8 0288 201b": "OSDevKit_ProV1_61_Areg_set_II",
+      "41e8 0288 e58b": "OSDevKit_ProV1_61_Areg_get_I__I",
+      "41e8 02b4 2610": "OSDevKit_ProV1_61_BaseGad",
+      "41e8 02b8 2610": "OSDevKit_ProV1_61_BaseWb",
+      "41e8 02bc 2610": "OSDevKit_ProV1_61_BaseIcon",
+      "41e8 02c4 2610": "OSDevKit_ProV1_61_BaseAsl",
+      "41e8 02c8 2610": "OSDevKit_ProV1_61_BaseLoc",
+      "41e8 02cc 2610": "OSDevKit_ProV1_61_BaseDt",
+      "41e8 02d8 2610": "OSDevKit_ProV1_61_BaseIff",
+      "41e8 02e0 2610": "OSDevKit_ProV1_61_BaseCx",
+      "41e8 02f0 2610": "OSDevKit_ProV1_61_WndIdNextEvent",
+      "41e8 02f0 2710": "OSDevKit_ProV1_61_WndIdMaskEvent",
+      "41e8 02f4 2610": {
+      "4e75": "OSDevKit_ProV1_61_CxMsgPort",
+      "6100": [
+        ["skip", 1],
+        "tail-call",
+        {
+          "4a83 6754 48e7 0002": "OSDevKit_ProV1_61_CxIdNextEvent",
+          "206d 0228 41e8 02f4": "OSDevKit_ProV1_61_CxIdWaitEvent"
+        }
+      ]
+      },
+      "41e8 0398 2050": "OSDevKit_ProV1_61_ClassGetFile",
+      "41e8 03a8 2608": "OSDevKit_ProV1_61_BaseTag",
+      "41e8 0528 2608": "OSDevKit_ProV1_61_BaseTopaz",
+      "41e8 0530 226d": {
+        "0228 43e9 0142 3091 3169 0002 0002 3169 000a 000a 2169 0010": "OSDevKit_ProV1_61_ScrOpen_IIIII",
+        "0228 43e9 0142 3091 3169 0002 0002 3169 000a 000a 3169 000c": "OSDevKit_ProV1_61_ScrOpen_III",
+        "0228 43e9 0162 241b 221b 201b 2808 30c0 30c1 30c2 30c3 30e9": "OSDevKit_ProV1_61_WndOpen_IIII"
+      },
+      "41e8 0568 0ca8": [
+        ["match", "0000 0100 0014 6614 7600 3628 0018 6100"],
+        "follow-rel",
+        "tail-call",
+        {
+          "0243 001f": "OSDevKit_ProV1_61_WndIdEventMenu",
+          "e04b e64b": "OSDevKit_ProV1_61_WndIdEventSub",
+          "ea4b 0243": "OSDevKit_ProV1_61_WndIdEventItem"
+        }
+      ],
+      "41e8 0568 2068": "OSDevKit_ProV1_61_WndIdEventWnd",
+      "41e8 0568 2268": "OSDevKit_ProV1_61_WndIdEventNextMenu",
+      "41e8 0568 3628": {
+        "0020 48c3 4e75": "OSDevKit_ProV1_61_WndIdEventXMouse",
+        "0022 48c3 4e75": "OSDevKit_ProV1_61_WndIdEventYMouse"
+      },
+      "41e8 0568 7600": {
+        "3628 0018 4e75": "OSDevKit_ProV1_61_WndIdEventCode",
+        "3628 001a 4e75": "OSDevKit_ProV1_61_WndIdEventQualifier"
+      },
+      "41e8 0568 76ff": {
+        "2068 001c b1fc 0000 0000 6704 2628 0028": "OSDevKit_ProV1_61_WndIdEventGtBank",
+        "2068 001c b1fc 0000 0000 6706 7600 3628": "OSDevKit_ProV1_61_WndIdEventGadget"
+      },
+      "43e8 0002 4aa9": "THX_ProV0_6_ThxEnd"
     },
     "0238": {
       "217c 0000": "DBench_ProV0_42_DbSavedOff",
@@ -1652,6 +1910,7 @@
   },
   "2243": {
     "201b 205b": "AMOS_ProV2_00_Copy",
+    "273c 0000": "OSDevKit_ProV1_61_LibClose",
     "281b 205b": "OSDevKit_ProV1_61_DosVarValue_set_SIS",
     "3219 b27c": "Music_ProV2_00_SetWave",
     "3419 6700": "AMOS_ProV2_00__GetLabelA"
@@ -1976,6 +2235,7 @@
     "201b": "IOPorts_ProV2_00_SerialSend",
     "221b": {
       "201b": {
+        "205b": "OSDevKit_ProV1_61_ChunkChild",
         "4eb9": [
           ["skip", 2],
           ["match", "6600"],
@@ -2111,7 +2371,31 @@
       ],
       "7e21": "GUI_ProV2_00_GuiReserveZone"
     },
+    "206d": {
+      "0228 41e8 01d6 2710 2702": "OSDevKit_ProV1_61_ScrIdPlot",
+      "0228 41e8 01e2 2710 2702": [
+        "tail-call",
+        "tail-call",
+        {
+          "2203 201b 205b b1fc 0000 0000 6710 48e7 0002 2c6d e75a 4eae fee0 4cdf 4000 4e75": "OSDevKit_ProV1_61_WndIdSize",
+          "2203 201b 205b b1fc 0000 0000 6710 48e7 0002 2c6d e75a 4eae ff58 4cdf 4000 4e75": "OSDevKit_ProV1_61_WndIdMove"
+        }
+      ],
+      "0228 41e8 01e6 2710 2702": "OSDevKit_ProV1_61_WndIdPlot"
+    },
     "221b": {
+      "201b 206d": {
+        "0228 41e8 01d6 2710 2700 2701 2702": "OSDevKit_ProV1_61_ScrIdBar",
+        "0228 41e8 01e2 2710 2700 2701 2702": [
+          "tail-call",
+          "tail-call",
+          {
+            "241b 221b 201b 205b 48e7 0002 2c6d e75a": "OSDevKit_ProV1_61_WndIdLimits",
+            "241b 221b 201b 205b b1fc 0000 0000 6710": "OSDevKit_ProV1_61_WndIdBox"
+          }
+        ],
+        "0228 41e8 01e6 2710 2700 2701 2702": "OSDevKit_ProV1_61_WndIdBar"
+      },
       "201b 246d": "AGA_ProV1_00_AgaInk_III",
       "201b 2a1b": {
         "b4bc 0000 0001 6a00 0004 7408 2c02 babc 0000 0001 6700 002c babc 0000 0002 6600 0012 0246 fffe bc82 6700 0018 5282 6000 0012 0246 fffc bc82 6700 0008 5282 2c02 60f0 2c05 d280 48e7 0010 266d 0248 47eb 0254 2680": "JD_ProV5_90_JdHexdump",
@@ -3419,6 +3703,7 @@
     "0004 162a 0212 0283": "IntuiExtend_ProV1_30B_VblFreq",
     "0004 7600 162a 0213": "IntuiExtend_ProV2_01B_PowerFreq"
   },
+  "260b": "OSDevKit_ProV1_61_A3Pointer",
   "260d": "CRAFT_ProV1_00_AmosBase",
   "2610": "AMOS_ProV2_00_Array",
   "2613": "TurboPlus_ProV2_00_ReserveScene",
@@ -4119,6 +4404,20 @@
         "202b 0010": "IOPorts_ProV2_00_SerialOpen_IIIII"
       },
       "202d": "AMOS_ProV2_00_ArexxAnswer_IS",
+      "206d": {
+        "0228 41e8 01da 2610 221b": {
+          "201b 2703 2700 2001 0080 ff00 ffff e198": "OSDevKit_ProV1_61_ScrIdAgaColour_set_II",
+          "201b 2703 2700 2001 0280 0000 0f00 e088": "OSDevKit_ProV1_61_ScrIdColour_set_II"
+        },
+        "0228 41e8 01da 2610 6100": [
+          ["skip", 1],
+          {
+            "201b 2703 2600": "OSDevKit_ProV1_61_ScrIdColour_get_I__I",
+            "201b 2703 2700": "OSDevKit_ProV1_61_ScrIdAgaColour_get_I__I"
+          }
+        ],
+        "0228 41e8 01de 2068 0004": "OSDevKit_ProV1_61_GtBevelBox"
+      },
       "222b": "Music_ProV2_00_Wave",
       "226d": "AMOS_ProV2_00_SetCurs",
       "246d": "IOPorts_ProV2_00_PrinterDump_IIII",
@@ -11870,5 +12169,5 @@
   "bfed": "AMOS_ProV2_00_Return",
   "c143": "AMOS_ProV2_00_Field",
   "e14b": "AMOS_ProV2_00_SetInput"
-}
+}]
 }
