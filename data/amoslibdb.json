@@ -1,6 +1,108 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": ["tail-call", "tail-call", "tail-call", {
+  "202b": {
+    "0004 6100": [
+      ["skip", 1],
+      {
+        "221b 201b": "EME_ProV3_00DEMO_Sample",
+        "261b b6bc": "EME_ProV3_00DEMO_SamPlay_III"
+      }
+    ],
+    "0008 b0bc": [
+      ["match", "0000 0008 6400"],
+      ["skip", 1],
+      ["match", "2700 6100"],
+      "follow-rel",
+      ["match", "241b b47c 0008 6400"],
+      ["skip", 1],
+      {
+        "246d 01e8 45ea 002e": "EasyLife_ProV1_09_ElppLoad",
+        "246d 01e8 d4fc 0000": "EasyLife_ProV1_44_ElppLoad"
+      }
+    ],
+    "000c 2700": "EasyLife_ProV1_09_MuiNotify_ISIIS"
+  },
+  "202d": {
+    "02c4 41fa": {
+      "07f0 2080": "JD_ProV5_90_JdDrawSegment",
+      "0806 2080": "JD_ProV5_30_JdDrawSegment"
+    },
+    "052c 6700": [
+      ["skip", 1],
+      {
+        "2040 317c ffff 00d8": "AMOS_ProV2_00_WindSave",
+        "2040 b668 0050 6400": [
+          ["skip", 1],
+          {
+            "e54b 2630 3000 4e75": "AMOS_ProV2_00_Logbase",
+            "e54b 2630 3018 4e75": "AMOS_ProV2_00_Phybase"
+          }
+        ],
+        "2240 2403 221b 201b": "Compact_ProV2_00_Unpack_III",
+        "2240 72ff 74ff 2003": "Compact_ProV2_00_Unpack_I"
+      }
+    ],
+    "0768 6700": [
+      ["skip", 1],
+      {
+        "93c9 6100": "AMOS_ProV2_00_MenuToBank",
+        "2040 223c": "AMOS_ProV2_00_MenuBase"
+      }
+    ],
+    "e736 41fa": "JD_ProV4_60_JdDrawSegment"
+  },
+  "203c": {
+    "0000 002c": "IntuiExtend_ProV1_30B_WbInitToggleGadget",
+    "4963 6f6e" : "IntuiExtend_ProV1_60_WbIconImage",
+    "5370 7269": "IntuiExtend_ProV1_60_WbBobImage",
+    "8000 0000": "CRAFT_ProV1_00_FrWindow_I"
+  },
+  "2043": {
+    "0803 0000": {
+      "6600": "AMOS_ProV2_00__FnStrucD",
+      "6604": "AMOS_ProV2_00_Leek",
+      "6606": "AMOS_ProV2_00_Deek"
+    },
+    "201b 0110": "AMOS_ProV2_00__FnBtst1",
+    "201b 0150": "AMOS_ProV2_00__InBchg1",
+    "201b 0190": "AMOS_ProV2_00__InBclr1",
+    "201b 01d0": "AMOS_ProV2_00__InBset1",
+    "201b 1210": {
+      "e039 1081": "AMOS_ProV2_00__InRorB1",
+      "e139 1081": "AMOS_ProV2_00__InRolB1"
+    },
+    "201b 2210": {
+      "e0b9 2081": "AMOS_ProV2_00__InRorL1",
+      "e1b9 2081": "AMOS_ProV2_00__InRolL1"
+    },
+    "201b 3210": {
+      "e079 3081": "AMOS_ProV2_00__InRorW1",
+      "e179 3081": "AMOS_ProV2_00__InRolW1"
+    },
+    "2203 7600": "AMOS_ProV2_00__FnStruc",
+    "226d 04f2": "AMOS_ProV2_00__UsingS",
+    "245b 7600": "AMOS_ProV2_00__PlusC",
+    "2610 4e75": "OSDevKit_ProV1_61_CpuLong_get_I__I",
+    "2628 0002": "OSDevKit_ProV1_61_ValL",
+    "3610 48c3": "OSDevKit_ProV1_61_CpuWord_get_I__I",
+    "7600 1610": "AMOS_ProV2_00_Peek_I_I",
+    "7600 3610": "OSDevKit_ProV1_61_CpuUword_get_I__I",
+    "7600 3618": "AMOS_ProV2_00__HPrintS",
+    "7600 3628": "OSDevKit_ProV1_61_ValW",
+    "d1db 1610": "OSDevKit_ProV1_61_StructByte_get_II__I",
+    "d1db 2610": "OSDevKit_ProV1_61_StructLong_get_II__I",
+    "d1db 3610": "OSDevKit_ProV1_61_StructWord_get_II__I",
+    "d1db 7600": {
+      "1610 4e75": "OSDevKit_ProV1_61_StructUbyte_get_II__I",
+      "3610 4e75": "OSDevKit_ProV1_61_StructUword_get_II__I"
+    }
+  },
+  "204b": "EasyLife_ProV1_09_MuiMakePopbutton",
+  "2053": {
+    "0868 0004": "IntuiExtend_ProV1_30B_WbSlideSwapLook",
+    "7e00 3e10": "IntuiExtend_ProV1_60_Wb3dEraseObject"
+  },
   "205b": ["tail-call", {
     "0868": "IntuiExtend_ProV2_01B_WbSlideSwapLook",
     "08a8": {
