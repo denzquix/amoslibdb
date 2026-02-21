@@ -1,6 +1,307 @@
 {
   "$schema": "./omm.schema.json",
 "dispatch": ["tail-call", "tail-call", "tail-call", {
+  "066b": "AMCAF_ProV1_50B4_EN_Qcos",
+  "0839": {
+    "0006 00bf e001 6600": "Delta_ProV1_40_DeltaWaitLeftMouse",
+    "0006 00bf e001 66f6": "Delta_ProV1_60_DeltaWaitLeftMouse",
+    "0006 00bf e001 6702": "First_ProV0_10_WaitMouse",
+    "0006 00bf e001 6706": "TurboPlus_ProV1_00_LeftClick",
+    "0007 00bf e001 66f6": "Delta_ProV1_60_DeltaWaitFire",
+    "0007 00bf e001 6702": "First_ProV0_10_WaitJoy",
+    "000a 00df f016 6706": "TurboPlus_ProV2_15_RightClick",
+    "000e 00df f002 66f6": "Delta_ProV1_60_DeltaBlitOff"
+  },
+  "0879": "First_ProV0_10_ChangeLed",
+  "08ad": {
+    "0005 069a 08ad": "AMOS_ProV2_00_UpdateOff",
+    "0005 069a 4e75": "AMOS_ProV2_00_BobUpdateOff",
+    "0006 069a 4e75": "AMOS_ProV2_00_SpriteUpdateOff",
+    "0008 069a 4e75": "AMOS_ProV2_00_BreakOff",
+    "0009 069a 4e75": "AMOS_ProV2_00_MenuOff",
+    "000b 069a 2b48": "AMOS_ProV2_00_Every",
+    "000b 069a 4e75": "AMOS_ProV2_00_EveryOff",
+    "000c 069a 4e75": "AMOS_ProV2_00_AutoViewOff"
+  },
+  "08b9": "Music_ProV2_00_LedOn",
+  "08c3": {
+    "000e 4e75": "AMOS_ProV2_00_Vrev",
+    "000f 08c3": "AMOS_ProV2_00_Rev",
+    "000f 4e75": "AMOS_ProV2_00_Hrev",
+    "001f 0883": "AMOS_ProV2_00_Logic_I",
+    "001f 08c3": "AMOS_ProV2_00_Physic_I"
+  },
+  "08ed": {
+    "0005 069a 08ed": "AMOS_ProV2_00_UpdateOn",
+    "0005 069a 4e75": "AMOS_ProV2_00_BobUpdateOn",
+    "0006 069a 4e75": "AMOS_ProV2_00_SpriteUpdateOn",
+    "0008 069a 42ad": "AMOS_ProV2_00_BreakOn",
+    "000b 069a 4e75": "AMOS_ProV2_00_EveryOn",
+    "000c 069a 4e75": "AMOS_ProV2_00_AutoViewOn"
+  },
+  "08f9": "Music_ProV2_00_LedOff",
+  "0c39": {
+    "0000 0000 1e62 6704 6000": "Delta_ProV1_60_DeltaLockPubScreens",
+    "0001 0000 1e62 6704 6000": "Delta_ProV1_60_DeltaUnlockPubScreens",
+    "00ff 00df f006 6700 2e1a": "Game_ProV0_90_GCheckVbl"
+  },
+  "0c6d": "GUI_ProV2_00_GuiAmigaOs",
+  "0c93": {
+    "8000 0000": "Music_ProV2_00_TrackPlay_II",
+    "ffff ffff": "AMOS3D_ProV1_02_TdDebug"
+  },
+  "0cab": [
+    ["match", "0000 0000 0014 6f00"],
+    ["skip", 1],
+    ["match", "0cab 0000 0061 0014 6400"],
+    ["skip", 1],
+    {
+      "226d 01a8 d2fc 0078 222b 0014 5341 e541 4ab1 1000 6600 00ec 222b 0018 4eb9": "TurboPlus_ProV1_00_BlitStoreLeft",
+      "226d 01a8 d2fc 0078 222b 0014 5341 e541 4ab1 1000 6600 0104 222b 0018 4eb9": "TurboPlus_ProV1_00_BlitStoreUp",
+      "226d 01a8 d2fc 007a 222b 0014 5341 e541 4ab1 1000 6600 00ec 222b 0018 4eb9": "Turbo_ProV1_90_BlitStoreLeft"
+    }
+  ],
+  "1039": {
+    "00bf e001 0200 0010 6600 fff4 48e7 0002 2c79 0000 0004 223c 0000 01f4": [
+      ["match", "6100"],
+      ["skip", 1],
+      {
+        "5381 6600 fff8 4eae ff88 41ee 0196 226d 0248 43e9 0294 4eae": "JD_ProV5_30_JdDiskchange",
+        "5381 6600 fff8 4eae ff88 41ee 0196 226d 0248 43e9 02ec 4eae": "JD_ProV4_60_JdDiskchange",
+        "0481 0000 0001 6600 fff4 4eae ff88 41ee 0196 43f9 0000 0232": "Misc_ProV1_00_DiskWait",
+        "0481 0000 0001 6600 fff4 4eae ff88 41ee 0196 43f9 0000 03b6": "Delta_ProV1_40_DeltaChangeDisk"
+      }
+    ],
+    "00bf e001 0200 0010 66f4 48e7 0002 2c79 0000 0004 223c 0000 01f4 6100": "JD_ProV5_90_JdDiskchange",
+    "00bf e001 0200 0010 66f4 48e7 0002 2c79 0000 0004 223c 0000 01f4 613c": "Delta_ProV1_60_DeltaChangeDisk"
+  },
+  "10fc": {
+    "0009 4210": "AMOS_ProV2_00__PrtVir",
+    "000d 10fc": "AMOS_ProV2_00__PrtRet"
+  },
+  "13fc": {
+    "0000 00df f1dc 4e75": "Delta_ProV1_40_DeltaNtsc",
+    "0020 00df f1dc 4e75": "Delta_ProV1_40_DeltaPal"
+  },
+  "2003": [
+    "tail-call",
+    {
+      "0240": "Music_ProV2_00_Voice",
+      "206d": "AMOS_ProV2_00__GetLabelE",
+      "2204": {
+        "260e 2c6d": "AMOS_ProV2_00__DFlToInt1",
+        "4cdb 000c": "AMOS_ProV2_00__DFloat_Compare"
+      },
+      "221b": [
+        "tail-call",
+        {
+          "b0bc 0000": "Music_ProV2_00_Volume_II",
+          "260e 2c6d": "AMOS_ProV2_00__Float_Compare"
+        }
+      ],
+      "260e": {
+        "2c6d 02bc 4eae ffdc": "AMOS_ProV2_00__DIntToFl1",
+        "2c6d 02c4 4eae ffdc": "AMOS_ProV2_00__IntToFl1",
+        "2c6d 02c4 4eae ffe2": "AMOS_ProV2_00__FlToInt1"
+      },
+      "281b": "AMOS_ProV2_00_Cls_IIIII",
+      "2a1b": "AMOS_ProV2_00_GetBlock_IIIIII",
+      "2f0b": "Music_ProV2_00_PlayOff_I",
+      "48e7": [
+        ["match", "0002 2c6d 0228 4dee 02d4 2c56 bdfc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "43fa 0010 4eae ff7c": "OSDevKit_ProV1_61_JoyInit",
+          "4eae ffe2 2600 0283": "OSDevKit_ProV1_61_JoyRead",
+          "4eae ffe2 7400 2600": "OSDevKit_ProV1_61_JoyType"
+        }
+      ],
+      "4eb9": "AMOS_ProV2_00_Call",
+      "5280": "AMOS_ProV2_00_Err",
+      "6100": [
+        "push",
+        "follow-rel",
+        {
+          "206d": "AMOS_ProV2_00_Start",
+          "2f00": [
+            "pop",
+            ["skip", 1],
+            {
+              "221b": "Music_ProV2_00_SamPlay_II",
+              "720f": "Music_ProV2_00_SamPlay_I"
+            }
+          ],
+          "48e7": "AMOS_ProV2_00_Erase",
+          "6100": [
+            "pop",
+            ["skip", 1],
+            {
+              "08a9 0000": "IOPorts_ProV2_00_SerialFast",
+              "08a9 0004": "IOPorts_ProV2_00_SerialSlow",
+              "2609 4e75": "IOPorts_ProV2_00_SerialBase",
+              "303c 0009": "IOPorts_ProV2_00_SerialGet",
+              "7009 4eb9": [
+                ["skip", 2],
+                {
+                  "2829 0020": "IOPorts_ProV2_00_SerialInput",
+                  "7600 2252": "IOPorts_ProV2_00_SerialStatus"
+                }
+              ],
+              "7400 7600": "AMOS_ProV2_00_Pof_get_I",
+              "7400 7601": {
+                "2f0e 2c6d 02b8 4eae ffbe 2c5f 222a 0000": "AMOS_ProV2_00_Lof",
+                "2f0e 2c6d 02b8 4eae ffbe 2c5f 2800 222a": "AMOS_ProV2_00_Eof"
+              },
+              "7600 1629": "IOPorts_ProV2_00_SerialError"
+            }
+          ],
+          "b0bc": {
+            "0000 0004 6400": [
+              "pop",
+              ["skip", 1],
+              ["match", "4eb9"],
+              "follow-abs",
+              {
+                "6100": "IOPorts_ProV2_00_SerialCheck",
+                "48e7": {
+                  "c0c2": "IOPorts_ProV2_00_SerialClose_I",
+                  "0042": "IOPorts_ProV2_00_SerialAbort"
+                }
+              }
+            ],
+            "0000 0007 6200": [
+              ["skip", 1],
+              {
+                "c0fc 000c 45ed 06a4 d5c0": [
+                  "pop",
+                  ["skip", 1],
+                  "tail-call",
+                  {
+                    "48e7": {
+                      "0042 2c78 0004 4a2a": {
+                        "0008 6712 4a2a 0009": "AMOS_ProV2_00_DevAbort",
+                        "0008 671c 4a2a 0009": "AMOS_ProV2_00_ALT2_DevAbort"
+                      },
+                      "c0c2 2c78 0004 6100": [
+                        "follow-rel",
+                        {
+                          "48e7 0042 2c78 0004 4a2a 0008 6712 4a2a 0009 670c 2252 4eae fe20 2252 4eae fe26 4cdf 4200 4e75": "AMOS_ProV2_00_DevClose_I",
+                          "48e7 0042 2c78 0004 4a2a 0008 671c 4a2a 0009 6716 2252 4eae fe2c 4a80 660c 2252 4eae fe20 2252": "AMOS_ProV2_00_ALT2_DevClose_I"
+                        }
+                      ]
+                    },
+                    "2612": "AMOS_ProV2_00_DevBase",
+                    "6100": "AMOS_ProV2_00_DevCheck"
+                  }
+                ],
+                "e548 45ed 06f8 d4c0 4e75": [
+                  "pop",
+                  ["skip", 1],
+                  {
+                    "2012 6710": "AMOS_ProV2_00_LibClose_I",
+                    "2612 4e75": "AMOS_ProV2_00_LibBase"
+                  }
+                ]
+              }
+            ],
+            "0000 000a 6400": [
+              "pop",
+              ["skip", 1],
+              {
+                "6700": [
+                  ["skip", 1],
+                  {
+                    "082a": "AMOS_ProV2_00_Port",
+                    "6100": "AMOS_ProV2_00_Close_I"
+                  }
+                ],
+                "4aaa": "AMOS_ProV2_00__InPrintH"
+              }
+            ],
+            "0000 0400 6c0a": "AMOS_ProV2_00_Bload"
+          }
+        }
+      ],
+      "6300": "Music_ProV2_00_SamBank",
+      "6f00": [
+        ["skip", 1],
+        {
+          "4eb9": [
+            "follow-abs",
+            {
+              "48e7": "AMOS_ProV2_00_DialogClose_I",
+              "2f0c": "AMOS_ProV2_00_Bsend",
+              "6100": [
+                ["skip", 1],
+                {
+                  "6708": "AMOS_ProV2_00_DialogClr",
+                  "6718": "AMOS_ProV2_00_Dialog"
+                }
+              ]
+            }
+          ],
+          "6100": "AMOS_ProV2_00_Bgrab",
+          "7200": "AMOS_ProV2_00_DialogUnfreeze_I",
+          "72ff": "AMOS_ProV2_00_DialogFreeze_I"
+        }
+      ],
+      "6f12": "AMOS_ProV2_00_Resource",
+      "720f": "Music_ProV2_00_Volume_I",
+      "7600": {
+        "4eb9": "AMOS_ProV2_00_Blength",
+        "6100": "AMOS_ProV2_00_Length",
+        "b0bc": "Music_ProV2_00_SamSwapped"
+      },
+      "76ff": "AMOS_ProV2_00__PrintE",
+      "b0bc": {
+        "0000 0003 6400": "AMOS_ProV2_00_Writing_II",
+        "0000 0004 6400": "Music_ProV2_00_Vumeter",
+        "0000 0040 6500": "Music_ProV2_00_Mvolume",
+        "0000 0064 6200": "Music_ProV2_00_Tempo",
+        "8000 0000 6602": "AMOS_ProV2_00_Cmove_II_V"
+      }
+    }
+  ],
+  "2010": {
+    "241b": "AMOS_ProV2_00__InAdd4",
+    "6700": "AMOS_ProV2_00__GetTablo"
+  },
+  "2013": {
+    "2703": "Music_ProV2_00_Sample",
+    "280e": {
+      "2c6d 02c4 4eae ffdc 2c44 2680 4e75": "AMOS_ProV2_00__IntToFl2",
+      "2c6d 02c4 4eae ffe2 2c44 2680 4e75": "AMOS_ProV2_00__FlToInt2"
+    },
+    "4eb9": [
+      ["skip", 2],
+      ["match", "6700"],
+      ["skip", 1],
+      ["match", "2613 2810 2704 7400 2703 2704 6100"],
+      ["skip", 1],
+      {
+        "d485 5344 66f2 2702 6100": "EasyLife_ProV1_44_ElzbMultiAdd_I",
+        "d485 5384 66f2 2702 6100": "EasyLife_ProV1_09_ElzbMultiAdd_I"
+      }
+    ],
+    "b0bc": [
+      ["match", "0000 0003 6400"],
+      ["skip", 1],
+      ["match", "202b 0004 b0bc 0000 0005 6400"],
+      ["skip", 1],
+      ["match", "202b 0008 6700"],
+      ["skip", 1],
+      ["match", "6b00"],
+      ["skip", 1],
+      ["match", "6100"],
+      ["skip", 1],
+      ["match", "6606 7000 6000"],
+      ["skip", 1],
+      {
+        "2f0e 2c40 2213 202b 0004 2c00 207c 0000": "EasyLife_ProV1_44_ElppCrunch",
+        "2f0e 2c40 2213 202b 0004 2c00 307c 0000": "EasyLife_ProV1_09_ElppCrunch"
+      }
+    ]
+  },
   "201b": ["tail-call", {
     "0240": "EME_ProV3_00DEMO_Voice",
     "0480": {
@@ -861,9 +1162,9 @@
           ["match", "241b 246d 01a8 b46a 000a 6e4c 5342 6b00"],
           ["skip", 1],
           {
-            "06a 000c d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0001 4eae": "TurboPlus_ProV1_00_ReserveObject",
-            "06a 000e d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0002 4eae": "Turbo_ProV1_90_ReserveObjectChip",
-            "06a 000e d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0004 4eae": "Turbo_ProV1_90_ReserveObjectFast"
+            "206a 000c d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0001 4eae": "TurboPlus_ProV1_00_ReserveObject",
+            "206a 000e d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0002 4eae": "Turbo_ProV1_90_ReserveObjectChip",
+            "206a 000e d482 2e02 d482 4ab0 2800 6630 244e 2c78 0004 c0fc 0006 223c 0001 0004 4eae": "Turbo_ProV1_90_ReserveObjectFast"
           }
         ],
         "4eb9": "TurboPlus_ProV2_00_ScenePalette",
