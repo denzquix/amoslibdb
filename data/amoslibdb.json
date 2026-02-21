@@ -5126,7 +5126,10 @@
       ],
       "d4fc 003c 4ef9": [
         "follow-abs",
-        ["TODO", "distinguish 608 (IOPorts_ProV2_00_ParallelClose) from 613 (IOPorts_ProV2_00_ParallelAbort)"]
+        {
+          "48e7 c0c2": "IOPorts_ProV2_00_ParallelClose",
+          "48e7 0042": "IOPorts_ProV2_00_ParallelAbort"
+        }
       ]
     },
     "0168 201b": {
@@ -10184,7 +10187,12 @@
         "4e75": "AMCAF_ProV1_19_Rnp",
         "4eb9": [
           "follow-abs",
-          ["TODO", "distinguish 1101 (AMCAF_ProV1_19_ExchangeBob) from 1102 (AMCAF_ProV1_19_ExchangeIcon)"]
+          ["match", "2203 6b00"],
+          ["skip", 1],
+          {
+            "206d fffc 4ea8 0110": "AMCAF_ProV1_19_ExchangeBob",
+            "206d fffc 4ea8 0114": "AMCAF_ProV1_19_ExchangeIcon"
+          }
         ],
         "4fef": {
           "ffec 2e1b 3e87": "AMCAF_ProV1_19_CoordsRead",
@@ -10916,7 +10924,12 @@
             "4e75": "AMCAF_ProV1_40_DE_Rnp",
             "4eb9": [
               "follow-abs",
-              ["TODO", "distinguish 1101 (AMCAF_ProV1_40_DE_ExchangeBob) from 1102 (AMCAF_ProV1_40_DE_ExchangeIcon)"]
+              ["match", "2203 6b00"],
+              ["skip", 1],
+              {
+                "206d fffc 4ea8 0110": "AMCAF_ProV1_40_DE_ExchangeBob",
+                "206d fffc 4ea8 0114": "AMCAF_ProV1_40_DE_ExchangeIcon"
+              }
             ],
             "4fef": {
               "ffec 2e1b 3e87": "AMCAF_ProV1_40_DE_CoordsRead",
@@ -11649,7 +11662,12 @@
     "4e75": "AMCAF_ProV1_40_EN_Rnp",
     "4eb9": [
       "follow-abs",
-      ["TODO", "distinguish 1101 (AMCAF_ProV1_40_EN_ExchangeBob) from 1102 (AMCAF_ProV1_40_EN_ExchangeIcon)"]
+      ["match", "2203 6b00"],
+      ["skip", 1],
+      {
+        "206d fffc 4ea8 0110": "AMCAF_ProV1_40_EN_ExchangeBob",
+        "206d fffc 4ea8 0114": "AMCAF_ProV1_40_EN_ExchangeIcon"
+      }
     ],
     "4fef": {
       "ffec 2e1b 3e87": "AMCAF_ProV1_40_EN_CoordsRead",
