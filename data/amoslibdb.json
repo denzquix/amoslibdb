@@ -6757,6 +6757,62 @@
       "222b": "Music_ProV2_00_Wave",
       "226d": "AMOS_ProV2_00_SetCurs",
       "246d": "IOPorts_ProV2_00_PrinterDump_IIII",
+      "262b": {
+        "0004 6100": [
+          "push",
+          "follow-rel",
+          {
+            "2003 6d00": [
+              "follow-rel",
+              {
+                "700f": [
+                  "pop",
+                  ["skip", 1],
+                  {
+                    "205b 6100": "OSDevKit_ProV1_61_ScrIdFromPub",
+                    "2613 26bc": "OSDevKit_ProV1_61_ScrIdTagOpen",
+                    "261b 4a83": "OSDevKit_ProV1_61_ScrIdFromPointer"
+                  }
+                ],
+                "7013": "OSDevKit_ProV1_61_WndIdTagOpen"
+              }
+            ],
+            "206d 0228": "OSDevKit_ProV1_61_GtWhatAttr"
+          }
+        ],
+        "0008 41fa": [
+          ["match", "0020 2708 6100"],
+          ["skip", 1],
+          {
+            "2743 0008 261b 221b 206d 0228 41e8 01d6": "OSDevKit_ProV1_61_ScrIdPutBob",
+            "2743 0008 261b 221b 206d 0228 41e8 01e6": "OSDevKit_ProV1_61_WndIdPutBob"
+          }
+        ],
+        "0008 6100": [
+          ["skip", 1],
+          {
+            "2043 41e8": "OSDevKit_ProV1_61_ScrIdOffset",
+            "2743 0008": "OSDevKit_ProV1_61_ScrIdMove",
+            "4a83 6700": [
+              "follow-rel",
+              {
+                "7012": "OSDevKit_ProV1_61_ScrIdSetMousePos",
+                "7014": "OSDevKit_ProV1_61_WndIdSetMousePos"
+              }
+            ]
+          }
+        ],
+        "000c 6100": "OSDevKit_ProV1_61_CxIdCreate",
+        "0020 6100": [
+          "follow-rel",
+          ["match", "2003 6d00"],
+          "follow-rel",
+          {
+            "700f": "OSDevKit_ProV1_61_ScrIdOpen",
+            "7013": "OSDevKit_ProV1_61_WndIdOpen"
+          }
+        ]
+      },
       "262d": [
         ["match", "0662"],
         "tail-call",
@@ -6842,6 +6898,7 @@
         "0000 0010": "AMOS_ProV2_00_DialogOpen_IS",
         "ffff ffff": "AMOS_ProV2_00_DialogRun_I"
       },
+      "41fa": "OSDevKit_ProV1_61_ScrIdFromWb",
       "42a3": {
         "42a3": [
           ["match", "263c 0000 2710 2703"],
@@ -6860,10 +6917,205 @@
       "48e7": "IOPorts_ProV2_00_PrinterDump_IIIIIII",
       "4eb9": "AMOS_ProV2_00_Fsel_SSSS",
       "6100": [
+        "push",
         "follow-rel",
         {
-          "48e7 c000 7001 6100": "AMOS_ProV2_00_DelSprite_I",
-          "48e7 c000 7002 6100": "AMOS_ProV2_00_DelIcon_I"
+          "2003": [
+            "pop",
+            ["skip", 1],
+            {
+              "206d": "OSDevKit_ProV1_61_ScrIdUse",
+              "6100": "OSDevKit_ProV1_61_WndIdActivate",
+              "261b": "OSDevKit_ProV1_61_WndIdLock"
+            }
+          ],
+          "206d": {
+            "0228 41e8 01e2 2610": [
+              "pop",
+              ["skip", 1],
+              ["match", "e683 5283 2703 6100"],
+              ["skip", 1],
+              ["match", "c6eb 0002 2683 2713 7602 6100"],
+              ["skip", 1],
+              ["match", "4a83 6700"],
+              ["skip", 1],
+              {
+                "226d 0228 43e9 0106 22c3 229b 261b 241b": "OSDevKit_ProV1_61_WndIdFillEllipse",
+                "226d 0228 43e9 0106 22c3 229b 2a1b 261b": "OSDevKit_ProV1_61_WndIdPaint"
+              }
+            ],
+            "0228 41e8 01ea 2010": [
+              "pop",
+              ["skip", 1],
+              ["match", "6700"],
+              ["skip", 1],
+              {
+                "201b 6d00": [
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000": "OSDevKit_ProV1_61_GtEnable",
+                    "2448 c0fc 0010 41e8 0020 d1c0 2728 000c": "OSDevKit_ProV1_61_GtDisable",
+                    "c0fc 0010 41e8 0020 d1c0 0c90 0000 0003": "OSDevKit_ProV1_61_GtWhatInteger",
+                    "c0fc 0010 41e8 0020 d1c0 0c90 0000 000c": "OSDevKit_ProV1_61_GtWhatString"
+                  }
+                ],
+                "202b 0004": [
+                  ["match", "6d00"],
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0002 6600": "OSDevKit_ProV1_61_GtSetCheckbox",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0003 6600": "OSDevKit_ProV1_61_GtSetInteger",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0005 6600": "OSDevKit_ProV1_61_GtSetMx",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 000c 6600": "OSDevKit_ProV1_61_GtSetString"
+                  }
+                ],
+                "202b 0008": [
+                  ["match", "6d00"],
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0000 6600": "OSDevKit_ProV1_61_GtSetImage",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0007 6600": "OSDevKit_ProV1_61_GtSetCycle",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 000f 6600": "OSDevKit_ProV1_61_GtSetBob"
+                  }
+                ],
+                "202b 000c": [
+                  ["match", "6d00"],
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0008 6600": "OSDevKit_ProV1_61_GtSetPalette",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0009 6600": "OSDevKit_ProV1_61_GtSetScroller"
+                  }
+                ],
+                "202b 0010": [
+                  ["match", "6d00"],
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 0004 6600": "OSDevKit_ProV1_61_GtSetListview",
+                    "2448 c0fc 0010 41e8 0020 d1c0 0c90 0000 000d 6600": "OSDevKit_ProV1_61_GtSetText"
+                  }
+                ],
+                "202b 0014": [
+                  ["match", "6d00"],
+                  ["skip", 1],
+                  ["match", "b0a8 000c 6c00"],
+                  ["skip", 1],
+                  {
+                    "c0fc 0010 41e8 0020 d1c0 0c90 0000 0006 6600": "OSDevKit_ProV1_61_GtSetNumber",
+                    "c0fc 0010 41e8 0020 d1c0 0c90 0000 000b 6600": "OSDevKit_ProV1_61_GtSetSlider"
+                  }
+                ],
+                "2f08 2228": {
+                  "0004 2428 0010 202b 0014 6d00": [
+                    ["skip", 1],
+                    ["match", "b0a8 000c 6c00"],
+                    ["skip", 1],
+                    ["match", "c0fc 0010 41e8 0020 d1c0 0ca8 0000 0000 000c 6600"],
+                    ["skip", 1],
+                    {
+                      "2f08 246d 04f2 24fc": "OSDevKit_ProV1_61_GtImage",
+                      "2f08 48e7 6000 2613": "OSDevKit_ProV1_61_GtBob"
+                    }
+                  ],
+                  "0004 2428 0010 202b 0018 6d00": "OSDevKit_ProV1_61_GtButton",
+                  "0004 2428 0010 202b 001c 6d00": [
+                    ["skip", 1],
+                    ["match", "b0a8 000c 6c00"],
+                    ["skip", 1],
+                    ["match", "c0fc 0010 41e8 0020 d1c0 0ca8 0000 0000 000c 6600"],
+                    ["skip", 1],
+                    ["match", "2f08 48e7 6000 2f1b 261b 6100"],
+                    ["skip", 1],
+                    ["match", "4a83 6700"],
+                    ["skip", 1],
+                    {
+                      "201b 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8003 0015 24d9 24fc 8003 0016 24d9 24fc 8008 003b 24c4 24fc 8003 1001 24fc 0000 0001": "OSDevKit_ProV1_61_GtHScroller",
+                      "201b 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8003 0015 24d9 24fc 8003 0016 24d9 24fc 8008 003b 24c4 24fc 8003 1001 24fc 0000 0002": "OSDevKit_ProV1_61_GtVScroller",
+                      "201b 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8008 0044 24fc 0000 0001 24fc 8008 0004 24c4 24fc 8008 0034 24c2 24fc 8003 0009 24c3": "OSDevKit_ProV1_61_GtCheckbox"
+                    }
+                  ],
+                  "0004 2428 0010 202b 0020 6d00": [
+                    ["skip", 1],
+                    ["match", "b0a8 000c 6c00"],
+                    ["skip", 1],
+                    ["match", "c0fc 0010 41e8 0020 d1c0 0ca8 0000 0000 000c 6600"],
+                    ["skip", 1],
+                    {
+                      "2f08 48e7 6000 261b 6100": [
+                        ["skip", 1],
+                        ["match", "4a83 6700"],
+                        ["skip", 1],
+                        ["match", "2f03 3f1b 3f3c 0000 3f1b 3f3c 0000 261b 6100"],
+                        ["skip", 1],
+                        ["match", "4a83 6700"],
+                        ["skip", 1],
+                        {
+                          "201b 2a1f 281f 271f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8003 0015 24d9 24fc 8003 0016 24d9 24fc 8008 0029 24c4 24fc 8008 002b 24c5 24fc 8008 002a 24db 24fc 8003 1001 24fc 0000 0001 24fc 8008 0034 24c2 24fc 8003 0009 24c3 24fc 8003 0007 24db 24fc 8003 0005 24db 24fc 8003 0003 24db 24fc 8003 0001 24db 24fc 8003 0010 24db 24bc 0000 0000": "OSDevKit_ProV1_61_GtHSlider",
+                          "201b 2a1f 281f 271f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8003 0015 24d9 24fc 8003 0016 24d9 24fc 8008 0029 24c4 24fc 8008 002b 24c5 24fc 8008 002a 24db 24fc 8003 1001 24fc 0000 0002 24fc 8008 0034 24c2 24fc 8003 0009 24c3 24fc 8003 0007 24db 24fc 8003 0005 24db 24fc 8003 0003 24db 24fc 8003 0001 24db 24fc 8003 0010 24db 24bc 0000 0000": "OSDevKit_ProV1_61_GtVSlider"
+                        }
+                      ],
+                      "2f08 48e7 6000 2f1b 261b": [
+                        ["match", "6100"],
+                        ["skip", 1],
+                        {
+                          "4a83 6700": "OSDevKit_ProV1_61_GtText",
+                          "2f03 261b": [
+                            ["match", "6100"],
+                            ["skip", 1],
+                            ["match", "4a83 6700"],
+                            ["skip", 1],
+                            {
+                              "201b 2a1f 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8008": "OSDevKit_ProV1_61_GtCycle",
+                              "201b 2a1f 281f 6e02 7801 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9": "OSDevKit_ProV1_61_GtMx",
+                              "201b 2a1f 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 226d 0228": "OSDevKit_ProV1_61_GtListview"
+                            }
+                          ]
+                        }
+                      ],
+                      "2f08 48e7 6000 2f1b 2f1b": [
+                        ["match", "261b 6100"],
+                        ["skip", 1],
+                        ["match", "4a83 6700"],
+                        ["skip", 1],
+                        {
+                          "201b 2a1f 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8003": "OSDevKit_ProV1_61_GtInteger",
+                          "201b 2a1f 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc 8008": "OSDevKit_ProV1_61_GtPalette",
+                          "201b 2a1f 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8008 0040 24e9 0004 24fc 8008 003a 24c4 24fc": "OSDevKit_ProV1_61_GtNumber",
+                          "201b 2a1f 5485 281f 4cdf 0006 2057 2143 0004 246d 04f2 226d 0228 43e9 01f2 24fc 8003 000e 24d9 24fc 8008 0040 24d9 24fc": "OSDevKit_ProV1_61_GtString"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "48e7": {
+            "0002 2c6d 0228": "OSDevKit_ProV1_61_CxInstall",
+            "c000 7001 6100": "AMOS_ProV2_00_DelSprite_I",
+            "c000 7002 6100": "AMOS_ProV2_00_DelIcon_I"
+          },
+          "6100": [
+            "pop",
+            ["skip", 1],
+            ["match", "261b 6100"],
+            ["skip", 1],
+            ["match", "6700"],
+            ["skip", 1],
+            {
+              "226d 0228": "OSDevKit_ProV1_61_GtGadgetsAttach",
+              "2708 2728": "OSDevKit_ProV1_61_GtGadgetsErase"
+            }
+          ]
         }
       ],
       "7600": [
@@ -7441,64 +7693,64 @@
       "261b 241b 6742 221b 201b 206d 01a8 3c28 0076 3e28": "Turbo_ProV1_90_Line3d",
       "261b 241b 6742 221b 201b 206d 0268 3c28 02a0 3e28": "GUI_ProV2_00_GuiLine3d"
     }
+  },
+  "2a2d": [
+    ["match", "052c 6700"],
+    ["skip", 1],
+    {
+      "2045 2c1b 5246 0286": "EasyLife_ProV1_44_ElmzReserve",
+      "2045 2c1b 5286 0286": "EasyLife_ProV1_09_ElmzReserve"
+    }
+  ],
+  "2a3c": "LDos_ProV1_00_LchkBoot",
+  "2a6d": "CRAFT_ProV1_00_GuruMeditation",
+  "2b43": {
+    "0542 4e75": "AMOS_ProV2_00_Randomize",
+    "069c 4e75": "AMOS_ProV2_00_MaskIff",
+    "ff76 4e75": "AMOS_ProV2_00_Timer_set"
+  },
+  "2b48": "AMOS_ProV2_00__InOnBreak",
+  "2b57": "AMOS_ProV2_00_Trap",
+  "2b5b": {
+    "e736 06ad": "IntuiExtend_ProV1_60_WbScreen",
+    "e736 4e75": "IntuiExtend_ProV1_30B_WbScreen"
+  },
+  "2b6d": "AMOS_ProV2_00__InRestore",
+  "2c13": [
+    ["match", "6100"],
+    ["skip", 1],
+    ["match", "2046 7000 3018 221b b27c 0000 6700 0106 b681 6500 0108 0c10 0022 6700 004c 0c10 0020 6700 003c 0c10 002c 6700 0034 0c10 0009 6700 002c 5341 b27c 0000 6700 0078 1a18 5340 0c10 0020 6700 0016 0c10 002c 6700 000e 0c10 0009 6700 0006 6000 ffe2 1a18 5340 6000 ffb0 7800 1a18 5340 6700 0086 5341 b27c 0000 6700 0010 5340 0c18 0022 6600 fff8 6000 ff8e 1a20 2448 7800 5244 1a18 0c10 0022 6700 0010 5340 6700 0010 5244 1a18 6000 ffec 5244 6000 0048 5244 6000 0042 2448 1a18 7800 5244 5340 6700 0034 0c10 0020 6700 002c 0c10 002c 6700 0024 0c10 0009 6700 001c 0c10 0022 6700 0014 5244 1a18 5340 6700 000a 6b00 0006 6000 ffd0 2604 b67c 0000 6700 0016 6100"],
+    ["skip", 1],
+    ["match", "2608 30c4 5344 10da 51cc fffc 7402 4e75 262d 0662 7402 4e75 48e7 000e 7015"],
+    "tail-call",
+    {
+      "41fa": "LDos_ProV1_10_Lword",
+      "7405": "LDos_ProV1_00_Lword"
+    }
+  ],
+  "2c1b": {
+    "201b": {
+      "2f00": "AMCAF_ProV1_50B4_EN_BankStretch",
+      "6b00": "AMCAF_ProV1_50B4_EN_RainFade"
     },
-    "2a2d": [
-      ["match", "052c 6700"],
-      ["skip", 1],
-      {
-        "2045 2c1b 5246 0286": "EasyLife_ProV1_44_ElmzReserve",
-        "2045 2c1b 5286 0286": "EasyLife_ProV1_09_ElmzReserve"
-      }
-    ],
-    "2a3c": "LDos_ProV1_00_LchkBoot",
-    "2a6d": "CRAFT_ProV1_00_GuruMeditation",
-    "2b43": {
-      "0542 4e75": "AMOS_ProV2_00_Randomize",
-      "069c 4e75": "AMOS_ProV2_00_MaskIff",
-      "ff76 4e75": "AMOS_ProV2_00_Timer_set"
+    "205b": {
+      "225b 5489 246d 0258 d4fc 0010 4a92 6700": "IntuiExtend_ProV1_60_RtFontReq",
+      "225b 5489 246d 0258 d4fc 0010 4a92 6766": "IntuiExtend_ProV2_01B_RtFontReq",
+      "7e00 3e18 cefc 0003 e547 e746 5446 de46": "IntuiExtend_ProV1_60_Wb3dShape"
     },
-    "2b48": "AMOS_ProV2_00__InOnBreak",
-    "2b57": "AMOS_ProV2_00_Trap",
-    "2b5b": {
-      "e736 06ad": "IntuiExtend_ProV1_60_WbScreen",
-      "e736 4e75": "IntuiExtend_ProV1_30B_WbScreen"
+    "206d": "TFT_ProV0_6_TftError",
+    "225b": {
+      "205b 3018 3219 7400 7600 bc7c 0000 6600 0004 7c01 b07c 0000 6700": {
+        "002a": "JD_ProV5_90_JdNinstr_SSI",
+        "002c": "JD_ProV5_30_JdNinstr_SSI"
+      },
+      "205b 48e7 001e 7e00 b3c8 6700 006e 2448 1a1a ba06 6700 0008 5247": "JD_ProV4_60_JdStream",
+      "d2fc 0002 1b7c 0000 069a 7200 206d fff8 4ea8 0120 48e7 fffe 6100": "Game_ProV0_90_GLoadIff"
     },
-    "2b6d": "AMOS_ProV2_00__InRestore",
-    "2c13": [
-      ["match", "6100"],
-      ["skip", 1],
-      ["match", "2046 7000 3018 221b b27c 0000 6700 0106 b681 6500 0108 0c10 0022 6700 004c 0c10 0020 6700 003c 0c10 002c 6700 0034 0c10 0009 6700 002c 5341 b27c 0000 6700 0078 1a18 5340 0c10 0020 6700 0016 0c10 002c 6700 000e 0c10 0009 6700 0006 6000 ffe2 1a18 5340 6000 ffb0 7800 1a18 5340 6700 0086 5341 b27c 0000 6700 0010 5340 0c18 0022 6600 fff8 6000 ff8e 1a20 2448 7800 5244 1a18 0c10 0022 6700 0010 5340 6700 0010 5244 1a18 6000 ffec 5244 6000 0048 5244 6000 0042 2448 1a18 7800 5244 5340 6700 0034 0c10 0020 6700 002c 0c10 002c 6700 0024 0c10 0009 6700 001c 0c10 0022 6700 0014 5244 1a18 5340 6700 000a 6b00 0006 6000 ffd0 2604 b67c 0000 6700 0016 6100"],
-      ["skip", 1],
-      ["match", "2608 30c4 5344 10da 51cc fffc 7402 4e75 262d 0662 7402 4e75 48e7 000e 7015"],
-      "tail-call",
-      {
-        "41fa": "LDos_ProV1_10_Lword",
-        "7405": "LDos_ProV1_00_Lword"
-      }
-    ],
-    "2c1b": {
-      "201b": {
-        "2f00": "AMCAF_ProV1_50B4_EN_BankStretch",
-        "6b00": "AMCAF_ProV1_50B4_EN_RainFade"
-      },
-      "205b": {
-        "225b 5489 246d 0258 d4fc 0010 4a92 6700": "IntuiExtend_ProV1_60_RtFontReq",
-        "225b 5489 246d 0258 d4fc 0010 4a92 6766": "IntuiExtend_ProV2_01B_RtFontReq",
-        "7e00 3e18 cefc 0003 e547 e746 5446 de46": "IntuiExtend_ProV1_60_Wb3dShape"
-      },
-      "206d": "TFT_ProV0_6_TftError",
-      "225b": {
-        "205b 3018 3219 7400 7600 bc7c 0000 6600 0004 7c01 b07c 0000 6700": {
-          "002a": "JD_ProV5_90_JdNinstr_SSI",
-          "002c": "JD_ProV5_30_JdNinstr_SSI"
-        },
-        "205b 48e7 001e 7e00 b3c8 6700 006e 2448 1a1a ba06 6700 0008 5247": "JD_ProV4_60_JdStream",
-        "d2fc 0002 1b7c 0000 069a 7200 206d fff8 4ea8 0120 48e7 fffe 6100": "Game_ProV0_90_GLoadIff"
-      },
-      "241b": "Amon_ProV1_03_FastCircle",
-      "245b": "AMCAF_ProV1_50B4_EN_MaskCopy_IIIIIIIIII",
-      "281b": "GUI_ProV1_75_TcpSave",
-      "2a1b": {
+    "241b": "Amon_ProV1_03_FastCircle",
+    "245b": "AMCAF_ProV1_50B4_EN_MaskCopy_IIIIIIIIII",
+    "281b": "GUI_ProV1_75_TcpSave",
+    "2a1b": {
       "281b 201b 4eb9": [
         ["skip", 2],
         ["match", "2e28 ffec 5187 5187 8efc 0006 5387 2448 221b 2601 4eb9"],
@@ -7516,14 +7768,14 @@
       }
     },
     "2e1b": {
-    "222b 0004 4eb9": "AMCAF_ProV1_50B4_EN_BlitterFill_IIII",
-    "225b 337c 0002": {
-      "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbBlockRead",
-      "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbBlockRead",
-      "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbTrackRead",
-      "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTrackRead"
-    },
-    "48e7 00fe 266d": "Game_ProV0_90_GScreenCopy"
+      "222b 0004 4eb9": "AMCAF_ProV1_50B4_EN_BlitterFill_IIII",
+      "225b 337c 0002": {
+        "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbBlockRead",
+        "001c 2346 0028 237c 0000 0200 0024 cefc 0200 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbBlockRead",
+        "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbTrackRead",
+        "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTrackRead"
+      },
+      "48e7 00fe 266d": "Game_ProV0_90_GScreenCopy"
     },
     "48e7": "Game_ProV0_90_GScreenShow",
     "5346": "IntuiExtend_ProV1_60_WbRollScreen",
@@ -7977,7 +8229,6 @@
       "205b d0fc 0030 2068": "IntuiExtend_ProV1_30B_WbGetColour"
     }
   },
-
   "2e3c": {
     "0000 0002": "SLN_ProV2_00_SSamChipLoad_S",
     "0000 008b": [
