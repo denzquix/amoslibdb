@@ -94,6 +94,9 @@
   "properties": {
     "dispatch": {
       "$ref": "#/definitions/OpcodeMatchValue"
+    },
+    "remap": {
+      "type": "object"
     }
   },
   "required": ["dispatch"]

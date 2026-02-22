@@ -1,6 +1,21 @@
 {
   "$schema": "./omm.schema.json",
+"remap": {
+  "OSDevKit_ProV1_61_ScrIdSetPal": "OSDevKit_ProV1_61_ScrIdColour_set_II",
+  "OSDevKit_ProV1_61_ScrIdSetAgaPal": "OSDevKit_ProV1_61_ScrIdAgaColour_set_II",
+  "OSDevKit_ProV1_61_ScrIdGetPal": "OSDevKit_ProV1_61_ScrIdColour_get_I__I",
+  "OSDevKit_ProV1_61_ScrIdGetAgaPal": "OSDevKit_ProV1_61_ScrIdAgaColour_get_I__I"
+},
 "dispatch": ["tail-call", "tail-call", "tail-call", {
+  "0283": [
+    ["match", "0000 001f ea5b 241b 0282 0000 003f eb8a 221b 0281 0000 001f 206d 0228 41e8 01de 2728 0004 d682 d681"],
+    "tail-call",
+    "tail-call",
+    {
+      "2003 205b b1fc 0000 0000 6710 48e7 0002 2c6d e75a 4eae ff40 4cdf 4000 4e75": "OSDevKit_ProV1_61_GtMenuOn",
+      "2003 205b b1fc 0000 0000 6710 48e7 0002 2c6d e75a 4eae ff4c 4cdf 4000 4e75": "OSDevKit_ProV1_61_GtMenuOff"
+    }
+  ],
   "066b": "AMCAF_ProV1_50B4_EN_Qcos",
   "0839": {
     "0006 00bf e001 6600": "Delta_ProV1_40_DeltaWaitLeftMouse",
@@ -97,6 +112,14 @@
         {
           "b0bc 0000": "Music_ProV2_00_Volume_II",
           "260e 2c6d": "AMOS_ProV2_00__Float_Compare"
+        }
+      ],
+      "225b": [
+        ["match", "205b 76f6 b1fc 0000 0000 672a b3fc 0000 0000 6722 48e7 0002 2c6d 0228 4dee 02d8 2c56 bdfc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "4eae ffbe": "OSDevKit_ProV1_61_ChunkWrite",
+          "4eae ffc4": "OSDevKit_ProV1_61_ChunkRead"
         }
       ],
       "260e": {
@@ -223,6 +246,28 @@
         }
       ],
       "6300": "Music_ProV2_00_SamBank",
+      "6d00": [
+        ["skip", 1],
+        ["match", "6100"],
+        ["skip", 1],
+        ["match", "b1fc 0000 0000 6700"],
+        ["skip", 1],
+        {
+          "2610 6700": [
+            "follow-rel",
+            {
+              "4cdf": "OSDevKit_ProV1_61_CxIdBase",
+              "7012": "OSDevKit_ProV1_61_ScrIdBase",
+              "7014": "OSDevKit_ProV1_61_WndIdBase"
+            }
+          ],
+          "226d 0228": {
+            "43e9 01ce b691 661e": "OSDevKit_ProV1_61_ScrIdClose",
+            "43e9 01de b691 6616": "OSDevKit_ProV1_61_WndIdClose"
+          },
+          "2728 000c": "OSDevKit_ProV1_61_WndIdUnlock"
+        }
+      ],
       "6f00": [
         ["skip", 1],
         {
@@ -252,6 +297,7 @@
         "6100": "AMOS_ProV2_00_Length",
         "b0bc": "Music_ProV2_00_SamSwapped"
       },
+      "76f6": "OSDevKit_ProV1_61_IffParse",
       "76ff": "AMOS_ProV2_00__PrintE",
       "b0bc": {
         "0000 0003 6400": "AMOS_ProV2_00_Writing_II",
@@ -1427,6 +1473,7 @@
     "7600 3610": "OSDevKit_ProV1_61_CpuUword_get_I__I",
     "7600 3618": "AMOS_ProV2_00__HPrintS",
     "7600 3628": "OSDevKit_ProV1_61_ValW",
+    "76f6 b1fc": "OSDevKit_ProV1_61_ChunkEnd",
     "d1db 1610": "OSDevKit_ProV1_61_StructByte_get_II__I",
     "d1db 2610": "OSDevKit_ProV1_61_StructLong_get_II__I",
     "d1db 3610": "OSDevKit_ProV1_61_StructWord_get_II__I",
@@ -1909,7 +1956,8 @@
           {
             "222d 04f2 2403 48e7 0002 2c6d 02b8 4eae fc6a 4cdf 4000 2600 4e75": "OSDevKit_ProV1_61_DosVarFind",
             "222d 04f2 2403 48e7 0002 2c6d 02b8 4eae fc70 4cdf 4000 2600 4e75": "OSDevKit_ProV1_61_DosVarDel",
-            "222d 04f2 2803 242d 04f2 263c 0000 03ff 48e7 0002 2c6d 02b8 4eae": "OSDevKit_ProV1_61_DosVarValue_get_SI__S"
+            "222d 04f2 2803 242d 04f2 263c 0000 03ff 48e7 0002 2c6d 02b8 4eae": "OSDevKit_ProV1_61_DosVarValue_get_SI__S",
+            "48e7 0002 2c78 0004 226d 04f2 2003 4eae fdd8 4cdf 4000 273c 0000": "OSDevKit_ProV1_61_LibOpen"
           }
         ],
         "48e7 40e0 2208 7000 246d 0268 7e0a": {
@@ -6672,6 +6720,27 @@
       },
       "202d": "AMOS_ProV2_00_ArexxAnswer_IS",
       "206d": {
+        "0228 41e8 010e 41e8 0010": "OSDevKit_ProV1_61_ScrIdSetLowPattern",
+        "0228 41e8 010e 41e8 0020": "OSDevKit_ProV1_61_ScrIdSetHighPattern",
+        "0228 41e8 01ce 2610 6100": [
+          ["skip", 1],
+          {
+            "b1fc 0000 0000 6700": "OSDevKit_ProV1_61_ScrIdClip",
+            "e683 5283 2703 206d": [
+              ["match", "0228 41e8 01ce 2610 6100"],
+              ["skip", 1],
+              ["match", "c6eb 0002 2683 2713 7602 6100"],
+              ["skip", 1],
+              ["match", "4a83 6700"],
+              ["skip", 1],
+              {
+                "226d 0228 43e9 0106 22c3 229b 261b 241b": "OSDevKit_ProV1_61_ScrIdFillEllipse",
+                "226d 0228 43e9 0106 22c3 229b 2a1b 261b": "OSDevKit_ProV1_61_ScrIdPaint"
+              }
+            ]
+          }
+        ],
+
         "0228 41e8 01da 2610 221b": {
           "201b 2703 2700 2001 0080 ff00 ffff e198": "OSDevKit_ProV1_61_ScrIdAgaColour_set_II",
           "201b 2703 2700 2001 0280 0000 0f00 e088": "OSDevKit_ProV1_61_ScrIdColour_set_II"
