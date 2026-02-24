@@ -14100,8 +14100,8 @@
         "pop",
         "follow-abs",
         {
-          "206d 05ee 2010 670c 2040 2028 0008 6100": "AMOS_ProV2_00_DialogClose",
-          "else": "First_ProV0_10_ClearBanks"
+          "206d 05ee 2010 670c 2040": "AMOS_ProV2_00_DialogClose",
+          "206d fffc 4ea8 0034 7600": "First_ProV0_10_ClearBanks"
         }
       ],
       "4eb9": [
@@ -14142,7 +14142,7 @@
   ],
   "4ef9": {
     "00fc 00d2": "JD_ProV4_60_JdReset",
-    "else": "AMOS_ProV2_00_MenuDel"
+    "202d 0768": "AMOS_ProV2_00_MenuDel"
   },
   "4fef": {
     "ffe8 246d 0168": "AMCAF_ProV1_50B4_EN_ConvertGrey",
@@ -14461,9 +14461,10 @@
             "pop",
             ["skip", 1],
             ["match", "0c83 0000 0000 6700"],
+            "follow-rel",
             {
-              "0006 2628 0008 4e75": "SLN_ProV2_00_SSamLength",
-              "else": "SLN_ProV2_00_SSamFreq"
+              "4e75": "SLN_ProV2_00_SSamLength",
+              "203c": "SLN_ProV2_00_SSamFreq"
             }
           ]
         },
@@ -14934,17 +14935,14 @@
           "3f3e": [
             "pop",
             ["skip", 1],
+            "tail-call",
             {
               "2703": "Music_ProV2_00_Say_S",
               "203c": {
                 "8000 0000 226d 00f8 2269 0542 2203 b280 6714 b27c 0028 6500": "Music_ProV2_00_SetTalk",
                 "8000 0000 226d 00f8 2269 0542 2203 b280 6714 b27c 1388 6500": "Music_ProV2_00_TalkMisc"
               },
-              "else": [
-                "tail-call",
-                ["match", "2a03 7000 6100"],
-                ["result", "Music_ProV2_00_Say_SI"]
-              ]
+              "2a03": "Music_ProV2_00_Say_SI"
             }
           ],
           "4002": [
@@ -15511,7 +15509,7 @@
       "b6bc": "OSDevKit_ProV1_61_ScrWhatBmap"
     }
   ],
-  "7000": {
+  "7000": ["tail-call", {
     "103c": "AMCAF_ProV1_50B4_EN_MaskCopy_IIIIIIIII",
     "2043": "OSDevKit_ProV1_61_FontOpen",
     "205b": {
@@ -15576,11 +15574,13 @@
         "2e1b 6718 48e7 0012": "OSDevKit_ProV1_20_PenFind"
       }
     },
+    "2a03": "AMOS_ProV2_00_Amal_ISI",
     "302d": "AMOS_ProV2_00__CmpLineCLI",
     "303c": "AMCAF_ProV1_50B4_EN_Launch_S",
     "4600": "CRAFT_ProV1_00_ChrConv",
     "47eb": "EasyLife_ProV1_09_Eltest_get_II__I",
     "48e7": "EasyLife_ProV1_09_StFreeAll",
+    "4a6d": "AMOS_ProV2_00_ShiftUp",
     "6100": [
       ["skip", 1],
       {
@@ -15601,28 +15601,16 @@
     "720f": "Music_ProV2_00_SamLoopOn2",
     "7240": "AMOS_ProV2_00_ChannelToSprite",
     "7600": "IntuiExtend_ProV1_60_SysKickstart",
-    "else": [
-      "tail-call",
-      {
-        "2a03": "AMOS_ProV2_00_Amal_ISI",
-        "4a6d": "AMOS_ProV2_00_ShiftUp",
-        "7a00": "AMOS_ProV2_00_Amal_IS"
-      }
-    ]
-  }, 
-  "7001": {
+    "7a00": "AMOS_ProV2_00_Amal_IS"
+  }],
+  "7001": ["tail-call", {
     "206d": "Requester_ProV2_00_RequestWb",
-    "2700": {
+    "2700": ["tail-call", {
       "7401 7eff": "CRAFT_ProV1_00_PalToBank_I",
       "7403 6100": "CRAFT_ProV1_00_PalCount",
-      "else": [
-        "tail-call",
-        {
-          "70ff 2700": "CRAFT_ProV1_00_PalSwapBank_I",
-          "7400 6100": "CRAFT_ProV1_00_PalFromBank_I"
-        }
-      ]
-    },
+      "70ff 2700": "CRAFT_ProV1_00_PalSwapBank_I",
+      "7400 6100": "CRAFT_ProV1_00_PalFromBank_I"
+    }],
     "47eb": "EasyLife_ProV1_09_Eltest_set_III",
     "4eb9": [
       ["skip", 2],
@@ -15637,35 +15625,20 @@
         "246d 01b8 b86a 000c 6200": "PowerBobs_ProV1_00_Pbob_IIII"
       }
     ],
+    "4a6d": "AMOS_ProV2_00_ShiftDown",
     "7240": "AMOS_ProV2_00_ChannelToBob",
-    "else": [
-      "tail-call",
-      {
-        "4a6d": "AMOS_ProV2_00_ShiftDown",
-        "7a00": "AMOS_ProV2_00_Anim_IS"
-      }
-    ]
-  },
-  "7002": {
+    "7a00": "AMOS_ProV2_00_Anim_IS"
+  }],
+  "7002": ["tail-call", {
+    "2a03": "AMOS_ProV2_00_MoveX_ISI",
     "7208": "AMOS_ProV2_00_ChannelToScreenDisplay",
-    "else": [
-      "tail-call",
-      {
-        "2a03": "AMOS_ProV2_00_MoveX_ISI",
-        "7a00": "AMOS_ProV2_00_MoveX_IS"
-      }
-    ]
-  },
-  "7003": {
+    "7a00": "AMOS_ProV2_00_MoveX_IS"
+  }],
+  "7003": ["tail-call", {
+    "2a03": "AMOS_ProV2_00_MoveY_ISI",
     "7208": "AMOS_ProV2_00_ChannelToScreenSize",
-    "else": [
-      "tail-call",
-      {
-        "2a03": "AMOS_ProV2_00_MoveY_ISI",
-        "7a00": "AMOS_ProV2_00_MoveY_IS"
-      }
-    ]
-  },
+    "7a00": "AMOS_ProV2_00_MoveY_IS"
+  }],
   "7004": {
     "2700": [
       "tail-call",
@@ -15704,26 +15677,23 @@
   },
   "7009": "AMOS_ProV2_00_Stop",
   "700a": "AMOS_ProV2_00_End",
-  "700f": {
+  "700f": ["tail-call", {
     "2700": "AMCAF_ProV1_50B4_EN_PtFreeVoice",
-    "else": [
-      "tail-call",
-      ["match", "2f0b 266d 00f8 6100"],
-      ["result", "Music_ProV2_00_PlayOff"]
-    ]
-  },
+    "2f0b": "Music_ProV2_00_PlayOff"
+  }],
   "7016": "AMOS_ProV2_00_Using",
   "7018": "EasyLife_ProV1_09_MuiHook",
   "7019": "CRAFT_ProV1_00_GrInk",
   "701a": "CRAFT_ProV1_00_GrBack",
   "701b": "CRAFT_ProV1_00_GrBorder",
-  "70ff": {
+  "70ff": ["tail-call", {
     "205b": {
       "b1fc": "OSDevKit_ProV1_20_ScrShowTitle",
       "205b": "JDK_ProV1_10_JdRelabel"
     },
     "206d": "Requester_ProV2_00_RequestOn",
     "2203": "OSDevKit_ProV1_61_DosFGetc",
+    "226d": "AMOS_ProV2_00_GetRomFonts",
     "241b": [
       ["match", "221b 6100"],
       ["skip", 1],
@@ -15741,14 +15711,10 @@
         "2e1b 7400 6100": "CRAFT_ProV1_00_PalSwapBank_II"
       }
     ],
-    "720f": "Music_ProV2_00_SamLoopOff",
-    "else": [
-      "tail-call",
-      ["match", "4a80 6b32 6724 612e 203c 0000 0108 7201"],
-      ["result", "CRAFT_ProV1_00_DrForget"]
-    ]
-  },
-  "7200": {
+    "4a80": "CRAFT_ProV1_00_DrForget",
+    "720f": "Music_ProV2_00_SamLoopOff"
+  }],
+  "7200": ["tail-call", {
     "205b": "EasyLife_ProV1_09_StCopy",
     "206d": {
       "fff8 4ea8 00e8 4e75": "AMOS_ProV2_00_CopperOff",
@@ -15775,16 +15741,12 @@
       "fff8 4ea8 0120 7600": "OSDevKit_ProV1_20_AslDo"
     },
     "426d": "AMOS_ProV2_00_SynchroOn",
+    "4a6d": "AMOS_ProV2_00_LimitMouse",
     "4eb9": "AMOS_ProV2_00_DialogUnfreeze",
     "74ff": "AMOS_ProV2_00_PriorityOff",
-    "7600": "PowerBobs_ProBETA6_XscrMouse",
-    "else": [
-      "tail-call",
-      ["match", "4a6d 052a 6700"],
-      ["result", "AMOS_ProV2_00_LimitMouse"]
-    ]
-  },
-  "7201": {
+    "7600": "PowerBobs_ProBETA6_XscrMouse"
+  }],
+  "7201": ["tail-call", {
     "206d": {
       "fff8 4ea8 0120 3b7c": "AMOS_ProV2_00_AmosLock",
       "fff8 4ea8 0120 4e75": "AMOS_ProV2_00_AmosToFront"
@@ -15825,13 +15787,8 @@
         ]
       }
     ],
-    "74ff": "AMOS_ProV2_00_PriorityOn",
-    "else": [
-      "tail-call",
-      ["match", "226d 04f2 206d fff8 4ea8 0094 6600"],
-      ["result", "AMOS_ProV2_00_GetRomFonts"]
-    ]
-  },
+    "74ff": "AMOS_ProV2_00_PriorityOn"
+  }],
   "7202": "AMOS_ProV2_00_GetDiscFonts",
   "7203": "AMOS_ProV2_00_GetFonts",
   "720f": "AMOS_ProV2_00__InFadePal",
@@ -15849,7 +15806,7 @@
     "7400": "AMOS_ProV2_00_PriorityReverseOff",
     "7401": "AMOS_ProV2_00_PriorityReverseOn"
   },
-  "7400": {
+  "7400": ["tail-call", {
     "0839": {
       "0006 00bf e001 6700 0012 0839 0002 00df": "JD_ProV4_60_JdMoffClick",
       "0006 00df f002 6604 7600 4e75 76ff 4e75": "AMCAF_ProV1_50B4_EN_BlitterBusy"
@@ -15950,7 +15907,7 @@
         "2c1b 2a1b 221b 201b 0880 0000 0881 0000 b280 6e02 c141 2040 9280 4a85 6d12 6e26": "TurboPlus_ProV2_00_WordHunt"
       },
       "342d": "PowerBobs_ProBETA6_YscrMouse",
-      "362d": "AMOS_ProV2_00_ScreenShow",
+      "362d": "AMOS_ProV2_00_ScreenShow",      
       "3839": "Amon_ProV1_03_Rrodent",
       "4e75": "LDos_ProV1_00_Lold"
     },
@@ -15959,56 +15916,38 @@
     "7604": "Make_ProV1_20_MemFast",
     "7606": "TFT_ProV0_6_TftVersion",
     "7eff": "CRAFT_ProV1_00_PalToBank_II",
-    "else": [
-      "tail-call",
-      {
-        "7600 362d": "AMOS_ProV2_00_ScreenShow",
-        "2203 6100": "AMOS_ProV2_00_ScreenShow_I",
-        "48e7 001a": {
-          "49fa 00ae 41fa 00b2 2888 246d": "CRAFT_ProV1_00_SysRequest_SSS",
-          "49fa 00b6 41fa 00ba 2888 246d": "JDColour_ProV2_00_JdRequest_SSS"
-        }
-      }
-    ]
-  },
-  "7401": {
+    "2203": "AMOS_ProV2_00_ScreenShow_I"
+  }],
+  "7401": ["tail-call", {
     "303c": "AMOS3D_ProV1_02_TdKeepOnI",
+    "48e7": {
+      "001a 49fa 00ae 41fa 00b2 2888 246d": "CRAFT_ProV1_00_SysRequest_SSSS",
+      "001a 49fa 00b6 41fa 00ba 2888 246d": "JDColour_ProV2_00_JdRequest_SSSS"
+    },
     "7000": "AMOS_ProV2_00_AmalFreeze_I",
     "7001": "AMOS_ProV2_00_AmalOn_I",
     "70ff": "AMOS_ProV2_00_AmalOff_I",
     "7600": "AMOS_ProV2_00_AmalFreeze",
     "7601": "AMOS_ProV2_00_AmalOn",
-    "76ff": "AMOS_ProV2_00_AmalOff",
-    "else": [
-      "tail-call",
-      {
-        "48e7 001a 49fa 00ae 41fa 00b2 2888 246d": "CRAFT_ProV1_00_SysRequest_SSSS",
-        "48e7 001a 49fa 00b6 41fa 00ba 2888 246d": "JDColour_ProV2_00_JdRequest_SSSS"
-      }
-    ]
-  },
-  "7402": {
+    "76ff": "AMOS_ProV2_00_AmalOff"
+  }],
+  "7402": ["tail-call", {
     "303c": {
-      "fe6c 323c 0030 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdPositionZ",
-      "fe6c 323c 0040 246d 0128 4eea fdd2": "AMOS3D_ProV1_02_TdAttitudeC"
+      "fe6c 323c 0030 246d": "AMOS3D_ProV1_02_TdPositionZ",
+      "fe6c 323c 0040 246d": "AMOS3D_ProV1_02_TdAttitudeC"
     },
+    "48e7": {
+      "001a 49fa 00ae 41fa": "CRAFT_ProV1_00_SysRequest_SSSSS",
+      "001a 49fa 00b6 41fa": "JDColour_ProV2_00_JdRequest_SSSSS"
+    },
+    "4a6d": "CRAFT_ProV1_00_ReserveAsPalette",
     "7000": "AMOS_ProV2_00_AnimFreeze_I",
     "7001": "AMOS_ProV2_00_AnimOn_I",
     "70ff": "AMOS_ProV2_00_AnimOff_I",
     "7600": "AMOS_ProV2_00_AnimFreeze",
     "7601": "AMOS_ProV2_00_AnimOn",
-    "76ff": "AMOS_ProV2_00_AnimOff",
-    "else": [
-      "tail-call",
-      {
-        "48e7 001a 49fa": {
-          "00ae 41fa 00b2 2888 246d": "CRAFT_ProV1_00_SysRequest_SSSSS",
-          "00b6 41fa 00ba 2888 246d": "JDColour_ProV2_00_JdRequest_SSSSS"
-        },
-        "4a6d 052a 6700": "CRAFT_ProV1_00_ReserveAsPalette"
-      }
-    ]
-  },
+    "76ff": "AMOS_ProV2_00_AnimOff"
+  }],
   "7403": [
     "tail-call",
     {
@@ -16069,26 +16008,24 @@
   "74d6": "AMOS_ProV2_00_Cos",
   "74dc": "AMOS_ProV2_00_Sin",
   "74e2": "AMOS_ProV2_00_Atan",
-  "74ff": {
+  "74ff": ["tail-call", {
     "2043": "AMOS_ProV2_00_Peek_IIS_S",
+    "2203": "AMOS_ProV2_00_ScreenHide_I",
     "263c": {
-      "8000 5874 7aff 205b": {
-        "6100": "EasyLife_ProV1_09_ElxpkBload_SSI",
-        "else": "EasyLife_ProV1_09_ElxpkBload_SI"
-      },
+      "8000 5874 7aff 205b": [
+        "tail-call",
+        {
+          "43fa": "EasyLife_ProV1_09_ElxpkBload_SI",
+          "6100": "EasyLife_ProV1_09_ElxpkBload_SSI"
+        }
+      ],
       "8000 5874 2a3c ffff": "EasyLife_ProV1_44_ElxpkBload_SSI",
       "8000 587e 7aff 205b": "EasyLife_ProV1_44_ElxpkBload_SI"
     },
-    "else": [
-      "tail-call",
-      {
-        "2203 6100": "AMOS_ProV2_00_ScreenHide_I",
-        "2803 b8bc": "AMOS_ProV2_00_Peek_II_S",
-        "7600 362d": "AMOS_ProV2_00_ScreenHide"
-      }
-    ]
-  },
-  "7600": {    
+    "2803": "AMOS_ProV2_00_Peek_II_S",
+    "7600": "AMOS_ProV2_00_ScreenHide"
+  }],
+  "7600": ["tail-call", {
     "0839": {
       "0006 00bf e001 6600 0004 7601": "IntuiExtend_ProV1_60_HardMouseKey",
       "0006 00bf e001 6600 0006 08c3": "IntuiExtend_ProV1_30B_HardMouseKey",
@@ -16209,44 +16146,44 @@
     },
     "7424": [
       ["match", "7a00 206d 00f8 d0fc 032e"],
+      "tail-call",
       {
         "2c08": "EME_ProV3_00DEMO_Boom",
-        "else": "Music_ProV2_00_Boom"
+        "7000": "Music_ProV2_00_Boom"
       }
     ],
     "743c": [
       ["match", "7a00 206d 00f8 d0fc 0322"],
+      "tail-call",
       {
         "2c08": "EME_ProV3_00DEMO_Shoot",
-        "else": "Music_ProV2_00_Shoot"
+        "7000": "Music_ProV2_00_Shoot"
       }
     ],
     "7446": [
       ["match", "720f 7a01 206d 00f8 d0fc 033e"],
+      "tail-call",
       {
         "2c08": "EME_ProV3_00DEMO_Bell",
-        "else": "Music_ProV2_00_Bell"
+        "b4bc": "Music_ProV2_00_Bell"
       }
     ],
     "7a00": "PowerBobs_ProV1_00_Set68020Amal",
-    "else": [
-      "tail-call",
+    "2203": [
+      ["match", "6b00"],
+      ["skip", 1],
+      ["match", "4a6d 052a 6700"],
+      ["skip", 1],
       {
-        "2203 6b00": [
-          ["skip", 1],
-          ["match", "4a6d 052a 6700"],
-          ["skip", 1],
-          {
-            "206d fffc 4ea8 004c 6600": "AMOS_ProV2_00_ReserveZone",
-            "206d fffc 4ea8 0050 6602": "AMOS_ProV2_00_ResetZone"
-          }
-        ],
-        "281b 240b": "EasyLife_ProV1_09_StCmp_IIS"
+        "206d fffc 4ea8 004c 6600": "AMOS_ProV2_00_ReserveZone",
+        "206d fffc 4ea8 0050 6602": "AMOS_ProV2_00_ResetZone"
       }
-    ]
-  },
+    ],
+    "281b": "EasyLife_ProV1_09_StCmp_IIS"
+  }],
   "7601": "AMCAF_ProV1_50B4_EN_Binexp",
-  "7604": {
+  "7604": ["tail-call", {
+    "281b": "EasyLife_ProV1_09_StCmp_IIIS",
     "4eb9": [
       ["skip", 2],
       {
@@ -16257,13 +16194,8 @@
     "7e0f": {
       "241b 3202 c447 e669 3001 c247 e668 2c1b 3a06 cc47 e66d 3805 ca47 e66c d800 da01": "AMCAF_ProV1_50B4_EN_MixColour_II",
       "2c2b 000c 3a06 cc47 e66d 3805 ca47 e66c 242b 0008 6b44 3202 c447 e669 3001 c247": "AMCAF_ProV1_50B4_EN_MixColour_IIII"
-    },
-    "else": [
-      "tail-call",
-      ["match", "281b 240b d7c3 e48b 201b 221b 48e7 001e 2c6d 01e8 4eae ffbe 4cdf 7800 6700"],
-      ["result", "EasyLife_ProV1_09_StCmp_IIIS"]
-    ]
-  },
+    }
+  }],
   "7606": [
     ["match", "4eb9"],
     ["skip", 2],
@@ -16307,7 +16239,11 @@
       "052c 2e1b 6b42 be68 004e": "TurboPlus_ProV1_00_FPoint",
       "e736 2068 0004 2e1b 6b3e": "IntuiExtend_ProV1_60_WbPoint_II"
     },
-    "221b": "OSDevKit_ProV1_20_RpPoint",
+    "2203": "AMOS_ProV2_00_RainbowDel",
+    "221b": {
+      "201b 225b": "OSDevKit_ProV1_20_RpPoint",
+      "6a14 4eb9": "AMOS_ProV2_00__InFade2"
+    },
     "245b": "IntuiExtend_ProV2_01B_WbGetMsg",
     "2f0e": [
       ["match", "6100"],
@@ -16322,23 +16258,16 @@
         "225b 246d 0258 d4fc 0014 4a92 6708 2c52 4eae ffd0 2600 2c5f 4e75": "IntuiExtend_ProV1_60_IffGetBitmapHeader"
       }
     ],
-    "6100": "IntuiExtend_ProV1_60_WbGetWbicon",
-    "else": [
-      "tail-call",
+    "6100": [
+      "follow-rel",
       {
-        "2203": "AMOS_ProV2_00_RainbowDel",
-        "221b": "AMOS_ProV2_00__InFade2",
-        "6100": [
-          "follow-rel",
-          {
-            "48e7 c000 7001 6100": "AMOS_ProV2_00_GetSpritePalette",
-            "48e7 c000 7002 6100": "AMOS_ProV2_00_GetIconPalette"
-          }
-        ]
+        "48e7 c000 7001 6100": "AMOS_ProV2_00_GetSpritePalette",
+        "48e7 c000 7002 6100": "AMOS_ProV2_00_GetIconPalette",
+        "246d 0258 d4fc 000c": "IntuiExtend_ProV1_60_WbGetWbicon"
       }
     ]
   }],
-  "7800": {
+  "7800": ["tail-call", {
     "246d": {
       "0662 205b 261b 241b 221b 201b 2c1b": "GUI_ProV2_00_GuiScreenOpen_IIIIIS",
       "0662 261b 241b 221b 201b 2c1b 6100": [
@@ -16355,14 +16284,9 @@
       "206d fffc 4ea8 0004 205b 0c58 0000 6600 0008 7801 6000 0014 48e7 0010 266d 0248 47eb 0236 2688 4cdf 0800 6100": "JD_ProV5_30_JdKeywait",
       "206d fffc 4ea8 0004 205b 0c58 0000 6600 0008 7801 6000 0014 48e7 0010 266d 0248 47eb 023a 2688 4cdf 0800 6100": "JD_ProV5_90_JdKeywait"
     },
-    "else": [
-      "tail-call",
-      {
-        "4a6d 052a 6700": "CRAFT_ProV1_00_SetBlue",
-        "e584 d7c4 206d": "EasyLife_ProV1_09_TagList_S"
-      }
-    ]
-  },
+    "4a6d": "CRAFT_ProV1_00_SetBlue",
+    "e584": "EasyLife_ProV1_09_TagList_S"
+  }],
   "7801": "EasyLife_ProV1_09_TagList_SI",
   "7802": "EasyLife_ProV1_09_TagList_SII",
   "7803": "EasyLife_ProV1_09_TagList_SIII",
@@ -16402,7 +16326,7 @@
     "6100": "AMOS_ProV2_00_ListBank",
     "4a83": "OSDevKit_ProV1_61_ChnLocation"
   },
-  "7c00": {
+  "7c00": ["tail-call", {
     "221b": "AMCAF_ProV1_50B4_EN_PtRawPlay",
     "2e1b": [
       ["match", "6700"],
@@ -16415,6 +16339,17 @@
       }
     ],
     "2e2b": "DoomMusic_ProV2_00_DmeSamPlay_III",
+    "48e7": {
+      "001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 504b": "JD_ProV5_90_JdHardware",
+      "001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 584b": [
+        ["match", "2253 4cdf 0800 43e9 0000 2a2c 0004 ba86 6600 000e 202c 0028 e580 2040 6100 008e 2e2c 0000 4a87 6700 000a e587 2847 6000 ffda 70ff 48e7 0010 266d 0248 584b 2053 4cdf 0800 41e8 0000 5280 0c18 0000 6600 fff8 48e7 8000 6100"],
+        "follow-rel",
+        {
+          "5680 2600 48e7 7ffe 48e7 0010 266d 0248 47eb 01a6": "JD_ProV5_30_JdHardware",
+          "5680 2600 48e7 7ffe 48e7 0010 266d 0248 47eb 01fe": "JD_ProV4_60_JdHardware"
+        }
+      ]
+    },
     "6100": [
       "follow-rel",
       {
@@ -16426,39 +16361,22 @@
     "7600": "EasyLife_ProV1_09_StGet_II__I",
     "7604": "EasyLife_ProV1_09_StGet_III__I",
     "7608": "EasyLife_ProV1_09_StGet_IIII__I",
-    "760c": "EasyLife_ProV1_09_StGet_IIIII__I",
-    "else": [
-      "tail-call",
-      {
-        "48e7 001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 504b": "JD_ProV5_90_JdHardware",
-        "48e7 001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 584b": [
-          ["match", "2253 4cdf 0800 43e9 0000 2a2c 0004 ba86 6600 000e 202c 0028 e580 2040 6100 008e 2e2c 0000 4a87 6700 000a e587 2847 6000 ffda 70ff 48e7 0010 266d 0248 584b 2053 4cdf 0800 41e8 0000 5280 0c18 0000 6600 fff8 48e7 8000 6100"],
-          "follow-rel",
-          {
-            "5680 2600 48e7 7ffe 48e7 0010 266d 0248 47eb 01a6": "JD_ProV5_30_JdHardware",
-            "5680 2600 48e7 7ffe 48e7 0010 266d 0248 47eb 01fe": "JD_ProV4_60_JdHardware"
-          }
-        ]
-      }
-    ]
-  },
-  "7c01": {
+    "760c": "EasyLife_ProV1_09_StGet_IIIII__I"
+  }],
+  "7c01": ["tail-call", {
     "4a2d": "AMOS_ProV2_00__Test_Normal",
-    "else": [
-      "tail-call",
-      {
-        "48e7 001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 504b": "JD_ProV5_90_JdLogical",
-        "48e7 001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 584b": [
-          ["match", "2253 4cdf 0800 43e9 0000 2a2c 0004 ba86 6600 000e 202c 0028 e580 2040 6100 008e 2e2c 0000 4a87 6700 000a e587 2847 6000 ffda 70ff 48e7 0010 266d 0248 584b 2053 4cdf 0800 41e8 0000 5280 0c18 0000 6600 fff8 48e7 8000 6100"],
-          ["skip", 1],
-          {
-            "48e7 0010 266d 0248 47eb 0226": "JD_ProV5_30_JdLogical",
-            "48e7 0010 266d 0248 47eb 027e": "JD_ProV4_60_JdLogical"
-          }
-        ]
-      }
-    ]
-  },
+    "48e7": {
+      "001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 504b": "JD_ProV5_90_JdLogical",
+      "001e 2c6d 02b8 204e 2268 0022 2029 0018 e580 2040 2028 0004 e580 2840 48e7 0010 266d 0248 584b": [
+        ["match", "2253 4cdf 0800 43e9 0000 2a2c 0004 ba86 6600 000e 202c 0028 e580 2040 6100 008e 2e2c 0000 4a87 6700 000a e587 2847 6000 ffda 70ff 48e7 0010 266d 0248 584b 2053 4cdf 0800 41e8 0000 5280 0c18 0000 6600 fff8 48e7 8000 6100"],
+        ["skip", 1],
+        {
+          "48e7 0010 266d 0248 47eb 0226": "JD_ProV5_30_JdLogical",
+          "48e7 0010 266d 0248 47eb 027e": "JD_ProV4_60_JdLogical"
+        }
+      ]
+    }
+  }],
   "7c02": [
     "tail-call",
     {
@@ -16490,30 +16408,18 @@
       }
     ]
   },
-  "7e01": {
+  "7e01": ["tail-call", {
     "504b": "CRAFT_ProV1_00_GuruAlert_SS",
-    "else": [
-      "tail-call",
-      ["match", "2807 e584 2604 5483 4eb9"],
-      ["result", "EasyLife_ProV1_09_Tag_S__S"]
-    ]
-  },
-  "7e02": {
+    "2807": "EasyLife_ProV1_09_Tag_S__S"
+  }],
+  "7e02": ["tail-call", {
     "47eb": "CRAFT_ProV1_00_GuruAlert_SSS",
-    "else": [
-      "tail-call",
-      ["match", "2807 e584 2604 5483 4eb9"],
-      ["result", "EasyLife_ProV1_09_Tag_SS__S"]
-    ]
-  },
-  "7e03": {
+    "2807": "EasyLife_ProV1_09_Tag_SS__S"
+  }],
+  "7e03": ["tail-call", {
     "47eb": "CRAFT_ProV1_00_GuruAlert_SSSS",
-    "else": [
-      "tail-call",
-      ["match", "2807 e584 2604 5483 4eb9"],
-      ["result", "EasyLife_ProV1_09_Tag_SSS__S"]
-    ]
-  },
+    "2807": "EasyLife_ProV1_09_Tag_SSS__S"
+  }],
   "7e04": "CRAFT_ProV1_00_GuruAlert_SSSSS",
   "7e08": [
     ["match", "6100"],
@@ -16614,9 +16520,10 @@
     ],
     "0001 0000 6c00": [
       ["skip", 1],
+      "tail-call",
       {
         "206d": "Music_ProV2_00_TrackLoad",
-        "else": "AMOS_ProV2_00_Load_SI"
+        "245b": "AMOS_ProV2_00_Load_SI"
       }
     ],
     "8000 0000 6608": "OSDevKit_ProV1_61_GgadWhatAttrs",
