@@ -11,7 +11,9 @@
   "OSDevKit_ProV1_20_ScrWhatFont": "OSDevKit_ProV1_20_WndWhatDmReq",
   "OSDevKit_ProV1_20_LibVersion": "OSDevKit_ProV1_20_WndWhatMaxWidth",
   "OSDevKit_ProV1_20_LibRevision": "OSDevKit_ProV1_20_WndWhatMaxHeight",
-  "AMOS_ProV2_00_Vdialog_set_II_S": "AMOS_ProV2_00_Vdialog_set_II_I"
+  "AMOS_ProV2_00_Vdialog_set_II_S": "AMOS_ProV2_00_Vdialog_set_II_I",
+  "OSDevKit_ProV1_61_BaseGfx": "Game_ProV0_90_GOddno",
+  "OSDevKit_ProV1_61_ExtL": "JD_ProV5_30_JdScreenResolution__V"
 },
 "dispatch": ["tail-call", "tail-call", "tail-call", {
   "0243": "OSDevKit_ProV1_61_MenuWhatMenuNb",
@@ -5537,6 +5539,8 @@
       "0128 255b": "JVP_ProV1_01_JvpStr"
     },
     "04f2 206d": "AMOS_ProV2_00__PrintX",
+    "04f2 2343": "OSDevKit_ProV1_61_ChnAdd_II",
+    "04f2 4a83": "OSDevKit_ProV1_61_ChnFree_I",
     "052c 2009": "AMCAF_ProV1_50B4_EN_FontStyle",
     "052c 41e9": "AMCAF_ProV1_50B4_EN_HamPoint",
     "09c0 2229": "AMOS_ProV2_00__HPrintX",
@@ -5561,8 +5565,10 @@
   },
   "2403": {
     "201b": "IOPorts_ProV2_00_SerialSend",
+    "205b": "OSDevKit_ProV1_61_StrPut_SII",
     "221b": {
       "201b": {
+        "48e7": "OSDevKit_ProV1_61_PoolCreate",
         "205b": "OSDevKit_ProV1_61_ChunkChild",
         "4eb9": [
           ["skip", 2],
@@ -5576,6 +5582,7 @@
         ],
         "6100": "IOPorts_ProV2_00_SerialBits"
       },
+      "205b": "OSDevKit_ProV1_61_ScrPosition",
       "206d": {
         "fff8 4ea8 00dc 6600": "AMOS_ProV2_00_Rain_get_II",
         "fff8 4ea8 00f8 6600": "AMOS_ProV2_00_CopMove",
@@ -5615,6 +5622,7 @@
       }
     ],
     "6300": "AMOS_ProV2_00_Circle",
+    "6700": "OSDevKit_ProV1_61_ScaleDiv",
     "6b00": [
       ["skip", 1],
       {
@@ -5623,11 +5631,24 @@
       }
     ],
     "7600": {
-      "720f 7a01 206d 00f8": "Music_ProV2_00_Bell_I",
-      "7800 7200 4a82 6724": "AMOS_ProV2_00_Cmove_II_S",
-      "7800 7200 b4bc 8000": "AMOS_ProV2_00_At"
+      "720f 7a01": "Music_ProV2_00_Bell_I",
+      "7800 7200": {
+        "4a82 6724": "AMOS_ProV2_00_Cmove_II_S",
+        "b4bc 8000": "AMOS_ProV2_00_At"
+      },
+      "221b 201b": "OSDevKit_ProV1_61_DispInfoGet",
+      "221b 6100": [
+        ["skip", 1],
+        {
+          "6712 48e7": "OSDevKit_ProV1_61_DosFPutc",
+          "6716 4a82": "OSDevKit_ProV1_61_DosFPuts",
+          "671c 48e7": "OSDevKit_ProV1_61_DosOpen"
+        }
+      ],
+      "221b 671c": "OSDevKit_ProV1_61_DosLock"
     },
     "7610": "AMOS_ProV2_00_Str",
+    "76ff": "OSDevKit_ProV1_61_DosFUngetc",
     "b4bc": "AMOS_ProV2_00_Amplay_IIII",
     "b6bc": "AMOS_ProV2_00_Chr"
   },
@@ -5681,6 +5702,7 @@
     },
     "205b": {
       "201b": "TFT_ProV0_6_SetBpl",
+      "225b": "OSDevKit_ProV1_20_StrPut_SII",
       "6100": [
         ["skip", 1],
         {
@@ -5712,7 +5734,33 @@
       "0228 41e8 01e6 2710 2702": "OSDevKit_ProV1_61_WndIdPlot"
     },
     "221b": {
+      "201b 205b": {
+        "48e7 0002 2c6d e75a 4eae fec2 4cdf 4000": "OSDevKit_ProV1_61_WndSetLimits",
+        "b1fc 0000 0000 6706 10c0 10c1 1082 4e75": "OSDevKit_ProV1_20_ItSetDraw",
+        "b1fc 0000 0000 6708 20c0 30c1 10c2 1083": "OSDevKit_ProV1_61_TaSet",
+        "b1fc 0000 0000 6708 20c3 20c0 30c1 3082": "OSDevKit_ProV1_61_RiSet",
+        "b1fc 0000 0000 6708 30c0 30c1 10c3 1082": "OSDevKit_ProV1_61_BmSetDatas",
+        "b1fc 0000 0000 6708 e588 d1c0 30c1 3082": "OSDevKit_ProV1_20_DotsSet",
+        "b1fc 0000 0000 670c 1140 0004 1141 0005": "OSDevKit_ProV1_20_BdSetDraw",
+        "b1fc 0000 0000 670c 3140 000c 3141 000e": "OSDevKit_ProV1_20_GadSetFat",
+        "b1fc 0000 0000 670e 2080 3141 000e 3142": "OSDevKit_ProV1_61_ViewSet",
+        "b1fc 0000 0000 6710 3140 0004 3141 0006": "OSDevKit_ProV1_61_GadSetBody",
+        "b1fc 0000 0000 6710 48e7 0002 2c6d e752": {
+          "4eae fd8a 4cdf 4000 4e75": "OSDevKit_ProV1_61_Rgb4CmSet",
+          "4eae fee0 4cdf 4000 4e75": "OSDevKit_ProV1_61_Rgb4Set"
+        },
+        "b1fc 0000 0000 6710 48e7 0002 2c6d e75a": "OSDevKit_ProV1_61_WndBox",
+        "b1fc 0000 0000 671a 48e7 0002 2c6d e752": [
+          ["match", "0c6e 0027 0014 6d00"],
+          ["skip", 1],
+          {
+            "4eae fc1c": "OSDevKit_ProV1_61_Rgb32CmSet",
+            "4eae fcac": "OSDevKit_ProV1_61_Rgb32Set"
+          }
+        ]
+      },
       "201b 206d": {
+        "0228 41e8 0192 30c0 30c1 30c2 3083": "OSDevKit_ProV1_61_GgadDefBody",
         "0228 41e8 01d6 2710 2700 2701 2702": "OSDevKit_ProV1_61_ScrIdBar",
         "0228 41e8 01e2 2710 2700 2701 2702": [
           "tail-call",
@@ -5724,6 +5772,13 @@
         ],
         "0228 41e8 01e6 2710 2700 2701 2702": "OSDevKit_ProV1_61_WndIdBar"
       },
+      "201b 225b": {
+        "205b b1fc 0000 0000": "OSDevKit_ProV1_61_PtrSet",
+        "205b b3fc 0000 0000": "OSDevKit_ProV1_20_DispInfoGet",
+        "b3fc 0000 0000 6700": "OSDevKit_ProV1_61_AreaEllipse",
+        "b3fc 0000 0000 6710": "OSDevKit_ProV1_61_RpEllipse",
+        "b3fc 0000 0000 671c": "OSDevKit_ProV1_61_RpBar"
+      },
       "201b 246d": "AGA_ProV1_00_AgaInk_III",
       "201b 2a1b": {
         "b4bc 0000 0001 6a00 0004 7408 2c02 babc 0000 0001 6700 002c babc 0000 0002 6600 0012 0246 fffe bc82 6700 0018 5282 6000 0012 0246 fffc bc82 6700 0008 5282 2c02 60f0 2c05 d280 48e7 0010 266d 0248 47eb 0254 2680": "JD_ProV5_90_JdHexdump",
@@ -5731,6 +5786,8 @@
         "b4bc 0000 0001 6a00 0004 7408 2c02 babc 0000 0001 6700 002e babc 0000 0002 6600 0012 0246 fffe bc82 6700 001a 5282 6000 0014 0246 fffc bc82 6700 000a 5282 2c02 6000 fff0 2c05 d280 48e7 0010 266d 0248 47eb 02a8": "JD_ProV4_60_JdHexdump"
       },
       "201b 48e7": {
+        "0002 2c6d e75a 4eae ff9a 4cdf 4000 2600": "OSDevKit_ProV1_61_DblClick",
+        "0002 2c78 0004 4eae fd48 4cdf 4000 2600": "OSDevKit_ProV1_20_PoolCreate",
         "0010 266d 0248 47eb 1478 2680 4cdf 0800": "JD_ProV5_90_JdDay_III__I",
         "0010 266d 0248 47eb 15ec 2680 4cdf 0800": "JD_ProV5_30_JdDay_III__I",
         "00fe 7600 266d 01c8 206b 01c2 2c6b 00e6": "Game_ProV0_90_GCircle"
@@ -5754,6 +5811,7 @@
         "3010 6700 028e b4bc 0000 0000 6a00 0004 740a 48e7 0010 266d 0248 47eb 0108 2682": "JD_ProV5_90_JdSquash",
         "3010 6700 028e b4bc 0000 0000 6a00 0004 740a 48e7 0010 266d 0248 47eb 013c 2682": "JD_ProV4_60_JdSquash"
       },
+      "205b b1fc": "OSDevKit_ProV1_20_ScrPosition",
       "206d fff8": "AMOS_ProV2_00_Rain_set_II",
       "261b b682": "Tools_ProV1_00_Range",
       "281b 205b": [
@@ -5783,6 +5841,14 @@
         "266d 01c8 206b 01c2 2c6b 00e6 4eae ff70 2600 4cdf 7f00 4e75": "Game_ProV0_90_GRgb",
         "266d 01c8 206b 01c2 2c6b 00e6 4eae ff9a 4cdf 7f00 2600 4e75": "Game_ProV0_90_GPoint"
       },
+      "671c 48e7": {
+        "0002 2c6d 0228 4dee 0154 2c56 4eae fd00 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosSegLoad",
+        "0002 2c6d 0228 4dee 0154 2c56 4eae fec2 4cdf 4000 2600 7400 4e75 76ff 4e75": "OSDevKit_ProV1_20_DosFUngetc",
+        "0002 2c6d 0228 4dee 0154 2c56 4eae fec8 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosFPutc",
+        "0002 2c6d 0228 4dee 0154 2c56 4eae ffac 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosLock",
+        "0002 2c6d 0228 4dee 0154 2c56 4eae ffe2 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosOpen"
+      },
+      "6720 4a82": "OSDevKit_ProV1_20_DosFPuts",
       "9481 263c": "EasyLife_ProV1_44_ElxpkBsave_SSII",
       "9481 6100": "EasyLife_ProV1_44_ElxpkBsave_SSSII",
       "b2bc 0001": "AMOS_ProV2_00_DialogRun_IIII",
@@ -5892,7 +5958,11 @@
         "246d 01e8 45ea 002e": "EasyLife_ProV1_09_ElppFree",
         "246d 01e8 d4fc 0000": "EasyLife_ProV1_44_ElppFree"
       }
-    ]
+    ],
+    "e58a": {
+      "e58b 206d 0228 41e8 0390 2050 2070 2000 b1fc 0000 0000 6606 7600 6000": "OSDevKit_ProV1_61_CliWhatArg_II__S",
+      "e58b 206d 0228 41e8 0390 2050 2070 2000 b1fc 0000 0000 6606 7600 7400": "OSDevKit_ProV1_61_CliWhatArg_II__I"
+    }
   },
   "243c": {
     "0000 0000 263c": {
@@ -5903,8 +5973,25 @@
     "0000 0000 4e75": "Game_ProV0_90_Gham"
   },
   "2443": {
-    "205b": "AMOS_ProV2_00_Poke_IS",
+    "205b": {
+      "341a 6706": "AMOS_ProV2_00_Poke_IS",
+      "2443 205b": "OSDevKit_ProV1_61_WndSharePort"
+    },
+    "225b": {
+      "205b 48e7 0002 2c6d e75a 4eae fe32 4cdf 4000 2600": "OSDevKit_ProV1_61_GadActivate",
+      "205b 48e7 0002 2c6d e75a 4eae ff22 4cdf 4000 4e75": "OSDevKit_ProV1_61_GgadRefresh",
+      "205b 48e7 0002 2c6d e75a 4eae ff46 4cdf 4000 4e75": "OSDevKit_ProV1_61_GadOn",
+      "205b 48e7 0002 2c6d e75a 4eae ff52 4cdf 4000 4e75": "OSDevKit_ProV1_61_GadOff",
+      "205b b1fc 0000 0000 6710 48e7 0002 2c6d e75a 4eae": "OSDevKit_ProV1_61_WndSetTitles",
+      "205b b1fc 0000 0000 6720 b3fc 0000 0000 6718 b5fc": "OSDevKit_ProV1_61_NodIns",
+      "205b b5fc 0000 0000 6718 b3fc 0000 0000 6710 48e7": "OSDevKit_ProV1_61_SprChange"
+    },
+    "241b": "OSDevKit_ProV1_61_ImgDrawState",
     "263c": "AMOS_ProV2_00_ReadText_S",
+    "281b": {
+      "261b 241b 221b 201b 225b 205b b3fc 0000 0000 6604 7600 6028 b1fc 0000 0000 6604 7600 601c 48e7 0002 2c6d e74e 4eae ffd6 4cdf 4000 273c 0000 001e 2600 6100": "OSDevKit_ProV1_61_LayerCreateBehind",
+      "261b 241b 221b 201b 225b 205b b3fc 0000 0000 6604 7600 6028 b1fc 0000 0000 6604 7600 601c 48e7 0002 2c6d e74e 4eae ffdc 4cdf 4000 273c 0000 001e 2600 6100": "OSDevKit_ProV1_61_LayerCreateUpfront"
+    },
     "341a": {
       "0c32": "AMOS_ProV2_00_Drive",
       "206d": "AMOS_ProV2_00__PrintS",
@@ -5931,6 +6018,7 @@
         "0100 6400": "AMOS_ProV2_00_CommandLine_set"
       }
     },
+    "381a": "OSDevKit_ProV1_61_Print",
     "4a52": "AMOS_ProV2_00_Exist",
     "6100": [
       ["skip", 1],
@@ -5956,7 +6044,33 @@
       "301a 6702": "AMOS_ProV2_00_Asc",
       "361a 4e75": "AMOS_ProV2_00_Len"
     },
-    "b5fc": "AMOS_ProV2_00_SetDir_IS"
+    "b5fc": {
+      "0000 0000 6700": [
+        ["skip", 1],
+        ["match", "48e7 0002 2c78 0004 7000 223c 0000 1000 4eae fece 0800 000c 6708 4cdf 4000 6000"],
+        ["skip", 1],
+        {
+          "204a 2c6d 0228 4dee": "OSDevKit_ProV1_61_GmsgGet",
+          "204a 4eae fe8c 4cdf": "OSDevKit_ProV1_61_MsgGet"
+        }
+      ],
+      "8000 0000 6712": "AMOS_ProV2_00_SetDir_IS",
+      "0000 0000 671a": "OSDevKit_ProV1_61_SprADataFree",
+      "8000 0000 6608": {
+        "246d 0228 45ea 03a8 205b 201b": {
+          "225b 48e7": "OSDevKit_ProV1_61_GgadCreate_IIII",
+          "226d 0228": "OSDevKit_ProV1_61_GgadCreate_III"
+        },
+        "246d 0228 45ea 03a8 205b 6100": "OSDevKit_ProV1_61_ObjNew",
+        "246d 0228 45ea 03a8 225b 205b": {
+          "221b 201b b1fc 0000 0000 6604 41fa 0026 48e7 0002 2c6d": "OSDevKit_ProV1_61_AppAddMenu",
+          "221b 201b b1fc 0000 0000 6604 7600 6022 48e7 0002 2c6d": "OSDevKit_ProV1_61_AppAddWnd",
+          "48e7 0002 2c6d 0228 4dee 02b4 2c56 4eae ffbe 4cdf 4000": "OSDevKit_ProV1_61_GmnLayout",
+          "48e7 0002 2c6d 0228 4dee 02c8 2c56 bdfc 0000 0000 6700": "OSDevKit_ProV1_61_CatOpen"
+        },
+        "246d 0228 45ea 03a8 7600 205b": "OSDevKit_ProV1_61_DtWhatAttrs"
+      }
+    }
   },
   "244e": {
     "223c 0002 0002 2c78 0004 4eae": "TurboPlus_ProV2_15_ChipLargest",
@@ -5983,10 +6097,28 @@
         "2248 7e07 588a 7c1f": "Effects_ProV0_15_WriteAgaCmap"
       }
     ],
-    "205b": "CRAFT_ProV1_00_StrCount",
+    "205b": {
+      "7e00 3e18": "CRAFT_ProV1_00_StrCount",
+      "201b 225b": "OSDevKit_ProV1_20_GgadCreate_IIII",
+      "201b 226d": "OSDevKit_ProV1_20_GgadCreate_III"
+    },
     "206d": "GUI_ProV2_00_GuiUniconify",
     "225b": {
-      "205b 2f0e 2c6d e75a 4eae feec 2c5f 4e75": "IntuiExtend_ProV1_30B_WbWindTitle",
+      "205b 221b 201b b1fc 0000 0000 6604 41fa": "OSDevKit_ProV1_20_AppAddMenu",
+      "205b 221b 201b b1fc 0000 0000 6606 7600": "OSDevKit_ProV1_20_AppAddWnd",
+      "205b 2f0e 2c6d e75a 4eae feec 2c5f 4e75": "IntuiExtend_ProV1_30B_WbWindTitle",      
+      "205b 48e7 0002 2c6d 0228 4dee 015c 2c56": {
+        "4eae fd84 4cdf 4000 7400": "OSDevKit_ProV1_20_ObjNew",
+        "4eae fe32 4cdf 4000 7400": "OSDevKit_ProV1_20_GadActivate",
+        "4eae ff22 4cdf 4000 4e75": "OSDevKit_ProV1_20_GgadRefresh",
+        "4eae ff46 4cdf 4000 4e75": "OSDevKit_ProV1_20_GadOn",
+        "4eae ff52 4cdf 4000 4e75": "OSDevKit_ProV1_20_GadOff"
+      },
+      "205b 48e7 0002 2c6d 0228 4dee 0160 2c56": "OSDevKit_ProV1_20_GmnLayout",
+      "205b 48e7 0002 2c6d 0228 4dee 0170 2c56": "OSDevKit_ProV1_20_CatOpen",
+      "205b b1fc 0000 0000 6716 48e7 0002 2c6d": "OSDevKit_ProV1_20_WndSetTitles",
+      "205b b1fc 0000 0000 6720 b3fc 0000 0000": "OSDevKit_ProV1_20_NodIns",
+      "205b b5fc 0000 0000 671e b3fc 0000 0000": "OSDevKit_ProV1_20_SprChange",
       "41fa 007e 7000 7200 7a00 3019 321a b240": "LDos_ProV1_10_Lstrcmp",
       "b3fc 0000 0000 67ff 0000 00bc b5fc 0000": "Personnal_ProV1_00B_BlitterCopy"
     },
@@ -5994,6 +6126,8 @@
       "0034 2c0e 2c6d e752 4eae ffb2 2c46 41fa 00e2 201b 1140 0006": "IntuiExtend_ProV2_01B_WbLoadFont",
       "0034 2c0e 2c6d e752 4eae ffb2 2c46 41fa 00ec 201b 1140 0006": "IntuiExtend_ProV1_60_WbLoadFont"
     },
+    "241b": "OSDevKit_ProV1_20_ImgDrawState",
+    "2c1b": "OSDevKit_ProV1_20_BltMskBmToRp",
     "2e1b": "CRAFT_ProV1_00_MemStrCount_IIS",
     "2f0e": "IntuiExtend_ProV1_60_WbGetMsg",
     "301a": {
@@ -6140,7 +6274,8 @@
       "341a 204a 2602 5343 7c00 7000 1018 dc40 51cb fffa 43f2 2000 2809 2a1b 5345 205b 7200 7000 1010 121a d041 b88a 6602 95c2": "Tools_ProV1_00_Encode"
     },
     "7600": "AMCAF_ProV1_50B4_EN_Extpath",
-    "7800": "EasyLife_ProV1_09_MuiNotify_IIIIS"
+    "7800": "EasyLife_ProV1_09_MuiNotify_IIIIS",
+    "b5fc": "OSDevKit_ProV1_20_SprADataFree"
   },
   "245f": "AMOS_ProV2_00__DProc1",
   "246b": {
@@ -7039,7 +7174,10 @@
   "2610": "AMOS_ProV2_00_Array",
   "2613": "TurboPlus_ProV2_00_ReserveScene",
   "261b": {
-    "0243": "IntuiExtend_ProV1_60_GetMenuCode",
+    "0243": {
+      "001f e15b": "IntuiExtend_ProV1_60_GetMenuCode",
+      "001f 4e75": "OSDevKit_ProV1_20_MenuWhatMenuNb"
+    },
     "0643": "IntuiExtend_ProV1_30B_WbScreenRastport",
     "0843": "LDos_ProV1_10_LprotConv",
     "0c83": "SLN_ProV2_00_STrackLoad_SI",
@@ -7144,7 +7282,10 @@
           "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2032 2e30 0054 6869": "GUI_ProV2_00_GuiRange"
         }
       ],
-      "201b 221b": "TFT_ProV0_6_MfmRead",
+      "201b 221b": {
+        "48e7 001e": "TFT_ProV0_6_MfmRead",
+        "225b 205b": "OSDevKit_ProV1_20_PtrSet"
+      },
       "201b 7e05": "GUI_ProV2_00_GuiDisplayIff_III",
       "205b 6100": [
         ["skip", 1],
@@ -7183,7 +7324,28 @@
       "221b 201b": {
         "0680 0000": "Personnal_ProV1_00B_SetSecondColor",
         "205b 2f0e": "IntuiExtend_ProV1_30B_WbChangeWindowBox",
+        "205b 48e7": "OSDevKit_ProV1_20_WndSetLimits",
+        "205b b1fc": {
+          "0000 0000 6708 20c0 30c1 10c2 1083 4e75": "OSDevKit_ProV1_20_TaSet",
+          "0000 0000 6708 20c3 20c0 30c1 3082 4e75": "OSDevKit_ProV1_20_RiSet",
+          "0000 0000 6708 30c0 30c1 10c3 1082 4e75": "OSDevKit_ProV1_20_BmSetDatas",
+          "0000 0000 670e 2080 3141 000e 3142 000c": "OSDevKit_ProV1_20_ViewSet",
+          "0000 0000 6710 3140 0004 3141 0006 3142": "OSDevKit_ProV1_20_GadSetBody",
+          "0000 0000 6716 48e7 0002 2c6d 0228 4dee": {
+            "0158 2c56 4eae fc1c 4cdf 4000 4e75": "OSDevKit_ProV1_20_Rgb32CmSet",
+            "0158 2c56 4eae fcac 4cdf 4000 4e75": "OSDevKit_ProV1_20_Rgb32Set",
+            "0158 2c56 4eae fd8a 4cdf 4000 4e75": "OSDevKit_ProV1_20_Rgb4CmSet",
+            "0158 2c56 4eae fee0 4cdf 4000 4e75": "OSDevKit_ProV1_20_Rgb4Set",
+            "015c 2c56 4eae fe1a 4cdf 4000 4e75": "OSDevKit_ProV1_20_WndBox"
+          }
+        },
         "205b d1fc": "IntuiExtend_ProV1_60_WbSetColour",
+        "206d 0228": "OSDevKit_ProV1_20_GgadDefBody",
+        "225b b3fc": {
+          "0000 0000 6716 48e7 0002 2c6d 0228 4dee 0158 2c56 4eae fece 4cdf 4000 4e75": "OSDevKit_ProV1_20_RpBar",
+          "0000 0000 6716 48e7 0002 2c6d 0228 4dee 0158 2c56 4eae ff4c 4cdf 4000 4e75": "OSDevKit_ProV1_20_RpEllipse",
+          "0000 0000 671a 48e7 0002 2c6d 0228 4dee 0158 2c56 4eae ff46 4cdf 4000 7400": "OSDevKit_ProV1_20_AreaEllipse"
+        },
         "226d 0268": {
           "2069 02b4 2269 01b8": "GUI_ProV2_00_GuiBox",
           "2829 0154 674e 2044": "GUI_ProV1_70_GuiRgb_IIII",
@@ -7233,6 +7395,7 @@
           "48e7 001e 2c02 2e03 48e7 0010 266d 0228 47eb 0140 2681 4cdf 0800 226d e736 2c6d": "JDColour_ProV2_00_JdFillColour"
         },
         "2f00 7000": "AGA_ProV1_00_AgaColour_IIII__V",
+        "48e7 0002": "OSDevKit_ProV1_20_DblClick",
         "48e7 001e": {
           "226d": {
             "0268 7e0b 4aa9 00ea 6700": "GUI_ProV1_50B_GuiBar",
@@ -7288,6 +7451,7 @@
         ],
         "48e7 ff1e": "Game_ProV0_90_GBob"
       },
+      "221b 4a82": "OSDevKit_ProV1_20_DosMode",
       "221b 48e7": "Game_ProV0_90_GPlot_III",
       "221b 6100": [
         "push",
@@ -7310,6 +7474,15 @@
           "c2fc 0100 c4fc 0010 d443 d441 4e75": "JDColour_ProV2_00_JdRgbValue"
         }
       ],
+      "221b 671c": "OSDevKit_ProV1_20_DosSeek",
+      "221b 6720": {
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae fc8e 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosAddPart",
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae fe68 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosFName",
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae fe6e 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosLName",
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae feb0 4cdf 4000 2600 7400 4e75 7600 4e75": "OSDevKit_ProV1_20_DosFGets",
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae ffd0 4cdf 4000 2600 7400 4e75 76ff 4e75": "OSDevKit_ProV1_20_DosWrite",
+        "4a82 671c 48e7 0002 2c6d 0228 4dee 0154 2c56 4eae ffd6 4cdf 4000 2600 7400 4e75 76ff 4e75": "OSDevKit_ProV1_20_DosRead"
+      },
       "221b 70ff": {
         "246d 0268 0c6a 0027 0126 6d2e e099 e09a": "GUI_ProV1_70B_GuiBest",
         "246d 0268 0c6a 0027 012c 6d2e e099 e09a": "GUI_ProV1_75_GuiBest",
@@ -7382,6 +7555,9 @@
       },
       "225b 221b": "DoomMusic_ProV2_00_DmeSamRaw",
       "225b 2a1b": "GUI_ProV2_00_GuiScreenCopy",
+      "241b 221b": {
+
+      },
       "2e1b 2a1b": "AGA_ProV1_00_AgaScreenCopy_IIIIIIII",
       "5382 e283": "JD_ProV4_60_JdAsr",
       "5382 e28b": "JD_ProV4_60_JdLsr",
@@ -7395,25 +7571,25 @@
       "e28a 7200": "AMCAF_ProV1_50B4_EN_RasterWait_II"
     },
     "245b": {
-    "201b": {
-      "7452 7e14 206d 0268 2a00 41e8 01d2 e588 2030 0000 e588 6700": [
-        "follow-rel",
-        ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
-        ["skip", 2],
-        {
-          "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468": "GUI_ProV1_61_TcpRead_III__I",
-          "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468": "GUI_ProV1_62_TcpRead_III__I"
-        }
-      ],
-      "7457 7e14 206d 0268 2a00 41e8 01d2 e588 2030 0000 e588 6700": [
-        "follow-rel",
-        ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
-        ["skip", 2],
-        {
-          "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468": "GUI_ProV1_61_TcpSend_III",
-          "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468": "GUI_ProV1_62_TcpSend_III"
-        }
-      ]
+      "201b": {
+        "7452 7e14 206d 0268 2a00 41e8 01d2 e588 2030 0000 e588 6700": [
+          "follow-rel",
+          ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
+          ["skip", 2],
+          {
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468": "GUI_ProV1_61_TcpRead_III__I",
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468": "GUI_ProV1_62_TcpRead_III__I"
+          }
+        ],
+        "7457 7e14 206d 0268 2a00 41e8 01d2 e588 2030 0000 e588 6700": [
+          "follow-rel",
+          ["match", "41fa 0010 2007 7200 7417 7600 4ef9"],
+          ["skip", 2],
+          {
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3300 5468": "GUI_ProV1_61_TcpSend_III",
+            "5072 6f67 7261 6d20 496e 7465 7272 7570 7465 6400 556e 6162 6c65 2074 6f20 6f70 656e 2077 696e 646f 7700 4761 6467 6574 206e 6f74 2064 6566 696e 6564 0047 7569 206e 6f74 2064 6566 696e 6564 0047 7569 2061 6c72 6561 6479 2075 7365 6400 4261 6e6b 206e 6f74 2072 6573 6572 7665 6400 4e6f 7420 6120 4775 6920 6261 6e6b 0047 7569 206e 6f74 206f 7065 6e00 5769 6e64 6f77 2061 6c72 6561 6479 206f 7065 6e00 496c 6c65 6761 6c20 6761 6467 6574 2076 616c 7565 0057 696e 646f 7720 6e6f 7420 6f70 656e 0047 6678 206f 7574 7075 7420 6e6f 7420 6465 6669 6e65 6400 496d 6167 6520 6e6f 7420 7265 7365 7276 6564 0041 736c 2e6c 6962 7261 7279 206e 6f74 2066 6f75 6e64 2100 496c 6c65 6761 6c20 7363 7265 656e 2070 6172 616d 6574 6572 0053 6372 6565 6e20 616c 7265 6164 7920 6f70 656e 0055 6e61 626c 6520 746f 206f 7065 6e20 7363 7265 656e 0053 6372 6565 6e20 6e6f 7420 6f70 656e 6564 0057 726f 6e67 2047 5549 2062 616e 6b20 7665 7273 696f 6e2e 2055 7365 2074 6865 2047 5549 2063 6f6e 7665 7274 6572 2031 2e36 3400 5468": "GUI_ProV1_62_TcpSend_III"
+          }
+        ]
       },
       "225b": [
         ["match", "205b 6100"],
@@ -7468,6 +7644,12 @@
       "2c1b 2a1b 281b 205b 3018 48e7 001e 246d 0268 367c 001b 4aaa 0140 6700 00a2 367c 001c 2c6a 0140 2848 327c 0000 347c 0000 7000 4eae ff76 4a80 6600 0084 367c 001d 4eae ff3a 2040 2028 000a 4eae ff9a 4a80 676c 3f2d ff72 6710 7200 206d fff8 4ea8 0120 3b7c ffff ff70 204c 327c 0000 347c 0000 70ff 4eae ff76 4a80 662a 367c 001e 2003 4eae ff46 4a80 671c 367c 0000 2004 2205 2406 2607 4eae ff58 4a80 6604 367c": "GUI_ProV2_00_XfaPlay"
     },
     "41f9": "AMCAF_ProV1_50B4_EN_RasterWait_I",
+    "4883": {
+      "48c3": "OSDevKit_ProV1_20_ExtB",
+      "4e75": "OSDevKit_ProV1_20_ExtW"
+    },
+    "48c3": "OSDevKit_ProV1_20_ExtL",
+    "4e75": "OSDevKit_ProV1_61_ChnSwap",
     "5c83": "AMCAF_ProV1_50B4_EN_CdWeekday",
     "6300": "EME_ProV3_00DEMO_Music",
     "6700": [
@@ -7534,6 +7716,7 @@
       "3602 4843 86fc 003c": "AMCAF_ProV1_50B4_EN_CtMinute",
       "7001 c680 4483 4e75": "AMCAF_ProV1_50B4_EN_Odd"
     },
+    "b1fc": "OSDevKit_ProV1_20_ScrWhatVport",
     "b6bc": {
       "0000 01f4 6f00": "EME_ProV3_00DEMO_SamRaw",
       "0001 0000 6c00": [
@@ -7545,13 +7728,28 @@
           "2f03 205b 3018 5340": "TurboPlus_ProV1_00_SceneLoad"
         }
       ],
-      "ffff ff80 6d1e": "TurboPlus_ProV1_00_AmosPri"
+      "ffff ff80 6d1e": "TurboPlus_ProV1_00_AmosPri",
+      "0000 0000 6606": [
+        ["match", "7000 6000"],
+        ["skip", 1],
+        {
+          "0683 0000": {
+            "0054 4e75": "OSDevKit_ProV1_20_ScrWhatRport",
+            "00b8 4e75": "OSDevKit_ProV1_20_ScrWhatBmap",
+            "00e0 4e75": "OSDevKit_ProV1_20_ScrWhatLayerInfo"
+          },
+          "5083 4e75": "OSDevKit_ProV1_20_AslWhatFont",
+          "7400 0683": "OSDevKit_ProV1_20_NodWhatStart"
+        }
+      ]
     },
     "c6bc": {
       "0000 ffff": "TFT_ProV0_6_GetLowWord",
       "ffff 0000": "TFT_ProV0_6_GetHighWord"
     },
-    "e88b": "AMCAF_ProV1_50B4_EN_RrggbbToRgb"
+    "e04b": "OSDevKit_ProV1_20_MenuWhatSubNb",
+    "e88b": "AMCAF_ProV1_50B4_EN_RrggbbToRgb",
+    "ea4b": "OSDevKit_ProV1_20_MenuWhatItemNb"
   },
   "262d": {
     "0168 4e75": "AMCAF_ProV1_50B4_EN_AmcafBase",
@@ -7680,6 +7878,7 @@
     },
     "0238 5843": "Prt_ProV1_40_JdPrtReset",
     "0238 5c43": "Prt_ProV1_10_PrtInit",
+    "02b8 4e75": "OSDevKit_ProV1_61_BaseDos",
     "04a6 4e75": "AMOS_ProV2_00_FrameParam",
     "08a4 4e75": "AMOS_ProV2_00_Edialog",
     "09c8 4e75": "AMOS_ProV2_00_Param_I",
@@ -7689,7 +7888,9 @@
     "0b3a 282d": "AMOS_ProV2_00_Pi",
     "e742 4e75": "JD_ProV4_60_JdIntwindowBase",
     "e746 4e75": "JD_ProV4_60_JdIntscreenBase",
+    "e74e 4e75": "OSDevKit_ProV1_61_BaseLayers",
     "e752 4e75": "Game_ProV0_90_GOddno",
+    "e75a 4e75": "OSDevKit_ProV1_61_BaseInt",
     "e7e0 4e75": "OSDevKit_ProV1_61_GiveMe",
     "ff76 4e75": "AMOS_ProV2_00_Timer_get",
     "ffe4 4e75": "IntuiExtend_ProV1_30B_MyTask"
@@ -7735,6 +7936,7 @@
         "202b 0010": "IOPorts_ProV2_00_SerialOpen_IIIII"
       },
       "202d": "AMOS_ProV2_00_ArexxAnswer_IS",
+      "2043": "OSDevKit_ProV1_61_ChnAdd_I",
       "206d": {
         "0228 41e8 010e 41e8 0010": "OSDevKit_ProV1_61_ScrIdSetLowPattern",
         "0228 41e8 010e 41e8 0020": "OSDevKit_ProV1_61_ScrIdSetHighPattern",
@@ -7852,6 +8054,7 @@
         ],
         "0000 0100": "AMOS_ProV2_00_ReadText_SII",
         "0000 0400": "AMOS_ProV2_00_DialogOpen_ISI",
+        "0001 0001": "OSDevKit_ProV1_61_StructAlloc",
         "8000 0000": [
           "tail-call",
           {
@@ -7910,9 +8113,31 @@
           }
         ]
       },
+      "272d": [
+        ["match", "04f2 263c 0000 03fe 6100"],
+        "follow-rel",
+        {
+          "7000 241b 221b 4a82": "OSDevKit_ProV1_61_LockName",
+          "7000 241b 221b 6100": [
+            ["skip", 1],
+            {
+              "6714 4a82 6710 48e7 0002 2c6d 02b8 4eae fe68 4cdf 4000 2600 4e75": "OSDevKit_ProV1_61_FhName",
+              "6714 4a82 6710 48e7 0002 2c6d 02b8 4eae feb0 4cdf 4000 2600 4e75": "OSDevKit_ProV1_61_DosInput"
+            }
+          ]
+        }
+      ],
       "273c": {
         "0000 0010": "AMOS_ProV2_00_DialogOpen_IS",
-        "ffff ffff": "AMOS_ProV2_00_DialogRun_I"
+        "ffff ffff": "AMOS_ProV2_00_DialogRun_I",
+        "0000 0000": [
+          ["match", "7601 6100"],
+          ["skip", 1],
+          {
+            "2a03 598b": "OSDevKit_ProV1_61_DosEof",
+            "598b 2703": "OSDevKit_ProV1_61_DosLof"
+          }
+        ]
       },
       "41fa": "OSDevKit_ProV1_61_ScrIdFromWb",
       "42a3": {
@@ -7930,7 +8155,10 @@
         ],
         "763f": "AMOS_ProV2_00_Amplay_II"
       },
-      "48e7": "IOPorts_ProV2_00_PrinterDump_IIIIIII",
+      "48e7": {
+        "0002 2c6d": "OSDevKit_ProV1_61_CliReadArgs",
+        "000e 246d": "IOPorts_ProV2_00_PrinterDump_IIIIIII"
+      },
       "4eb9": "AMOS_ProV2_00_Fsel_SSSS",
       "6100": [
         "push",
@@ -7945,6 +8173,7 @@
               "261b": "OSDevKit_ProV1_61_WndIdLock"
             }
           ],
+          "2043": "OSDevKit_ProV1_61_StrGet_I",
           "206d": {
             "0228 41e8 01e2 2610": [
               "pop",
@@ -8134,6 +8363,7 @@
           ]
         }
       ],
+      "670e": "OSDevKit_ProV1_61_ChnIns_I",
       "7600": [
         "tail-call",
         {
@@ -8225,6 +8455,7 @@
       "6100": "AMOS_ProV2_00__FnMinS"
     }
   ],
+  "272b": "OSDevKit_ProV1_61_ChnInsTo_III",
   "273c": {
     "0000 0000": [
       "tail-call",
@@ -8245,7 +8476,14 @@
           }
         ],
         "273c": "SLN_ProV2_00_STrackPlay_I",
-        "6100": "OSDevKit_ProV1_20_WndWhatActive"
+        "6100": [
+          ["skip", 1],
+          {
+            "2703 206d 0228 41e8 015c 2050 2628 0034 7400": "OSDevKit_ProV1_20_WndWhatActive",
+            "2703 206d 0228 41e8 015c 2050 2628 0038 7400": "OSDevKit_ProV1_20_ScrWhatActive",
+            "2703 206d 0228 41e8 015c 2050 2628 003c 7400": "OSDevKit_ProV1_20_ScrWhatFront"
+          }
+        ]
       }
     ],
     "0000 0001": [
@@ -8271,6 +8509,8 @@
       }
     ],
     "0000 0007": "SLN_ProV2_00_STrackLoad_S",
+    "0000 0008": "OSDevKit_ProV1_20_IntAlloc",
+    "0000 000e": "OSDevKit_ProV1_20_LnodAlloc",
     "0000 000f": [
       "tail-call",
       {
@@ -8338,6 +8578,7 @@
     "0000 00fc": "AMCAF_ProV1_50B4_EN_BlitterCopy_IIIIII",
     "0000 3d09": "AMCAF_ProV1_50B4_EN_PtInstrPlay_II",
     "0001 0000": "CRAFT_ProV1_00_BwInstr_SS",
+    "0001 0001": "OSDevKit_ProV1_20_StructAlloc",
     "3b9a c9ff": "IntuiExtend_ProV1_60_WbFlushMemory",
     "8000 0000": [
       "tail-call",
@@ -8397,14 +8638,20 @@
           "241b 221b 206d": "AMOS_ProV2_00_CopWait_IIII"
         },
         "221b 206d fffc": "AMOS_ProV2_00_Sprite",
-        "221b 2a1b 6700": "AMOS_ProV2_00_GetCblock"
+        "221b 2a1b 6700": "AMOS_ProV2_00_GetCblock",
+        "221b 201b 205b": "OSDevKit_ProV1_61_BltPattern",
+        "221b 48e7 0002": "OSDevKit_ProV1_61_DosReport",
+        "221b 4a83 6712": "OSDevKit_ProV1_61_DosFault" 
       },
       "6d00": "OSDevKit_ProV1_61_WndIdData_set_II"
     },
+    "273c": "OSDevKit_ProV1_61_DosEndNotify",
     "2a1b": {
       "245b 7400 341a": "AMOS_ProV2_00__FnMid3",
       "babc 0000 0100": "AMOS_ProV2_00_Scan_II"
     },
+    "48e7": "OSDevKit_ProV1_61_DosDate",
+    "6606": "OSDevKit_ProV1_61_DtDo",
     "6b00": [
       ["skip", 1],
       {
@@ -8412,9 +8659,14 @@
         "201b 4eb9": "Music_ProV2_00_SamSwap"
       }
     ],
-    "7602": "OSDevKit_ProV1_61_ChrW",
+    "7600": "OSDevKit_ProV1_61_EventWaitPort",
+     "7602": "OSDevKit_ProV1_61_ChrW",
     "7604": "OSDevKit_ProV1_61_ChrL",
-    "b8bc": "Music_ProV2_00_SetEnvel"
+    "b8bc": {
+      "0000 0040": "Music_ProV2_00_SetEnvel",
+      "8000 0000": "OSDevKit_ProV1_61_ObjSetAttrs"
+    },
+    "e38c": "OSDevKit_ProV1_61_TagListAlloc"
   },
   "281a": "AMOS_ProV2_00__InNext",
   "281b": {
@@ -8453,6 +8705,10 @@
       "261b 7400 7e17 206d 0268 41e8 0240 2003": "GUI_ProV1_70B_TcpFOpen_ISI",
       "261b 7400 7e17 206d 0268 41e8 024c 2003": "GUI_ProV1_75_TcpFOpen_ISI"
     },
+    "241b": {
+      "221b 201b 205b b1fc 0000 0000 670a 20c0 20c1 30c2 30c4 3083 4e75": "OSDevKit_ProV1_61_SiSetBuf",
+      "221b 201b 205b b1fc 0000 0000 670a 30c0 30c1 30c2 30c4 3083 4e75": "OSDevKit_ProV1_61_PiSet"
+    },
     "245b": {
       "205b 261b 241b 221b 201b 2c1b": "GUI_ProV2_00_GuiScreenOpen_IIIIISSI",
       "241b 221b 225b 201b 6710 b3fc": "OSDevKit_ProV1_61_BobBlit",
@@ -8471,7 +8727,10 @@
         "226d 0268 7e0b 2a29 0146 6700": "GUI_ProV1_70B_GuiBbox",
         "226d 0268 7e0b 2a29 014c 6700": "GUI_ProV1_75_GuiBbox",
         "226d 0268 7e0b 2a29 01b8 6700": "GUI_ProV2_00_GuiBbox",
-        "48e7 0010 266d 0208 47eb 0000": "JDInt_ProV1_30_JdIntzone"
+        "48e7 0010 266d 0208 47eb 0000": "JDInt_ProV1_30_JdIntzone",
+        "205b 225b b1fc 0000 0000 671e": "OSDevKit_ProV1_20_BltPattern",
+        "205b b1fc 0000 0000 670a 20c0": "OSDevKit_ProV1_20_SiSetBuf",
+        "205b b1fc 0000 0000 670a 30c0": "OSDevKit_ProV1_20_PiSet"
       },
       "241b 221b 206d": [
         ["match", "0268 7e05 0c83 8000 0000 6712 2003 4eb9"],
@@ -8487,6 +8746,8 @@
         }
       ],
       "241b 221b 43fa": "Personnal_ProV1_00B_MplotDefine",
+      "241b 221b 48e7": "OSDevKit_ProV1_20_DosReport",
+      "241b 221b 4a83": "OSDevKit_ProV1_20_DosFault",
       "241b 221b 6700": [
         ["skip", 1],
         ["match", "b441 6f00"],
@@ -8579,9 +8840,17 @@
   },
   "2a03": {
     "245b": "AMOS_ProV2_00__FnMid2",
+    "206d": "OSDevKit_ProV1_61_FxPlay_III",
     "261b": {
       "221b": "AMOS_ProV2_00_Amreg_set_II",
-      "223c": "AMOS_ProV2_00_Amreg_set_I"
+      "223c": "AMOS_ProV2_00_Amreg_set_I",
+      "241b": {
+        "221b 201b 205b b1fc 0000 0000 670c 30c0 30c1 30c2 30c3 30c4 2085 4e75": "OSDevKit_ProV1_61_ImgSetBody",
+        "221b 201b 205b b1fc 0000 0000 6718 3140 001c 3141 001e 3142 0018 3143": "OSDevKit_ProV1_61_VpSetBody",
+        "221b 201b 225b b3fc 0000 0000 6710 48e7 0002 2c6d e752 4eae fe74 4cdf": "OSDevKit_ProV1_61_RpScroll",
+        "221b 201b 225b b3fc 0000 0000 671a 48e7 0002 2c6d e752 0c6e 0027 0014": "OSDevKit_ProV1_61_RpBfScroll",
+        "221b 201b 225b b3fc 0000 0000 671a 48e7 0002 2c6d e75a 0c6e 0027 0014": "OSDevKit_ProV1_61_WndScrollRaster"
+      }
     },
     "281b": {
       "261b 241b 206d 0228 41e8": {
@@ -8601,7 +8870,8 @@
       "281b 261b 241b 7200 4a6d": "AMOS_ProV2_00_Clip_IIII_V"
     },
     "6700": "AMOS_ProV2_00_DelCblock_I",
-    "6b00": "AMOS_ProV2_00__FnRight"
+    "6b00": "AMOS_ProV2_00__FnRight",
+    "7600": "OSDevKit_ProV1_61_WndWaitPort"
   },
   "2a0e": "AMCAF_ProV1_50B4_EN_OpenWorkbench",
   "2a1b": {
@@ -8726,8 +8996,19 @@
       "241b 221b 205b 6100": "GUI_ProV2_00_GuiSetZone",
       "241b 221b 48e7 0010": "JDColour_ProV2_00_JdScreenBorder",
       "241b 221b 48e7 00fe": "Game_ProV0_90_GLine_IIIII",
-      "7400 b685 6e06 b684": "Tools_ProV1_01_Range"
+      "7400 b685 6e06 b684": "Tools_ProV1_01_Range",
+      "241b 221b 201b 205b": {
+        "b1fc 0000 0000 670c": "OSDevKit_ProV1_20_ImgSetBody",
+        "b1fc 0000 0000 6718": "OSDevKit_ProV1_20_VpSetBody"
+      },
+      "241b 221b 201b 225b": {
+        "b3fc 0000 0000 6716 48e7 0002 2c6d 0228 4dee 0158 2c56 4eae fc16 4cdf 4000 4e75": "OSDevKit_ProV1_20_RpBfScroll",
+        "b3fc 0000 0000 6716 48e7 0002 2c6d 0228 4dee 0158 2c56 4eae fe74 4cdf 4000 4e75": "OSDevKit_ProV1_20_RpScroll",
+        "b3fc 0000 0000 6716 48e7 0002 2c6d 0228 4dee 015c 2c56 4eae fce2 4cdf 4000 4e75": "OSDevKit_ProV1_20_WndScrollRaster"
+      },
+      "241b 221b 201b 245b": "OSDevKit_ProV1_20_GadModifProp"
     },
+    "281b 675e": "OSDevKit_ProV1_61_DosMsgNotify",
     "281b 6d00": "PowerBobs_ProV1_00_PmulShift",
     "281b b8bc": [
       ["match", "0001 0000 6400"],
@@ -8814,6 +9095,7 @@
     },
     "241b": "Amon_ProV1_03_FastCircle",
     "245b": "AMCAF_ProV1_50B4_EN_MaskCopy_IIIIIIIIII",
+    "273c": "OSDevKit_ProV1_20_ChnListAlloc",
     "281b": "GUI_ProV1_75_TcpSave",
     "2a1b": {
       "281b 201b 4eb9": [
@@ -8825,7 +9107,10 @@
           "48e7 001e 224a e14b 246d 01d8 e54b 47ea 0920 d7c3 2a58 49ea 0108 2c50 3019 363c": "Effects_ProV0_15_StarfieldOne"
         }
       ],
-      "281b 261b 241b": "IntuiExtend_ProV1_60_WbGauge",
+      "281b 261b 241b": {
+        "201b 221b": "IntuiExtend_ProV1_60_WbGauge",
+        "225b 221b": "OSDevKit_ProV1_20_BltClip"
+      },
       "281b 3606 e183": "IntuiExtend_ProV1_60_WbCircle_III",
       "e75e e75d 206d": {
         "0258 d0fc 00b0 3146": "IntuiExtend_ProV1_60_WbPrintLocate",
@@ -8840,9 +9125,13 @@
         "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbTrackRead",
         "001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTrackRead"
       },
-      "48e7 00fe 266d": "Game_ProV0_90_GScreenCopy"
+      "48e7 00fe 266d": "Game_ProV0_90_GScreenCopy",
+      "6744 2707 6100": "OSDevKit_ProV1_20_ChnFind"
     },
-    "48e7": "Game_ProV0_90_GScreenShow",
+    "48e7": {
+      "001e 2c6d": "OSDevKit_ProV1_20_DosDate",
+      "00fe 266d": "Game_ProV0_90_GScreenShow"
+    },
     "5346": "IntuiExtend_ProV1_60_WbRollScreen",
     "6100": "EasyLife_ProV1_09_MuiFlush",
     "6b00": [
@@ -8891,6 +9180,7 @@
     ]
   },
   "2c2b": "AMCAF_ProV1_50B4_EN_BlitterFill_IIIIII",
+  "2c6d": "OSDevKit_ProV1_61_SysView",
   "2c78": {
     "0004 0c6e 0024 0014": "IntuiExtend_ProV1_30B_WbReset",
     "0004 4eae fd2a 4e75": "Game_ProV0_90_GReboot",
@@ -8908,6 +9198,7 @@
     },
     "93c9 2c78 0004 4eae feda 2c47 2600": "AMCAF_ProV1_50B4_EN_AmosTask"
   },
+  "2e13": "OSDevKit_ProV1_20_TagListAlloc",
   "2e1b": {
     "0287": [
       ["match", "0000 000f 6700"],
@@ -8986,7 +9277,8 @@
     "281b": "IntuiExtend_ProV1_60_WbBevelBox",
     "2a1b": {
       "281b 48e7": "Game_ProV0_90_GSpasteBob",
-      "2c1b 201b": "JDColour_ProV2_00_JdScreenConvert"
+      "2c1b 201b": "JDColour_ProV2_00_JdScreenConvert",
+      "281b 675e": "OSDevKit_ProV1_20_DosMsgNotify"
     },
     "2c1b": {
       "201b": "AMCAF_ProV1_50B4_EN_BankCopy_III",
@@ -9004,6 +9296,7 @@
         "337c 000b 001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 0194 2080 2c5f 4e75": "IntuiExtend_ProV1_60_WbTrackFormat",
         "337c 000b 001c 2346 0028 237c 0000 1600 0024 cefc 1600 2347 002c 2f0e 2c78 0004 4eae fe38 206d 0258 d0fc 026e 2080 2c5f 4e75": "IntuiExtend_ProV1_30B_WbTrackFormat"
       },
+      "245b": "OSDevKit_ProV1_20_AppAddIcon",
       "261b": [
         ["match", "6f00"],
         ["skip", 1],
@@ -9015,6 +9308,12 @@
       "281b": "Personnal_ProV1_00B_LDoubleMask",
       "2a1b": {
         "281b": {
+          "261b 241b 221b 201b 205b b1fc 0000 0000": {
+            "671e 1080 1141 0001": "OSDevKit_ProV1_20_ItSet",
+            "671e 1140 0004 1141": "OSDevKit_ProV1_20_BdSet",
+            "671e 2080 2141 0004": "OSDevKit_ProV1_20_SiSet"
+          },
+          "6762 4a85 675e 48e7 0002 2c78 0004 7030": "OSDevKit_ProV1_20_DosSigNotify",
           "0484 0000 0001 0485 0000 0001 c8fc 0006": "Personnal_ProV1_00B_MplotModify",
           "261b 241b 48e7 00fe 6000 00a2 2002 4eb9": "Game_ProV0_90_GGetImg",
           "48e7 00fe 266d 01c8 206b 01de 2248 2068": "Game_ProV0_90_GSetMbob",
@@ -9159,6 +9458,8 @@
     ],
     "6606": "AMCAF_ProV1_50B4_EN_TurboText_IISII",
     "6708": "CRAFT_ProV1_00_StrPeek_IIS",
+    "6722": "OSDevKit_ProV1_20_DosEndNotify",
+    "672a": "OSDevKit_ProV1_20_ChnLocation",
     "672c": "AMCAF_ProV1_50B4_EN_C2pShift",
     "6b00": [
       "push",
@@ -9323,13 +9624,26 @@
     ]
   },
   "2f00": "Game_ProV0_90_GExit",
+  "2f02": {
+    "2002 6100": "AMOS_ProV2_00_DevClose",
+    "7407 2002": "AMOS_ProV2_00_ALT2_DevClose"
+  },
   "2f03": {
     "201b": "AMOS_ProV2_00_Bsave",
     "261b": "OSDevKit_ProV1_61_GtSetAttrs",
-    "273c": "OSDevKit_ProV1_61_IffClose",
+    "273c": {
+      "0000 001c": "OSDevKit_ProV1_61_IffClose",
+      "0000 0002": "OSDevKit_ProV1_61_ScrClose",
+      "0000 0010": "OSDevKit_ProV1_61_ChnListAlloc"
+    },
+    "6100": "OSDevKit_ProV1_61_DosSetDir",
     "6b00": "AMOS_ProV2_00_IffAnim_SII"
   },
-  "2f06": "AMOS_ProV2_00__Modulo",
+  "2f06": {
+    "2c1b 4a83": "AMOS_ProV2_00__Modulo",
+    "2f06 2443": "OSDevKit_ProV1_61_BltMskBmToRp",
+    "2f06 2c03": "OSDevKit_ProV1_61_BltClip"
+  },
   "2f08": {
     "206d": {
       "00f8 4a28 05ee 672c": "Music_ProV2_00_TrackStop",
@@ -9743,6 +10057,10 @@
     "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0009 12fc 0035 12fc 0037 12fc 002e": "Delta_ProV1_40_DeltaRadian",
     "0000 048a 3079 0000 048a 3279 0000 0480 32fc 0016 12fc 0044 12fc 0065 12fc 006c": "Delta_ProV1_40_DeltaAbout"
   },
+  "307c": {
+    "0000 2243": "OSDevKit_ProV1_61_ScrTagOpen_I",
+    "0000 4a83": "OSDevKit_ProV1_61_ChnFind"
+  },
   "3200": "AMOS_ProV2_00__Plt",
   "323c": "AMOS_ProV2_00_Space",
   "33fc": {
@@ -9855,7 +10173,10 @@
     ]
   },
   "41fa": {
-    "0008 2608 7402": "AMCAF_ProV1_50B4_EN_AmcafVersion",
+    "0008 2608 7402": {
+      "4e75 0035": "AMCAF_ProV1_50B4_EN_AmcafVersion",
+      "4e75 0001": "OSDevKit_ProV1_61__0__S"
+    },
     "0008 2708 6000": [
       "follow-rel",
       {
@@ -10048,9 +10369,19 @@
       }
     ],
     "000c 206d": "AMOS_ProV2_00__CRet",
+    "001e 229b": "OSDevKit_ProV1_20_ChnAdd_II",
     "0022 7000": "TurboPlus_ProV2_00_Debug",
+    "0024 2283": "OSDevKit_ProV1_61_ChnListFree",
+    "0024 229b": "OSDevKit_ProV1_20_ChnIns_II", 
     "0024 235b": "EasyLife_ProV1_09_MuiSet_III",
+    "002a 2e1b": "OSDevKit_ProV1_20_ChnInsTo_III",
+    "003c 229b": "OSDevKit_ProV1_20_ChnListFree",
+    "0058 2283": "OSDevKit_ProV1_61_ChnNewLength",
+    "00b6 0683": "OSDevKit_ProV1_61_ChnIns_II",
+    "00c8 7600": "OSDevKit_ProV1_20_ChnAdd_I",
+    "00ca 2e1b": "OSDevKit_ProV1_20_ChnFree_I",
     "0124 2343": "OSDevKit_ProV1_61_WndIdMouse",
+    "0128 235b": "OSDevKit_ProV1_20_ChnNewLength",
     "df40 d3fc": "Personnal_ProV1_00B_ScreenYSize",
     "df60 2611": "Personnal_ProV1_00B_ScreenXSize",
     "e184 2051": "Personnal_ProV1_00B_CopperNextLine",
@@ -10082,9 +10413,14 @@
         "1b50 3000": "AMOS_ProV2_00_Pen_I_S"
       }
     ],
+    "00b0 6100": "OSDevKit_ProV1_61_AslFile",
     "c830 2052": "Personnal_ProV1_00B_ActiveSecondScreen",
     "d646 2052": "Personnal_ProV1_00B_NormalPlayfields",
     "d66e 2052": "Personnal_ProV1_00B_InversePlayfields"
+  },
+  "4883": {
+    "48c3": "OSDevKit_ProV1_61_ExtB",
+    "4883": "OSDevKit_ProV1_61_ExtW"
   },
   "48c3": "JD_ProV5_30_JdScreenResolution__V",
   "48e3": [
