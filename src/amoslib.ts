@@ -946,3 +946,184 @@ export const getReverseLookup = (tokens: TokenInfo[]): Map<number, {name: string
   }
   return m;
 };
+
+export function *yieldCodePatternSignature(
+  getCodePattern: (source: 'local', routineNumber: number) => CodePattern,
+  routineNumber: number,
+  maxCount = 16,
+) {
+  let iter = eachCodePatternToken(getCodePattern('local', routineNumber));
+  let count = 0;
+  let routineWords = 0;
+  stepLoop: for (let step = iter.next(); !step.done; step = iter.next()) {
+    if (typeof step.value === 'number') {
+      switch (step.value) {
+        case 0x6000: {
+          // unconditional branch case: initial opcode never emitted
+          // because it cannot be distinguished from a tail call that
+          // might or might not be eliminated. instead we either follow
+          // the jump, or if it is negative and within the routine,
+          // terminate here.
+          step = iter.next();
+          if (step.done) break stepLoop;
+          routineWords += 2;
+          if (typeof step.value === 'number') {
+            const offset = (step.value << 16 >> 16) - 2;
+            if (offset % 2) {
+              throw new Error('branch offset must be word aligned');
+            }
+            if (offset < 0) {
+              if (-offset > routineWords*2) {
+                throw new Error('negative unconditional branch exceeds routine start');
+              }
+              // terminus 3: unconditional backward branch within routine
+              yield -3;
+              return;
+            }
+            let skipWords = offset/2;
+            while (skipWords > 0) {
+              step = iter.next();
+              if (step.done) {
+                throw new Error('skipped past end of routine');
+              }
+              if (typeof step.value === 'number') {
+                skipWords--;
+                routineWords++;
+              }
+              else switch (step.value.type) {
+                case 'abs-local': case 'abs-main': {
+                  if (skipWords < 2) {
+                    throw new Error('skipped into middle of 32-bit address');
+                  }
+                  skipWords -= 2;
+                  routineWords += 2;
+                  break;
+                }
+                case 'tail-call': {
+                  throw new Error('skipped through tail call');
+                }
+                case 'pivot-local': {
+                  skipWords--;
+                  routineWords++;
+                  break;
+                }
+                default: throw new Error('unhandled case');
+              }
+            }
+          }
+          else if (step.value.type === 'pivot-local') {
+            iter = eachCodePatternToken(getCodePattern('local', step.value.routineNumber));
+            routineWords = 0;
+          }
+          else {
+            throw new Error('invalid bytecode');
+          }
+          continue stepLoop;
+        }
+      }
+      yield step.value;
+      if (++count >= maxCount) return;
+      routineWords++;
+      switch (step.value) {
+        case 0x4eb9: {
+          // subroutine at absolute offset
+          step = iter.next();
+          if (step.done) break stepLoop;
+          if (typeof step.value === 'number') {
+            step = iter.next();
+            if (step.done) break stepLoop;
+            if (typeof step.value !== 'number') {
+              throw new Error('invalid code pattern');
+            }
+          }
+          else if (step.value.type !== 'abs-local' && step.value.type !== 'abs-main') {
+            throw new Error('invalid code pattern');
+          }
+          break;
+        }
+        case 0x6400:
+        case 0x6500:
+        case 0x6700:
+        case 0x6C00:
+        case 0x6200:
+        case 0x6F00:
+        case 0x6300:
+        case 0x6D00:
+        case 0x6B00:
+        case 0x6600:
+        case 0x6A00:
+        case 0x6000:
+        case 0x6100: {
+          step = iter.next();
+          if (step.done) break stepLoop;
+          if (typeof step.value !== 'number' && step.value.type !== 'pivot-local') {
+            throw new Error('invalid bytecode');
+          }
+          break;
+        }
+        case 0x4ED0:
+        case 0x4ED1:
+        case 0x4ED2:
+        case 0x4ED3:
+        case 0x4ED4:
+        case 0x4ED5:
+        case 0x4ED6:
+        case 0x4ED7:
+
+        case 0x4EE8:
+        case 0x4EE9:
+        case 0x4EEA:
+        case 0x4EEB:
+        case 0x4EEC:
+        case 0x4EED:
+        case 0x4EEE:
+        case 0x4EEF:
+
+        case 0x4EF0:
+        case 0x4EF1:
+        case 0x4EF2:
+        case 0x4EF3:
+        case 0x4EF4:
+        case 0x4EF5:
+        case 0x4EF6:
+        case 0x4EF7:
+
+        case 0x4EFA:
+        case 0x4EFB:
+
+        case 0x4EF8:
+        case 0x4EF9:
+
+        case 0x4e75:
+        case 0x4e77:
+        case 0x4e73:
+        case 0x4e74:
+          return;
+        default: {
+          // BRA.s with negative offset
+          if ((step.value & 0xff80) === 0x6080) {
+            return;
+          }
+          break;
+        }
+      }
+    }
+    else switch (step.value.type) {
+      case 'abs-local': case 'abs-main': {
+        routineWords += 2;
+        break;
+      }
+      case 'pivot-local': {
+        routineWords++;
+        break;
+      }
+      case 'tail-call': {
+        iter = eachCodePatternToken(getCodePattern('local', step.value.routineNumber));
+        routineWords = 0;
+        break;
+      }
+      default: throw new Error('unhandled case');
+    }
+  }
+  throw new Error('unterminated bytecode');
+}
