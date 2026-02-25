@@ -765,7 +765,7 @@ export function *eachRoutineWord(routine: RoutineDef): Generator<number> {
 
 const u16s = (v: number) => v.toString(16).padStart(4, '0');
 
-export function *eachCodePatternToken(code: CodePattern): Generator<string> {
+export function *eachCodePatternTokenString(code: CodePattern): Generator<string> {
   for (const section of code.sections) {
     switch (section.type) {
       case 'literal': {
@@ -823,15 +823,80 @@ export function *eachCodePatternToken(code: CodePattern): Generator<string> {
   }
 }
 
+export type CodePatternToken = number | {type:'pivot-local', routineNumber:number} | {type:'abs-local', routineNumber:number} | {type:'abs-main', routineNumber:number} | {type:'tail-call', routineNumber:number};
+
+export function *eachCodePatternToken(code: CodePattern): Generator<CodePatternToken> {
+  for (const section of code.sections) {
+    switch (section.type) {
+      case 'literal': {
+        for (let ptr = 0; ptr < section.bytes.length; ptr += 2) {
+          yield section.bytes.readUint16BE(ptr);
+        }
+        break;
+      }
+      case 'Rdata': {
+        yield 0x4e71;
+        yield 0x4e71;
+        break;
+      }
+      case 'Rjmp': case 'Rjmpt': {
+        yield 0x4EF9;
+        yield {type:'abs-main', routineNumber:section.target};
+        break;
+      }
+      case 'Ljmp': {
+        yield 0x4EF9;
+        yield {type:'abs-local', routineNumber:section.target};
+        break;
+      }
+      case 'Rjsr': case 'Rjsrt': {
+        yield 0x4EB9;
+        yield {type:'abs-main', routineNumber:section.target};
+        break;
+      }
+      case 'Ljsr': {
+        yield 0x4EB9;
+        yield {type:'abs-local', routineNumber:section.target};
+        break;
+      }
+      case 'Rlea': {
+        const regNum = Number(section.register.slice(1));
+        yield 0x41F9 | (regNum << 9);
+        yield {type:'abs-local', routineNumber:section.target};
+        break;
+      }
+      case 'Rbra': yield 0x6000; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbsr': yield 0x6100; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbhi': yield 0x6200; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbls': yield 0x6300; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbcc': yield 0x6400; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbcs': yield 0x6500; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbne': yield 0x6600; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbeq': yield 0x6700; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbpl': yield 0x6A00; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbmi': yield 0x6B00; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rbge': yield 0x6C00; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rblt': yield 0x6D00; yield {type:'pivot-local', routineNumber:section.target}; break;
+      case 'Rble': yield 0x6F00; yield {type:'pivot-local', routineNumber:section.target}; break;
+    }
+  }
+  if (code.fallthroughTarget !== false) {
+    yield {type:'tail-call', routineNumber:code.fallthroughTarget};
+  }
+  else if (code.sections.length === 0) {
+    yield 0x4e75;
+  }
+}
+
 export function eachRoutineToken(routine: RoutineDef): Generator<string> {
-  return eachCodePatternToken(routine.code);
+  return eachCodePatternTokenString(routine.code);
 }
 
 export const stringifyRoutine = (isMain: boolean, codePatterns: CodePattern[], i: number, loopCheck: number[] = [i]): string => {
   if (i < 0 || i >= codePatterns.length) {
     throw new Error('routine not defined: ' + i);
   }
-  const str = [...eachCodePatternToken(codePatterns[i]!)].join(' ').replace(/\[([RXA]:)(\d+)\]/g, (_, t, ns) => {
+  const str = [...eachCodePatternTokenString(codePatterns[i]!)].join(' ').replace(/\[([RXA]:)(\d+)\]/g, (_, t, ns) => {
     const n = Number(ns);
     if (isMain) {
       return '[' + t + '0,' + ns + ']';
