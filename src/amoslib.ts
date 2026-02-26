@@ -950,7 +950,7 @@ export const getReverseLookup = (tokens: TokenInfo[]): Map<number, {name: string
 };
 
 export function *yieldCodePatternSignature(
-  getCodePattern: (source: 'local', routineNumber: number) => CodePattern,
+  getCodePattern: (source: 'local' | 'main', routineNumber: number) => CodePattern,
   routineNumber: number,
   maxCount = 16,
 ) {
@@ -1015,6 +1015,35 @@ export function *yieldCodePatternSignature(
           }
           else if (step.value.type === 'pivot-local') {
             iter = eachCodePatternToken(getCodePattern('local', step.value.routineNumber));
+            routineWords = 0;
+          }
+          else {
+            throw new Error('invalid bytecode');
+          }
+          continue stepLoop;
+        }
+        case 0x4ef9: {
+          step = iter.next();
+          if (step.done) break stepLoop;
+          if (typeof step.value === 'number') {
+            const highWord = step.value;
+            step = iter.next();
+            if (step.done) break stepLoop;
+            if (typeof step.value !== 'number') {
+              throw new Error('invalid bytecode');
+            }
+            const lowWord = step.value;
+            yield 0x4ef9;
+            yield highWord;
+            yield lowWord;
+            return;
+          }
+          else if (step.value.type === 'abs-local') {
+            iter = eachCodePatternToken(getCodePattern('local', step.value.routineNumber));
+            routineWords = 0;
+          }
+          else if (step.value.type === 'abs-main') {
+            iter = eachCodePatternToken(getCodePattern('main', step.value.routineNumber));
             routineWords = 0;
           }
           else {
@@ -1094,7 +1123,6 @@ export function *yieldCodePatternSignature(
         case 0x4EFB:
 
         case 0x4EF8:
-        case 0x4EF9:
 
         case 0x4e75:
         case 0x4e77:
@@ -1131,7 +1159,7 @@ export function *yieldCodePatternSignature(
 }
 
 export function hashCodePatternSignature(
-  getCodePattern: (source: 'local', routineNumber: number) => CodePattern,
+  getCodePattern: (source: 'local' | 'main', routineNumber: number) => CodePattern,
   routineNumber: number,
   maxCount = 16,
 ) {
