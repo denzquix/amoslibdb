@@ -1,4 +1,6 @@
 
+import { h32 } from 'xxhashjs';
+
 export type TokenInfo = {instrEntryPoint: number, funcEntryPoint: number, name: string, signature: string, terminator: number};
 
 export function parseAmosLib(data: Buffer) {
@@ -1126,4 +1128,19 @@ export function *yieldCodePatternSignature(
     }
   }
   throw new Error('unterminated bytecode');
+}
+
+export function hashCodePatternSignature(
+  getCodePattern: (source: 'local', routineNumber: number) => CodePattern,
+  routineNumber: number,
+  maxCount = 16,
+) {
+  const seed = Buffer.from('AMOS').readUint32BE(0);
+  const h = h32(seed);
+  const buf = Buffer.alloc(2);
+  for (const part of yieldCodePatternSignature(getCodePattern, routineNumber, maxCount)) {
+    buf.writeUint16BE(part);
+    h.update(buf);
+  }
+  return (h.digest().toNumber() >>> 0).toString(16).padStart(8, '0');
 }
