@@ -108,7 +108,8 @@ function* prefixIterator<T>(iter: Iterator<T>, ...values: T[]) {
 
 export function traceLibRoutineFromCodePattern(
   data: LibData,
-  getCodePattern: (source: 'local' | 'main', routineNumber: number) => CodePattern, routineNumber: number,
+  getCodePattern: (source: 'local' | 'main', routineNumber: number) => CodePattern,
+  routineNumber: number,
 ): string | null {
   function match(iter: Iterator<CodePatternToken>, matcher: LibMatcher, stack: Iterator<CodePatternToken>[]): string | null {
     if (typeof matcher === 'string') {
