@@ -2027,7 +2027,7 @@ namespace AMOS {
       //Run: 168,
       //_InRun0CLI: 169,
       Run_S: 170,
-      //_InRun1CLI: 171,
+      _InRun1CLI: 171,
       Prun: 172,
       //_InPRunCLI: 173,
       AskEditor_I: 174,
