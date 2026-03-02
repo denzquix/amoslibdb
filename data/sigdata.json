@@ -4,6 +4,7 @@
     ["signature", {
       "ec07c1a6": "NO_OP",
       "b69fa484": "CONST_0",
+      "8d522bda": "CONST_4",
       "ad5f04b9": "AMOS_ProV2_00__CmpLineCLI",
       "8fd0e634": "AMOS_ProV2_00__PlusF",
       "febdf0fc": "AMOS_ProV2_00__MoinsF",
@@ -1071,7 +1072,7 @@
       "7ca05843": "Music_ProV2_00_SamStop",
       "7486d619": "Music_ProV2_00_SamStop_I",
       "11eaed12": "Music_ProV2_00_TrackLoad",
-      "fe916243": "Music_ProV2_00_TrackStop",
+      "aad426bd": "Music_ProV2_00_TrackStop",
       "d950339d": "Music_ProV2_00_TrackLoopOn",
       "2d697eac": "Music_ProV2_00_TrackLoopOf",
       "3ded1e9b": "Music_ProV2_00_TrackPlay",
