@@ -50,6 +50,36 @@
           {
             "type": "array",
             "items": [
+              {"const": "signature"},
+              {
+                "type": "object",
+                "properties": {
+                  "else": {
+                    "$ref": "#/definitions/OpcodeMatchValue"
+                  }
+                },
+                "additionalProperties": {
+                  "$ref": "#/definitions/OpcodeMatchValue"
+                },
+                "propertyNames": {
+                  "oneOf": [
+                    {"const": "else"},
+                    {
+                      "type": "string",
+                      "pattern": "^[0-9A-Fa-f]{8}$",
+                      "description": "One 32-bit hex number, lower case, zero-padded"
+                    }
+                  ]
+                },
+                "description": "An object mapping 32-bit hex (or 'else') to match by signature"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          {
+            "type": "array",
+            "items": [
               { "const": "result" },
               { "type": "string" }
             ],
