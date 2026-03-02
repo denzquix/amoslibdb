@@ -990,7 +990,6 @@ export function *yieldCodePatternSignature(
               }
               if (typeof step.value === 'number') {
                 skipWords--;
-                routineWords++;
               }
               else switch (step.value.type) {
                 case 'abs-local': case 'abs-main': {
@@ -998,7 +997,6 @@ export function *yieldCodePatternSignature(
                     throw new Error('skipped into middle of 32-bit address');
                   }
                   skipWords -= 2;
-                  routineWords += 2;
                   break;
                 }
                 case 'tail-call': {
@@ -1006,7 +1004,6 @@ export function *yieldCodePatternSignature(
                 }
                 case 'pivot-local': {
                   skipWords--;
-                  routineWords++;
                   break;
                 }
                 default: throw new Error('unhandled case');
@@ -1015,11 +1012,11 @@ export function *yieldCodePatternSignature(
           }
           else if (step.value.type === 'pivot-local') {
             iter = eachCodePatternToken(getCodePattern('local', step.value.routineNumber));
-            routineWords = 0;
           }
           else {
             throw new Error('invalid bytecode');
           }
+          routineWords = 0;
           continue stepLoop;
         }
         case 0x4ef9: {
@@ -1056,8 +1053,9 @@ export function *yieldCodePatternSignature(
       if (++count >= maxCount) return;
       routineWords++;
       switch (step.value) {
-        case 0x4eb9: {
-          // subroutine at absolute offset
+        case 0x4eb9: // subroutine at absolute offset
+        case 0x41f9: // LEA on absolute offset
+        {
           step = iter.next();
           if (step.done) break stepLoop;
           if (typeof step.value === 'number') {
@@ -1171,4 +1169,183 @@ export function hashCodePatternSignature(
     h.update(buf);
   }
   return (h.digest().toNumber() >>> 0).toString(16).padStart(8, '0');
+}
+
+export interface BytecodeSource {
+  readWord(): number;
+  atLibraryAddress(): boolean;
+  followAbsoluteJump(): void;
+  followRelativeJump(): void;
+  jumpRelative(offset: number): void;
+}
+
+export function *yieldBytecodeSignature(
+  src: BytecodeSource,
+  maxCount = 16,
+) {
+  let count = 0;
+  let routineWords = 0;
+  stepLoop: for (;;) {
+    const word = src.readWord();
+    if (word === -1) {
+      return;
+    }
+    switch (word) {
+      case 0x6000: {
+        const word = src.readWord();
+        if (word === -1) return;
+        console.log('6000 ' + word.toString(16).padStart(4, '0'));
+        const offset = (word << 16 >> 16) - 2;
+        if (offset % 2) {
+          throw new Error('branch offset must be word aligned');
+        }
+        if (offset < 0 && (-offset < routineWords*2)) {
+          // terminus 3: unconditional backward branch within routine
+          yield -3;
+          return;
+        }
+        src.jumpRelative(offset);
+        routineWords = 0;
+        continue stepLoop;
+      }
+      case 0x4ef9: {
+        if (!src.atLibraryAddress()) {
+          const highWord = src.readWord();
+          if (highWord === -1) return;
+          const lowWord = src.readWord();
+          if (lowWord === -1) return;
+          yield 0x4ef9;
+          yield highWord;
+          yield lowWord;
+          return;
+        }
+        src.followAbsoluteJump();
+        continue stepLoop;
+      }
+    }
+    yield word;
+    if (++count >= maxCount) return;
+    routineWords++;
+    switch (word) {
+      case 0x4eb9: {
+        // subroutine at absolute offset
+        src.readWord();
+        src.readWord();
+        break;
+      }
+      case 0x41F9: {
+        // LEA from absolute offset
+        src.readWord();
+        src.readWord();
+        break;
+      }
+      case 0x6400:
+      case 0x6500:
+      case 0x6700:
+      case 0x6C00:
+      case 0x6200:
+      case 0x6F00:
+      case 0x6300:
+      case 0x6D00:
+      case 0x6B00:
+      case 0x6600:
+      case 0x6A00:
+      case 0x6000:
+      case 0x6100: {
+        src.readWord();
+        break;
+      }
+      case 0x4ED0:
+      case 0x4ED1:
+      case 0x4ED2:
+      case 0x4ED3:
+      case 0x4ED4:
+      case 0x4ED5:
+      case 0x4ED6:
+      case 0x4ED7:
+
+      case 0x4EE8:
+      case 0x4EE9:
+      case 0x4EEA:
+      case 0x4EEB:
+      case 0x4EEC:
+      case 0x4EED:
+      case 0x4EEE:
+      case 0x4EEF:
+
+      case 0x4EF0:
+      case 0x4EF1:
+      case 0x4EF2:
+      case 0x4EF3:
+      case 0x4EF4:
+      case 0x4EF5:
+      case 0x4EF6:
+      case 0x4EF7:
+
+      case 0x4EFA:
+      case 0x4EFB:
+
+      case 0x4EF8:
+
+      case 0x4e75:
+      case 0x4e77:
+      case 0x4e73:
+      case 0x4e74:
+        return;
+      default: {
+        // BRA.s with negative offset
+        if ((word & 0xff80) === 0x6080) {
+          return;
+        }
+        break;
+      }
+    }
+  }
+}
+
+export function createBytecodeHasher(src: Buffer, pivot: number, offsets: readonly number[]) {
+  const offsetSet = new Set(offsets);
+  function createBytecodeSource(offset: number): BytecodeSource {
+    return {
+      atLibraryAddress() {
+        return offsetSet.has(offset);
+      },
+      followAbsoluteJump() {
+        const addr = src.readUint32BE(offset) & (-1 >>> 2);
+        offset = addr;
+      },
+      followRelativeJump() {
+        const addr = src.readInt16BE(offset);
+        offset += addr;
+      },
+      jumpRelative(o: number) {
+        offset += o;
+      },
+      readWord() {
+        const w = src.readUint16BE(offset);
+        offset += 2;
+        return w;
+      },
+    };
+  }
+  return {
+    hashAtPivot(offset: number) {
+      return this.hashAt(pivot + offset);
+    },
+    hashAt(offset: number) {
+      const seed = Buffer.from('AMOS').readUint32BE(0);
+      const h = h32(seed);
+      const buf = Buffer.alloc(2);
+      const v = createBytecodeSource(offset);
+      console.log('finding at ' +offset.toString(16));
+      for (const x of yieldBytecodeSignature(v)) {
+        buf.writeUint16BE(x);
+        console.log(' ' + x.toString(16).padStart(4, '0'));
+        h.update(buf);
+      }
+      const d = h.digest().toNumber().toString(16).padStart(8, '0');
+      console.log(' => ' + d);
+      return d;
+    }
+  }
 }
